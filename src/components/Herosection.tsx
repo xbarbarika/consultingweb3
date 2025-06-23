@@ -28,7 +28,7 @@ const HeroSection = () => {
           opacity: 0.5,
         }}
       />
-      <div className="px-6 md:px-20 lg:px-36">
+      <div className="px-6 md:px-16 lg:px-28">
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-2">
           {/* Left Content */}
           <div className="text-center md:text-left">
