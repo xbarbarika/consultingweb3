@@ -9,7 +9,7 @@ const items = [
 ];
 
 const WhoWeHelp = () => (
-  <section className="w-full min-h-[350px] flex flex-col items-center justify-center py-12 px-2 relative overflow-hidden mt-[100px]">
+  <section className="w-full min-h-[350px] flex flex-col items-center justify-center py-12 px-2 relative overflow-hidden mt-36 mb-30">
     <div className="text-center mb-2">
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">Who We Help</h2>
       <p className="text-gray-600 text-base md:text-lg">Tailored Growth for Every Web3 Vertical</p>
