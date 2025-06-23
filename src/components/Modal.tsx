@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface ModalProps {
   isOpen: boolean;
@@ -8,13 +8,24 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen) {
     return null;
   }
 
   return (
     <div
-      className="absolute inset-0 z-50 flex justify-center items-center backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-sm bg-black/20"
       onClick={onClose}
     >
       <div
@@ -28,7 +39,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         >
           &times;
         </button>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto p-4">
           {children}
         </div>
       </div>

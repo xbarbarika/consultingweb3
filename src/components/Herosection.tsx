@@ -11,9 +11,8 @@ const HeroSection = () => {
 
   return (
     <div 
-      className="pt-32 pb-12 relative overflow-hidden"
+      className="relative overflow-hidden bg-[#F3F3F3] pt-32 pb-12"
       style={{
-        backgroundColor: '#F3F3F3',
         backgroundImage: 'url(/Vector.svg)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -22,62 +21,55 @@ const HeroSection = () => {
     >
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-1"
+        className="absolute top-1/2 left-1/2 -z-1 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
-          width: 720,
-          height: 720,
-          borderRadius: '720px',
           background: 'linear-gradient(180deg, #B7BA00 0%, #C56D2F 100%)',
           filter: 'blur(300px)',
           opacity: 0.5,
         }}
       />
-      <div style={{ padding: '0 140px' }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto z-10 relative">
+      <div className="px-6 md:px-20 lg:px-36">
+        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-2">
           {/* Left Content */}
-          <div className="text-left">
+          <div className="text-center md:text-left">
             <h1
-              className="text-black mb-6"
+              className="mb-6 text-4xl font-bold text-black md:text-5xl lg:text-6xl"
               style={{
                 fontFamily: 'DM Serif Text, serif',
-                fontSize: '64px',
-                fontWeight: 400,
                 lineHeight: '100%',
               }}
             >
               Scaling Web3 Projects from Zero to Moon
             </h1>
             <p
-              className="text-black mb-6"
+              className="mb-6 text-lg text-black md:text-xl lg:text-2xl"
               style={{
                 fontFamily: 'Inter, sans-serif',
-                fontSize: '28px',
-                fontWeight: 500,
               }}
             >
               We are a full-stack growth and marketing agency helping Web3 startups accelerate adoption, build communities, and go global.
             </p>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="mb-8 flex items-center justify-center gap-3 md:justify-start">
               <span
-                className="w-3 h-3 blinking-dot"
-                style={{ backgroundColor: 'rgba(145, 118, 0, 1)', borderRadius: '50%' }}
+                className="blinking-dot h-3 w-3 rounded-full"
+                style={{ backgroundColor: 'rgba(145, 118, 0, 1)' }}
               ></span>
               <span className="text-lg font-medium" style={{ color: 'rgba(145, 118, 0, 1)' }}>We are Live</span>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-center gap-4 sm:flex-row md:justify-start">
               <button
                 onClick={openModal}
-                className="bg-[#8A8A6A] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-base font-semibold"
+                className="w-full rounded-md bg-[#8A8A6A] px-8 py-3 text-base font-semibold text-white transition hover:bg-opacity-90 sm:w-auto"
               >
                 Book a Free Strategy Call
               </button>
-              <button className="border border-black px-8 py-3 rounded-md hover:bg-gray-100 transition text-base font-semibold text-black">
+              <button className="w-full rounded-md border border-black px-8 py-3 text-base font-semibold text-black transition hover:bg-gray-100 sm:w-auto">
                 Explore Our Work
               </button>
             </div>
 
             {/* Stats Section */}
-            <div className="flex justify-start gap-8 mt-12 text-left">
+            <div className="mt-12 flex flex-wrap justify-center gap-8 text-center md:justify-start md:text-left">
               <div>
                 <p className="text-3xl font-bold text-black">500+</p>
                 <p className="text-gray-800">satisfied clients</p>
@@ -94,34 +86,21 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image */}
-          <div
-            style={{
-              width: '589px',
-              height: '444px',
-              borderRadius: '13.15px',
-            }}
-            className="overflow-hidden"
-          >
+          <div className="mx-auto mt-8 md:mt-0 h-auto w-full max-w-lg md:h-[444px] md:w-[589px] overflow-hidden rounded-[13.15px]">
             <img
               src="/hero.png"
               alt="Developer at work"
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
         
         {/* Logos Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-16">
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             
           {/* Clutch */}
           <div
-            style={{
-              width: 'auto',
-              padding: '15px 25px',
-              borderRadius: '10px',
-              background: 'rgba(255, 255, 255, 0.50)',
-            }}
-            className="flex flex-col justify-between items-center text-center h-full"
+            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
           >
             <img src="/Clutchlogo.svg" alt="Clutch" className="h-12 mb-2" />
             <div className="text-xs text-gray-800">Top Crypto Marketing Agency 2025</div>
@@ -129,13 +108,7 @@ const HeroSection = () => {
 
           {/* Techreviewer */}
           <div
-            style={{
-              width: 'auto',
-              padding: '15px 25px',
-              borderRadius: '10px',
-              background: 'rgba(255, 255, 255, 0.50)',
-            }}
-            className="flex flex-col justify-between items-center text-center h-full"
+            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
           >
             <img src="/TechReviewerLogo.svg" alt="Techreviewer" className="h-12 mb-2" />
             <div className="text-xs text-gray-800">Best Web Design Company</div>
@@ -143,13 +116,7 @@ const HeroSection = () => {
 
           {/* Trustpilot */}
           <div
-            style={{
-              width: 'auto',
-              padding: '15px 25px',
-              borderRadius: '10px',
-              background: 'rgba(255, 255, 255, 0.50)',
-            }}
-            className="flex flex-col justify-between items-center text-center h-full"
+            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
           >
             <img src="/TrustpilotLogo.svg" alt="Trustpilot" className="h-12 mb-2" />
             <div className="text-xs text-gray-800">Top Rated Trustpilot Agency</div>
@@ -157,13 +124,7 @@ const HeroSection = () => {
 
           {/* Influencer Marketing Hub */}
           <div
-            style={{
-              width: 'auto',
-              padding: '15px 25px',
-              borderRadius: '10px',
-              background: 'rgba(255, 255, 255, 0.50)',
-            }}
-            className="flex flex-col justify-between items-center text-center h-full"
+            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
           >
             <img src="/InfluencerLogo.svg" alt="Influencer Marketing Hub" className="h-12 mb-2" />
             <div className="text-xs text-gray-800">Top Crypto & NFT Agency</div>

@@ -8,13 +8,13 @@ const SocialIcon = ({ children }: { children: React.ReactNode }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-[#E5E7EB] py-8 mt-16">
-      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
+    <footer className="bg-[#E5E7EB] py-8 mt-16 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
         {/* Logo Placeholder */}
         <div className="w-16 h-16 bg-gray-400"></div>
 
         {/* Copyright */}
-        <p className="text-sm text-gray-800">
+        <p className="text-sm text-gray-800 text-center md:text-left">
           Copyright © 2025 BRIX Agency All Rights Reserved
         </p>
 

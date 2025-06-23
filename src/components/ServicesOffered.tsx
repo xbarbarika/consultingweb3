@@ -36,25 +36,24 @@ const ServicesOffered = () => {
   return (
     <section
       id="services"
-      className="py-32 mb-24"
-      style={{ padding: '0 140px', scrollMarginTop: '100px' }}
+      className="py-16 md:py-24 px-6 md:px-20 lg:px-36"
+      style={{ scrollMarginTop: '100px' }}
     >
-      <h2 className="text-4xl font-bold text-center mb-16 text-black">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-black">
         Services Offered
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {servicesData.map((service, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-10 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2"
-            style={{ height: '380px' }}
+            className="bg-white rounded-xl p-8 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 md:p-10"
           >
-            <h3 className="text-2xl font-semibold mb-8 text-black">{service.title}</h3>
-            <ul className="space-y-5">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-black">{service.title}</h3>
+            <ul className="space-y-4">
               {service.items.map((item, itemIndex) => (
                 <li key={itemIndex} className="flex items-start">
                   <span className="text-black mr-3 mt-1">•</span>
-                  <span className="text-lg text-gray-800">{item}</span>
+                  <span className="text-base md:text-lg text-gray-800">{item}</span>
                 </li>
               ))}
             </ul>
