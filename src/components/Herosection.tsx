@@ -1,10 +1,14 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import Modal from './Modal';
+import ScheduleMeetingForm from './ScheduleMeetingForm';
 
-interface HeroSectionProps {
-  onBookCallClick: () => void;
-}
+const HeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-const HeroSection: React.FC<HeroSectionProps> = ({ onBookCallClick }) => {
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div 
       className="pt-32 pb-12 relative overflow-hidden"
@@ -61,8 +65,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onBookCallClick }) => {
               <span className="text-lg font-medium" style={{ color: 'rgba(145, 118, 0, 1)' }}>We are Live</span>
             </div>
             <div className="flex items-center gap-4">
-              <button 
-                onClick={onBookCallClick}
+              <button
+                onClick={openModal}
                 className="bg-[#8A8A6A] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-base font-semibold"
               >
                 Book a Free Strategy Call
@@ -167,6 +171,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onBookCallClick }) => {
 
         </div>
       </div>
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <ScheduleMeetingForm />
+        </Modal>
+      )}
     </div>
   );
 };

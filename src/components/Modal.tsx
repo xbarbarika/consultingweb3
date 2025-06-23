@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center"
+      className="absolute inset-0 z-50 flex justify-center items-center backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -23,12 +23,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       >
         <button
           onClick={onClose}
-          className="absolute -top-4 -right-4 text-white text-4xl"
+          className="absolute top-4 right-4 text-black text-4xl"
           style={{ zIndex: 1 }}
         >
           &times;
         </button>
-        {children}
+        <div className="max-w-5xl mx-auto">
+          {children}
+        </div>
       </div>
     </div>
   );
