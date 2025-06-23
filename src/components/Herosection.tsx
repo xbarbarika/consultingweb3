@@ -1,6 +1,10 @@
 import React from 'react';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onBookCallClick: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onBookCallClick }) => {
   return (
     <div 
       className="pt-32 pb-12 relative overflow-hidden"
@@ -57,7 +61,10 @@ const HeroSection = () => {
               <span className="text-lg font-medium" style={{ color: 'rgba(145, 118, 0, 1)' }}>We are Live</span>
             </div>
             <div className="flex items-center gap-4">
-              <button className="bg-[#8A8A6A] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-base font-semibold">
+              <button 
+                onClick={onBookCallClick}
+                className="bg-[#8A8A6A] text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-base font-semibold"
+              >
                 Book a Free Strategy Call
               </button>
               <button className="border border-black px-8 py-3 rounded-md hover:bg-gray-100 transition text-base font-semibold text-black">
