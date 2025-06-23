@@ -1,30 +1,44 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
-const Navbar = () => {
+interface NavbarProps {
+  onMenuClick?: () => void;
+  showMenuButton?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {/* Desktop Navbar */}
       <div className="hidden md:flex fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-7xl justify-between items-center glassy-navbar">
-        <div className="w-5 h-5 bg-black rounded-sm" />
+        <div className="flex items-center gap-6">
+          {showMenuButton && (
+            <button onClick={onMenuClick} className="bg-[#716A54] text-white text-sm px-4 py-1 rounded-full font-semibold hover:bg-[#5a543e] transition">Menu</button>
+          )}
+          <div className="w-5 h-5 bg-black rounded-sm" />
+        </div>
         <div className="flex space-x-[80px] text-sm text-gray-700">
           <a href="#about-us" className="hover:text-black">About Us</a>
           <a href="#services" className="hover:text-black">Services</a>
           <a href="#team" className="hover:text-black">Team</a>
           <a href="#faq" className="hover:text-black">FAQ</a>
         </div>
-        <button className="bg-black text-white text-sm px-4 py-1 rounded-full hover:bg-gray-800 transition">
+        <Link href="/contact" className="bg-black text-white text-sm px-4 py-1 rounded-full hover:bg-gray-800 transition">
           Contact us
-        </button>
+        </Link>
       </div>
 
       {/* Mobile Navbar */}
       <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              {showMenuButton && (
+                <button onClick={onMenuClick} className="bg-[#716A54] text-white text-sm px-4 py-1 rounded-full font-semibold hover:bg-[#5a543e] transition">Menu</button>
+              )}
               <div className="w-5 h-5 bg-black rounded-sm" />
             </div>
             <div className="-mr-2 flex">
@@ -52,9 +66,9 @@ const Navbar = () => {
               <a href="#faq" className="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">FAQ</a>
             </div>
             <div className="px-2 pt-2 pb-3">
-              <button className="w-full bg-black text-white text-sm px-4 py-2 rounded-full hover:bg-gray-800 transition">
+              <Link href="/contact" className="w-full bg-black text-white text-sm px-4 py-2 rounded-full hover:bg-gray-800 transition block text-center">
                 Contact us
-              </button>
+              </Link>
             </div>
           </div>
         )}

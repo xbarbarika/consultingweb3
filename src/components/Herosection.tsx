@@ -39,7 +39,11 @@ const HeroSection = () => {
                 lineHeight: '100%',
               }}
             >
-              Scaling Web3 Projects from Zero to Moon
+              <span className="whitespace-nowrap">
+                <span className="inline-block bg-[#D9D3A3] px-2 md:px-4 rounded-sm" style={{boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone'}}>
+                  Scaling Web3
+                </span>{' '}Projects
+              </span>{' '}from Zero to Moon
             </h1>
             <p
               className="mb-6 text-lg text-black md:text-xl lg:text-2xl"
