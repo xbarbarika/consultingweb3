@@ -3,6 +3,10 @@ import Navbar from '../components/Navbar';
 import WhoWeHelp from "@/components/WhoWeHelp";
 import ServicesOffered from "@/components/ServicesOffered";
 import AboutUs from "@/components/AboutUs";
+import OurTeam from "@/components/OurTeam";
+import ScheduleMeeting from "@/components/ScheduleMeeting";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +16,10 @@ export default function Home() {
       <AboutUs />
       <WhoWeHelp />
       <ServicesOffered />
+      <OurTeam />
+      <ScheduleMeeting />
+      <FAQ />
+      <Footer />
     </main>
   );
 }

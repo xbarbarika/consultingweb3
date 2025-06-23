@@ -2,7 +2,11 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#F3F3F3] py-24" style={{ padding: '0 140px' }}>
+    <div
+      id="about-us"
+      className="bg-[#F3F3F3] py-24 mt-24"
+      style={{ padding: '0 140px', scrollMarginTop: '100px' }}
+    >
       <div className="flex mx-auto rounded-lg overflow-hidden" style={{ maxWidth: '1529px' }}>
         {/* Left Content */}
         <div className="p-12 flex flex-col justify-center bg-white" style={{ flexBasis: '30%' }}>

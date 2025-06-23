@@ -34,7 +34,11 @@ const servicesData = [
 
 const ServicesOffered = () => {
   return (
-    <section className="py-32" style={{ padding: '0 140px' }}>
+    <section
+      id="services"
+      className="py-32 mb-24"
+      style={{ padding: '0 140px', scrollMarginTop: '100px' }}
+    >
       <h2 className="text-4xl font-bold text-center mb-16 text-black">
         Services Offered
       </h2>
