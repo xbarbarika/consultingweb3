@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
 
 const ScheduleMeetingForm = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    date: '',
+    time: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const { error } = await supabase
+      .from('strategy_calls')
+      .insert([form]);
+    if (error) {
+      alert('There was an error scheduling your call. Please try again.');
+      return;
+    }
+    setSubmitted(true);
+    setForm({
+      name: '',
+      email: '',
+      date: '',
+      time: '',
+    });
+  };
+
+  if (submitted) {
+    return <div className="p-8 text-center">Thank you! Your strategy call is scheduled.</div>;
+  }
+
   return (
     <div className="bg-[#ECEBE8] rounded-2xl p-8 md:p-16">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-black">
         Schedule a meeting
       </h2>
-      <form className="max-w-lg mx-auto">
+      <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
         <div className="mb-6">
           <label htmlFor="modal-name" className="block text-gray-700 text-sm font-medium mb-2">
             Name
@@ -15,6 +46,9 @@ const ScheduleMeetingForm = () => {
             type="text"
             id="modal-name"
             placeholder="Enter your Name"
+            value={form.name}
+            onChange={e => setForm({ ...form, name: e.target.value })}
+            required
             className="w-full px-4 py-3 bg-white rounded-lg focus:outline-none text-black"
           />
         </div>
@@ -26,6 +60,9 @@ const ScheduleMeetingForm = () => {
             type="email"
             id="modal-email"
             placeholder="Anything@example.com"
+            value={form.email}
+            onChange={e => setForm({ ...form, email: e.target.value })}
+            required
             className="w-full px-4 py-3 bg-white rounded-lg focus:outline-none text-black"
           />
         </div>
@@ -37,6 +74,9 @@ const ScheduleMeetingForm = () => {
             <input
               type="date"
               id="modal-date"
+              value={form.date}
+              onChange={e => setForm({ ...form, date: e.target.value })}
+              required
               className="w-full px-4 py-3 bg-white rounded-lg focus:outline-none text-black"
             />
           </div>
@@ -47,6 +87,9 @@ const ScheduleMeetingForm = () => {
             <input
               type="time"
               id="modal-time"
+              value={form.time}
+              onChange={e => setForm({ ...form, time: e.target.value })}
+              required
               className="w-full px-4 py-3 bg-white rounded-lg focus:outline-none text-black"
             />
           </div>

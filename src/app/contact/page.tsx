@@ -4,15 +4,44 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
 import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabaseClient';
 
 export default function ContactPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    whatsapp_telegram: '',
+    message: '',
+    date: '',
+    time: '',
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitted(false);
+
+    const { error } = await supabase
+      .from('meetings')
+      .insert([form]);
+
+    if (error) {
+      alert('There was an error scheduling your meeting. Please try again.');
+      return;
+    }
+
     setSubmitted(true);
+    setForm({
+      name: '',
+      email: '',
+      whatsapp_telegram: '',
+      message: '',
+      date: '',
+      time: '',
+    });
   };
 
   return (
@@ -49,23 +78,47 @@ export default function ContactPage() {
                   <input
                     type="text"
                     placeholder="Your name"
+                    value={form.name}
+                    onChange={e => setForm({ ...form, name: e.target.value })}
                     className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 text-sm sm:text-base"
                     required
                   />
                   <input
                     type="text"
                     placeholder="WhatsApp / Telegram"
+                    value={form.whatsapp_telegram}
+                    onChange={e => setForm({ ...form, whatsapp_telegram: e.target.value })}
                     className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 text-sm sm:text-base"
                   />
                 </div>
                 <input
                   type="email"
                   placeholder="Email"
+                  value={form.email}
+                  onChange={e => setForm({ ...form, email: e.target.value })}
                   className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 text-sm sm:text-base"
                   required
                 />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <input
+                    type="date"
+                    value={form.date}
+                    onChange={e => setForm({ ...form, date: e.target.value })}
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 text-sm sm:text-base"
+                    required
+                  />
+                  <input
+                    type="time"
+                    value={form.time}
+                    onChange={e => setForm({ ...form, time: e.target.value })}
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 text-sm sm:text-base"
+                    required
+                  />
+                </div>
                 <textarea
                   placeholder="Text message"
+                  value={form.message}
+                  onChange={e => setForm({ ...form, message: e.target.value })}
                   rows={4}
                   className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg focus:outline-none text-black border border-gray-200 resize-none text-sm sm:text-base"
                   required
