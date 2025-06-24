@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 
+function add30Min(timeStr: string) {
+  const [h, m] = timeStr.split(':').map(Number);
+  const date = new Date(0, 0, 0, h, m + 30);
+  return date.toTimeString().slice(0, 5);
+}
+function subtract30Min(timeStr: string) {
+  const [h, m] = timeStr.split(':').map(Number);
+  const date = new Date(0, 0, 0, h, m - 30);
+  return date.toTimeString().slice(0, 5);
+}
+
 const ScheduleMeetingForm = () => {
   const [form, setForm] = useState({
     name: '',
@@ -9,16 +20,48 @@ const ScheduleMeetingForm = () => {
     time: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    // 1. Check for existing meeting within 30 minutes
+    const { data: existing, error: checkError } = await supabase
+      .from('strategy_calls')
+      .select('*')
+      .eq('date', form.date)
+      .gte('time', subtract30Min(form.time))
+      .lte('time', add30Min(form.time));
+    if (checkError) {
+      alert('Error checking for existing meetings. Please try again.');
+      setLoading(false);
+      return;
+    }
+    if (existing && existing.length > 0) {
+      alert('A call is already scheduled within 30 minutes of this time. Please choose another slot.');
+      setLoading(false);
+      return;
+    }
+    // 2. Insert new meeting
     const { error } = await supabase
       .from('strategy_calls')
       .insert([form]);
     if (error) {
       alert('There was an error scheduling your call. Please try again.');
+      setLoading(false);
       return;
     }
+    // 3. Send admin email
+    await fetch('/api/send-admin-email', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        date: form.date,
+        time: form.time,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
     setSubmitted(true);
     setForm({
       name: '',
@@ -26,6 +69,7 @@ const ScheduleMeetingForm = () => {
       date: '',
       time: '',
     });
+    setLoading(false);
   };
 
   if (submitted) {
@@ -99,8 +143,9 @@ const ScheduleMeetingForm = () => {
             type="submit"
             className="text-white py-3 px-8 md:px-12 rounded-lg transition-colors w-full md:w-auto"
             style={{ backgroundColor: '#716A54' }}
+            disabled={loading}
           >
-            Book a Free Strategy Call
+            {loading ? 'Booking...' : 'Book a Free Strategy Call'}
           </button>
         </div>
       </form>
