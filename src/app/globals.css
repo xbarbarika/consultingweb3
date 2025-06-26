@@ -61,3 +61,11 @@ body {
 .blinking-dot {
   animation: blink 1.5s infinite;
 }
+
+.gradient-reverse-on-hover {
+  background-image: linear-gradient(to right, #f472b6, #8b5cf6); /* from-pink-400 to-purple-500 */
+  transition: background-image 0.3s;
+}
+.gradient-reverse-on-hover:hover {
+  background-image: linear-gradient(to left, #8b5cf6, #f472b6); /* from-purple-500 to-pink-400 */
+}

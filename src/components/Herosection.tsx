@@ -1,163 +1,64 @@
-'use client';
-import React, { useState } from 'react';
-import Modal from './Modal';
-import ScheduleMeetingForm from './ScheduleMeetingForm';
+import React from 'react';
 
-const HeroSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
+export default function HeroSection() {
   return (
-    <div 
-      className="relative overflow-hidden bg-[#F3F3F3] pt-32 pb-12"
-      style={{
-        backgroundImage: 'url(/Vector.svg)',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-      }}
-    >
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -z-1 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          background: 'linear-gradient(180deg, #B7BA00 0%, #C56D2F 100%)',
-          filter: 'blur(300px)',
-          opacity: 0.5,
-        }}
-      />
-      <div className="px-6 md:px-16 lg:px-28">
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-2">
-          {/* Left Content */}
-          <div className="text-center md:text-left">
-            <h1
-              className="mb-6 text-4xl font-bold text-black md:text-5xl lg:text-6xl"
-              style={{
-                fontFamily: 'DM Serif Text, serif',
-                lineHeight: '100%',
-              }}
-            >
-              <span className="whitespace-nowrap">
-                <span className="inline-block bg-[#D9D3A3] px-2 md:px-4 rounded-sm" style={{boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone'}}>
-                  Scaling Web3
-                </span>{' '}Projects
-              </span>{' '}from Zero to Moon
-            </h1>
-            <p
-              className="mb-6 text-lg text-black md:text-xl lg:text-2xl"
-              style={{
-                fontFamily: 'Inter, sans-serif',
-              }}
-            >
-              We are a full-stack growth and marketing agency helping Web3 startups accelerate adoption, build communities, and go global.
+    <div className="relative bg-[#0B0C2A] text-white min-h-screen overflow-hidden font-sans">
+      {/* Glowing Background Effect */}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
+        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#FF8BA7] via-[#7F5CFF] to-transparent opacity-60 blur-[100px]" />
+        <div className="absolute right-0 bottom-0 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#00E0FF] via-[#D38EFF] to-transparent opacity-40 blur-[80px]" />
+      </div>
+      {/* Hero Content */}
+      <div className="relative z-10 flex flex-col items-start px-20 pt-32 pb-16">
+        <h1 className="text-[64px] font-semibold leading-tight tracking-tight font-dm-sans">
+          <span
+            className="inline-block text-transparent bg-clip-text font-semibold font-dm-sans"
+            style={{
+              backgroundImage: 'linear-gradient(90deg, #ff9966 0%, #ff5e62 40%, #ff8ba7 70%, #a685ff 100%)',
+            }}
+          >
+            SUBSCRIPTION-BASED
+          </span><br />
+          <span className="text-white font-semibold font-dm-sans">MARKETING FOR UNSTOPPABLE GROWTH</span>
+        </h1>
+        {/* Divider/Arrow and Subheading/Button side by side */}
+        <div className="flex w-full items-center mt-2 mb-4">
+          {/* Divider and Arrow */}
+          <div className="flex-1 flex items-center">
+            <div className="h-px bg-white/60 w-full" />
+            <svg className="ml-4" width="56" height="24" viewBox="0 0 56 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12H54M54 12L46 4M54 12L46 20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+          {/* Subheading and Button */}
+          <div className="flex flex-col items-start ml-8" style={{width: 600}}>
+            <p className="text-xl text-gray-300 text-left mb-2 font-dm-sans">
+              Design, development, content, ads and all you need in one package from a leading digital marketing company worldwide
             </p>
-            <div className="mb-8 flex items-center justify-center gap-3 md:justify-start">
-              <span
-                className="blinking-dot h-3 w-3 rounded-full"
-                style={{ backgroundColor: 'rgba(145, 118, 0, 1)' }}
-              ></span>
-              <span className="text-lg font-medium" style={{ color: 'rgba(145, 118, 0, 1)' }}>We are Live</span>
-            </div>
-            <div className="flex flex-col items-center gap-4 sm:flex-row md:justify-start">
-              <button
-                onClick={openModal}
-                className="w-full rounded-md bg-[#8A8A6A] px-8 py-3 text-base font-semibold text-white transition hover:bg-opacity-90 sm:w-auto"
-              >
-                Book a Free Strategy Call
-              </button>
-              <button className="w-full rounded-md border border-black px-8 py-3 text-base font-semibold text-black transition hover:bg-gray-100 sm:w-auto">
-                Explore Our Work
-              </button>
-            </div>
-
-            {/* Stats Section */}
-            <div className="mt-12 flex flex-wrap justify-center gap-8 text-center md:justify-start md:text-left">
-              <div>
-                <p className="text-3xl font-bold text-black">500+</p>
-                <p className="text-gray-800">satisfied clients</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-black">500+</p>
-                <p className="text-gray-800">satisfied clients</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-black">500+</p>
-                <p className="text-gray-800">satisfied clients</p>
-              </div>
-            </div>
+            <button className="w-full py-4 rounded-lg text-lg font-bold text-white shadow-lg transition text-center gradient-reverse-on-hover font-dm-sans">
+              Book a demo
+            </button>
           </div>
-
-          {/* Right Image */}
-          <div className="mx-auto mt-8 md:mt-0 h-auto w-full max-w-lg md:h-[444px] md:w-[589px] overflow-hidden rounded-[13.15px]">
-            <img
-              src="/hero.png"
-              alt="Developer at work"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        
-        {/* Logos Section */}
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            
-          {/* Clutch */}
-          <div
-            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
-          >
-            <img src="/Clutchlogo.svg" alt="Clutch" className="h-12 mb-2" />
-            <div className="text-xs text-gray-800">Top Crypto Marketing Agency 2025</div>
-          </div>
-
-          {/* Techreviewer */}
-          <div
-            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
-          >
-            <img src="/TechReviewerLogo.svg" alt="Techreviewer" className="h-12 mb-2" />
-            <div className="text-xs text-gray-800">Best Web Design Company</div>
-          </div>
-
-          {/* Trustpilot */}
-          <div
-            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
-          >
-            <img src="/TrustpilotLogo.svg" alt="Trustpilot" className="h-12 mb-2" />
-            <div className="text-xs text-gray-800">Top Rated Trustpilot Agency</div>
-          </div>
-
-          {/* Influencer Marketing Hub */}
-          <div
-            className="flex h-full flex-col items-center justify-between rounded-lg bg-white/50 p-4 text-center"
-          >
-            <img src="/InfluencerLogo.svg" alt="Influencer Marketing Hub" className="h-12 mb-2" />
-            <div className="text-xs text-gray-800">Top Crypto & NFT Agency</div>
-          </div>
-
         </div>
       </div>
-
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <ScheduleMeetingForm />
-        </Modal>
-      )}
+      {/* Awards & Trust Section */}
+      <div className="relative z-10 flex justify-center gap-6 mt-8 px-10 flex-wrap">
+        {[
+          { name: 'Clutch', text: 'Top Digital Marketing Agencies For Startups' },
+          { name: 'sortlist', text: 'Best Advertising Agency In The US' },
+          { name: 'FINTECH DRIFT', text: 'Best Marketing Agencies For Fintech Companies' },
+          { name: 'Influencer MarketingHub', text: '#1 Crypto Marketing Agency 2021–2023' },
+          { name: 'HOSTINGER', text: 'Best Digital Agency Worldwide' },
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className="w-60 h-28 border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center text-center bg-white/5 text-base text-white shadow-sm hover:shadow-lg hover:bg-white/10 transition backdrop-blur-sm"
+          >
+            <div className="font-semibold text-2xl mb-1">{item.name}</div>
+            <div className="text-gray-200 text-sm">{item.text}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
-
-export default HeroSection;
-
-/*
-<style jsx global>{`
-  .glassy-navbar {
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border-radius: 48px;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-    padding: 0.5rem 2rem;
-  }
-`}</style>
-*/
+}
