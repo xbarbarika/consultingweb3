@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
 
   return (
     <nav
-      className={`w-full flex items-center justify-between px-16 py-6 text-white font-bold text-sm tracking-wide uppercase fixed top-0 left-0 z-30 transition-colors duration-300 ${isHovered ? 'bg-black' : 'bg-transparent'}`}
+      className={`w-full flex items-center justify-between px-16 py-6 text-white font-bold text-sm tracking-wide fixed top-0 left-0 z-30 transition-colors duration-300 ${isHovered ? 'bg-black' : 'bg-transparent'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{backdropFilter: 'none'}}
@@ -37,9 +37,9 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
         <span className="ml-2 text-lg font-extrabold tracking-widest">NINJA</span>
       </div>
       {/* Menu */}
-      <ul className="flex gap-10 items-center mx-auto">
+      <ul className="flex gap-6 items-center mx-auto">
         {menuItems.map((item) => (
-          <li key={item.label} className="relative flex items-center cursor-pointer hover:text-pink-400 transition text-base font-semibold">
+          <li key={item.label} className="relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize">
             <span>{item.label}</span>
             {item.hasDropdown && (
               <svg className="ml-1" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,16 +51,31 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
       </ul>
       {/* CTA Button */}
       <button
-        className="rounded-md px-6 py-2 font-semibold bg-transparent border border-transparent bg-gradient-to-r from-pink-400 to-purple-500 text-transparent bg-clip-text border-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 transition relative"
+        className="rounded-md px-6 py-2 font-semibold bg-transparent border-2 text-transparent bg-clip-text transition-all duration-300 group"
         style={{
+          background: 'linear-gradient(90deg, #FF8BA7, #7F5CFF)',
           borderImage: 'linear-gradient(90deg, #FF8BA7, #7F5CFF) 1',
-          borderWidth: '2px',
           borderStyle: 'solid',
           borderRadius: '8px',
-          color: 'transparent',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
+        } as React.CSSProperties}
+        onMouseEnter={(e) => {
+          const target = e.currentTarget as HTMLElement;
+          target.style.background = 'linear-gradient(90deg, #FF8BA7, #7F5CFF)';
+          target.style.backgroundClip = 'border-box';
+          (target.style as any).WebkitBackgroundClip = 'border-box';
+          (target.style as any).WebkitTextFillColor = 'white';
+          target.style.color = 'white';
+        }}
+        onMouseLeave={(e) => {
+          const target = e.currentTarget as HTMLElement;
+          target.style.background = 'linear-gradient(90deg, #FF8BA7, #7F5CFF)';
+          target.style.backgroundClip = 'text';
+          (target.style as any).WebkitBackgroundClip = 'text';
+          (target.style as any).WebkitTextFillColor = 'transparent';
+          target.style.color = 'transparent';
         }}
       >
         Book Intro Call

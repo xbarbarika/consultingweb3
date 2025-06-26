@@ -10,7 +10,7 @@ export default function HeroSection() {
       </div>
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-start px-20 pt-32 pb-16">
-        <h1 className="text-[64px] font-semibold leading-tight tracking-tight font-dm-sans">
+        <h1 className="text-[64px] font-semibold leading-tight tracking-tight font-dm-sans mt-9 ml-7">
           <span
             className="inline-block text-transparent bg-clip-text font-semibold font-dm-sans"
             style={{
@@ -21,17 +21,17 @@ export default function HeroSection() {
           </span><br />
           <span className="text-white font-semibold font-dm-sans">MARKETING FOR UNSTOPPABLE GROWTH</span>
         </h1>
-        {/* Divider/Arrow and Subheading/Button side by side */}
-        <div className="flex w-full items-center mt-2 mb-4">
+        {/* Divider/Arrow and Subheading/Button side by side, arrow just left of button */}
+        <div className="flex w-full items-center mt-6 mb-2">
           {/* Divider and Arrow */}
           <div className="flex-1 flex items-center">
             <div className="h-px bg-white/60 w-full" />
-            <svg className="ml-4" width="56" height="24" viewBox="0 0 56 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12H54M54 12L46 4M54 12L46 20" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg className="mx-4" width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="0,8 16,16 0,24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           {/* Subheading and Button */}
-          <div className="flex flex-col items-start ml-8" style={{width: 600}}>
+          <div className="flex flex-col items-start" style={{width: 600}}>
             <p className="text-xl text-gray-300 text-left mb-2 font-dm-sans">
               Design, development, content, ads and all you need in one package from a leading digital marketing company worldwide
             </p>
@@ -42,7 +42,7 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Awards & Trust Section */}
-      <div className="relative z-10 flex justify-center gap-6 mt-8 px-10 flex-wrap">
+      <div className="relative z-10 flex justify-center gap-10 mt-1 px-10 flex-wrap">
         {[
           { name: 'Clutch', text: 'Top Digital Marketing Agencies For Startups' },
           { name: 'sortlist', text: 'Best Advertising Agency In The US' },
@@ -52,10 +52,11 @@ export default function HeroSection() {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="w-60 h-28 border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center text-center bg-white/5 text-base text-white shadow-sm hover:shadow-lg hover:bg-white/10 transition backdrop-blur-sm"
+            className="flex flex-col items-center justify-center text-center bg-white/5 border border-white/20 rounded-2xl p-8 w-[280px] h-[180px] min-w-[260px] max-w-[300px] min-h-[160px] max-h-[200px] -mx-2"
+            style={{boxShadow: '0 2px 32px 0 rgba(31,38,135,0.10)'}}
           >
-            <div className="font-semibold text-2xl mb-1">{item.name}</div>
-            <div className="text-gray-200 text-sm">{item.text}</div>
+            <div className="font-bold text-4xl mb-3 text-white/90" style={{fontFamily: 'inherit'}}>{item.name}</div>
+            <div className="text-base text-white/70 font-normal leading-snug" style={{fontFamily: 'inherit'}}>{item.text}</div>
           </div>
         ))}
       </div>
