@@ -9,20 +9,20 @@ const items = [
 ];
 
 const WhoWeHelp = () => (
-  <section className="w-full min-h-[350px] flex flex-col items-center justify-center py-12 px-2 relative overflow-hidden mt-[100px]">
-    <div className="text-center mb-2">
-      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">Who We Help</h2>
-      <p className="text-gray-600 text-base md:text-lg">Tailored Growth for Every Web3 Vertical</p>
+  <section className="relative w-full overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mt-16 md:mt-24 mb-16 md:mb-24">
+    <div className="text-center">
+      <h2 className="text-3xl font-semibold text-gray-800 sm:text-4xl">Who We Help</h2>
+      <p className="mt-2 text-base text-gray-600 md:text-lg">Tailored Growth for Every Web3 Vertical</p>
     </div>
-    <div className="flex flex-wrap justify-center gap-[18px] mt-8">
+    <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:gap-8">
       {items.map(({ title, subtitle }) => (
         <div
           key={title}
-          className="flex flex-col items-center justify-center w-[160px] h-[160px] bg-white/70 backdrop-blur-md rounded-2xl shadow-md border border-white/40"
+          className="flex h-40 w-full flex-col items-center justify-center rounded-2xl border border-white/40 bg-white/70 shadow-md backdrop-blur-md"
         >
-          <span className="font-bold text-gray-900 mb-1" style={{ fontSize: '42px' }}>{title}</span>
+          <span className="mb-1 text-4xl font-bold text-gray-900">{title}</span>
           {subtitle && (
-            <span className="tracking-widest" style={{ fontSize: '14px', color: '#000' }}>{subtitle}</span>
+            <span className="text-sm tracking-widest text-black">{subtitle}</span>
           )}
         </div>
       ))}
