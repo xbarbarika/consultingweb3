@@ -13,7 +13,7 @@ const FeaturedIn = () => {
           </div>
           <div className="max-w-[550px]">
             <p className="text-[#A1A1AA] text-base md:text-lg mb-6">
-              Barbarika's founders shared insights with Forbes on the strategic advantages of partnering over contracting with service providers.
+              Barbarika&apos;s founders shared insights with Forbes on the strategic advantages of partnering over contracting with service providers.
             </p>
             <button className="border border-white text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300">
               Read the article
@@ -43,7 +43,7 @@ const FeaturedIn = () => {
           <div className="bg-[#1C1C1C] rounded-2xl p-6 min-h-[120px] text-sm">
             <p className="text-white font-semibold mb-2">Cryptopolitan</p>
             <p className="text-[#A1A1AA]">
-              What's Holding Up The Next Bull Run in 2024, and What Trends Will Fuel It
+              What&apos;s Holding Up The Next Bull Run in 2024, and What Trends Will Fuel It
             </p>
           </div>
 

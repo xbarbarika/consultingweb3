@@ -1,11 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Link from 'next/link';
-
-interface NavbarProps {
-  onMenuClick?: () => void;
-  showMenuButton?: boolean;
-}
 
 const menuItems = [
   { label: 'Services', hasDropdown: true },
@@ -17,7 +11,7 @@ const menuItems = [
   { label: 'Events' },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
+const Navbar: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -61,20 +55,20 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         } as React.CSSProperties}
-        onMouseEnter={(e) => {
+        onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
           const target = e.currentTarget as HTMLElement;
           target.style.background = 'linear-gradient(90deg, #FF8BA7, #7F5CFF)';
           target.style.backgroundClip = 'border-box';
-          (target.style as any).WebkitBackgroundClip = 'border-box';
-          (target.style as any).WebkitTextFillColor = 'white';
+          (target.style as CSSStyleDeclaration).webkitBackgroundClip = 'border-box';
+          (target.style as CSSStyleDeclaration).webkitTextFillColor = 'white';
           target.style.color = 'white';
         }}
-        onMouseLeave={(e) => {
+        onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
           const target = e.currentTarget as HTMLElement;
           target.style.background = 'linear-gradient(90deg, #FF8BA7, #7F5CFF)';
           target.style.backgroundClip = 'text';
-          (target.style as any).WebkitBackgroundClip = 'text';
-          (target.style as any).WebkitTextFillColor = 'transparent';
+          (target.style as CSSStyleDeclaration).webkitBackgroundClip = 'text';
+          (target.style as CSSStyleDeclaration).webkitTextFillColor = 'transparent';
           target.style.color = 'transparent';
         }}
       >

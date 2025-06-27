@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <main style={{ backgroundColor: '#F3F3F3', minHeight: '100vh' }}>
-      <Navbar onMenuClick={() => setMenuOpen(true)} />
+      <Navbar />
       <HeroSection />
       <FeaturedIn />
               <MarketingServices />
