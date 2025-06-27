@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import HeroSection from "@/components/Herosection";
 import Navbar from '../components/Navbar';
-import WhoWeHelp from "@/components/WhoWeHelp";
+import MarketingServices from "@/components/WhoWeHelp";
 import ServicesOffered from "@/components/ServicesOffered";
-import AboutUs from "@/components/AboutUs";
+import FeaturedIn from "@/components/AboutUs";
 import OurTeam from "@/components/OurTeam";
 import ScheduleMeeting from "@/components/ScheduleMeeting";
 import FAQ from "@/components/FAQ";
@@ -18,8 +18,8 @@ export default function Home() {
     <main style={{ backgroundColor: '#F3F3F3', minHeight: '100vh' }}>
       <Navbar onMenuClick={() => setMenuOpen(true)} />
       <HeroSection />
-      <AboutUs />
-      <WhoWeHelp />
+      <FeaturedIn />
+              <MarketingServices />
       <ServicesOffered />
       <OurTeam />
       <ScheduleMeeting />

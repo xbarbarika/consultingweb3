@@ -10,7 +10,7 @@ export default function HeroSection() {
       </div>
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-start px-20 pt-32 pb-16">
-        <h1 className="text-[64px] font-semibold leading-tight tracking-tight font-dm-sans mt-9 ml-7">
+        <h1 className="text-[64px] font-semibold leading-none tracking-tight font-dm-sans mt-9 ml-7 mb-0">
           <span
             className="inline-block text-transparent bg-clip-text font-semibold font-dm-sans"
             style={{
@@ -22,27 +22,33 @@ export default function HeroSection() {
           <span className="text-white font-semibold font-dm-sans">MARKETING FOR UNSTOPPABLE GROWTH</span>
         </h1>
         {/* Divider/Arrow and Subheading/Button side by side, arrow just left of button */}
-        <div className="flex w-full items-center mt-6 mb-2">
+        <div className="flex w-full items-start mb-2">
           {/* Divider and Arrow */}
-          <div className="flex-1 flex items-center">
+          <div className="flex-1 flex items-center mt-25">
             <div className="h-px bg-white/60 w-full" />
             <svg className="mx-4" width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <polyline points="0,8 16,16 0,24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          {/* Subheading and Button */}
+          {/* Subheading and Button Container */}
           <div className="flex flex-col items-start" style={{width: 600}}>
-            <p className="text-xl text-gray-300 text-left mb-2 font-dm-sans">
-              Design, development, content, ads and all you need in one package from a leading digital marketing company worldwide
-            </p>
-            <button className="w-full py-4 rounded-lg text-lg font-bold text-white shadow-lg transition text-center gradient-reverse-on-hover font-dm-sans">
-              Book a demo
-            </button>
+            {/* Subheading */}
+            <div className="mb-4">
+              <p className="text-xl text-gray-300 text-left font-dm-sans">
+                Design, development, content, ads and all you need in one package from a leading digital marketing company worldwide
+              </p>
+            </div>
+            {/* Button */}
+            <div className="w-full mt-4">
+              <button className="w-full py-4 rounded-lg text-lg font-bold text-white shadow-lg transition text-center gradient-reverse-on-hover font-dm-sans">
+                Book a demo
+              </button>
+            </div>
           </div>
         </div>
       </div>
       {/* Awards & Trust Section */}
-      <div className="relative z-10 flex justify-center gap-10 mt-1 px-10 flex-wrap">
+      <div className="relative z-10 flex justify-center gap-10 px-10 flex-wrap">
         {[
           { name: 'Clutch', text: 'Top Digital Marketing Agencies For Startups' },
           { name: 'sortlist', text: 'Best Advertising Agency In The US' },
@@ -52,13 +58,51 @@ export default function HeroSection() {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center justify-center text-center bg-white/5 border border-white/20 rounded-2xl p-8 w-[280px] h-[180px] min-w-[260px] max-w-[300px] min-h-[160px] max-h-[200px] -mx-2"
+            className="flex flex-col items-center justify-center text-center bg-white/5 border border-white/20 rounded-2xl p-8 w-[280px] h-[200px] min-w-[260px] max-w-[300px] min-h-[200px] max-h-[240px] -mx-2"
             style={{boxShadow: '0 2px 32px 0 rgba(31,38,135,0.10)'}}
           >
             <div className="font-bold text-4xl mb-3 text-white/90" style={{fontFamily: 'inherit'}}>{item.name}</div>
             <div className="text-base text-white/70 font-normal leading-snug" style={{fontFamily: 'inherit'}}>{item.text}</div>
           </div>
         ))}
+      </div>
+      
+      {/* Download Guide Section */}
+      <div className="relative z-10 mx-24 mt-24 mb-10">
+        <div className="bg-gradient-to-r from-[#2D1B69]/40 via-[#1E3A8A]/40 to-[#0F4C75]/40 backdrop-blur-lg border border-white/20 rounded-3xl p-7 shadow-2xl">
+          {/* Top Section - Title and Profile Image */}
+          <div className="flex items-start justify-between mb-8">
+            <div className="flex-1">
+              <h2 className="text-4xl font-semibold text-white font-dm-sans leading-tight ml-6 mt-4 mb-6">
+                Download A Guide to Making<br />
+                2025 Your Best Marketing Year
+              </h2>
+            </div>
+            
+            {/* Profile Image */}
+            <div className="ml-8 flex items-center justify-center w-28 h-full">
+              <div className="w-28 h-28 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center overflow-hidden mt-4">
+                <div className="w-24 h-24 rounded-full bg-gray-400 flex items-center justify-center text-gray-600 font-bold text-sm">
+                  Profile
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom Section - Email and Button */}
+          <div className="flex items-center gap-6 ml-6 mb-4">
+            <div className="min-w-[300px]">
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full bg-transparent border-b-2 border-white/30 text-white placeholder-white/70 py-2 px-0 focus:outline-none focus:border-white font-dm-sans text-base"
+              />
+            </div>
+            <button className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-black hover:text-white transition font-dm-sans whitespace-nowrap">
+              DOWNLOAD FOR FREE
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,33 +1,62 @@
 import React from 'react';
 
-const items = [
-  { title: 'DEFI', subtitle: 'PROTOCOLS' },
-  { title: 'NFT', subtitle: 'PROJECTS' },
-  { title: 'L1+L2', subtitle: 'CHAINS' },
-  { title: 'DAO', subtitle: '' },
-  { title: 'W3', subtitle: 'INFRAS' },
-];
+const MarketingServices = () => {
+  return (
+    <section className="w-full bg-gradient-to-r from-[#0D0D0D] via-[#141423] to-[#1B1441] py-32 px-8 md:px-20 lg:px-32 font-sans text-white min-h-screen">
+      <div className="max-w-[1600px] mx-auto text-center">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 leading-tight">
+          Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-400 to-purple-500">new generation</span><br />
+          of digital marketing services
+        </h2>
 
-const WhoWeHelp = () => (
-  <section className="relative w-full overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mt-16 md:mt-24 mb-16 md:mb-24">
-    <div className="text-center">
-      <h2 className="text-3xl font-semibold text-gray-800 sm:text-4xl">Who We Help</h2>
-      <p className="mt-2 text-base text-gray-600 md:text-lg">Tailored Growth for Every Web3 Vertical</p>
-    </div>
-    <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:gap-8">
-      {items.map(({ title, subtitle }) => (
-        <div
-          key={title}
-          className="flex h-40 w-full flex-col items-center justify-center rounded-2xl border border-white/40 bg-white/70 shadow-md backdrop-blur-md"
-        >
-          <span className="mb-1 text-4xl font-bold text-gray-900">{title}</span>
-          {subtitle && (
-            <span className="text-sm tracking-widest text-black">{subtitle}</span>
-          )}
+        {/* Tabs (Text) */}
+        <div className="flex justify-between items-center mt-12 mb-12 text-sm md:text-base font-medium text-white max-w-[640px] mx-auto border-b border-[#3f3f3f] pb-3">
+          <span className="text-white/80">Freelance / In-house / Agencies</span>
+          <span className="text-white/80">2024</span>
+          <span className="text-white/80">Subscription</span>
         </div>
-      ))}
-    </div>
-  </section>
-);
 
-export default WhoWeHelp; 
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center mt-16">
+          {/* Row 1 */}
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">1–3 months</h3>
+            <p className="text-base md:text-lg text-white/70">you save on hiring an in-house marketer or an agency</p>
+          </div>
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">$100k</h3>
+            <p className="text-base md:text-lg text-white/70">average saving on annual agency fees</p>
+          </div>
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">30+</h3>
+            <p className="text-base md:text-lg text-white/70">marketing services in one package</p>
+          </div>
+
+          {/* Row 2 */}
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">100+</h3>
+            <p className="text-base md:text-lg text-white/70">marketing specialists in your team</p>
+          </div>
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">2 hours</h3>
+            <p className="text-base md:text-lg text-white/70">per week you spend on management</p>
+          </div>
+          <div className="bg-[#1B1B1F] border border-[#3A3A3C] rounded-xl p-8 min-h-[180px] flex flex-col justify-center">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4">1 day</h3>
+            <p className="text-base md:text-lg text-white/70">from creating new task to starting work</p>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-20">
+          <button className="bg-gradient-to-r from-pink-500 to-indigo-500 text-white font-semibold py-4 px-12 rounded-xl shadow-lg hover:opacity-90 transition-all text-lg">
+            More about the Subscription
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MarketingServices; 

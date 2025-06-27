@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, showMenuButton }) => {
           <rect width="32" height="32" rx="6" fill="#fff" fillOpacity="0.1"/>
           <path d="M8 20L16 10L24 20" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        <span className="ml-2 text-lg font-extrabold tracking-widest">NINJA</span>
+                    <span className="ml-2 text-lg font-extrabold tracking-widest">BARBARIKA</span>
       </div>
       {/* Menu */}
       <ul className="flex gap-6 items-center mx-auto">
