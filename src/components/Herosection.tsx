@@ -1,109 +1,108 @@
-import React from 'react';
+import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-[#0B0C2A] text-white min-h-screen overflow-hidden font-sans">
-      {/* Glowing Background Effect */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
-        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#FF8BA7] via-[#7F5CFF] to-transparent opacity-60 blur-[100px]" />
-        <div className="absolute right-0 bottom-0 w-[400px] h-[300px] bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#00E0FF] via-[#D38EFF] to-transparent opacity-40 blur-[80px]" />
+    <section className="relative text-white min-h-screen w-full pt-32 pb-20 px-4 sm:px-6" style={{backgroundImage: 'url(/hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+            {/* Background Circles Image */}
+      <div className="absolute inset-0 z-0 herocircles-bg" style={{backgroundImage: 'url(/herocircles.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}></div>
+      
+      {/* Floating Labels */}
+      <div className="absolute inset-0 z-0">
+        <p className="hidden md:block absolute left-[60px] lg:left-[100px] top-[120px] lg:top-[180px] opacity-70" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Performance Ads</p>
+        <p className="hidden md:block absolute left-[80px] lg:left-[160px] bottom-[180px] lg:bottom-[240px] opacity-70" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Influencer Ops</p>
+        <p className="hidden md:block absolute right-[60px] lg:right-[100px] top-[140px] lg:top-[200px] opacity-70" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Community Campaigns</p>
+        <p className="hidden md:block absolute right-[80px] lg:right-[160px] bottom-[140px] lg:bottom-[200px] opacity-70" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Tech PR</p>
+        
+        <div className="absolute top-[100px] sm:top-[140px] lg:top-[180px] left-1/2 transform -translate-x-1/2">
+          <button className="inline-flex justify-center items-center gap-[8px] lg:gap-[10px] px-[16px] lg:px-[20px] py-[6px] lg:py-[8px] text-[10px] sm:text-xs rounded-[30px]" style={{background: 'rgba(255, 255, 255, 0.07)'}}>Chain the Future</button>
+        </div>
       </div>
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-start px-20 pt-32 pb-16">
-        <h1 className="text-[64px] font-semibold leading-none tracking-tight font-dm-sans mt-9 ml-7 mb-0">
-          <span
-            className="inline-block text-transparent bg-clip-text font-semibold font-dm-sans"
-            style={{
-              backgroundImage: 'linear-gradient(90deg, #ff9966 0%, #ff5e62 40%, #ff8ba7 70%, #a685ff 100%)',
-            }}
-          >
-            SUBSCRIPTION-BASED
-          </span><br />
-          <span className="text-white font-semibold font-dm-sans">MARKETING FOR UNSTOPPABLE GROWTH</span>
+
+      {/* Main Content */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center lg:mt-0 md:-mt-12 -mt-24">
+        <div className="text-center">
+          <h1 className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-4 sm:mb-6 lg:mb-8 text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[36px] sm:leading-[40px] md:leading-[52px] lg:leading-[72px]" style={{
+            fontFamily: 'var(--font-dm-sans)',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            background: 'linear-gradient(82deg, #FF8F4E 54.13%, #CA22EA 100.03%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            <span className="block sm:hidden">Subscription-based</span>
+            <span className="block sm:hidden">marketing</span>
+            <span className="block sm:hidden">for</span>
+            <span className="block sm:hidden">unstoppable growth</span>
+            <span className="hidden sm:block">Subscription-based <br /> marketing for unstoppable growth</span>
         </h1>
-        {/* Divider/Arrow and Subheading/Button side by side, arrow just left of button */}
-        <div className="flex w-full items-start mb-2">
-          {/* Divider and Arrow */}
-          <div className="flex-1 flex items-center mt-25">
-            <div className="h-px bg-white/60 w-full" />
-            <svg className="mx-4" width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="0,8 16,16 0,24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          {/* Subheading and Button Container */}
-          <div className="flex flex-col items-start" style={{width: 600}}>
-            {/* Subheading */}
-            <div className="mb-4">
-              <p className="text-xl text-gray-300 text-left font-dm-sans">
-                Design, development, content, ads and all you need in one package from a leading digital marketing company worldwide
-              </p>
-            </div>
-            {/* Button */}
-            <div className="w-full mt-4">
-              <button className="w-full py-4 rounded-lg text-lg font-bold text-white shadow-lg transition text-center gradient-reverse-on-hover font-dm-sans">
-                Book a demo
-              </button>
-            </div>
+          <p className="text-gray-300 mt-3 sm:mt-4 lg:mt-6 text-sm sm:text-base max-w-xs sm:max-w-md lg:max-w-2xl mx-auto px-2 sm:px-0">
+            We architect high-conversion digital campaigns that help ambitious startups and enterprises break through noise and grow fast — without wasting ad dollars.
+          </p>
+          <div className="mt-4 sm:mt-6 lg:mt-8 flex flex-row justify-center gap-3 sm:gap-4 px-2 sm:px-0">
+            <button className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm sm:text-base">Learn more</button>
+            <button className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition text-sm sm:text-base">Book Demo</button>
           </div>
         </div>
       </div>
-      {/* Awards & Trust Section */}
-      <div className="relative z-10 flex justify-center gap-10 px-10 flex-wrap">
-        {[
-          { name: 'Clutch', text: 'Top Digital Marketing Agencies For Startups' },
-          { name: 'sortlist', text: 'Best Advertising Agency In The US' },
-          { name: 'FINTECH DRIFT', text: 'Best Marketing Agencies For Fintech Companies' },
-          { name: 'Influencer MarketingHub', text: '#1 Crypto Marketing Agency 2021–2023' },
-          { name: 'HOSTINGER', text: 'Best Digital Agency Worldwide' },
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center justify-center text-center bg-white/5 border border-white/20 rounded-2xl p-8 w-[280px] h-[200px] min-w-[260px] max-w-[300px] min-h-[200px] max-h-[240px] -mx-2"
-            style={{boxShadow: '0 2px 32px 0 rgba(31,38,135,0.10)'}}
-          >
-            <div className="font-bold text-4xl mb-3 text-white/90" style={{fontFamily: 'inherit'}}>{item.name}</div>
-            <div className="text-base text-white/70 font-normal leading-snug" style={{fontFamily: 'inherit'}}>{item.text}</div>
+
+      {/* Footer Badges */}
+      <div className="absolute bottom-[35px] left-0 right-0 z-10 hidden lg:flex justify-center gap-6 max-w-none mx-auto px-4">
+        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-2">
+            <img src="/Clutchlogo.svg" alt="Clutch" style={{width: '180px', height: '60px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
           </div>
-        ))}
+          <p className="text-xs text-gray-400">Top Crypto Marketing Agency 2025</p>
+        </div>
+        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-2">
+            <img src="/TechReviewerLogo.svg" alt="TechReviewer" style={{width: '180px', height: '60px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
+          </div>
+          <p className="text-xs text-gray-400">Best Web Design Company</p>
+        </div>
+        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-2">
+            <img src="/TrustpilotLogo.svg" alt="Trustpilot" style={{width: '180px', height: '60px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
+          </div>
+          <p className="text-xs text-gray-400">Top Rated Trustpilot Agency</p>
+        </div>
+        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-2">
+            <img src="/InfluencerLogo.svg" alt="Influencer MarketingHub" style={{width: '180px', height: '60px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
+          </div>
+          <p className="text-xs text-gray-400">Top Crypto & NFT Agency</p>
+        </div>
       </div>
       
-      {/* Download Guide Section */}
-      <div className="relative z-10 mx-24 mt-24 mb-10">
-        <div className="bg-gradient-to-r from-[#2D1B69]/40 via-[#1E3A8A]/40 to-[#0F4C75]/40 backdrop-blur-lg border border-white/20 rounded-3xl p-7 shadow-2xl">
-          {/* Top Section - Title and Profile Image */}
-          <div className="flex items-start justify-between mb-8">
-            <div className="flex-1">
-              <h2 className="text-4xl font-semibold text-white font-dm-sans leading-tight ml-6 mt-4 mb-6">
-                Download A Guide to Making<br />
-                2025 Your Best Marketing Year
-              </h2>
+      {/* Mobile/Tablet Footer Badges */}
+      <div className="absolute bottom-[100px] sm:bottom-[90px] md:bottom-[60px] left-0 right-0 z-10 grid grid-cols-2 gap-2 sm:gap-3 max-w-[320px] sm:max-w-[600px] mx-auto px-2 sm:px-4 lg:hidden">
+        <div className="flex flex-col items-center w-full px-[15px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-1">
+            <img src="/Clutchlogo.svg" alt="Clutch" style={{width: '90px', height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} className="sm:w-[120px] sm:h-[40px]" />
             </div>
-            
-            {/* Profile Image */}
-            <div className="ml-8 flex items-center justify-center w-28 h-full">
-              <div className="w-28 h-28 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center overflow-hidden mt-4">
-                <div className="w-24 h-24 rounded-full bg-gray-400 flex items-center justify-center text-gray-600 font-bold text-sm">
-                  Profile
+          <p className="text-[10px] sm:text-xs text-gray-400 hidden sm:block">Top Crypto Marketing Agency 2025</p>
                 </div>
+        <div className="flex flex-col items-center w-full px-[15px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-1">
+            <img src="/TechReviewerLogo.svg" alt="TechReviewer" style={{width: '90px', height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} className="sm:w-[120px] sm:h-[40px]" />
               </div>
+          <p className="text-[10px] sm:text-xs text-gray-400 hidden sm:block">Best Web Design Company</p>
             </div>
+        <div className="flex flex-col items-center w-full px-[15px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-1">
+            <img src="/TrustpilotLogo.svg" alt="Trustpilot" style={{width: '90px', height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} className="sm:w-[120px] sm:h-[40px]" />
           </div>
-          
-          {/* Bottom Section - Email and Button */}
-          <div className="flex items-center gap-6 ml-6 mb-4">
-            <div className="min-w-[300px]">
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full bg-transparent border-b-2 border-white/30 text-white placeholder-white/70 py-2 px-0 focus:outline-none focus:border-white font-dm-sans text-base"
-              />
+          <p className="text-[10px] sm:text-xs text-gray-400 hidden sm:block">Top Rated Trustpilot Agency</p>
             </div>
-            <button className="bg-white text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-black hover:text-white transition font-dm-sans whitespace-nowrap">
-              DOWNLOAD FOR FREE
-            </button>
+        <div className="flex flex-col items-center w-full px-[15px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] text-center text-sm" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
+          <div className="flex items-center justify-center mb-1">
+            <img src="/InfluencerLogo.svg" alt="Influencer MarketingHub" style={{width: '90px', height: '30px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} className="sm:w-[120px] sm:h-[40px]" />
           </div>
+          <p className="text-[10px] sm:text-xs text-gray-400 hidden sm:block">Top Crypto & NFT Agency</p>
         </div>
       </div>
-    </div>
+
+
+    </section>
   );
 }

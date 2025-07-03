@@ -46,7 +46,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <Navbar showMenuButton onMenuClick={() => setMenuOpen(true)} />
+      <Navbar onMenuClick={() => setMenuOpen(true)} />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       <div className="w-full flex justify-start max-w-5xl mx-auto mt-30 px-4">
         <button
