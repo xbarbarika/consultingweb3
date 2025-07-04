@@ -21,7 +21,7 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center lg:mt-0 md:-mt-12 -mt-24">
         <div className="text-center">
-          <h1 className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-4 sm:mb-6 lg:mb-8 text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[36px] sm:leading-[40px] md:leading-[52px] lg:leading-[72px]" style={{
+          <h1 className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-4 sm:mb-6 lg:mb-8 text-[28px] xs:text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[32px] xs:leading-[36px] sm:leading-[40px] md:leading-[52px] lg:leading-[72px]" style={{
             fontFamily: 'var(--font-dm-sans)',
             fontStyle: 'normal',
             fontWeight: 500,
@@ -30,10 +30,9 @@ export default function HeroSection() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            <span className="block sm:hidden">Subscription-based</span>
-            <span className="block sm:hidden">marketing</span>
-            <span className="block sm:hidden">for</span>
-            <span className="block sm:hidden">unstoppable growth</span>
+            <span className="block sm:hidden text-[28px] xs:text-[32px] leading-[32px] xs:leading-[36px]">Subscription-based</span>
+            <span className="block sm:hidden text-[28px] xs:text-[32px] leading-[32px] xs:leading-[36px]">marketing for</span>
+            <span className="block sm:hidden text-[28px] xs:text-[32px] leading-[32px] xs:leading-[36px]">unstoppable growth</span>
             <span className="hidden sm:block">Subscription-based <br /> marketing for unstoppable growth</span>
         </h1>
           <p className="text-gray-300 mt-3 sm:mt-4 lg:mt-6 text-sm sm:text-base max-w-xs sm:max-w-md lg:max-w-2xl mx-auto px-2 sm:px-0">
