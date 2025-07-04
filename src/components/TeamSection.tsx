@@ -99,48 +99,69 @@ export default function TeamSection() {
           align-items: center;
         }
         
-        .profile-normal {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .profile-normal {
-          transition: opacity 0.4s ease;
-        }
-        
-        .profile-container:hover .profile-normal {
-          opacity: 0;
-        }
-        
-        .profile-hover-box {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 280px;
-          height: 220px;
+        .profile-morphing-circle {
           background: linear-gradient(135deg, #2B203E 0%, #1a1425 100%);
-          border-radius: 16px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .profile-container:hover .profile-morphing-circle {
+          width: 280px !important;
+          height: 220px !important;
+          border-radius: 16px !important;
           padding: 25px;
           box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .profile-avatar-image {
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          object-fit: contain;
+        }
+        
+        .profile-container:hover .profile-avatar-image {
+          width: 0px !important;
+          height: 0px !important;
           opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
         }
         
-        .profile-container:hover .profile-hover-box {
+        .profile-text-content {
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .profile-container:hover .profile-text-content {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        
+        .profile-hover-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          text-align: center;
+          width: 100%;
+          padding: 0 20px;
+        }
+        
+        .profile-container:hover .profile-hover-content {
           opacity: 1;
-          pointer-events: auto;
         }
         
-        .founder-hover-box {
-          width: 320px;
-          height: 250px;
+        .founder-morphing-circle {
+          background: linear-gradient(135deg, #2B203E 0%, #1a1425 100%);
+        }
+        
+        .profile-container:hover .founder-morphing-circle {
+          width: 320px !important;
+          height: 250px !important;
+          border-radius: 16px !important;
           padding: 30px;
         }
         
@@ -164,14 +185,14 @@ export default function TeamSection() {
         }
         
         @media (max-width: 768px) {
-          .profile-hover-box {
-            width: 220px;
-            height: 180px;
+          .profile-container:hover .profile-morphing-circle {
+            width: 220px !important;
+            height: 180px !important;
             padding: 20px;
           }
-          .founder-hover-box {
-            width: 250px;
-            height: 200px;
+          .profile-container:hover .founder-morphing-circle {
+            width: 250px !important;
+            height: 200px !important;
             padding: 25px;
           }
         }
@@ -205,25 +226,73 @@ export default function TeamSection() {
       {/* Founder Section */}
       <div className="flex justify-center mb-16">
         <div className="profile-container" style={{ alignItems: 'center' }}>
-          {/* Normal Founder View */}
-          <div className="profile-normal">
-            <div 
-              className="rounded-full bg-[#2B203E] flex items-center justify-center overflow-hidden founder-avatar"
-              style={{
-                width: '140px',
-                height: '140px',
-                aspectRatio: '1/1'
-              }}
-            >
-              <Image
-                src={founder.avatar}
-                alt={founder.name}
-                width={140}
-                height={140}
-                className="object-contain"
-              />
-            </div>
+          {/* Founder Morphing Circle */}
+          <div 
+            className="founder-morphing-circle profile-morphing-circle founder-avatar"
+            style={{
+              width: '140px',
+              height: '140px',
+              borderRadius: '50%'
+            }}
+          >
+            <Image
+              src={founder.avatar}
+              alt={founder.name}
+              width={140}
+              height={140}
+              className="profile-avatar-image"
+            />
             
+            {/* Founder Hover Content inside the morphing circle */}
+            <div className="profile-hover-content">
+              <div 
+                style={{ 
+                  color: '#FFFFFF',
+                  textAlign: 'center',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontSize: '24px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '120%',
+                  marginBottom: '12px'
+                }}
+              >
+                {founder.name}
+              </div>
+              <div 
+                style={{ 
+                  color: '#FFFFFF',
+                  textAlign: 'center',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontSize: '18px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '120%',
+                  opacity: 0.8,
+                  marginBottom: '18px'
+                }}
+              >
+                {founder.role}
+              </div>
+              <div 
+                style={{ 
+                  color: '#FFFFFF',
+                  textAlign: 'center',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontSize: '14px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '140%',
+                  opacity: 0.7
+                }}
+              >
+                {founder.description}
+              </div>
+            </div>
+          </div>
+          
+          {/* Founder Text Content below circle */}
+          <div className="profile-text-content">
             <div 
               className="founder-name"
               style={{ 
@@ -256,53 +325,6 @@ export default function TeamSection() {
               {founder.role}
             </div>
           </div>
-          
-          {/* Founder Hover Box */}
-          <div className="profile-hover-box founder-hover-box">
-            <div 
-              style={{ 
-                color: '#FFFFFF',
-                textAlign: 'center',
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '24px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '120%',
-                marginBottom: '12px'
-              }}
-            >
-              {founder.name}
-            </div>
-            <div 
-              style={{ 
-                color: '#FFFFFF',
-                textAlign: 'center',
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '18px',
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '120%',
-                opacity: 0.8,
-                marginBottom: '18px'
-              }}
-            >
-              {founder.role}
-            </div>
-            <div 
-              style={{ 
-                color: '#FFFFFF',
-                textAlign: 'center',
-                fontFamily: 'var(--font-dm-sans)',
-                fontSize: '14px',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '140%',
-                opacity: 0.7
-              }}
-            >
-              {founder.description}
-            </div>
-          </div>
         </div>
       </div>
       
@@ -312,25 +334,73 @@ export default function TeamSection() {
             key={index} 
             className="responsive-member profile-container"
           >
-            {/* Normal Profile View */}
-            <div className="profile-normal">
-              <div 
-                className="rounded-full bg-[#2B203E] flex items-center justify-center overflow-hidden responsive-avatar"
-                style={{
-                  width: '110.938px',
-                  height: '110.938px',
-                  aspectRatio: '110.94/110.94'
-                }}
-              >
-                <Image
-                  src={member.avatar}
-                  alt={member.name}
-                  width={110.938}
-                  height={110.938}
-                  className="object-contain"
-                />
-              </div>
+            {/* Morphing Circle */}
+            <div 
+              className="profile-morphing-circle responsive-avatar"
+              style={{
+                width: '110.938px',
+                height: '110.938px',
+                borderRadius: '50%'
+              }}
+            >
+              <Image
+                src={member.avatar}
+                alt={member.name}
+                width={110.938}
+                height={110.938}
+                className="profile-avatar-image"
+              />
               
+              {/* Hover Content inside the morphing circle */}
+              <div className="profile-hover-content">
+                <div 
+                  style={{ 
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: '20px',
+                    fontStyle: 'normal',
+                    fontWeight: 600,
+                    lineHeight: '120%',
+                    marginBottom: '10px'
+                  }}
+                >
+                  {member.name}
+                </div>
+                <div 
+                  style={{ 
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: '16px',
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    lineHeight: '120%',
+                    opacity: 0.8,
+                    marginBottom: '15px'
+                  }}
+                >
+                  {member.role}
+                </div>
+                <div 
+                  style={{ 
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: '13px',
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    lineHeight: '140%',
+                    opacity: 0.7
+                  }}
+                >
+                  {member.description}
+                </div>
+              </div>
+            </div>
+            
+            {/* Text Content below circle */}
+            <div className="profile-text-content">
               <div 
                 className="responsive-name"
                 style={{ 
@@ -361,53 +431,6 @@ export default function TeamSection() {
                 }}
               >
                 {member.role}
-              </div>
-            </div>
-            
-            {/* Hover Box */}
-            <div className="profile-hover-box">
-              <div 
-                style={{ 
-                  color: '#FFFFFF',
-                  textAlign: 'center',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '20px',
-                  fontStyle: 'normal',
-                  fontWeight: 600,
-                  lineHeight: '120%',
-                  marginBottom: '10px'
-                }}
-              >
-                {member.name}
-              </div>
-              <div 
-                style={{ 
-                  color: '#FFFFFF',
-                  textAlign: 'center',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '16px',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '120%',
-                  opacity: 0.8,
-                  marginBottom: '15px'
-                }}
-              >
-                {member.role}
-              </div>
-              <div 
-                style={{ 
-                  color: '#FFFFFF',
-                  textAlign: 'center',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: '13px',
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  lineHeight: '140%',
-                  opacity: 0.7
-                }}
-              >
-                {member.description}
               </div>
             </div>
           </div>
