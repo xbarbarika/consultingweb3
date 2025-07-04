@@ -4,6 +4,7 @@ import HeroSection from "@/components/Herosection";
 import Navbar from '../components/Navbar';
 import MenuModal from '@/components/MenuModal';
 import EvolutionSection from '@/components/EvolutionSection';
+import MarketingGrid from '@/components/MarketingGrid';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,6 +80,8 @@ export default function Home() {
       </section>
       
       <EvolutionSection />
+      
+      <MarketingGrid />
       
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </main>
