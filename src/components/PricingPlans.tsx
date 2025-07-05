@@ -37,38 +37,38 @@ const features = [
 
 const PricingPlans = () => {
   return (
-    <div className="bg-black text-white py-20 px-6 md:px-12 text-center">
+    <div className="bg-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 text-center">
       <h2 
-        className="text-transparent bg-clip-text"
+        className="text-transparent bg-clip-text mb-8 sm:mb-10 lg:mb-12"
         style={{
           textAlign: 'center',
           fontFamily: 'DM Sans',
-          fontSize: '40px',
+          fontSize: 'clamp(28px, 6vw, 40px)',
           fontStyle: 'normal',
           fontWeight: 500,
           lineHeight: '100%',
           background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          marginBottom: '45px'
+          WebkitTextFillColor: 'transparent'
         }}
       >
         Choose a Plan That Moves at Your Speed
       </h2>
-      <div className="w-full flex flex-col items-center" style={{ marginBottom: '120px' }}>
+      <div className="w-full flex flex-col items-center mb-16 sm:mb-20 lg:mb-32">
         <div
           style={{
             color: '#FFF',
             textAlign: 'center',
             fontFamily: 'DM Sans',
-            fontSize: '24px',
+            fontSize: 'clamp(16px, 4vw, 24px)',
             fontStyle: 'normal',
             fontWeight: 500,
-            lineHeight: '100%',
+            lineHeight: '1.3',
             opacity: 0.9,
-            whiteSpace: 'nowrap',
-            marginBottom: '10px'
+            whiteSpace: 'normal',
+            marginBottom: '10px',
+            padding: '0 1rem'
           }}
         >
           Flexible marketing subscriptions. Upgrade, downgrade, or switch anytime.
@@ -78,11 +78,12 @@ const PricingPlans = () => {
             color: '#FFF',
             textAlign: 'center',
             fontFamily: 'DM Sans',
-            fontSize: '24px',
+            fontSize: 'clamp(14px, 3.5vw, 24px)',
             fontStyle: 'italic',
             fontWeight: 300,
-            lineHeight: '100%',
-            opacity: 0.6
+            lineHeight: '1.3',
+            opacity: 0.6,
+            padding: '0 1rem'
           }}
         >
           Tap into a full-stack team, without the full-time cost.
@@ -90,14 +91,16 @@ const PricingPlans = () => {
       </div>
 
       {/* Plans */}
-      <div className="flex flex-col md:flex-row justify-center mb-16" style={{ gap: '60px' }}>
+      <div className="flex flex-col lg:flex-row justify-center mb-12 sm:mb-16 gap-6 sm:gap-8 lg:gap-16">
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="px-8 py-10 transition-all duration-300 text-gray-100 hover:shadow-lg"
+            className="px-6 sm:px-8 py-8 sm:py-10 transition-all duration-300 text-gray-100 hover:shadow-lg mx-auto lg:mx-0"
             style={{
-              width: '347px',
-              height: '327px',
+              width: '100%',
+              maxWidth: '347px',
+              minHeight: '300px',
+              height: 'auto',
               borderRadius: '25px',
               background: '#19191A'
             }}
@@ -145,23 +148,23 @@ const PricingPlans = () => {
                 color: '#B9B9B9',
                 textAlign: 'center',
                 fontFamily: 'DM Sans',
-                fontSize: '16px',
+                fontSize: 'clamp(14px, 3.5vw, 16px)',
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: '22.4px',
                 letterSpacing: '0.32px',
-                marginBottom: '45px'
+                marginBottom: '35px sm:mb-45px'
               }}
             >
               {plan.name}
             </div>
-            <div style={{ marginBottom: '25px' }}>
+            <div style={{ marginBottom: '20px sm:mb-25px' }}>
               <span
                 style={{
                   color: '#FFF',
                   textAlign: 'center',
                   fontFamily: 'DM Sans',
-                  fontSize: '32px',
+                  fontSize: 'clamp(24px, 6vw, 32px)',
                   fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '22.4px',
@@ -174,7 +177,7 @@ const PricingPlans = () => {
                 style={{
                   color: 'rgba(255, 255, 255, 0.30)',
                   fontFamily: 'DM Sans',
-                  fontSize: '32px',
+                  fontSize: 'clamp(20px, 5vw, 32px)',
                   fontStyle: 'normal',
                   fontWeight: 500,
                   lineHeight: '22.4px',
@@ -190,7 +193,7 @@ const PricingPlans = () => {
                 color: '#FFF',
                 textAlign: 'center',
                 fontFamily: 'DM Sans',
-                fontSize: '26px',
+                fontSize: 'clamp(20px, 5vw, 26px)',
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: '22.4px',
@@ -205,10 +208,10 @@ const PricingPlans = () => {
                 color: '#FFF',
                 textAlign: 'center',
                 fontFamily: 'DM Sans',
-                fontSize: '16px',
+                fontSize: 'clamp(14px, 3.5vw, 16px)',
                 fontStyle: 'normal',
                 fontWeight: 500,
-                lineHeight: '22.4px',
+                lineHeight: '1.4',
                 letterSpacing: '0.32px',
                 opacity: 0.6
               }}
@@ -220,24 +223,25 @@ const PricingPlans = () => {
       </div>
 
       {/* Features */}
-      <div className="bg-[#1a1a1a] text-gray-300 rounded-xl max-w-6xl mx-auto p-8">
+      <div className="bg-[#1a1a1a] text-gray-300 rounded-xl max-w-6xl mx-auto p-6 sm:p-8">
         <h3 
-          className="mb-6"
+          className="mb-6 text-center sm:text-left"
           style={{
             color: '#B9B9B9',
-            textAlign: 'left',
+            textAlign: 'center',
             fontFamily: 'DM Sans',
-            fontSize: '16px',
+            fontSize: 'clamp(14px, 3.5vw, 16px)',
             fontStyle: 'normal',
             fontWeight: 500,
             lineHeight: '22.4px',
             letterSpacing: '0.32px',
-            marginLeft: '8px'
+            marginLeft: '0',
+            marginBottom: '20px sm:mb-6'
           }}
         >
           All Plans include
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left text-sm">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
               <img 
@@ -245,26 +249,26 @@ const PricingPlans = () => {
                 alt="tick" 
                 className="flex-shrink-0" 
                 style={{
-                  width: '24px',
-                  height: '24px',
+                  width: '20px sm:w-24px',
+                  height: '20px sm:h-24px',
                   color: '#808080'
                 }}
               />
                               <span
                   style={{
                     display: 'flex',
-                    width: '196.352px',
-                    height: '21px',
+                    width: 'auto',
+                    height: 'auto',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     color: '#808080',
                     fontFamily: 'DM Sans',
-                    fontSize: '16px',
+                    fontSize: 'clamp(14px, 3.5vw, 16px)',
                     fontStyle: 'normal',
                     fontWeight: 500,
-                    lineHeight: '22.4px',
+                    lineHeight: '1.4',
                     letterSpacing: '0.16px',
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'normal'
                   }}
                 >
                 {feature}

@@ -29,36 +29,36 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="bg-black text-white px-6 py-16" style={{ height: '680px' }}>
-      <div className="max-w-7xl mx-auto flex gap-16">
+    <div className="bg-black text-white px-4 sm:px-6 py-8 sm:py-12 lg:py-16" style={{ minHeight: '680px', height: 'auto' }}>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* FAQ Section - Left Side */}
         <div className="flex-1">
           <h2 
-            className="mb-8"
+            className="mb-6 sm:mb-8 text-center lg:text-left"
             style={{
               display: 'flex',
-              width: '97.745px',
-              height: '48.042px',
+              width: 'auto',
+              height: 'auto',
               flexDirection: 'column',
               justifyContent: 'center',
               color: '#FFF',
               fontFamily: 'DM Sans',
-              fontSize: '36.603px',
+              fontSize: 'clamp(24px, 5vw, 36.603px)',
               fontStyle: 'normal',
               fontWeight: 700,
-              lineHeight: '51.245px'
+              lineHeight: '1.4'
             }}
           >
             FAQ&apos;s
           </h2>
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
             {faqData.map((faq, index) => (
               <div 
                 key={index} 
                 className="border-b border-gray-700 overflow-hidden" 
                 style={{ 
-                  minHeight: '65px',
-                  height: openIndex === index ? 'auto' : '65px',
+                  minHeight: '60px',
+                  height: openIndex === index ? 'auto' : '60px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: openIndex === index ? 'flex-start' : 'center',
@@ -70,21 +70,22 @@ const FaqSection = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <div
-                  className="w-full flex justify-between items-center text-left cursor-pointer"
+                  className="w-full flex justify-between items-center text-left cursor-pointer px-2 sm:px-0"
                   style={{
                     fontFamily: 'DM Sans',
-                    fontSize: '18.302px',
+                    fontSize: 'clamp(14px, 3.5vw, 18.302px)',
                     fontStyle: 'normal',
                     fontWeight: 600,
-                    lineHeight: '22.877px',
-                    minHeight: '65px',
-                    paddingTop: openIndex === index ? '20px' : '0px',
-                    paddingBottom: openIndex === index ? '10px' : '0px',
+                    lineHeight: '1.25',
+                    minHeight: '60px',
+                    paddingTop: openIndex === index ? '15px' : '0px',
+                    paddingBottom: openIndex === index ? '8px' : '0px',
                     transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     transform: openIndex === index ? 'translateX(8px)' : 'translateX(0)'
                   }}
                 >
                   <span
+                    className="pr-4"
                     style={openIndex === index ? {
                       background: 'linear-gradient(82deg, #FF8F4E 54.13%, #CA22EA 100.03%)',
                       backgroundClip: 'text',
@@ -103,10 +104,10 @@ const FaqSection = () => {
                   <img
                     src="/faq.svg"
                     alt="FAQ toggle"
-                    className={`${openIndex === index ? 'rotate-45' : ''}`}
+                    className={`${openIndex === index ? 'rotate-45' : ''} flex-shrink-0`}
                     style={{
-                      width: '30.503px',
-                      height: '30.503px',
+                      width: 'clamp(20px, 5vw, 30.503px)',
+                      height: 'clamp(20px, 5vw, 30.503px)',
                       color: '#FFFFFF',
                       transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                       transform: openIndex === index ? 'rotate(45deg) scale(1.1)' : 'rotate(0deg) scale(1)',
@@ -120,7 +121,7 @@ const FaqSection = () => {
                   }`}
                   style={{
                     overflow: 'hidden',
-                    paddingBottom: openIndex === index ? '20px' : '0px',
+                    paddingBottom: openIndex === index ? '15px' : '0px',
                     paddingLeft: '8px',
                     transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                     transform: openIndex === index ? 'translateY(0) scale(1)' : 'translateY(-10px) scale(0.98)'
@@ -130,10 +131,10 @@ const FaqSection = () => {
                     style={{ 
                       color: '#808080',
                       fontFamily: 'DM Sans',
-                      fontSize: '16px',
+                      fontSize: 'clamp(14px, 3.5vw, 16px)',
                       fontStyle: 'normal',
                       fontWeight: 500,
-                      lineHeight: '22.4px',
+                      lineHeight: '1.4',
                       letterSpacing: '0.16px',
                       transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                       transform: openIndex === index ? 'translateY(0)' : 'translateY(-5px)'
@@ -148,25 +149,25 @@ const FaqSection = () => {
         </div>
         
         {/* Still Have Questions Box - Right Side */}
-        <div className="w-80">
-          <div className="bg-[#1a1a1a] rounded-xl p-8" style={{ height: '500px' }}>
+        <div className="w-full lg:w-80">
+          <div className="bg-[#1a1a1a] rounded-xl p-6 sm:p-8" style={{ minHeight: '400px', height: 'auto' }}>
             <h3 
-              className="mb-4"
+              className="mb-4 text-center lg:text-left"
               style={{
                 background: 'linear-gradient(82deg, #FF8F4E 54.13%, #CA22EA 100.03%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 fontFamily: 'DM Sans',
-                fontSize: '24px',
+                fontSize: 'clamp(20px, 4vw, 24px)',
                 fontWeight: 600,
-                lineHeight: '30px'
+                lineHeight: '1.25'
               }}
             >
               Still have questions?
             </h3>
             <p 
-              className="text-gray-300 text-base leading-relaxed"
+              className="text-gray-300 text-sm sm:text-base leading-relaxed text-center lg:text-left"
               style={{
                 fontFamily: 'DM Sans'
               }}
@@ -180,7 +181,7 @@ const FaqSection = () => {
           </div>
           
           {/* Contact Us Button */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center lg:justify-start mt-6">
             <button
               className="px-[18px] py-[7px] text-white font-medium rounded-[32px] transition-all duration-300 text-sm"
               style={{
