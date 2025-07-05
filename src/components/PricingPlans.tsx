@@ -4,21 +4,21 @@ const plans = [
   {
     name: 'Nucleus Plan',
     price: '$3,200',
-    hours: '40 hr',
+    // hours: '40 hr',
     description: 'Your lean growth starter kit.',
     highlight: false,
   },
   {
     name: 'Nerve Plan',
     price: '$5,600',
-    hours: '80 hr',
+    // hours: '80 hr',
     description: 'Your full-stack growth engine.',
     highlight: true,
   },
   {
     name: 'Nova Plan',
     price: '$9,600',
-    hours: '160 hr',
+    // hours: '160 hr',
     description: 'Your in-house marketing department—on autopilot.',
     highlight: false,
   },
@@ -37,7 +37,7 @@ const features = [
 
 const PricingPlans = () => {
   return (
-    <div className="bg-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 text-center">
+    <div id="pricing" className="bg-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 text-center">
       <h2 
         className="text-transparent bg-clip-text mb-8 sm:mb-10 lg:mb-12"
         style={{
@@ -95,13 +95,13 @@ const PricingPlans = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="px-6 sm:px-8 py-8 sm:py-10 transition-all duration-300 text-gray-100 hover:shadow-lg mx-auto lg:mx-0"
+            className="px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 transition-all duration-300 text-gray-100 hover:shadow-lg mx-auto lg:mx-0"
             style={{
               width: '100%',
-              maxWidth: '347px',
-              minHeight: '300px',
+              maxWidth: '320px',
+              minHeight: '280px',
               height: 'auto',
-              borderRadius: '25px',
+              borderRadius: '20px',
               background: '#19191A'
             }}
             onMouseEnter={(e) => {
@@ -136,29 +136,28 @@ const PricingPlans = () => {
             }}
           >
             <div 
-              className="hover:text-white transition-colors cursor-pointer plan-container"
+              className="hover:text-white transition-colors cursor-pointer plan-container mb-4 md:mb-6 lg:mb-[45px]"
               style={{
                 display: 'inline-flex',
-                padding: '8px 17px',
+                padding: '6px 14px',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '10px',
+                gap: '8px',
                 borderRadius: '360px',
                 border: '1px solid #6B6B6B',
                 color: '#B9B9B9',
                 textAlign: 'center',
                 fontFamily: 'DM Sans',
-                fontSize: 'clamp(14px, 3.5vw, 16px)',
+                fontSize: 'clamp(13px, 3.2vw, 16px)',
                 fontStyle: 'normal',
                 fontWeight: 500,
-                lineHeight: '22.4px',
-                letterSpacing: '0.32px',
-                marginBottom: '35px sm:mb-45px'
+                lineHeight: '1.4',
+                letterSpacing: '0.32px'
               }}
             >
               {plan.name}
             </div>
-            <div style={{ marginBottom: '20px sm:mb-25px' }}>
+            <div style={{ marginBottom: '15px sm:mb-20px lg:mb-25px' }}>
               <span
                 style={{
                   color: '#FFF',
@@ -184,7 +183,7 @@ const PricingPlans = () => {
                   letterSpacing: '0.32px'
                 }}
               >
-                /month
+                /mo
               </span>
             </div>
             <div 

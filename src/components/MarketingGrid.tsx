@@ -229,6 +229,7 @@ const MarketingGrid = () => {
         `
       }} />
     <div 
+      id="services"
       className="marketing-grid-container bg-[#0e0b17] text-white px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16"
       style={{
         width: '100vw',

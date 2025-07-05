@@ -198,6 +198,7 @@ export default function TeamSection() {
         }
       `}</style>
       <section 
+        id="team"
         className="bg-black text-white px-2 sm:px-4 text-center responsive-section"
         style={{
           height: '950px',

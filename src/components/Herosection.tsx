@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative text-white min-h-screen w-full pt-32 pb-20 px-4 sm:px-6" style={{backgroundImage: 'url(/hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    <section id="hero" className="relative text-white min-h-[80vh] sm:min-h-[90vh] lg:min-h-screen w-full pt-36 pb-24 px-4 sm:px-6" style={{backgroundImage: 'url(/hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
             {/* Background Circles Image */}
       <div className="absolute inset-0 z-0 herocircles-bg" style={{backgroundImage: 'url(/herocircles.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}></div>
       
@@ -21,7 +21,7 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center lg:mt-0 md:-mt-12 -mt-24">
         <div className="text-center">
-          <h1 className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-4 sm:mb-6 lg:mb-8 text-[28px] xs:text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[32px] xs:leading-[36px] sm:leading-[40px] md:leading-[52px] lg:leading-[72px]" style={{
+          <h1 className="w-full max-w-[320px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-8 sm:mb-12 lg:mb-20 mt-3 sm:mt-8 lg:mt-12 text-[28px] xs:text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[32px] xs:leading-[36px] sm:leading-[40px] md:leading-[52px] lg:leading-[72px]" style={{
             fontFamily: 'var(--font-dm-sans)',
             fontStyle: 'normal',
             fontWeight: 500,

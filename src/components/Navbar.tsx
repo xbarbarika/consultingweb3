@@ -6,12 +6,11 @@ interface NavbarProps {
 }
 
 const menuItems = [
-  { label: 'Home' },
-  { label: 'Services', hasDropdown: true },
-  { label: 'Industries', hasDropdown: true },
+  { label: 'Services'},
+  { label: 'Industries' },
   { label: 'Success stories' },
   { label: 'Our people' },
-  { label: 'Company', hasDropdown: true },
+  { label: 'Company' },
   { label: 'Pricing' },
   { label: 'Events' },
 ];
@@ -21,19 +20,39 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
     <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-30 bg-transparent hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
       {/* Logo and Brand */}
       <div className="flex items-center">
-        <span className="text-lg sm:text-xl font-bold tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
+        <button
+          type="button"
+          onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
+          className="cursor-pointer bg-transparent border-none p-0 m-0 focus:outline-none"
+          style={{ background: 'none' }}
+        >
+          <span className="text-lg sm:text-xl font-bold tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
+        </button>
       </div>
       
       {/* Menu Items - Center - HIDDEN ON TABLET */}
       <ul className="hidden lg:flex gap-8 items-center">
         {menuItems.map((item, index) => (
-          <li key={item.label} className={`relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize ${index === 0 ? 'text-white' : 'text-gray-300'}`}>
+          <li
+            key={item.label}
+            className={`relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize ${index === 0 ? 'text-white' : 'text-gray-300'}`}
+            onClick={e => {
+              if (item.label === 'Services') {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              } else if (item.label === 'Industries') {
+                e.preventDefault();
+                document.getElementById('industries')?.scrollIntoView({ behavior: 'smooth' });
+              } else if (item.label === 'Our people') {
+                e.preventDefault();
+                document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+              } else if (item.label === 'Pricing') {
+                e.preventDefault();
+                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             <span className="capitalize">{item.label}</span>
-            {item.hasDropdown && (
-              <svg className="ml-1 w-3 h-3" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
           </li>
         ))}
       </ul>
