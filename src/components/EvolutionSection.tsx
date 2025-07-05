@@ -31,13 +31,13 @@ export default function EvolutionSection() {
   return (
     <section id="industries" className="bg-black text-white py-20 px-6 text-center">
       <h2 
-        className="mb-4 mx-auto w-full max-w-[320px] sm:max-w-[500px] lg:w-[553px] lg:max-w-none px-4 lg:px-0 text-2xl sm:text-3xl lg:text-[40px]"
+        className="mb-4 mx-auto w-full max-w-[320px] sm:max-w-[500px] lg:max-w-[700px] px-4 lg:px-0 text-2xl sm:text-3xl lg:text-[40px]"
         style={{
           textAlign: 'center',
           fontFamily: 'var(--font-dm-sans)',
           fontStyle: 'normal',
           fontWeight: 500,
-          lineHeight: '100%',
+          lineHeight: '1.2',
           background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',

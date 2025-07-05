@@ -1,24 +1,25 @@
 import React from 'react';
+import Image from 'next/image';
 
 const plans = [
   {
     name: 'Nucleus Plan',
     price: '$3,200',
-    // hours: '40 hr',
+    hours: '40 hr',
     description: 'Your lean growth starter kit.',
     highlight: false,
   },
   {
     name: 'Nerve Plan',
     price: '$5,600',
-    // hours: '80 hr',
+    hours: '80 hr',
     description: 'Your full-stack growth engine.',
     highlight: true,
   },
   {
     name: 'Nova Plan',
     price: '$9,600',
-    // hours: '160 hr',
+    hours: '160 hr',
     description: 'Your in-house marketing department—on autopilot.',
     highlight: false,
   },
@@ -243,13 +244,13 @@ const PricingPlans = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left text-sm">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
-              <img 
+              <Image 
                 src="/tick.svg" 
                 alt="tick" 
+                width={20}
+                height={20}
                 className="flex-shrink-0" 
                 style={{
-                  width: '20px sm:w-24px',
-                  height: '20px sm:h-24px',
                   color: '#808080'
                 }}
               />

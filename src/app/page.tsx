@@ -6,6 +6,7 @@ import MenuModal from '@/components/MenuModal';
 import EvolutionSection from '@/components/EvolutionSection';
 import MarketingGrid from '@/components/MarketingGrid';
 import TeamSection from '@/components/TeamSection';
+import LocationsSection from '@/components/LocationsSection';
 import PricingPlans from '@/components/PricingPlans';
 import FaqSection from '@/components/FaqSection';
 
@@ -23,6 +24,7 @@ export default function Home() {
       <EvolutionSection />
       <TeamSection />
       <MarketingGrid />
+      <LocationsSection />
       <PricingPlans />
       <FaqSection />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />

@@ -3,34 +3,34 @@ import Image from "next/image";
 const founder = { 
   name: "Kritesh", 
   role: "Founder & CEO", 
-  avatar: "/Kritesh.svg",
-  description: "Visionary leader with extensive experience in Web3 and blockchain technology. Drives innovation and strategic growth across all business verticals."
+  avatar: "/ghibli-founder.jpg",
+  description: "Visionary leader driving innovation across Web3 and blockchain technology."
 };
 
 const teamMembers = [
   { 
-    name: "Abhishek", 
-    role: "Front End Developer", 
-    avatar: "/Abhishek.svg",
-    description: "Specializes in React, Next.js, and modern frontend technologies. Creates responsive and interactive user interfaces with exceptional attention to detail."
-  },
-  { 
-    name: "Shivam", 
-    role: "UI/UX Designer", 
-    avatar: "/Shivam.svg",
-    description: "Expert in user experience design and interface creation. Transforms complex ideas into intuitive, beautiful designs that users love."
+    name: "Aditya", 
+    role: "Full Stack Blockchain Developer", 
+    avatar: "/ghibli-blockchain.jpg",
+    description: "Blockchain specialist building secure DeFi protocols and Web3 solutions."
   },
   { 
     name: "Prince", 
     role: "Frontend Developer", 
-    avatar: "/Prince.svg",
-    description: "Skilled in modern JavaScript frameworks and responsive design. Builds fast, scalable web applications with clean, maintainable code."
+    avatar: "/ghibli-developer2.jpg",
+    description: "Modern JavaScript expert creating fast, scalable web applications."
   },
   { 
-    name: "Aditya", 
-    role: "Blockchain Developer", 
-    avatar: "/Aditya.svg",
-    description: "Blockchain specialist with expertise in smart contracts and DeFi protocols. Builds secure, decentralized applications and Web3 solutions."
+    name: "Abhishek", 
+    role: "Front End Developer", 
+    avatar: "/ghibli-developer1.jpg",
+    description: "React specialist crafting responsive interfaces with pixel-perfect precision."
+  },
+  { 
+    name: "Shivam", 
+    role: "UI/UX Designer", 
+    avatar: "/ghibli-designer.jpg",
+    description: "Design expert transforming complex ideas into intuitive user experiences."
   },
 ];
 
@@ -120,7 +120,8 @@ export default function TeamSection() {
         
         .profile-avatar-image {
           transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          object-fit: contain;
+          object-fit: cover;
+          border-radius: 50%;
         }
         
         .profile-container:hover .profile-avatar-image {
@@ -165,22 +166,14 @@ export default function TeamSection() {
           padding: 30px;
         }
         
-        /* Desktop Zigzag positioning */
+        /* Desktop alignment - all members aligned */
         @media (min-width: 769px) {
           .responsive-grid {
             max-width: 100% !important;
+            align-items: flex-start !important;
           }
-          .responsive-member:nth-child(1) {
-            margin-top: 0px;
-          }
-          .responsive-member:nth-child(2) {
-            margin-top: 40px;
-          }
-          .responsive-member:nth-child(3) {
-            margin-top: 0px;
-          }
-          .responsive-member:nth-child(4) {
-            margin-top: 40px;
+          .responsive-member {
+            margin-top: 0px !important;
           }
         }
         

@@ -1,6 +1,7 @@
 // components/FaqSection.tsx
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const faqData = [
   {
@@ -101,13 +102,13 @@ const FaqSection = () => {
                   >
                     {faq.question}
                   </span>
-                  <img
+                  <Image
                     src="/faq.svg"
                     alt="FAQ toggle"
+                    width={30}
+                    height={30}
                     className={`${openIndex === index ? 'rotate-45' : ''} flex-shrink-0`}
                     style={{
-                      width: 'clamp(20px, 5vw, 30.503px)',
-                      height: 'clamp(20px, 5vw, 30.503px)',
                       color: '#FFFFFF',
                       transition: 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                       transform: openIndex === index ? 'rotate(45deg) scale(1.1)' : 'rotate(0deg) scale(1)',

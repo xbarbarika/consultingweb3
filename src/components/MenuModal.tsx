@@ -122,8 +122,8 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
           </ul>
           
           {/* CTA Button */}
-          <div className="mt-4 pt-3 border-t border-white/10">
-            <button className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium hover:opacity-90 transition-opacity text-sm">
+          <div className="mt-6 pt-4 border-t border-white/10">
+            <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:opacity-90 transition-opacity text-sm shadow-lg">
               Book Intro-Call
             </button>
           </div>

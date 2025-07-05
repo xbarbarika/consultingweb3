@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const cases = [
   {
@@ -71,7 +72,7 @@ export default function CaseStudies() {
                 <span className="bg-gradient-to-r from-[#FF6A5F] via-[#FF5BBE] to-[#A63FFD] bg-clip-text text-transparent text-xl ml-2 group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
               </div>
               <div className="flex justify-end">
-                <img src={item.logo} alt={item.company} className="h-5" />
+                <Image src={item.logo} alt={item.company} width={80} height={20} className="h-5" />
               </div>
             </div>
           </div>

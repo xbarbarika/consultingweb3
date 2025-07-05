@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 
 const services = [
   {
     title: "Crypto Marketing",
     description:
-      "Effectively promote your cryptocurrency, ICO, or blockchain offering within a complex and fast-evolving digital landscape through targeted cryptocurrency promotion.",
+      "Effectively promote your cryptocurrency and blockchain offerings through targeted digital marketing strategies.",
     projects: 50,
     active: true,
     icon: "bitcoin-btc.svg",
@@ -75,7 +76,7 @@ const services = [
   {
     title: "Ecommerce",
     description:
-      "Empower and enable your ECommerce venture to achieve bigger and better things with BARBARIKA - your partner in everything digital and marketing.",
+      "Empower your ECommerce venture with comprehensive digital marketing strategies for growth and success.",
     projects: 30,
     icon: "bag-happy.svg",
   },
@@ -124,13 +125,7 @@ const MarketingGrid = () => {
               font-size: 9.63px !important;
               line-height: 11.556px !important;
             }
-            .projects-badge {
-              width: 95px !important;
-              height: 25.992px !important;
-              padding: 6.42px 10.177px 6.733px 10.432px !important;
-              font-size: 9.63px !important;
-              line-height: 11.556px !important;
-            }
+
             .service-icon {
               width: 32.099px !important;
               height: 32.099px !important;
@@ -138,6 +133,17 @@ const MarketingGrid = () => {
             .marketing-card {
               height: 333.028px !important;
               min-height: unset !important;
+              display: flex !important;
+              flex-direction: column !important;
+            }
+            .marketing-card p {
+              flex-grow: 1 !important;
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+              hyphens: auto !important;
+            }
+            .marketing-grid {
+              align-items: stretch !important;
             }
           }
           @media (min-width: 768px) and (max-width: 1023px) {
@@ -156,13 +162,7 @@ const MarketingGrid = () => {
               font-size: 8.5px !important;
               line-height: 10.5px !important;
             }
-            .projects-badge {
-              width: 88px !important;
-              height: 24px !important;
-              padding: 5px 9px !important;
-              font-size: 8.5px !important;
-              line-height: 10.5px !important;
-            }
+
             .service-icon {
               width: 28px !important;
               height: 28px !important;
@@ -170,6 +170,11 @@ const MarketingGrid = () => {
             .marketing-card {
               height: auto !important;
               min-height: 300px !important;
+            }
+            .marketing-card p {
+              word-wrap: break-word !important;
+              overflow-wrap: break-word !important;
+              hyphens: auto !important;
             }
           }
           .marketing-card:hover {
@@ -208,18 +213,7 @@ const MarketingGrid = () => {
             line-height: 11.556px !important;
             text-transform: uppercase !important;
           }
-          .marketing-card:hover .projects-badge {
-            border: 0.802px solid rgba(169, 104, 204, 0.48) !important;
-            background: transparent !important;
-            color: #442152 !important;
-            text-align: center !important;
-            font-family: "DM Sans" !important;
-            font-size: 9.63px !important;
-            font-style: normal !important;
-            font-weight: 500 !important;
-            line-height: 11.556px !important;
-            text-transform: uppercase !important;
-          }
+
           .marketing-card:hover .service-icon {
             color: #40234F !important;
           }
@@ -285,13 +279,13 @@ const MarketingGrid = () => {
             <div className="mb-4">
               <div className="p-2 w-fit mb-4">
                 {service.icon ? (
-                  <img
+                  <Image
                     src={`/${service.icon}`}
                     alt={service.title}
+                    width={24}
+                    height={24}
                     className="service-icon"
                     style={{
-                      width: '24px',
-                      height: '24px',
                       flexShrink: 0,
                       filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                     }}
@@ -358,32 +352,6 @@ const MarketingGrid = () => {
                 }}
               >
                 DEPARTMENT
-              </span>
-              <span 
-                className="badge projects-badge"
-                style={{
-                  display: 'flex',
-                  width: '85px',
-                  height: '22px',
-                  padding: '4px 8px',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  flexShrink: 0,
-                  borderRadius: '6.42px',
-                  border: '0.802px solid #A1A1A9',
-                  background: 'transparent',
-                  color: '#A1A1AA',
-                  textAlign: 'center',
-                  fontFamily: '"DM Sans"',
-                  fontSize: '8px',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '10px',
-                  textTransform: 'uppercase',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                {service.projects} PROJECTS
               </span>
             </div>
             <p 

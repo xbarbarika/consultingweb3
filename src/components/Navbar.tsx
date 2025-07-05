@@ -59,26 +59,11 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       
       {/* CTA Button */}
       <div className="flex items-center gap-4">
-                 <button 
-           className="hidden lg:inline-flex justify-center items-center gap-[10px] px-[18px] py-[7px] text-white font-medium rounded-[32px] transition-all duration-300 group-hover:!bg-white group-hover:!text-black text-sm" 
-           style={{background: 'rgba(0, 0, 0, 0.24)'}}
-           onMouseEnter={(e) => {
-             e.currentTarget.style.background = 'linear-gradient(90deg, #FF69B4, #8A2BE2)';
-             e.currentTarget.style.color = 'white';
-           }}
-           onMouseLeave={(e) => {
-             const nav = e.currentTarget.closest('nav');
-             if (nav && nav.matches(':hover')) {
-               e.currentTarget.style.background = 'white';
-               e.currentTarget.style.color = 'black';
-             } else {
-               e.currentTarget.style.background = 'rgba(0, 0, 0, 0.24)';
-               e.currentTarget.style.color = 'white';
-             }
-           }}
-         >
-           Book Intro-Call
-         </button>
+        <button 
+          className="hidden lg:inline-flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm border border-white/20 bg-black/30 hover:bg-white hover:text-black hover:border-white hover:shadow-lg" 
+        >
+          Book Intro-Call
+        </button>
         
         {/* Mobile & Tablet Menu Button - VISIBLE ON TABLET */}
                  <button
