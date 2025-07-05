@@ -6,6 +6,7 @@ import MenuModal from '@/components/MenuModal';
 import EvolutionSection from '@/components/EvolutionSection';
 import MarketingGrid from '@/components/MarketingGrid';
 import TeamSection from '@/components/TeamSection';
+import PricingPlans from '@/components/PricingPlans';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,6 +84,7 @@ export default function Home() {
       <EvolutionSection />
       <TeamSection />
       <MarketingGrid />
+      <PricingPlans />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </main>
   );
