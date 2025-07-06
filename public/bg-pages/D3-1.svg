@@ -1,0 +1,18 @@
+<svg width="1440" height="898" viewBox="0 0 1440 898" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_311_2044)">
+<rect width="1440" height="898" fill="url(#paint0_radial_311_2044)" style=""/>
+<foreignObject x="-100" y="-100" width="1640" height="1098"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(50px);clip-path:url(#bgblur_1_311_2044_clip_path);height:100%;width:100%"></div></foreignObject><rect data-figma-bg-blur-radius="100" width="1440" height="898" fill="#7D7D7D" fill-opacity="0.01" style="fill:#7D7D7D;fill:color(display-p3 0.4921 0.4921 0.4921);fill-opacity:0.01;"/>
+</g>
+<defs>
+<clipPath id="bgblur_1_311_2044_clip_path" transform="translate(100 100)"><rect width="1440" height="898"/>
+</clipPath><radialGradient id="paint0_radial_311_2044" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(422.5 -76.5) rotate(72.3205) scale(1139.31 4721.47)">
+<stop stop-color="#CB7C2D" style="stop-color:#CB7C2D;stop-color:color(display-p3 0.7945 0.4855 0.1764);stop-opacity:1;"/>
+<stop offset="0.197115" stop-color="#21144D" style="stop-color:#21144D;stop-color:color(display-p3 0.1302 0.0774 0.3034);stop-opacity:1;"/>
+<stop offset="0.413135" stop-color="#1A0F32" style="stop-color:#1A0F32;stop-color:color(display-p3 0.1030 0.0594 0.1970);stop-opacity:1;"/>
+<stop offset="0.68327" style="stop-color:black;stop-opacity:1;"/>
+</radialGradient>
+<clipPath id="clip0_311_2044">
+<rect width="1440" height="898" fill="white" style="fill:white;fill-opacity:1;"/>
+</clipPath>
+</defs>
+</svg>

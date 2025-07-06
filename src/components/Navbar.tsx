@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -16,7 +17,29 @@ const menuItems = [
   { label: 'Events' },
 ];
 
+const servicesDropdown = [
+  { label: 'Marketing Subscription', href: '/marketing-sub' },
+  { label: 'Social Media', href: '/social-media' },
+  { label: 'Paid Social', href: '/paid-social' },
+  { label: 'SEO', href: '/seo' },
+  { label: 'Influencer Marketing', href: '/influencer' },
+  { label: 'PR & Outreach', href: '/pr-marketing' },
+  { label: 'Video Production', href: '/video' },
+  { label: 'Lead Generation', href: '/lead-gen' },
+  { label: 'Branding', href: '/branding' },
+  { label: 'Community Management', href: '/community' },
+  { label: 'Website development', href: '/website-dev' },
+  { label: 'Web Design', href: '/web-design' },
+  { label: 'Blockchain development', href: '/blockchain' },
+];
+
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
+  const pathname = usePathname();
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const handleServicesClick = (e: React.MouseEvent<HTMLSpanElement> | React.KeyboardEvent<HTMLSpanElement>) => {
+    e.preventDefault();
+    setServicesOpen((open) => !open);
+  };
   return (
     <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-30 bg-transparent hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
       {/* Logo and Brand */}
@@ -38,23 +61,89 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
           <li
             key={item.label}
             className={`relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize ${index === 0 ? 'text-white' : 'text-gray-300'}`}
-            onClick={e => {
-              if (item.label === 'Services') {
-                e.preventDefault();
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-              } else if (item.label === 'Industries') {
-                e.preventDefault();
-                document.getElementById('industries')?.scrollIntoView({ behavior: 'smooth' });
-              } else if (item.label === 'Our people') {
-                e.preventDefault();
-                document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
-              } else if (item.label === 'Pricing') {
-                e.preventDefault();
-                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
           >
-            <span className="capitalize">{item.label}</span>
+            {item.label === 'Services' ? (
+              <>
+                <span
+                  className="capitalize flex items-center gap-1 select-none"
+                  onClick={handleServicesClick}
+                  tabIndex={0}
+                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') handleServicesClick(e); }}
+                  aria-haspopup="true"
+                  aria-expanded={servicesOpen}
+                  role="button"
+                >
+                  {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                {servicesOpen && (
+                  <div className="absolute left-0 top-full mt-2 w-64 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" style={{minWidth: '260px'}}>
+                    {servicesDropdown.map((service, i) => (
+                      service.href ? (
+                        <Link key={service.label} href={service.href}>
+                          <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                            <span>{service.label}</span>
+                          </div>
+                        </Link>
+                      ) : (
+                        <div key={service.label} className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                          <span>{service.label}</span>
+                        </div>
+                      )
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : item.label === 'Industries' ? (
+              pathname === '/' ? (
+                <span
+                  onClick={e => {
+                    e.preventDefault();
+                    document.getElementById('industries')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="capitalize"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link href="/#industries">
+                  <span className="capitalize">{item.label}</span>
+                </Link>
+              )
+            ) : item.label === 'Our people' ? (
+              pathname === '/' ? (
+                <span
+                  onClick={e => {
+                    e.preventDefault();
+                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="capitalize"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link href="/#team">
+                  <span className="capitalize">{item.label}</span>
+                </Link>
+              )
+            ) : item.label === 'Pricing' ? (
+              pathname === '/' ? (
+                <span
+                  onClick={e => {
+                    e.preventDefault();
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="capitalize"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link href="/#pricing">
+                  <span className="capitalize">{item.label}</span>
+                </Link>
+              )
+            ) : (
+              <span className="capitalize">{item.label}</span>
+            )}
           </li>
         ))}
       </ul>
