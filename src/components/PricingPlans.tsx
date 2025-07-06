@@ -5,21 +5,21 @@ const plans = [
   {
     name: 'Nucleus Plan',
     price: '$3,200',
-    //hours: '40 hr',
+    hours: '40 hr',
     description: 'Your lean growth starter kit.',
     highlight: false,
   },
   {
     name: 'Nerve Plan',
     price: '$5,600',
-    //
+    hours: '80 hr',
     description: 'Your full-stack growth engine.',
     highlight: true,
   },
   {
     name: 'Nova Plan',
     price: '$9,600',
-    //hours: '160 hr',
+    hours: '160 hr',
     description: 'Your in-house marketing department—on autopilot.',
     highlight: false,
   },

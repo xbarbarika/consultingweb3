@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -20,14 +21,15 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
     <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-30 bg-transparent hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
       {/* Logo and Brand */}
       <div className="flex items-center">
-        <button
-          type="button"
-          onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
-          className="cursor-pointer bg-transparent border-none p-0 m-0 focus:outline-none"
-          style={{ background: 'none' }}
-        >
-          <span className="text-lg sm:text-xl font-bold tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
-        </button>
+        <Link href="/">
+          <button
+            type="button"
+            className="cursor-pointer bg-transparent border-none p-0 m-0 focus:outline-none"
+            style={{ background: 'none' }}
+          >
+            <span className="text-lg sm:text-xl font-bold tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
+          </button>
+        </Link>
       </div>
       
       {/* Menu Items - Center - HIDDEN ON TABLET */}
@@ -59,11 +61,13 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       
       {/* CTA Button */}
       <div className="flex items-center gap-4">
-        <button 
-          className="hidden lg:inline-flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm border border-white/20 bg-black/30 hover:bg-white hover:text-black hover:border-white hover:shadow-lg" 
-        >
-          Book Intro-Call
-        </button>
+        <Link href="/book-demo">
+          <button 
+            className="hidden lg:inline-flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm border border-white/20 bg-black/30 hover:bg-white hover:text-black hover:border-white hover:shadow-lg" 
+          >
+            Book a Demo
+          </button>
+        </Link>
         
         {/* Mobile & Tablet Menu Button - VISIBLE ON TABLET */}
                  <button
