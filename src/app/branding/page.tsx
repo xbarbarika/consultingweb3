@@ -11,15 +11,13 @@ export default function Service() {
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Branding</span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          All Your Branding.<br />
-          <span className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-            One Simple Subscription.
-          </span>
+          Build a Brand<br />
+          That Stands Out and Sticks
         </h1>
         {/* Subheading */}
         <p className="mt-4 text-gray-400 max-w-2xl text-base sm:text-lg">
-          Say goodbye to messy handoffs, bloated retainers, and scattered freelancers.<br />
-          With NinjaPromo, you get a fully integrated branding team—on-demand.
+          We craft brands that resonate from visual identity to verbal tone.<br />
+          Our approach combines deep research, clear positioning, and design systems built for growth.
         </p>
         {/* Card and Features Row */}
         <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full">
@@ -46,10 +44,10 @@ export default function Service() {
           </div>
           {/* Features List */}
           <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto 2xl:ml-[-28cm] min-w-0 break-words">
-            <li>Transparent billing</li>
-            <li>30+ services under one roof</li>
-            <li>Access to top-tier strategists, designers, and growth experts</li>
-            <li>Scalable to match your goals</li>
+            <li>Brand strategy, positioning & architecture</li>
+            <li>Logo, visual identity & brand guidelines</li>
+            <li>Messaging frameworks for all channels</li>
+            <li>Brand audits & repositioning</li>
           </ul>
         </div>
       </main>

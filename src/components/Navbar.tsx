@@ -154,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
           <button 
             className="hidden lg:inline-flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm border border-white/20 bg-black/30 hover:bg-white hover:text-black hover:border-white hover:shadow-lg" 
           >
-            Book a Demo
+            Book Intro-Call
           </button>
         </Link>
         

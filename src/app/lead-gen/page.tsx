@@ -11,15 +11,15 @@ export default function Service() {
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Lead Generation</span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          All Your Lead Generation.<br />
-          <span className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-            One Simple Subscription.
+          Consistent, Qualified Leads,<br />
+          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 text-transparent bg-clip-text">
+            Without the Guesswork
           </span>
         </h1>
         {/* Subheading */}
         <p className="mt-4 text-gray-400 max-w-2xl text-base sm:text-lg">
-          Say goodbye to messy handoffs, bloated retainers, and scattered freelancers.<br />
-          With NinjaPromo, you get a fully integrated lead generation team—on-demand.
+          We build and manage performance-driven lead generation systems that deliver results—not just clicks.<br />
+          From strategy to execution, we handle every step so your sales team focuses on closing, not chasing.
         </p>
         {/* Card and Features Row */}
         <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full">
@@ -46,10 +46,10 @@ export default function Service() {
           </div>
           {/* Features List */}
           <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto 2xl:ml-[-28cm] min-w-0 break-words">
-            <li>Transparent billing</li>
-            <li>30+ services under one roof</li>
-            <li>Access to top-tier strategists, designers, and growth experts</li>
-            <li>Scalable to match your goals</li>
+            <li>High-intent lead targeting with real-time list building</li>
+            <li>Personalized messaging that gets replies</li>
+            <li>CRM integration and ongoing funnel optimization</li>
+            <li>Weekly reports with lead quality insights</li>
           </ul>
         </div>
       </main>

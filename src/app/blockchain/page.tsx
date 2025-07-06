@@ -8,18 +8,20 @@ export default function Service() {
       <Navbar />
       <main className="w-full flex-1 flex flex-col items-start justify-center py-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
         {/* Service Label */}
-        <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Website Development</span></div>
+        <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Blockchain Development</span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          All Your Website Development.<br />
-          <span className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-            One Simple Subscription.
+          <span className="text-gray-300">Scalable, Secure, and </span>
+          <span className="text-white">
+            <span className="text-white"> 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-pink-400 font-bold">Custom</span>
+            </span>
+            <br />Blockchain Solutions
           </span>
         </h1>
         {/* Subheading */}
         <p className="mt-4 text-gray-400 max-w-2xl text-base sm:text-lg">
-          Say goodbye to messy handoffs, bloated retainers, and scattered freelancers.<br />
-          With NinjaPromo, you get a fully integrated website development team—on-demand.
+          From smart contracts to full dApps, we help you build on-chain products with performance and security at the core.
         </p>
         {/* Card and Features Row */}
         <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full">
@@ -27,7 +29,7 @@ export default function Service() {
           <div className="flex flex-col items-start w-full md:w-auto" style={{flex: '1 1 340px', minWidth: 0}}>
             <div className="bg-[#181825] rounded-2xl p-6 sm:p-8 min-w-[220px] md:min-w-[340px] min-h-[140px] md:min-h-[180px] flex flex-col justify-between shadow-lg border border-white/10 relative w-full max-w-md" style={{boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'}}>
               <div className="w-8 h-5 sm:w-10 sm:h-6 bg-[#232336] rounded mb-6" />
-              <div className="text-xl sm:text-2xl font-medium mb-2">Website Development</div>
+              <div className="text-xl sm:text-2xl font-medium mb-2">Blockchain Development</div>
               <div className="text-xs text-gray-500 tracking-widest">BARBARIKA</div>
             </div>
             {/* CTA Button */}
@@ -46,10 +48,10 @@ export default function Service() {
           </div>
           {/* Features List */}
           <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto 2xl:ml-[-28cm] min-w-0 break-words">
-            <li>Transparent billing</li>
-            <li>30+ services under one roof</li>
-            <li>Access to top-tier strategists, designers, and growth experts</li>
-            <li>Scalable to match your goals</li>
+            <li>Smart contract development (Solidity, Rust)</li>
+            <li>dApp & token infrastructure</li>
+            <li>NFT platforms, wallets & DAO integrations</li>
+            <li>Audits, testing, and post-launch support</li>
           </ul>
         </div>
       </main>
