@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                 </span>
                 {servicesOpen && (
                   <div className="absolute left-0 top-full mt-2 w-64 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" style={{minWidth: '260px'}}>
-                    {servicesDropdown.map((service, i) => (
+                    {servicesDropdown.map((service) => (
                       service.href ? (
                         <Link key={service.label} href={service.href}>
                           <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
