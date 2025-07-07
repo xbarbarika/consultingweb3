@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -36,10 +36,39 @@ const servicesDropdown = [
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
-  const handleServicesClick = (e: React.MouseEvent<HTMLSpanElement> | React.KeyboardEvent<HTMLSpanElement>) => {
-    e.preventDefault();
-    setServicesOpen((open) => !open);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+
+    if (servicesOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [servicesOpen]);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setServicesOpen(true);
   };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 100);
+  };
+  
   return (
     <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-30 bg-transparent hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
       {/* Logo and Brand */}
@@ -63,20 +92,24 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
             className={`relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize ${index === 0 ? 'text-white' : 'text-gray-300'}`}
           >
             {item.label === 'Services' ? (
-              <>
-                <span
-                  className="capitalize flex items-center gap-1 select-none"
-                  onClick={handleServicesClick}
-                  tabIndex={0}
-                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') handleServicesClick(e); }}
-                  aria-haspopup="true"
-                  aria-expanded={servicesOpen}
-                  role="button"
-                >
-                  {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </span>
+              <div
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link href="/service">
+                  <span className="capitalize flex items-center gap-1 select-none">
+                    {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
+                </Link>
                 {servicesOpen && (
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" style={{minWidth: '260px'}}>
+                  <div 
+                    className="absolute left-0 top-full mt-0 w-64 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" 
+                    style={{minWidth: '260px'}}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {servicesDropdown.map((service) => (
                       service.href ? (
                         <Link key={service.label} href={service.href}>
@@ -92,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                     ))}
                   </div>
                 )}
-              </>
+              </div>
             ) : item.label === 'Industries' ? (
               pathname === '/' ? (
                 <span
