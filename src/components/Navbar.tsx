@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   };
   
   return (
-    <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-30 bg-transparent hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
+    <nav className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-16 py-3 sm:py-4 text-white font-medium text-sm fixed top-0 left-0 z-50 bg-black/80 lg:bg-transparent lg:hover:bg-black transition-colors duration-300 backdrop-blur-sm group">
       {/* Logo and Brand */}
       <div className="flex items-center">
         <Link href="/">

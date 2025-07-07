@@ -6,7 +6,7 @@ export default function Service() {
   return (
     <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-5.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-center py-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
+      <main className="w-full flex-1 flex flex-col items-start justify-center pt-20 sm:pt-24 lg:pt-10 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
         {/* Service Label */}
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">PR & Outreach</span></div>
         {/* Main Heading */}
@@ -45,7 +45,7 @@ export default function Service() {
             </div>
           </div>
           {/* Features List */}
-          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto 2xl:ml-[-28cm] min-w-0 break-words">
+          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto min-w-0 break-words">
             <li>Transparent billing</li>
             <li>30+ services under one roof</li>
             <li>Access to top-tier strategists, designers, and growth experts</li>
