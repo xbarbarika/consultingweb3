@@ -6,7 +6,7 @@ export default function Service() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'radial-gradient(ellipse 80% 60% at 40% 40%, #bfc6e6 0%, #dbe2f7 60%, #e7eaf7 100%)' }}>
       <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-center py-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
+      <main className="w-full flex-1 flex flex-col items-start justify-center pt-20 sm:pt-24 lg:pt-10 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
         {/* Service Label */}
         <div className="text-[#8d8fa7] text-base mb-2 font-medium">Service <span className="text-[#232336] font-normal">Website/App Development</span></div>
         {/* Main Heading */}

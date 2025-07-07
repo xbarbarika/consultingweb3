@@ -1,13 +1,17 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import MenuModal from '@/components/MenuModal';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Service() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-6.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-      <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-center py-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
+      <Navbar onMenuClick={() => setMenuOpen(true)} />
+              <main className="w-full flex-1 flex flex-col items-start justify-center pt-20 sm:pt-24 lg:pt-10 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
         {/* Service Label */}
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Video Production</span></div>
         {/* Main Heading */}
@@ -52,6 +56,7 @@ export default function Service() {
           </ul>
         </div>
       </main>
+      <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 } 

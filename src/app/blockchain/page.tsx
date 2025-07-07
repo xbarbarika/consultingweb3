@@ -1,12 +1,16 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import MenuModal from '@/components/MenuModal';
 import Link from 'next/link';
 
 export default function Service() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-13.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-      <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-center py-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
+      <Navbar onMenuClick={() => setMenuOpen(true)} />
+      <main className="w-full flex-1 flex flex-col items-start justify-center pt-20 sm:pt-24 lg:pt-10 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
         {/* Service Label */}
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Blockchain Development</span></div>
         {/* Main Heading */}
@@ -23,6 +27,21 @@ export default function Service() {
         <p className="mt-4 text-gray-400 max-w-2xl text-base sm:text-lg">
           From smart contracts to full dApps, we help you build on-chain products with performance and security at the core.
         </p>
+        
+        {/* Book Demo Button */}
+        <div className="mt-8">
+          <Link href="/book-demo">
+            <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
+              style={{
+                borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
+                borderStyle: 'solid',
+                borderWidth: '2px',
+              }}>
+              Book Demo
+            </button>
+          </Link>
+        </div>
+        
         {/* Card and Features Row */}
         <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full">
           {/* Card */}
@@ -32,22 +51,9 @@ export default function Service() {
               <div className="text-xl sm:text-2xl font-medium mb-2">Blockchain Development</div>
               <div className="text-xs text-gray-500 tracking-widest">BARBARIKA</div>
             </div>
-            {/* CTA Button */}
-            <div className="mt-8">
-              <Link href="/book-demo">
-                <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
-                  style={{
-                    borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
-                    borderStyle: 'solid',
-                    borderWidth: '2px',
-                  }}>
-                  Book Demo
-                </button>
-              </Link>
-            </div>
           </div>
           {/* Features List */}
-          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto 2xl:ml-[-28cm] min-w-0 break-words">
+          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto min-w-0 break-words">
             <li>Smart contract development (Solidity, Rust)</li>
             <li>dApp & token infrastructure</li>
             <li>NFT platforms, wallets & DAO integrations</li>
@@ -55,6 +61,7 @@ export default function Service() {
           </ul>
         </div>
       </main>
+      <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 } 
