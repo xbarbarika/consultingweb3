@@ -73,7 +73,7 @@ const Footer = () => {
                 marginBottom: '15px'
               }}
             >
-              We'd love to hear from you.
+              We&apos;d love to hear from you.
             </p>
             <p 
               className="cursor-pointer"
