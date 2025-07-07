@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 export default function Service() {
   return (
-    <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-5.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-8.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-center pt-20 sm:pt-24 lg:pt-10 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8">
+      <main className="w-full flex-1 flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8 overflow-y-auto">
         {/* Service Label */}
         <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">PR & Outreach</span></div>
         {/* Main Heading */}

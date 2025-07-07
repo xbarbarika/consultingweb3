@@ -9,9 +9,9 @@ export default function Service() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#0e0e1a] to-[#150d2e] text-white flex flex-col">
-      <Navbar onMenuClick={() => setMenuOpen(true)} />
-      <main className="w-full flex-1 flex flex-col items-start justify-start pt-20 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8 lg:ml-16">
+    <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <Navbar />
+      <main className="w-full flex-1 flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8 overflow-y-auto">
         {/* Service Label */}
         <div className="text-gray-400 text-sm sm:text-base mb-2">
           Service <span className="text-white font-medium">Marketing Subscription</span>
