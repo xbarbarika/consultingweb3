@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function PaidSocial() {
@@ -55,6 +56,7 @@ export default function PaidSocial() {
           </ul>
         </div>
       </main>
+      <Footer />
     </div>
   );
 } 

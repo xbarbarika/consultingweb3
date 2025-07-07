@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
+import Footer from '@/components/Footer';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 
@@ -147,6 +148,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 } 

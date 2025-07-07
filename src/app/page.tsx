@@ -9,6 +9,7 @@ import TeamSection from '@/components/TeamSection';
 import LocationsSection from '@/components/LocationsSection';
 import PricingPlans from '@/components/PricingPlans';
 import FaqSection from '@/components/FaqSection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Home() {
       <LocationsSection />
       <PricingPlans />
       <FaqSection />
+      <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </main>
   );

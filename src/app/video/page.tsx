@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -56,6 +57,7 @@ export default function Service() {
           </ul>
         </div>
       </main>
+      <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );

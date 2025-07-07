@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
+import Footer from '@/components/Footer';
 
 export default function BookDemoPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -178,6 +179,7 @@ export default function BookDemoPage() {
         </div>
       </div>
     </section>
+    <Footer />
     <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </main>
   );

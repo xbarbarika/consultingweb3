@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function Service() {
@@ -51,6 +52,7 @@ export default function Service() {
           </ul>
         </div>
       </main>
+      <Footer />
     </div>
   );
 } 

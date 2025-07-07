@@ -1,50 +1,656 @@
-import React from 'react';
-
-const SocialIcon = ({ children }: { children: React.ReactNode }) => (
-  <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center">
-    {children}
-  </div>
-);
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaDiscord,
+  FaYoutube,
+  FaXTwitter,
+} from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#E5E7EB] py-8 mt-16 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
-        {/* Logo Placeholder */}
-        <div className="w-16 h-16 bg-gray-400"></div>
+    <footer className="bg-black text-white py-10 px-6 md:px-20" style={{ paddingLeft: '130px', minHeight: '646px' }}>
+      <div className="grid md:grid-cols-4 text-sm text-zinc-300" style={{ gap: '50px' }}>
 
-        {/* Copyright */}
-        <p className="text-sm text-gray-800 text-center md:text-left">
-          Copyright © 2025 BRIX Agency All Rights Reserved
-        </p>
+        {/* Left section */}
+        <div className="col-span-1">
+          <h2 
+            style={{
+              fontFamily: 'Epilogue',
+              fontSize: '30.071px',
+              fontStyle: 'italic',
+              fontWeight: '600',
+              lineHeight: '110%',
+              letterSpacing: '1.504px',
+              color: 'white',
+              marginBottom: '8px',
+              marginTop: '90px'
+            }}
+          >
+            BARBARIKA
+          </h2>
+          <p 
+            style={{
+              fontFamily: 'Epilogue',
+              fontSize: '22px',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              lineHeight: '110%',
+              letterSpacing: '1.1px',
+              textTransform: 'uppercase',
+              color: 'white',
+              opacity: '0.5',
+              marginBottom: '80px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            Your global growth partner
+          </p>
 
-        {/* Social Icons */}
-        <div className="flex items-center space-x-3">
-          <SocialIcon>
-            <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
-            </svg>
-          </SocialIcon>
-          <SocialIcon>
-            <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3.06A12.92 12.92 0 013 2.5a4.48 4.48 0 001.38 5.98A4.49 4.49 0 013.2 8.1v.06a4.48 4.48 0 003.59 4.4A4.49 4.49 0 014.8 13a4.48 4.48 0 004.19 3.12 9 9 0 01-5.57 1.92A9.28 9.28 0 011 18a12.91 12.91 0 007 2.94c8.42 0 13.02-6.98 13.02-13.02v-.59A9.43 9.43 0 0023 3z" />
-            </svg>
-          </SocialIcon>
-          <SocialIcon>
-            <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.646c-3.141 0-3.492.012-4.702.068-2.673.123-3.952 1.4-4.075 4.075-.056 1.21-.067 1.561-.067 4.702s.011 3.492.067 4.702c.123 2.673 1.402 3.952 4.075 4.075 1.21.056 1.561.067 4.702.067s3.492-.011 4.702-.067c2.673-.123 3.952-1.402 4.075-4.075.056-1.21.067-1.561.067-4.702s-.011-3.492-.067-4.702c-.123-2.673-1.402-3.952-4.075-4.075-1.21-.056-1.561-.068-4.702-.068zm0 3.247a5.137 5.137 0 100 10.274 5.137 5.137 0 000-10.274zm0 8.627a3.49 3.49 0 110-6.98 3.49 3.49 0 010 6.98zm4.883-7.927a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" />
-            </svg>
-          </SocialIcon>
-          <SocialIcon>
-            <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-          </SocialIcon>
-          <SocialIcon>
-            <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24">
-              <path d="M21.582,6.186c-0.23-0.854-0.906-1.531-1.76-1.76C18.25,4,12,4,12,4S5.75,4,4.178,4.426 c-0.854,0.229-1.531,0.906-1.76,1.76C2,7.758,2,12,2,12s0,4.242,0.418,5.814c0.229,0.854,0.906,1.531,1.76,1.76 C5.75,20,12,20,12,20s6.25,0,7.822-0.426c0.854-0.229,1.531-0.906,1.76-1.76C22,16.242,22,12,22,12S22,7.758,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" />
-            </svg>
-          </SocialIcon>
+          <div>
+            <h3 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '18px',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                lineHeight: 'normal',
+                color: 'white',
+                marginBottom: '5px'
+              }}
+            >
+              Get in Touch
+            </h3>
+            <p 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '17px',
+                fontStyle: 'normal',
+                fontWeight: '500',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '15px'
+              }}
+            >
+              We'd love to hear from you.
+            </p>
+            <p 
+              className="cursor-pointer"
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '500',
+                lineHeight: 'normal',
+                color: 'white',
+                marginBottom: '15px'
+              }}
+            >
+              📧 hello@barbarika.io
+            </p>
+            <p 
+              className="cursor-pointer"
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '500',
+                lineHeight: 'normal',
+                color: 'white',
+                marginBottom: '40px'
+              }}
+            >
+              📞 +91 00000 00000
+            </p>
+          </div>
+
+          {/* Social icons */}
+          <div>
+            <h3 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '18px',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                lineHeight: 'normal',
+                color: 'white',
+                marginBottom: '15px',
+                marginTop: '85px'
+              }}
+            >
+              Follow us
+            </h3>
+            <div className="flex gap-4 text-xl text-zinc-400">
+              <FaInstagram className="cursor-pointer hover:text-white" />
+              <FaLinkedin className="cursor-pointer hover:text-white" />
+              <FaTelegram className="cursor-pointer hover:text-white" />
+              <FaDiscord className="cursor-pointer hover:text-white" />
+              <FaYoutube className="cursor-pointer hover:text-white" />
+              <FaXTwitter className="cursor-pointer hover:text-white" />
+            </div>
+          </div>
+        </div>
+
+        {/* Services */}
+        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+          <h3 
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '16px',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: 'normal',
+              color: 'white',
+              marginBottom: '16px'
+            }}
+          >
+            Services
+          </h3>
+          <ul className="space-y-2">
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Social Media Marketing
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Paid Social Advertising
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              SEO Services
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Influencer Marketing
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              PR & Outreach
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Video Production
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Lead Generation
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Community Management
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Branding
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Website/App Development
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Web/App Design
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6'
+              }}
+            >
+              Blockchain Development
+            </li>
+          </ul>
+        </div>
+
+        {/* Industries */}
+        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+          <h3 
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '16px',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: 'normal',
+              color: 'white',
+              marginBottom: '16px'
+            }}
+          >
+            Industries
+          </h3>
+          <ul className="space-y-2">
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              B2B
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Fintech
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Crypto
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Healthcare
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Software
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              SaaS
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Startup
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Small Business
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Gaming
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              eSport
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Mobile
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6'
+              }}
+            >
+              eCommerce
+            </li>
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+          <h3 
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '16px',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: 'normal',
+              color: 'white',
+              marginBottom: '16px'
+            }}
+          >
+            Company
+          </h3>
+          <ul className="space-y-2">
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              About us
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Our People
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Pricing
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Blog
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6',
+                marginBottom: '16px'
+              }}
+            >
+              Careers
+            </li>
+            <li 
+              style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                lineHeight: 'normal',
+                color: 'white',
+                opacity: '0.6'
+              }}
+            >
+              Contact
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-zinc-800 mt-10 pt-6 text-center">
+        <div className="flex items-center justify-center gap-6">
+          <p 
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '14px',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              lineHeight: 'normal',
+              color: 'white',
+              opacity: '0.4'
+            }}
+          >
+            © 2025 Barbarika. All rights reserved.
+          </p>
+          <span 
+            className="cursor-pointer hover:text-white"
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '14px',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              lineHeight: 'normal',
+              color: 'white',
+              opacity: '0.4'
+            }}
+          >
+            Privacy Policy
+          </span>
+          <span 
+            className="cursor-pointer hover:text-white"
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '14px',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              lineHeight: 'normal',
+              color: 'white',
+              opacity: '0.4'
+            }}
+          >
+            Terms of Service
+          </span>
         </div>
       </div>
     </footer>
