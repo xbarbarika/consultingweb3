@@ -21,31 +21,85 @@ export default function Service() {
           Strategic PR that puts your brand in the spotlight and keeps it there.<br />
           From earned media to thought leadership, we shape narratives that drive business results.
         </p>
-        {/* Card and Features Row */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full" style={{ marginLeft: '66px' }}>
+        
+        {/* Book Demo Button */}
+        <div className="mt-8" style={{ marginLeft: '66px' }}>
+          <Link href="/book-demo">
+            <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
+              style={{
+                borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
+                borderStyle: 'solid',
+                borderWidth: '2px',
+              }}>
+              Book Demo
+            </button>
+          </Link>
+        </div>
+        
+        {/* Card and Features Row Layout */}
+        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
           {/* Card */}
-          <div className="flex flex-col items-start w-full md:w-auto" style={{flex: '1 1 340px', minWidth: 0}}>
-            <div className="bg-[#181825] rounded-2xl p-6 sm:p-8 min-w-[220px] md:min-w-[340px] min-h-[140px] md:min-h-[180px] flex flex-col justify-between shadow-lg border border-white/10 relative w-full max-w-md" style={{boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'}}>
-              <div className="w-8 h-5 sm:w-10 sm:h-6 bg-[#232336] rounded mb-6" />
-              <div className="text-xl sm:text-2xl font-medium mb-2">PR & Outreach</div>
-              <div className="text-xs text-gray-500 tracking-widest">BARBARIKA</div>
-            </div>
-            {/* CTA Button */}
-            <div className="mt-8">
-              <Link href="/book-demo">
-                <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
-                  style={{
-                    borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
-                    borderStyle: 'solid',
-                    borderWidth: '2px',
-                  }}>
-                  Book Demo
-                </button>
-              </Link>
+          <div className="flex flex-col items-start">            
+            {/* Gradient Border Wrapper */}
+            <div style={{
+              width: '461px',
+              height: '240px',
+              borderRadius: '22px',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
+              padding: '1px'
+            }}>
+              {/* Inner Card Content */}
+              <div className="relative" style={{ 
+                width: '100%', 
+                height: '100%', 
+                borderRadius: '22px', 
+                background: '#181825',
+                backdropFilter: 'blur(21.5px)' 
+              }}>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '40px',
+                  left: '45px',
+                  width: '62px',
+                  height: '37px',
+                  borderRadius: '4px',
+                  background: '#232336'
+                }} />
+                <div style={{ 
+                  position: 'absolute',
+                  top: '130px',
+                  left: '45px',
+                  color: '#FFFFFF', 
+                  fontFamily: 'Inter', 
+                  fontSize: '24px', 
+                  fontWeight: '400', 
+                  lineHeight: '28px'
+                }}>PR & Outreach</div>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '176px',
+                  left: '45px',
+                  color: 'rgba(255, 255, 255, 0.3)', 
+                  fontFamily: 'Epilogue', 
+                  fontSize: '18px', 
+                  fontStyle: 'italic', 
+                  fontWeight: '500', 
+                  lineHeight: '110%', 
+                  letterSpacing: '0.9px'
+                }}>BARBARIKA</div>
+              </div>
             </div>
           </div>
+          
           {/* Features List */}
-          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto min-w-0 break-words">
+          <ul className="space-y-3 list-disc list-inside flex-1" style={{
+            color: 'rgba(255, 255, 255, 0.6)', 
+            fontFamily: 'Inter', 
+            fontSize: '20px', 
+            fontStyle: 'normal', 
+            fontWeight: '400', 
+            lineHeight: '260%' 
+          }}>
             <li>Transparent billing</li>
             <li>30+ services under one roof</li>
             <li>Access to top-tier strategists, designers, and growth experts</li>

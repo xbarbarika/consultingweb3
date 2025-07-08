@@ -39,19 +39,70 @@ export default function Service() {
             </button>
           </Link>
         </div>
-        {/* Card and Features Row */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full" style={{ marginLeft: '66px' }}>
+        {/* Card and Features Row Layout */}
+        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
           {/* Card */}
-          <div className="flex flex-col items-start w-full md:w-auto" style={{flex: '1 1 340px', minWidth: 0}}>
-            <div className="bg-[#181825] rounded-2xl p-6 sm:p-8 min-w-[220px] md:min-w-[340px] min-h-[140px] md:min-h-[180px] flex flex-col justify-between shadow-lg border border-white/10 relative w-full max-w-md" style={{boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'}}>
-              {/* Clapperboard Icon */}
-              <Image src="/bag-happy.svg" alt="Clapperboard" width={40} height={40} className="w-10 h-10 mb-6" />
-              <div className="text-xl sm:text-2xl font-medium mb-2">Video Production</div>
-              <div className="text-xs text-gray-500 tracking-widest">BARBARIKA</div>
+          <div className="flex flex-col items-start">            
+            {/* Gradient Border Wrapper */}
+            <div style={{
+              width: '461px',
+              height: '240px',
+              borderRadius: '22px',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
+              padding: '1px'
+            }}>
+              {/* Inner Card Content */}
+              <div className="relative" style={{ 
+                width: '100%', 
+                height: '100%', 
+                borderRadius: '22px', 
+                background: '#181825',
+                backdropFilter: 'blur(21.5px)' 
+              }}>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '40px',
+                  left: '45px',
+                  width: '62px',
+                  height: '37px',
+                  borderRadius: '4px',
+                  background: '#232336'
+                }} />
+                <div style={{ 
+                  position: 'absolute',
+                  top: '130px',
+                  left: '45px',
+                  color: '#FFFFFF', 
+                  fontFamily: 'Inter', 
+                  fontSize: '24px', 
+                  fontWeight: '400', 
+                  lineHeight: '28px'
+                }}>Video Production</div>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '176px',
+                  left: '45px',
+                  color: 'rgba(255, 255, 255, 0.3)', 
+                  fontFamily: 'Epilogue', 
+                  fontSize: '18px', 
+                  fontStyle: 'italic', 
+                  fontWeight: '500', 
+                  lineHeight: '110%', 
+                  letterSpacing: '0.9px'
+                }}>BARBARIKA</div>
+              </div>
             </div>
           </div>
+          
           {/* Features List */}
-          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto min-w-0 break-words">
+          <ul className="space-y-3 list-disc list-inside flex-1" style={{
+            color: 'rgba(255, 255, 255, 0.6)', 
+            fontFamily: 'Inter', 
+            fontSize: '20px', 
+            fontStyle: 'normal', 
+            fontWeight: '400', 
+            lineHeight: '260%' 
+          }}>
             <li>Brand videos, ads, explainers, and UGC</li>
             <li>End-to-end production: scripting, shooting, editing</li>
             <li>Optimized for every platform and funnel stage</li>

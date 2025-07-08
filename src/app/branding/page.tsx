@@ -11,7 +11,7 @@ export default function Service() {
   return (
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-11.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar onMenuClick={() => setMenuOpen(true)} />
+      <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
                   <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Branding</span></div>
@@ -40,25 +40,77 @@ export default function Service() {
           </Link>
         </div>
         
-        {/* Card and Features Row */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full" style={{ marginLeft: '66px' }}>
+        {/* Card and Features Row Layout */}
+        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
           {/* Card */}
-          <div className="flex flex-col items-start w-full md:w-auto" style={{flex: '1 1 340px', minWidth: 0}}>
-            <div className="bg-[#181825] rounded-2xl p-6 sm:p-8 min-w-[220px] md:min-w-[340px] min-h-[140px] md:min-h-[180px] flex flex-col justify-between shadow-lg border border-white/10 relative w-full max-w-md" style={{boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'}}>
-              <div className="w-8 h-5 sm:w-10 sm:h-6 bg-[#232336] rounded mb-6" />
-              <div className="text-xl sm:text-2xl font-medium mb-2">Branding</div>
-              <div className="text-xs text-gray-500 tracking-widest">BARBARIKA</div>
+          <div className="flex flex-col items-start">            
+            {/* Gradient Border Wrapper */}
+            <div style={{
+              width: '461px',
+              height: '240px',
+              borderRadius: '22px',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
+              padding: '1px'
+            }}>
+              {/* Inner Card Content */}
+              <div className="relative" style={{ 
+                width: '100%', 
+                height: '100%', 
+                borderRadius: '22px', 
+                background: '#181825',
+                backdropFilter: 'blur(21.5px)' 
+              }}>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '40px',
+                  left: '45px',
+                  width: '62px',
+                  height: '37px',
+                  borderRadius: '4px',
+                  background: '#232336'
+                }} />
+                <div style={{ 
+                  position: 'absolute',
+                  top: '130px',
+                  left: '45px',
+                  color: '#FFFFFF', 
+                  fontFamily: 'Inter', 
+                  fontSize: '24px', 
+                  fontWeight: '400', 
+                  lineHeight: '28px'
+                }}>Branding</div>
+                <div style={{ 
+                  position: 'absolute',
+                  top: '176px',
+                  left: '45px',
+                  color: 'rgba(255, 255, 255, 0.3)', 
+                  fontFamily: 'Epilogue', 
+                  fontSize: '18px', 
+                  fontStyle: 'italic', 
+                  fontWeight: '500', 
+                  lineHeight: '110%', 
+                  letterSpacing: '0.9px'
+                }}>BARBARIKA</div>
+              </div>
             </div>
           </div>
+          
           {/* Features List */}
-          <ul className="space-y-6 text-base text-white/90 list-disc list-inside mt-2 flex-1 w-full md:w-auto min-w-0 break-words">
+          <ul className="space-y-3 list-disc list-inside flex-1" style={{
+            color: 'rgba(255, 255, 255, 0.6)', 
+            fontFamily: 'Inter', 
+            fontSize: '20px', 
+            fontStyle: 'normal', 
+            fontWeight: '400', 
+            lineHeight: '260%' 
+          }}>
             <li>Brand strategy, positioning & architecture</li>
             <li>Logo, visual identity & brand guidelines</li>
             <li>Messaging frameworks for all channels</li>
             <li>Brand audits & repositioning</li>
           </ul>
         </div>
-        </main>
+      </main>
       </div>
       <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
