@@ -8,23 +8,21 @@ export default function Service() {
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-12.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Navbar />
-        <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8 min-h-[calc(100vh-64px)]">
+        <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-gray-400 text-base mb-2">Service <span className="text-white font-medium">Lead Generation</span></div>
+                  <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Lead Generation</span></div>
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
           Consistent, Qualified Leads,<br />
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 text-transparent bg-clip-text">
-            Without the Guesswork
-          </span>
+          Without the Guesswork
         </h1>
         {/* Subheading */}
-        <p className="mt-4 text-gray-400 max-w-2xl text-base sm:text-lg">
+        <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
           We build and manage performance-driven lead generation systems that deliver results—not just clicks.<br />
           From strategy to execution, we handle every step so your sales team focuses on closing, not chasing.
         </p>
         {/* Card and Features Row */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full">
+        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start w-full" style={{ marginLeft: '66px' }}>
           {/* Card */}
           <div className="flex flex-col items-start w-full md:w-auto" style={{flex: '1 1 340px', minWidth: 0}}>
             <div className="bg-[#181825] rounded-2xl p-6 sm:p-8 min-w-[220px] md:min-w-[340px] min-h-[140px] md:min-h-[180px] flex flex-col justify-between shadow-lg border border-white/10 relative w-full max-w-md" style={{boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'}}>
