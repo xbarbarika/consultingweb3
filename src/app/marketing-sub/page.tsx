@@ -10,9 +10,10 @@ export default function Service() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white flex flex-col" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-      <Navbar />
-      <main className="w-full flex-1 flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8 overflow-y-auto">
+    <div className="text-white">
+      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <Navbar />
+        <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:ml-[6cm] lg:px-8 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
         <div className="text-sm mb-2 tracking-widest uppercase" style={{ color: '#b3b3b3', fontWeight: 500, letterSpacing: '0.08em' }}>
           Service <span className="text-white font-semibold">Marketing Subscription</span>
@@ -64,7 +65,8 @@ export default function Service() {
             <li>Scalable to match your goals</li>
           </ul>
         </div>
-      </main>
+        </main>
+      </div>
       <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       {/* Google Fonts Import for Inter/Poppins */}
