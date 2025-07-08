@@ -3,7 +3,7 @@ import Image from "next/image";
 const founder = { 
   name: "Kritesh", 
   role: "Founder & CEO", 
-  avatar: "/ghibli-founder.jpg",
+  avatar: "/kriteshprofile.png",
   description: "Visionary leader driving innovation across Web3 and blockchain technology."
 };
 
@@ -11,25 +11,25 @@ const teamMembers = [
   { 
     name: "Aditya", 
     role: "Full Stack Blockchain Developer", 
-    avatar: "/ghibli-blockchain.jpg",
+    avatar: "/aadityaprofile.png",
     description: "Blockchain specialist building secure DeFi protocols and Web3 solutions."
   },
   { 
     name: "Prince", 
     role: "Frontend Developer", 
-    avatar: "/ghibli-developer2.jpg",
+    avatar: "/princeprofile.png",
     description: "Modern JavaScript expert creating fast, scalable web applications."
   },
   { 
     name: "Abhishek", 
     role: "Front End Developer", 
-    avatar: "/ghibli-developer1.jpg",
+    avatar: "/abhishekprofile.png",
     description: "React specialist crafting responsive interfaces with pixel-perfect precision."
   },
   { 
     name: "Shivam", 
     role: "UI/UX Designer", 
-    avatar: "/ghibli-designer.jpg",
+    avatar: "/shivamprofile.png",
     description: "Design expert transforming complex ideas into intuitive user experiences."
   },
 ];
@@ -82,6 +82,11 @@ export default function TeamSection() {
             width: 120px !important;
             height: 120px !important;
           }
+          .founder-avatar .profile-avatar-image {
+            width: 120px !important;
+            height: 120px !important;
+            object-position: center top;
+          }
           .founder-name {
             font-size: 20px !important;
             margin-top: 25px !important;
@@ -122,6 +127,15 @@ export default function TeamSection() {
           transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           object-fit: cover;
           border-radius: 50%;
+        }
+        
+        /* Specific styling for Kritesh's founder image */
+        .founder-avatar .profile-avatar-image {
+          object-fit: cover;
+          object-position: center top;
+          border-radius: 50%;
+          width: 140px !important;
+          height: 140px !important;
         }
         
         .profile-container:hover .profile-avatar-image {
