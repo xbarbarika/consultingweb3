@@ -28,8 +28,7 @@ const servicesDropdown = [
   { label: 'Lead Generation', href: '/lead-gen' },
   { label: 'Branding', href: '/branding' },
   { label: 'Community Management', href: '/community' },
-  { label: 'Website development', href: '/website-dev' },
-  { label: 'Web Design', href: '/web-design' },
+    { label: 'Web3 & Mobile', href: '/website-dev' },
   { label: 'Blockchain ', href: '/blockchain' },
 ];
 

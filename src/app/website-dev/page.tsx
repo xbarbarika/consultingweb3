@@ -10,16 +10,16 @@ export default function Service() {
         <Navbar />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Website/App Development</span></div>
+        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Web3 & Mobile Development</span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
-          Fast, Scalable Websites<br />
-          Built for Performance
+          Next-Gen Web3 & Mobile<br />
+          Solutions for the Future
         </h1>
         {/* Subheading */}
         <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
-          Custom development that combines speed, security, and scalability.<br />
-          From MVP to enterprise, we build digital platforms that grow with your business.
+          Cutting-edge blockchain technology meets mobile innovation.<br />
+          From DeFi platforms to mobile dApps, we build the digital infrastructure of tomorrow.
         </p>
         {/* CTA Button */}
         <div className="mt-8" style={{ marginLeft: '66px' }}>
@@ -67,7 +67,7 @@ export default function Service() {
                   fontSize: '24px', 
                   fontWeight: '400', 
                   lineHeight: '28px'
-                }}>Website/App Development</div>
+                }}>Web3 & Mobile Development</div>
                 <div style={{ 
                   position: 'absolute',
                   top: '176px',
@@ -93,10 +93,12 @@ export default function Service() {
             fontWeight: '400', 
             lineHeight: '260%' 
           }}>
-            <li>Full-stack web and mobile app development</li>
-            <li>SEO-ready, mobile-optimized builds</li>
-            <li>Ongoing maintenance and support</li>
-            <li>CMS integrations (Webflow, WordPress, Headless)</li>
+            <li>Blockchain & DeFi platform development</li>
+            <li>Mobile dApps for iOS & Android</li>
+            <li>Smart contract development & auditing</li>
+            <li>Cross-platform mobile app design & development</li>
+            <li>Web3 wallet integrations & NFT marketplaces</li>
+            <li>UI/UX design for blockchain applications</li>
           </ul>
         </div>
         </main>
