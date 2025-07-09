@@ -30,7 +30,7 @@ export default function Service() {
           </Link>
         </div>
         {/* Card and Features Row Layout */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
+        <div className="flex flex-col lg:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
           {/* Card */}
           <div className="flex flex-col items-start">            
             {/* Gradient Border Wrapper */}
@@ -84,22 +84,48 @@ export default function Service() {
             </div>
           </div>
           
-          {/* Features List */}
-          <ul className="space-y-3 list-disc list-inside flex-1" style={{
-            color: 'rgba(255, 255, 255, 0.6)', 
-            fontFamily: 'Inter', 
-            fontSize: '20px', 
-            fontStyle: 'normal', 
-            fontWeight: '400', 
-            lineHeight: '260%' 
-          }}>
-            <li>Blockchain & DeFi platform development</li>
-            <li>Mobile dApps for iOS & Android</li>
-            <li>Smart contract development & auditing</li>
-            <li>Cross-platform mobile app design & development</li>
-            <li>Web3 wallet integrations & NFT marketplaces</li>
-            <li>UI/UX design for blockchain applications</li>
-          </ul>
+          {/* Two Column Features Layout */}
+          <div className="flex flex-col lg:flex-row gap-8 flex-1">
+            {/* Left Column - Web3 & Mobile Features */}
+            <div className="flex-1">
+              <h3 className="text-white/80 text-lg font-semibold mb-4" style={{ fontFamily: 'Inter' }}>Web3 & Mobile Development</h3>
+              <ul className="space-y-3 list-disc list-inside" style={{
+                color: 'rgba(255, 255, 255, 0.6)', 
+                fontFamily: 'Inter', 
+                fontSize: '18px', 
+                fontStyle: 'normal', 
+                fontWeight: '400', 
+                lineHeight: '200%' 
+              }}>
+                <li>Blockchain & DeFi platform development</li>
+                <li>Mobile dApps for iOS & Android</li>
+                <li>Smart contract development & auditing</li>
+                <li>Cross-platform mobile app development</li>
+                <li>Web3 wallet integrations & NFT marketplaces</li>
+                <li>UI/UX design for blockchain applications</li>
+              </ul>
+            </div>
+            
+            {/* Right Column - Website/App Development & Design Features */}
+            <div className="flex-1">
+              <h3 className="text-white/80 text-lg font-semibold mb-4" style={{ fontFamily: 'Inter' }}>Website & App Development</h3>
+              <ul className="space-y-3 list-disc list-inside" style={{
+                color: 'rgba(255, 255, 255, 0.6)', 
+                fontFamily: 'Inter', 
+                fontSize: '18px', 
+                fontStyle: 'normal', 
+                fontWeight: '400', 
+                lineHeight: '200%' 
+              }}>
+                <li>Fast, scalable websites built for performance</li>
+                <li>SEO-ready, mobile-optimized builds</li>
+                <li>Ongoing maintenance and support</li>
+                <li>Wireframes, prototypes, and design systems</li>
+                <li>Conversion-optimized layouts</li>
+                <li>Cross-device, cross-platform design consistency</li>
+              </ul>
+            </div>
+          </div>
         </div>
         </main>
       </div>

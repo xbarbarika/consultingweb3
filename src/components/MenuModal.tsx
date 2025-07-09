@@ -27,7 +27,7 @@ const menuData = [
       { label: 'Lead Generation', href: '/lead-gen' },
       { label: 'Branding', href: '/branding' },
       { label: 'Community Management', href: '/community' },
-      { label: 'Website Development', href: '/website-dev' },
+      { label: 'Website Development', href: '/web3-and-mobile' },
       { label: 'Web Design', href: '/web-design' },
       { label: 'Blockchain Development', href: '/blockchain' },
     ],
