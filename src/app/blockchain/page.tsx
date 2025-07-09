@@ -14,7 +14,7 @@ export default function Service() {
         <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-                  <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Blockchain Development</span></div>
+                  <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Blockchain </span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
           Scalable, Secure, and Custom<br />
@@ -77,7 +77,7 @@ export default function Service() {
                   fontSize: '24px', 
                   fontWeight: '400', 
                   lineHeight: '28px'
-                }}>Blockchain Development</div>
+                }}>Blockchain</div>
                 <div style={{ 
                   position: 'absolute',
                   top: '176px',

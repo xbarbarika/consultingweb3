@@ -313,7 +313,7 @@ const Footer = () => {
                 opacity: '0.6'
               }}
             >
-              Blockchain Development
+              Blockchain 
             </li>
           </ul>
         </div>

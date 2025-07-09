@@ -30,7 +30,7 @@ const servicesDropdown = [
   { label: 'Community Management', href: '/community' },
   { label: 'Website development', href: '/website-dev' },
   { label: 'Web Design', href: '/web-design' },
-  { label: 'Blockchain development', href: '/blockchain' },
+  { label: 'Blockchain ', href: '/blockchain' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
