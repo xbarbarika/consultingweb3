@@ -6,7 +6,12 @@ import Link from 'next/link';
 export default function Service() {
   return (
     <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-12.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <div className="min-h-screen" style={{ 
+        background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #3498db 100%)',
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat' 
+      }}>
         <Navbar />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}

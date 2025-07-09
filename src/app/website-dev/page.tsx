@@ -46,7 +46,7 @@ export default function Service() {
                 width: '100%', 
                 height: '100%', 
                 borderRadius: '22px', 
-                background: 'white',
+                background: 'linear-gradient(135deg, #e3f0ff 0%, #c8d8fc 100%)',
                 backdropFilter: 'blur(21.5px)' 
               }}>
                 <div style={{ 
@@ -62,7 +62,7 @@ export default function Service() {
                   position: 'absolute',
                   top: '130px',
                   left: '45px',
-                  color: '#FFFFFF', 
+                  color: '#232336', 
                   fontFamily: 'Inter', 
                   fontSize: '24px', 
                   fontWeight: '400', 
@@ -72,7 +72,7 @@ export default function Service() {
                   position: 'absolute',
                   top: '176px',
                   left: '45px',
-                  color: 'rgba(255, 255, 255, 0.3)', 
+                  color: 'rgba(35, 35, 54, 0.6)', 
                   fontFamily: 'Epilogue', 
                   fontSize: '18px', 
                   fontStyle: 'italic', 
