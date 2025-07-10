@@ -1,41 +1,52 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function Service() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-9.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar />
+      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-11.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Web3 & Mobile Development</span></div>
+        <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>Service <span className="text-white/90 font-medium">Web3 & Mobile</span></div>
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
-          Next-Gen Web3 & Mobile<br />
-          Solutions for the Future
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
+          Build the Future<br />
+          with Web3 & Mobile Solutions
         </h1>
         {/* Subheading */}
-        <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
-          Cutting-edge blockchain technology meets mobile innovation.<br />
+        <p className="mt-[25px] text-white/50 max-w-2xl text-base sm:text-lg font-normal leading-[110%] ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
+          Next-gen web3 and mobile solutions for the future.<br />
           From DeFi platforms to mobile dApps, we build the digital infrastructure of tomorrow.
         </p>
-        {/* CTA Button */}
-        <div className="mt-8" style={{ marginLeft: '66px' }}>
+        
+        {/* Book Demo Button */}
+        <div className="mt-8 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           <Link href="/book-demo">
-            <button className="px-6 sm:px-8 py-2.5 rounded-full font-medium border border-[#232336] bg-white text-[#232336] transition hover:bg-[#232336] hover:text-white focus:outline-none shadow-md" style={{minWidth: '140px'}}>
+            <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
+              style={{
+                borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
+                borderStyle: 'solid',
+                borderWidth: '2px',
+              }}>
               Book Demo
             </button>
           </Link>
         </div>
+        
         {/* Card and Features Row Layout */}
-        <div className="flex flex-col lg:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 mt-10 items-start ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           {/* Card */}
-          <div className="flex flex-col items-start">            
+          <div className="flex flex-col items-start w-full sm:w-auto">            
             {/* Gradient Border Wrapper */}
-            <div style={{
-              width: '461px',
+            <div className="w-full sm:w-auto lg:w-[461px]" style={{
+              maxWidth: '461px',
               height: '240px',
               borderRadius: '22px',
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
@@ -46,7 +57,7 @@ export default function Service() {
                 width: '100%', 
                 height: '100%', 
                 borderRadius: '22px', 
-                background: 'linear-gradient(135deg, #e3f0ff 0%, #c8d8fc 100%)',
+                background: '#181825',
                 backdropFilter: 'blur(21.5px)' 
               }}>
                 <div style={{ 
@@ -56,23 +67,23 @@ export default function Service() {
                   width: '62px',
                   height: '37px',
                   borderRadius: '4px',
-                  background: '#d1d5db'
+                  background: '#5D8BFF'
                 }} />
                 <div style={{ 
                   position: 'absolute',
                   top: '130px',
                   left: '45px',
-                  color: '#232336', 
+                  color: '#FFFFFF', 
                   fontFamily: 'Inter', 
                   fontSize: '24px', 
                   fontWeight: '400', 
                   lineHeight: '28px'
-                }}>Web3 & Mobile Development</div>
+                }}>Web3 & Mobile</div>
                 <div style={{ 
                   position: 'absolute',
                   top: '176px',
                   left: '45px',
-                  color: 'rgba(35, 35, 54, 0.6)', 
+                  color: 'rgba(255, 255, 255, 0.3)', 
                   fontFamily: 'Epilogue', 
                   fontSize: '18px', 
                   fontStyle: 'italic', 
@@ -84,52 +95,24 @@ export default function Service() {
             </div>
           </div>
           
-          {/* Two Column Features Layout */}
-          <div className="flex flex-col lg:flex-row gap-8 flex-1">
-            {/* Left Column - Web3 & Mobile Features */}
-            <div className="flex-1">
-              <h3 className="text-white/80 text-lg font-semibold mb-4" style={{ fontFamily: 'Inter' }}>Web3 & Mobile Development</h3>
-              <ul className="space-y-3 list-disc list-inside" style={{
-                color: 'rgba(255, 255, 255, 0.6)', 
-                fontFamily: 'Inter', 
-                fontSize: '18px', 
-                fontStyle: 'normal', 
-                fontWeight: '400', 
-                lineHeight: '200%' 
-              }}>
-                <li>Blockchain & DeFi platform development</li>
-                <li>Mobile dApps for iOS & Android</li>
-                <li>Smart contract development & auditing</li>
-                <li>Cross-platform mobile app development</li>
-                <li>Web3 wallet integrations & NFT marketplaces</li>
-                <li>UI/UX design for blockchain applications</li>
-              </ul>
-            </div>
-            
-            {/* Right Column - Website/App Development & Design Features */}
-            <div className="flex-1">
-              <h3 className="text-white/80 text-lg font-semibold mb-4" style={{ fontFamily: 'Inter' }}>Website & App Development</h3>
-              <ul className="space-y-3 list-disc list-inside" style={{
-                color: 'rgba(255, 255, 255, 0.6)', 
-                fontFamily: 'Inter', 
-                fontSize: '18px', 
-                fontStyle: 'normal', 
-                fontWeight: '400', 
-                lineHeight: '200%' 
-              }}>
-                <li>Fast, scalable websites built for performance</li>
-                <li>SEO-ready, mobile-optimized builds</li>
-                <li>Ongoing maintenance and support</li>
-                <li>Wireframes, prototypes, and design systems</li>
-                <li>Conversion-optimized layouts</li>
-                <li>Cross-device, cross-platform design consistency</li>
-              </ul>
-            </div>
-          </div>
+          {/* Features List */}
+          <ul className="space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{
+            color: 'rgba(255, 255, 255, 0.6)', 
+            fontFamily: 'Inter', 
+            fontStyle: 'normal', 
+            fontWeight: '400', 
+            lineHeight: '260%' 
+          }}>
+            <li>Decentralized application (dApp) development</li>
+            <li>Mobile-first blockchain solutions</li>
+            <li>Smart contract development and auditing</li>
+            <li>Cross-platform mobile app development</li>
+          </ul>
         </div>
         </main>
       </div>
       <Footer />
+      <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 } 

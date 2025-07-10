@@ -11,24 +11,24 @@ export default function Service() {
 
   return (
     <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar />
+      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-3.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+        <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">Marketing Subscription</span></div>
+        <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>Service <span className="text-white/90 font-medium">Marketing Subscription</span></div>
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
-          All Your Marketing.<br />
-          One Simple Subscription.
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
+          All Your Marketing Needs,<br />
+          One Simple Subscription
         </h1>
         {/* Subheading */}
-        <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
-          From brand development to automated performance campaigns, we give you the full marketing stack.<br />
-          Expand your reach, optimise your funnels, and scale with confidence.
+        <p className="mt-[25px] text-white/50 max-w-2xl text-base sm:text-lg font-normal leading-[110%] ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
+          Scale with an on-demand team that knows your business inside and out.<br />
+          From strategy to execution, get expert marketing support without the overhead.
         </p>
         
         {/* Book Demo Button */}
-        <div className="mt-8" style={{ marginLeft: '66px' }}>
+        <div className="mt-8 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           <Link href="/book-demo">
             <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
               style={{
@@ -42,12 +42,12 @@ export default function Service() {
         </div>
         
         {/* Card and Features Row Layout */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 mt-10 items-start ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           {/* Card */}
-          <div className="flex flex-col items-start">            
+          <div className="flex flex-col items-start w-full sm:w-auto">            
             {/* Gradient Border Wrapper */}
-            <div style={{
-              width: '461px',
+            <div className="w-full sm:w-auto lg:w-[461px]" style={{
+              maxWidth: '461px',
               height: '240px',
               borderRadius: '22px',
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
@@ -58,7 +58,7 @@ export default function Service() {
                 width: '100%', 
                 height: '100%', 
                 borderRadius: '22px', 
-                background: 'rgba(219, 219, 219, 0.06)',
+                background: '#181825',
                 backdropFilter: 'blur(21.5px)' 
               }}>
                 <div style={{ 
@@ -68,7 +68,7 @@ export default function Service() {
                   width: '62px',
                   height: '37px',
                   borderRadius: '4px',
-                  background: 'rgba(255, 255, 255, 0.08)'
+                  background: '#FF965D'
                 }} />
                 <div style={{ 
                   position: 'absolute',
@@ -97,28 +97,23 @@ export default function Service() {
           </div>
           
           {/* Features List */}
-          <ul className="space-y-3 list-disc list-inside flex-1" style={{ 
+          <ul className="space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{
             color: 'rgba(255, 255, 255, 0.6)', 
             fontFamily: 'Inter', 
-            fontSize: '20px', 
             fontStyle: 'normal', 
             fontWeight: '400', 
             lineHeight: '260%' 
           }}>
-            <li>Transparent billing</li>
-            <li>30+ services under one roof</li>
-            <li>Access to top-tier strategists, designers, and growth experts</li>
-            <li>Scalable to match your goals</li>
+            <li>Complete marketing team at your fingertips</li>
+            <li>Unlimited revisions and requests</li>
+            <li>Transparent pricing, no hidden fees</li>
+            <li>Pause or cancel anytime—no long-term contracts</li>
           </ul>
         </div>
         </main>
       </div>
       <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-      {/* Google Fonts Import for Inter/Poppins */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
-      `}</style>
     </div>
   );
 } 

@@ -10,39 +10,32 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-6 md:px-20" style={{ paddingLeft: '130px', minHeight: '646px' }}>
-      <div className="grid md:grid-cols-4 text-sm text-zinc-300" style={{ gap: '50px' }}>
+    <footer className="bg-black text-white py-10 px-4 sm:px-6 md:px-8 lg:px-20 xl:pl-[130px]" style={{ minHeight: '646px' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-sm text-zinc-300 gap-8 sm:gap-10 lg:gap-[50px]">
 
         {/* Left section */}
-        <div className="col-span-1">
+        <div className="col-span-1 sm:col-span-2 lg:col-span-1">
           <h2 
+            className="text-white mb-2 mt-6 sm:mt-12 lg:mt-[90px] text-2xl sm:text-3xl lg:text-[30.071px]"
             style={{
               fontFamily: 'Epilogue',
-              fontSize: '30.071px',
               fontStyle: 'italic',
               fontWeight: '600',
               lineHeight: '110%',
               letterSpacing: '1.504px',
-              color: 'white',
-              marginBottom: '8px',
-              marginTop: '90px'
             }}
           >
             BARBARIKA
           </h2>
           <p 
+            className="text-white/50 mb-12 sm:mb-16 lg:mb-20 text-lg sm:text-xl lg:text-[22px]"
             style={{
               fontFamily: 'Epilogue',
-              fontSize: '22px',
               fontStyle: 'normal',
               fontWeight: '400',
               lineHeight: '110%',
               letterSpacing: '1.1px',
               textTransform: 'uppercase',
-              color: 'white',
-              opacity: '0.5',
-              marginBottom: '80px',
-              whiteSpace: 'nowrap'
             }}
           >
             Your global growth partner
@@ -50,56 +43,45 @@ const Footer = () => {
 
           <div>
             <h3 
+              className="text-white mb-1 text-base sm:text-lg"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '18px',
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
-                color: 'white',
-                marginBottom: '5px'
               }}
             >
               Get in Touch
             </h3>
             <p 
+              className="text-white/60 mb-4 text-sm sm:text-base lg:text-[17px]"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '17px',
                 fontStyle: 'normal',
                 fontWeight: '500',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '15px'
               }}
             >
               We&apos;d love to hear from you.
             </p>
             <p 
-              className="cursor-pointer"
+              className="cursor-pointer text-white mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '500',
                 lineHeight: 'normal',
-                color: 'white',
-                marginBottom: '15px'
               }}
             >
               📧 hello@barbarika.io
             </p>
             <p 
-              className="cursor-pointer"
+              className="cursor-pointer text-white mb-8 sm:mb-10 lg:mb-10 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '500',
                 lineHeight: 'normal',
-                color: 'white',
-                marginBottom: '40px'
               }}
             >
               📞 +91 00000 00000
@@ -109,15 +91,12 @@ const Footer = () => {
           {/* Social icons */}
           <div>
             <h3 
+              className="text-white mb-4 mt-8 sm:mt-12 lg:mt-[85px] text-base sm:text-lg"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '18px',
                 fontStyle: 'normal',
                 fontWeight: '600',
                 lineHeight: 'normal',
-                color: 'white',
-                marginBottom: '15px',
-                marginTop: '85px'
               }}
             >
               Follow us
@@ -134,16 +113,14 @@ const Footer = () => {
         </div>
 
         {/* Services */}
-        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+        <div className="mt-6 sm:mt-12 lg:mt-[90px] ml-0 sm:ml-8 lg:ml-[100px]">
           <h3 
+            className="text-white mb-4 text-base"
             style={{
               fontFamily: 'Inter',
-              fontSize: '16px',
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: 'normal',
-              color: 'white',
-              marginBottom: '16px'
             }}
           >
             Services
@@ -151,246 +128,195 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link href="/marketing-sub" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Marketing Subscription
               </Link>
             </li>
             <li>
               <Link href="/social-media" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Social Media
               </Link>
             </li>
             <li>
               <Link href="/paid-social" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Paid Social
               </Link>
             </li>
             <li>
               <Link href="/seo" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 SEO
               </Link>
             </li>
             <li>
               <Link href="/influencer" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Influencer Marketing
               </Link>
             </li>
             <li>
               <Link href="/pr-marketing" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 PR & Outreach
               </Link>
             </li>
             <li>
               <Link href="/video" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Video Production
               </Link>
             </li>
             <li>
               <Link href="/lead-gen" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Lead Generation
               </Link>
             </li>
             <li>
               <Link href="/branding" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Branding
               </Link>
             </li>
             <li>
               <Link href="/community" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Community Management
               </Link>
             </li>
             <li>
               <Link href="/web3-and-mobile" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Web3 & Mobile
               </Link>
             </li>
             <li>
               <Link href="/blockchain" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
-                  marginBottom: '16px',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 Blockchain
               </Link>
             </li>
             <li>
               <Link href="/genai" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
-                  fontSize: '16px',
                   fontStyle: 'normal',
                   fontWeight: '400',
                   lineHeight: 'normal',
-                  color: 'white',
-                  opacity: '0.6',
                   textDecoration: 'none',
                   cursor: 'pointer'
                 }}
-                className="hover:opacity-100 transition-opacity"
               >
                 GenAI
               </Link>
@@ -399,184 +325,135 @@ const Footer = () => {
         </div>
 
         {/* Industries */}
-        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+        <div className="mt-6 sm:mt-12 lg:mt-[90px] ml-0 sm:ml-8 lg:ml-[100px]">
           <h3 
+            className="text-white mb-4 text-base"
             style={{
               fontFamily: 'Inter',
-              fontSize: '16px',
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: 'normal',
-              color: 'white',
-              marginBottom: '16px'
             }}
           >
             Industries
           </h3>
           <ul className="space-y-2">
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               B2B
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Fintech
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Crypto
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Healthcare
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Software
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               SaaS
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Startup
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Small Business
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Gaming
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               eSport
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Mobile
             </li>
-            <li 
+            <li className="text-white/60 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6'
               }}
             >
               eCommerce
@@ -585,100 +462,75 @@ const Footer = () => {
         </div>
 
         {/* Company */}
-        <div style={{ marginTop: '90px', marginLeft: '100px' }}>
+        <div className="mt-6 sm:mt-12 lg:mt-[90px] ml-0 sm:ml-8 lg:ml-[100px]">
           <h3 
+            className="text-white mb-4 text-base"
             style={{
               fontFamily: 'Inter',
-              fontSize: '16px',
               fontStyle: 'normal',
               fontWeight: '500',
               lineHeight: 'normal',
-              color: 'white',
-              marginBottom: '16px'
             }}
           >
             Company
           </h3>
           <ul className="space-y-2">
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               About us
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Our People
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Pricing
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Blog
             </li>
-            <li 
+            <li className="text-white/60 mb-4 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
               }}
             >
               Careers
             </li>
-            <li 
+            <li className="text-white/60 text-sm sm:text-base"
               style={{
                 fontFamily: 'Inter',
-                fontSize: '16px',
                 fontStyle: 'normal',
                 fontWeight: '400',
                 lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6'
               }}
             >
               Contact
@@ -689,44 +541,36 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-zinc-800 mt-10 pt-6 text-center">
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           <p 
+            className="text-white/40 text-xs sm:text-sm"
             style={{
               fontFamily: 'Inter',
-              fontSize: '14px',
               fontStyle: 'normal',
               fontWeight: '400',
               lineHeight: 'normal',
-              color: 'white',
-              opacity: '0.4'
             }}
           >
             © 2025 Barbarika. All rights reserved.
           </p>
           <span 
-            className="cursor-pointer hover:text-white"
+            className="cursor-pointer hover:text-white text-white/40 text-xs sm:text-sm"
             style={{
               fontFamily: 'Inter',
-              fontSize: '14px',
               fontStyle: 'normal',
               fontWeight: '400',
               lineHeight: 'normal',
-              color: 'white',
-              opacity: '0.4'
             }}
           >
             Privacy Policy
           </span>
           <span 
-            className="cursor-pointer hover:text-white"
+            className="cursor-pointer hover:text-white text-white/40 text-xs sm:text-sm"
             style={{
               fontFamily: 'Inter',
-              fontSize: '14px',
               fontStyle: 'normal',
               fontWeight: '400',
               lineHeight: 'normal',
-              color: 'white',
-              opacity: '0.4'
             }}
           >
             Terms of Service

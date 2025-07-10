@@ -131,14 +131,14 @@ export default function Service() {
   return (
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar />
+        <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-center justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
           {/* Header */}
           <div className="w-full max-w-5xl mx-auto text-center mt-10 mb-8">
             <h2 className="text-2xl sm:text-3xl font-semibold text-pink-400 mb-2">Services</h2>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Services</h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              We’re experts in all things marketing. B2B, blockchain, fintech, software, and high-growth startup brands are our sweet spot. Discover how we can scale your business to new heights through our strategic services below:
+              We&apos;re experts in all things marketing. B2B, blockchain, fintech, software, and high-growth startup brands are our sweet spot. Discover how we can scale your business to new heights through our strategic services below:
             </p>
           </div>
 

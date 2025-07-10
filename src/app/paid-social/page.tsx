@@ -1,30 +1,34 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function PaidSocial() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-5.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar />
+        <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>
+        <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>
           Service <span className="text-white/90 font-medium">Paid Social Advertising</span>
         </div>
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           Supercharge Your Growth with<br />
           High-Converting Social Ad Campaigns
         </h1>
         {/* Subheading */}
-        <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
+        <p className="mt-[25px] text-white/50 max-w-2xl text-base sm:text-lg font-normal leading-[110%] ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           We design, build and optimise ad campaigns that generate real sales.<br />
           From creative production to advanced audience targeting, you get performance at scale.
         </p>
         {/* CTA Button */}
-        <div className="mt-8" style={{ marginLeft: '66px' }}>
+        <div className="mt-8 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           <Link href="/book-demo">
             <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
               style={{
@@ -37,12 +41,12 @@ export default function PaidSocial() {
           </Link>
         </div>
         {/* Card and Features Row Layout */}
-        <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 mt-10 items-start ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           {/* Card */}
-          <div className="flex flex-col items-start">            
+          <div className="flex flex-col items-start w-full sm:w-auto">            
             {/* Gradient Border Wrapper */}
-            <div style={{
-              width: '461px',
+            <div className="w-full sm:w-auto lg:w-[461px]" style={{
+              maxWidth: '461px',
               height: '240px',
               borderRadius: '22px',
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3) 100%)',
@@ -92,10 +96,9 @@ export default function PaidSocial() {
           </div>
           
           {/* Features List */}
-          <ul className="space-y-3 list-disc list-inside flex-1" style={{
+          <ul className="space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{
             color: 'rgba(255, 255, 255, 0.6)', 
             fontFamily: 'Inter', 
-            fontSize: '20px', 
             fontStyle: 'normal', 
             fontWeight: '400', 
             lineHeight: '260%' 
@@ -109,6 +112,7 @@ export default function PaidSocial() {
         </main>
       </div>
       <Footer />
+      <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 } 
