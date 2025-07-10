@@ -127,21 +127,9 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                 )}
               </div>
             ) : item.label === 'Industries' ? (
-              pathname === '/' ? (
-                <span
-                  onClick={e => {
-                    e.preventDefault();
-                    document.getElementById('industries')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="capitalize"
-                >
-                  {item.label}
-                </span>
-              ) : (
-                <Link href="/#industries">
-                  <span className="capitalize">{item.label}</span>
-                </Link>
-              )
+              <Link href="/industries">
+                <span className="capitalize">{item.label}</span>
+              </Link>
             ) : item.label === 'Our people' ? (
               pathname === '/' ? (
                 <span
