@@ -1,177 +1,247 @@
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface MenuModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const menuData = [
-  {
-    title: 'Home',
-    color: 'text-pink-500',
-    items: [],
-    href: '/',
-  },
-  {
-    title: 'Services',
-    color: 'text-pink-500', 
-    items: [
-      { label: 'Marketing Subscription', href: '/marketing-sub' },
-      { label: 'Social Media', href: '/social-media' },
-      { label: 'Paid Social', href: '/paid-social' },
-      { label: 'SEO', href: '/seo' },
-      { label: 'Influencer Marketing', href: '/influencer' },
-      { label: 'PR & Outreach', href: '/pr-marketing' },
-      { label: 'Video Production', href: '/video' },
-      { label: 'Lead Generation', href: '/lead-gen' },
-      { label: 'Branding', href: '/branding' },
-      { label: 'Community Management', href: '/community' },
-      { label: 'Website Development', href: '/web3-and-mobile' },
-      { label: 'Web Design', href: '/web-design' },
-      { label: 'Blockchain Development', href: '/blockchain' },
-    ],
-  },
-  {
-    title: 'Industries',
-    color: 'text-pink-500',
-    items: [
-      'Crypto & Blockchain',
-      'DeFi',
-      'NFT',
-      'Web3',
-      'Gaming',
-      'SaaS',
-      'Tech',
-    ],
-  },
-  {
-    title: 'Success stories',
-    color: 'text-pink-500',
-    items: [],
-  },
-  {
-    title: 'Our people',
-    color: 'text-pink-500',
-    items: [],
-  },
-  {
-    title: 'Company',
-    color: 'text-pink-500',
-    items: [
-      'About us',
-      'Careers',
-      'Blog',
-      'Events',
-      'Brand Assets',
-    ],
-  },
-  {
-    title: 'Pricing',
-    color: 'text-pink-500',
-    items: [],
-  },
-  {
-    title: 'Events',
-    color: 'text-pink-500',
-    items: [],
-  },
+const servicesData = [
+  { label: 'Marketing Subscription', href: '/marketing-sub' },
+  { label: 'Social Media', href: '/social-media' },
+  { label: 'Paid Social', href: '/paid-social' },
+  { label: 'SEO', href: '/seo' },
+  { label: 'Influencer Marketing', href: '/influencer' },
+  { label: 'PR & Outreach', href: '/pr-marketing' },
+  { label: 'Video Production', href: '/video' },
+  { label: 'Lead Generation', href: '/lead-gen' },
+  { label: 'Branding', href: '/branding' },
+  { label: 'Community Management', href: '/community' },
+  { label: 'Web3 & Mobile', href: '/web3-and-mobile' },
+  { label: 'Blockchain', href: '/blockchain' },
+  { label: 'GenAI', href: '/genai' },
 ];
 
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  if (!isOpen) return null;
+  const pathname = usePathname();
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsAnimating(true);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+      setTimeout(() => setIsAnimating(false), 300);
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setServicesOpen(false);
+    onClose();
+  };
+
+  if (!isOpen && !isAnimating) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/90 backdrop-blur-sm px-3 py-3">
-      {/* Close button */}
-      <button
-        onClick={onClose}
-        className="mb-3 px-4 py-2 bg-white/10 rounded-full shadow text-white font-medium text-sm hover:bg-white/20 focus:outline-none flex items-center gap-1 border border-white/20"
-        style={{ zIndex: 101 }}
-      >
-        <span className="text-base">&times;</span>
-        <span>Close</span>
-      </button>
-      
-      <div className="relative w-full max-w-xs mx-auto bg-black/85 backdrop-blur-xl rounded-xl shadow-lg p-4 border border-white/10">
-        {/* Main Navigation */}
-        <div className="w-full">
-          <h3 className="mb-3 text-lg font-bold text-white text-center">Menu</h3>
-          <ul className="space-y-2">
-            {menuData.map((item, index) => (
-              <li key={item.title}>
-                {item.href ? (
-                  <Link href={item.href}>
-                    <button
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm font-medium ${
-                        selectedIndex === index 
-                          ? 'bg-pink-500/20 text-pink-400' 
-                          : 'text-gray-300 hover:text-pink-400 hover:bg-white/5'
-                      }`}
-                      onClick={() => {
-                        setSelectedIndex(index);
-                        onClose();
-                      }}
-                    >
-                      {item.title}
-                    </button>
-                  </Link>
-                ) : (
-                  <button
-                    className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm font-medium ${
-                      selectedIndex === index 
-                        ? 'bg-pink-500/20 text-pink-400' 
-                        : 'text-gray-300 hover:text-pink-400 hover:bg-white/5'
-                    }`}
-                    onClick={() => setSelectedIndex(index)}
-                  >
-                    {item.title}
-                    {item.items.length > 0 && (
-                      <span className="float-right text-xs">▶</span>
-                    )}
-                  </button>
-                )}
-                
-                {/* Sub-items */}
-                {selectedIndex === index && item.items.length > 0 && (
-                  <ul className="mt-1 ml-3 space-y-1">
-                    {item.items.map((subItem) => (
-                      <li key={typeof subItem === 'string' ? subItem : subItem.label}>
-                        {typeof subItem === 'string' ? (
-                          <span className="text-gray-400 hover:text-pink-300 cursor-pointer text-xs py-0.5 transition-colors block">
-                            {subItem}
-                          </span>
-                        ) : (
-                          <Link href={subItem.href}>
-                            <span 
-                              className="text-gray-400 hover:text-pink-300 cursor-pointer text-xs py-0.5 transition-colors block"
-                              onClick={onClose}
-                            >
-                              {subItem.label}
-                            </span>
-                          </Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
+    <div 
+      className={`fixed inset-0 z-[100] flex flex-col transition-all duration-300 h-screen ${
+        isOpen 
+          ? 'opacity-100 backdrop-blur-xl' 
+          : 'opacity-0 backdrop-blur-none pointer-events-none'
+      }`}
+      style={{
+        background: 'linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,40,0.98) 50%, rgba(0,0,0,0.95) 100%)',
+        height: '100dvh' // Use dynamic viewport height for better mobile support with fallback from h-screen class
+      }}
+    >
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 right-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Header */}
+      <div className="relative flex items-center justify-between p-4 sm:p-6 border-b border-white/10 flex-shrink-0">
+        <Link href="/" onClick={handleClose}>
+          <span 
+            className="text-xl sm:text-2xl font-bold tracking-wider text-white hover:text-pink-400 transition-colors" 
+            style={{ fontFamily: 'Epilogue, sans-serif' }}
+          >
+            BARBARIKA
+          </span>
+        </Link>
+        <button
+          onClick={handleClose}
+          className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-all duration-200 hover:scale-105"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      {/* Scrollable Menu Content */}
+      <div className="relative flex-1 overflow-y-auto overscroll-contain">
+        <div className="max-w-lg mx-auto px-4 sm:px-6 py-4 sm:py-6 pb-6 sm:pb-8">
           
-          {/* CTA Button */}
-          <div className="mt-6 pt-4 border-t border-white/10">
-            <Link href="/book-demo">
-              <button 
-                className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:opacity-90 transition-opacity text-sm shadow-lg"
-                onClick={onClose}
+          {/* Navigation Items */}
+          <nav className="space-y-1">
+            {/* Home */}
+            <Link href="/" onClick={handleClose}>
+              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
+                pathname === '/' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+              }`}>
+                <span className={`text-base sm:text-lg font-medium ${
+                  pathname === '/' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
+                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Home
+                </span>
+              </div>
+            </Link>
+
+            {/* Services with Dropdown */}
+            <div>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
               >
-                Book a Demo
+                <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Services
+                </span>
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 16 16" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
+                >
+                  <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              {servicesOpen && (
+                <div className="mt-2 ml-2 sm:ml-4 space-y-1 animate-fade-in">
+                  <Link href="/service" onClick={handleClose}>
+                    <div className="p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors">
+                      <span className="text-sm font-semibold text-pink-400">View All Services</span>
+                    </div>
+                  </Link>
+                  <div className="grid grid-cols-1 gap-1">
+                    {servicesData.map((service) => (
+                      <Link key={service.label} href={service.href} onClick={handleClose}>
+                        <div className="p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors group">
+                          <span className="text-sm text-white/70 group-hover:text-white transition-colors">
+                            {service.label}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Industries */}
+            <Link href="/industries" onClick={handleClose}>
+              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
+                pathname === '/industries' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+              }`}>
+                <span className={`text-base sm:text-lg font-medium ${
+                  pathname === '/industries' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
+                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Industries
+                </span>
+              </div>
+            </Link>
+
+            {/* Our People - Scroll to section if on home, otherwise navigate */}
+            <button
+              onClick={() => {
+                if (pathname === '/') {
+                  handleClose();
+                  setTimeout(() => {
+                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                } else {
+                  window.location.href = '/#team';
+                }
+              }}
+              className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
+            >
+              <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Our People
+              </span>
+            </button>
+
+            {/* Pricing - Scroll to section if on home, otherwise navigate */}
+            <button
+              onClick={() => {
+                if (pathname === '/') {
+                  handleClose();
+                  setTimeout(() => {
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                } else {
+                  window.location.href = '/#pricing';
+                }
+              }}
+              className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
+            >
+              <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Pricing
+              </span>
+            </button>
+
+            {/* Contact */}
+            <Link href="/contact" onClick={handleClose}>
+              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
+                pathname === '/contact' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+              }`}>
+                <span className={`text-base sm:text-lg font-medium ${
+                  pathname === '/contact' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
+                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Contact
+                </span>
+              </div>
+            </Link>
+          </nav>
+
+          {/* CTA Section - Always visible at bottom */}
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10">
+            <div className="text-center mb-4 sm:mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                Ready to Get Started?
+              </h3>
+              <p className="text-white/60 text-sm">
+                Book a free consultation call with our experts
+              </p>
+            </div>
+            
+            <Link href="/book-demo" onClick={handleClose}>
+              <button className="w-full px-6 py-3 sm:py-4 rounded-full font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
+                style={{
+                  background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)',
+                  boxShadow: '0 8px 32px rgba(255, 91, 190, 0.3)'
+                }}>
+                <span className="relative z-10">Book Intro-Call</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </Link>
           </div>
         </div>
+        
+        {/* Extra bottom padding to ensure CTA is always accessible */}
+        <div className="h-4 sm:h-6 flex-shrink-0"></div>
       </div>
     </div>
   );

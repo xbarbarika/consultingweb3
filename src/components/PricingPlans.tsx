@@ -5,23 +5,23 @@ const plans = [
   {
     name: 'Nucleus Plan',
     price: '$3,200',
-    //
     description: 'Your lean growth starter kit.',
     highlight: false,
+    popular: false,
   },
   {
     name: 'Nerve Plan',
     price: '$5,600',
-    //hours: '80 hr',
     description: 'Your full-stack growth engine.',
     highlight: true,
+    popular: true,
   },
   {
     name: 'Nova Plan',
     price: '$9,600',
-    //hours: '160 hr',
     description: 'Your in-house marketing department—on autopilot.',
     highlight: false,
+    popular: false,
   },
 ];
 
@@ -38,228 +38,254 @@ const features = [
 
 const PricingPlans = () => {
   return (
-    <div id="pricing" className="bg-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 text-center">
-      <h2 
-        className="text-transparent bg-clip-text mb-8 sm:mb-10 lg:mb-12"
-        style={{
-          textAlign: 'center',
-          fontFamily: 'DM Sans',
-          fontSize: 'clamp(28px, 6vw, 40px)',
-          fontStyle: 'normal',
-          fontWeight: 500,
-          lineHeight: '100%',
-          background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}
-      >
-        Choose a Plan That Moves at Your Speed
-      </h2>
-      <div className="w-full flex flex-col items-center mb-16 sm:mb-20 lg:mb-32">
-        <div
-          style={{
-            color: '#FFF',
-            textAlign: 'center',
-            fontFamily: 'DM Sans',
-            fontSize: 'clamp(16px, 4vw, 24px)',
-            fontStyle: 'normal',
-            fontWeight: 500,
-            lineHeight: '1.3',
-            opacity: 0.9,
-            whiteSpace: 'normal',
-            marginBottom: '10px',
-            padding: '0 1rem'
-          }}
-        >
-          Flexible marketing subscriptions. Upgrade, downgrade, or switch anytime.
-        </div>
-        <div
-          style={{
-            color: '#FFF',
-            textAlign: 'center',
-            fontFamily: 'DM Sans',
-            fontSize: 'clamp(14px, 3.5vw, 24px)',
-            fontStyle: 'italic',
-            fontWeight: 300,
-            lineHeight: '1.3',
-            opacity: 0.6,
-            padding: '0 1rem'
-          }}
-        >
-          Tap into a full-stack team, without the full-time cost.
-        </div>
+    <div id="pricing" className="relative bg-black text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 right-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Plans */}
-      <div className="flex flex-col lg:flex-row justify-center mb-12 sm:mb-16 gap-6 sm:gap-8 lg:gap-16">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className="px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 transition-all duration-300 text-gray-100 hover:shadow-lg mx-auto lg:mx-0"
+      <div className="relative max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 
+            className="text-transparent bg-clip-text mb-6 sm:mb-8 lg:mb-10"
             style={{
-              width: '100%',
-              maxWidth: '320px',
-              minHeight: '280px',
-              height: 'auto',
-              borderRadius: '20px',
-              background: '#19191A'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'radial-gradient(84.11% 84.51% at 39.77% 16.11%, rgba(255, 158, 114, 0.70) 0%, rgba(255, 94, 193, 0.70) 100%)';
-              // Change plan container color and border to white
-              const planContainer = e.currentTarget.querySelector('.plan-container') as HTMLElement;
-              if (planContainer) {
-                planContainer.style.color = '#FFF';
-                planContainer.style.border = '1px solid #FFF';
-              }
-              // Change description text color to white
-              const descriptionText = e.currentTarget.querySelector('.description-text') as HTMLElement;
-              if (descriptionText) {
-                descriptionText.style.color = '#FFF';
-                descriptionText.style.opacity = '1';
-              }
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#19191A';
-              // Reset plan container color and border
-              const planContainer = e.currentTarget.querySelector('.plan-container') as HTMLElement;
-              if (planContainer) {
-                planContainer.style.color = '#B9B9B9';
-                planContainer.style.border = '1px solid #6B6B6B';
-              }
-              // Reset description text color
-              const descriptionText = e.currentTarget.querySelector('.description-text') as HTMLElement;
-              if (descriptionText) {
-                descriptionText.style.color = '#FFF';
-                descriptionText.style.opacity = '0.6';
-              }
+              textAlign: 'center',
+              fontFamily: 'DM Sans',
+              fontSize: 'clamp(28px, 6vw, 48px)',
+              fontStyle: 'normal',
+              fontWeight: 500,
+              lineHeight: '100%',
+              background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}
           >
-            <div 
-              className="hover:text-white transition-colors cursor-pointer plan-container mb-4 md:mb-6 lg:mb-[45px]"
-              style={{
-                display: 'inline-flex',
-                padding: '6px 14px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '8px',
-                borderRadius: '360px',
-                border: '1px solid #6B6B6B',
-                color: '#B9B9B9',
-                textAlign: 'center',
-                fontFamily: 'DM Sans',
-                fontSize: 'clamp(13px, 3.2vw, 16px)',
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '1.4',
-                letterSpacing: '0.32px'
-              }}
-            >
-              {plan.name}
-            </div>
-            <div style={{ marginBottom: '15px sm:mb-20px lg:mb-25px' }}>
-              <span
-                style={{
-                  color: '#FFF',
-                  textAlign: 'center',
-                  fontFamily: 'DM Sans',
-                  fontSize: 'clamp(24px, 6vw, 32px)',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '22.4px',
-                  letterSpacing: '0.32px'
-                }}
-              >
-                {plan.price}
-              </span>
-              <span
-                style={{
-                  color: 'rgba(255, 255, 255, 0.30)',
-                  fontFamily: 'DM Sans',
-                  fontSize: 'clamp(20px, 5vw, 32px)',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '22.4px',
-                  letterSpacing: '0.32px'
-                }}
-              >
-                /mo
-              </span>
-            </div>
-            <p 
-              className="description-text"
+            Choose a Plan That Moves at Your Speed
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
+            <p
               style={{
                 color: '#FFF',
                 textAlign: 'center',
                 fontFamily: 'DM Sans',
-                fontSize: 'clamp(14px, 3.5vw, 16px)',
+                fontSize: 'clamp(16px, 4vw, 24px)',
                 fontStyle: 'normal',
                 fontWeight: 500,
-                lineHeight: '1.4',
-                letterSpacing: '0.32px',
-                opacity: 0.6
+                lineHeight: '1.3',
+                opacity: 0.9,
               }}
             >
-              {plan.description}
+              Flexible marketing subscriptions. Upgrade, downgrade, or switch anytime.
+            </p>
+            <p
+              style={{
+                color: '#FFF',
+                textAlign: 'center',
+                fontFamily: 'DM Sans',
+                fontSize: 'clamp(14px, 3.5vw, 20px)',
+                fontStyle: 'italic',
+                fontWeight: 300,
+                lineHeight: '1.3',
+                opacity: 0.6,
+              }}
+            >
+              Tap into a full-stack team, without the full-time cost.
             </p>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Features */}
-      <div className="bg-[#1a1a1a] text-gray-300 rounded-xl max-w-6xl mx-auto p-6 sm:p-8">
-        <h3 
-          className="mb-6 text-center sm:text-left"
-          style={{
-            color: '#B9B9B9',
-            textAlign: 'center',
-            fontFamily: 'DM Sans',
-            fontSize: 'clamp(14px, 3.5vw, 16px)',
-            fontStyle: 'normal',
-            fontWeight: 500,
-            lineHeight: '22.4px',
-            letterSpacing: '0.32px',
-            marginLeft: '0',
-            marginBottom: '20px sm:mb-6'
-          }}
-        >
-          All Plans include
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left text-sm">
-          {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <Image 
-                src="/tick.svg" 
-                alt="tick" 
-                width={20}
-                height={20}
-                className="flex-shrink-0" 
+        {/* Plans Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20 lg:mb-24">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`relative group cursor-pointer transition-all duration-300 ${
+                plan.popular ? 'md:-mt-8' : ''
+              }`}
+            >
+              {/* Popular Badge */}
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="px-4 py-2 rounded-full text-xs font-semibold text-white"
+                    style={{
+                      background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
+                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)'
+                    }}>
+                    Most Popular
+                  </div>
+                </div>
+              )}
+
+              {/* Plan Card */}
+              <div
+                className={`h-full px-6 sm:px-8 py-8 sm:py-10 transition-all duration-300 text-gray-100 relative overflow-hidden ${
+                  plan.popular 
+                    ? 'ring-2 ring-pink-500/50 shadow-xl shadow-pink-500/20' 
+                    : 'hover:shadow-xl hover:shadow-white/10'
+                }`}
                 style={{
-                  color: '#808080'
+                  borderRadius: '24px',
+                  background: plan.popular 
+                    ? 'linear-gradient(135deg, rgba(255, 150, 93, 0.1) 0%, rgba(186, 52, 226, 0.1) 100%)' 
+                    : '#19191A',
+                  border: plan.popular 
+                    ? '1px solid rgba(255, 150, 93, 0.3)' 
+                    : '1px solid rgba(107, 107, 107, 0.3)'
                 }}
-              />
-                              <span
+                onMouseEnter={(e) => {
+                  if (!plan.popular) {
+                    e.currentTarget.style.background = 'radial-gradient(84.11% 84.51% at 39.77% 16.11%, rgba(255, 158, 114, 0.15) 0%, rgba(255, 94, 193, 0.15) 100%)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 150, 93, 0.5)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!plan.popular) {
+                    e.currentTarget.style.background = '#19191A';
+                    e.currentTarget.style.borderColor = 'rgba(107, 107, 107, 0.3)';
+                  }
+                }}
+              >
+                {/* Plan Badge */}
+                <div className="flex justify-center mb-6 sm:mb-8">
+                  <div 
+                    className="inline-flex px-4 py-2 rounded-full text-center transition-colors"
+                    style={{
+                      border: plan.popular ? '1px solid rgba(255, 150, 93, 0.5)' : '1px solid #6B6B6B',
+                      color: plan.popular ? '#FF965D' : '#B9B9B9',
+                      backgroundColor: plan.popular ? 'rgba(255, 150, 93, 0.1)' : 'transparent',
+                      fontFamily: 'DM Sans',
+                      fontSize: 'clamp(13px, 3.2vw, 16px)',
+                      fontWeight: 500,
+                      letterSpacing: '0.32px'
+                    }}
+                  >
+                    {plan.name}
+                  </div>
+                </div>
+                
+                {/* Price */}
+                <div className="text-center mb-6 sm:mb-8">
+                  <div className="flex items-baseline justify-center">
+                    <span
+                      style={{
+                        color: '#FFF',
+                        fontFamily: 'DM Sans',
+                        fontSize: 'clamp(32px, 8vw, 48px)',
+                        fontWeight: 500,
+                        letterSpacing: '0.32px'
+                      }}
+                    >
+                      {plan.price}
+                    </span>
+                    <span
+                      style={{
+                        color: 'rgba(255, 255, 255, 0.4)',
+                        fontFamily: 'DM Sans',
+                        fontSize: 'clamp(16px, 4vw, 20px)',
+                        fontWeight: 500,
+                        letterSpacing: '0.32px',
+                        marginLeft: '4px'
+                      }}
+                    >
+                      /mo
+                    </span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p 
+                  className="text-center mb-8 sm:mb-10"
                   style={{
-                    display: 'flex',
-                    width: 'auto',
-                    height: 'auto',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    color: '#808080',
+                    color: plan.popular ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.6)',
                     fontFamily: 'DM Sans',
-                    fontSize: 'clamp(14px, 3.5vw, 16px)',
-                    fontStyle: 'normal',
+                    fontSize: 'clamp(14px, 3.5vw, 18px)',
                     fontWeight: 500,
                     lineHeight: '1.4',
-                    letterSpacing: '0.16px',
-                    whiteSpace: 'normal'
+                    letterSpacing: '0.32px',
                   }}
                 >
-                {feature}
-              </span>
+                  {plan.description}
+                </p>
+
+                {/* CTA Button */}
+                <div className="mt-auto">
+                  <button 
+                    className={`w-full py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base ${
+                      plan.popular 
+                        ? 'text-white hover:shadow-lg' 
+                        : 'text-white border border-white/20 hover:border-pink-400/50 hover:bg-white/5'
+                    }`}
+                    style={plan.popular ? {
+                      background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
+                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)'
+                    } : {}}
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Features Section */}
+        <div className="max-w-4xl mx-auto">
+          <h3 
+            className="text-center mb-8 sm:mb-10"
+            style={{
+              color: '#B9B9B9',
+              fontFamily: 'DM Sans',
+              fontSize: 'clamp(16px, 4vw, 20px)',
+              fontWeight: 500,
+              letterSpacing: '0.32px',
+            }}
+          >
+            All Plans Include
+          </h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl hover:bg-white/5 transition-colors">
+                <div className="flex-shrink-0 mt-0.5">
+                  <Image 
+                    src="/tick.svg" 
+                    alt="tick" 
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    style={{
+                      filter: 'hue-rotate(180deg) saturate(1.5) brightness(1.2)'
+                    }}
+                  />
+                </div>
+                <span
+                  style={{
+                    color: '#D1D5DB',
+                    fontFamily: 'DM Sans',
+                    fontSize: 'clamp(14px, 3.5vw, 16px)',
+                    fontWeight: 500,
+                    lineHeight: '1.5',
+                    letterSpacing: '0.16px',
+                  }}
+                >
+                  {feature}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 sm:mt-16 lg:mt-20">
+          <p className="text-white/60 text-sm sm:text-base mb-6 sm:mb-8">
+            Not sure which plan is right for you?
+          </p>
+          <button className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-white border border-white/20 hover:border-pink-400/50 hover:bg-white/5 transition-all duration-300 text-sm sm:text-base">
+            Schedule a Consultation
+          </button>
         </div>
       </div>
     </div>
