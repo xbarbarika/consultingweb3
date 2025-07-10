@@ -1,44 +1,40 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/Navbar';
-import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export default function Service() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-2.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-4.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Navbar />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>
-          Service <span className="text-white/90 font-medium">Social Media Marketing</span>
-        </div>
+                  <div className="text-white/60 text-xl font-medium leading-7 mt-16 mb-6" style={{ fontFamily: 'Inter', marginLeft: '66px' }}>Service <span className="text-white/90 font-medium">GenAI</span></div>
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ marginLeft: '66px' }}>
-          Spark Conversations. Build Community.<br />
-          Drive Growth.
+          AI-Powered Solutions That Drive Growth
         </h1>
         {/* Subheading */}
         <p className="mt-[25px] text-white/50 max-w-2xl text-lg font-normal leading-[110%]" style={{ marginLeft: '66px' }}>
-          Strategic content creation and community management that builds loyal audiences.<br />
-          From viral posts to thoughtful engagement, we turn followers into customers.
+          Leverage cutting-edge AI technology to transform your business operations.<br />
+          From content generation to process automation—we harness the power of AI for your success.
         </p>
-        {/* CTA Button */}
-        <div className="mt-6 mb-2" style={{ marginLeft: '66px' }}>
+        
+        {/* Book Demo Button */}
+        <div className="mt-8" style={{ marginLeft: '66px' }}>
           <Link href="/book-demo">
-            <button className="px-6 sm:px-8 py-3 rounded-full font-semibold text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto shadow-lg"
+            <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
               style={{
-                background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)',
-                boxShadow: '0 4px 32px 0 rgba(0,0,0,0.25)'
+                borderImage: 'linear-gradient(90deg, #5d8bff 0%, #5bafff 50%, #3f7ffd 100%) 1',
+                borderStyle: 'solid',
+                borderWidth: '2px',
               }}>
               Book Demo
             </button>
           </Link>
         </div>
+        
         {/* Card and Features Row Layout */}
         <div className="flex flex-col md:flex-row gap-10 mt-10 items-start" style={{ marginLeft: '66px' }}>
           {/* Card */}
@@ -56,7 +52,7 @@ export default function Service() {
                 width: '100%', 
                 height: '100%', 
                 borderRadius: '22px', 
-                background: '#232336',
+                background: '#181825',
                 backdropFilter: 'blur(21.5px)' 
               }}>
                 <div style={{ 
@@ -66,7 +62,7 @@ export default function Service() {
                   width: '62px',
                   height: '37px',
                   borderRadius: '4px',
-                  background: '#a97b5d'
+                  background: '#1d4ed8'
                 }} />
                 <div style={{ 
                   position: 'absolute',
@@ -77,7 +73,7 @@ export default function Service() {
                   fontSize: '24px', 
                   fontWeight: '400', 
                   lineHeight: '28px'
-                }}>Marketing Subscription</div>
+                }}>Generative AI Solutions</div>
                 <div style={{ 
                   position: 'absolute',
                   top: '176px',
@@ -103,16 +99,15 @@ export default function Service() {
             fontWeight: '400', 
             lineHeight: '260%' 
           }}>
-            <li>Strategy, content, and community handled</li>
-            <li>Platform-specific execution (IG, X, TikTok, LinkedIn, and more)</li>
-            <li>Organic + paid social integration</li>
-            <li>Creative assets optimized for attention and action</li>
+            <li>Custom AI model development and integration</li>
+            <li>Content generation and automation solutions</li>
+            <li>AI-powered customer service and chatbots</li>
+            <li>Data analysis and predictive insights</li>
           </ul>
         </div>
         </main>
       </div>
       <Footer />
-      <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 } 

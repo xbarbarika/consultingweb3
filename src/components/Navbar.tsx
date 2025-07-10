@@ -28,8 +28,9 @@ const servicesDropdown = [
   { label: 'Lead Generation', href: '/lead-gen' },
   { label: 'Branding', href: '/branding' },
   { label: 'Community Management', href: '/community' },
-    { label: 'Web3 & Mobile', href: '/web3-and-mobile' },
+  { label: 'Web3 & Mobile', href: '/web3-and-mobile' },
   { label: 'Blockchain ', href: '/blockchain' },
+  { label: 'GenAI', href: '/genai' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {

@@ -6,6 +6,7 @@ import {
   FaYoutube,
   FaXTwitter,
 } from 'react-icons/fa6';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -148,172 +149,251 @@ const Footer = () => {
             Services
           </h3>
           <ul className="space-y-2">
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Social Media Marketing
+            <li>
+              <Link href="/marketing-sub" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Marketing Subscription
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Paid Social Advertising
+            <li>
+              <Link href="/social-media" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Social Media
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              SEO Services
+            <li>
+              <Link href="/paid-social" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Paid Social
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Influencer Marketing
+            <li>
+              <Link href="/seo" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                SEO
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              PR & Outreach
+            <li>
+              <Link href="/influencer" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Influencer Marketing
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Video Production
+            <li>
+              <Link href="/pr-marketing" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                PR & Outreach
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Lead Generation
+            <li>
+              <Link href="/video" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Video Production
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Community Management
+            <li>
+              <Link href="/lead-gen" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Lead Generation
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Branding
+            <li>
+              <Link href="/branding" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Branding
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Website/App Development
+            <li>
+              <Link href="/community" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Community Management
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6',
-                marginBottom: '16px'
-              }}
-            >
-              Web/App Design
+            <li>
+              <Link href="/web3-and-mobile" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Web3 & Mobile
+              </Link>
             </li>
-            <li 
-              style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-                color: 'white',
-                opacity: '0.6'
-              }}
-            >
-              Blockchain 
+            <li>
+              <Link href="/blockchain" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  marginBottom: '16px',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                Blockchain
+              </Link>
+            </li>
+            <li>
+              <Link href="/genai" 
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  color: 'white',
+                  opacity: '0.6',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover:opacity-100 transition-opacity"
+              >
+                GenAI
+              </Link>
             </li>
           </ul>
         </div>
