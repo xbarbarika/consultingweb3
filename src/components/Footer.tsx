@@ -16,19 +16,15 @@ const Footer = () => {
         {/* Left section */}
         <div className="col-span-1 sm:col-span-2 lg:col-span-1">
           <h2 
-            className="text-white mb-2 mt-6 sm:mt-12 lg:mt-[90px] text-2xl sm:text-3xl lg:text-[30.071px]"
+            className="text-white mb-2 mt-6 sm:mt-12 lg:mt-[90px] text-lg sm:text-xl font-bold italic tracking-wider"
             style={{
-              fontFamily: 'Epilogue',
-              fontStyle: 'italic',
-              fontWeight: '600',
-              lineHeight: '110%',
-              letterSpacing: '1.504px',
+              fontFamily: 'Epilogue, sans-serif',
             }}
           >
             BARBARIKA
           </h2>
           <p 
-            className="text-white/50 mb-12 sm:mb-16 lg:mb-20 text-lg sm:text-xl lg:text-[22px]"
+            className="text-white/50 mb-12 sm:mb-16 lg:mb-20 text-lg sm:text-xl lg:text-[22px] whitespace-nowrap"
             style={{
               fontFamily: 'Epilogue',
               fontStyle: 'normal',
@@ -125,7 +121,7 @@ const Footer = () => {
           >
             Services
           </h3>
-          <ul className="space-y-2">
+          <ul className="[&>*:not(:last-child)]:mb-[10px]">
             <li>
               <Link href="/marketing-sub" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
@@ -337,7 +333,7 @@ const Footer = () => {
           >
             Industries
           </h3>
-          <ul className="space-y-2">
+          <ul className="[&>*:not(:last-child)]:mb-[10px]">
             <li>
               <Link href="/industries" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
