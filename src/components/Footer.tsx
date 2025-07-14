@@ -338,125 +338,185 @@ const Footer = () => {
             Industries
           </h3>
           <ul className="space-y-2">
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              B2B
+            <li>
+              <Link href="/industries" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                B2B
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Fintech
+            <li>
+              <Link href="/fintech" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Fintech
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Crypto
+            <li>
+              <Link href="/crypto" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Crypto
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Healthcare
+            <li>
+              <Link href="/healthcare" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Healthcare
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Software
+            <li>
+              <Link href="/software" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Software
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              SaaS
+            <li>
+              <Link href="/saas" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                SaaS
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Startup
+            <li>
+              <Link href="/startup" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Startup
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Small Business
+            <li>
+              <Link href="/small-business" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Small Business
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Gaming
+            <li>
+              <Link href="/gaming" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Gaming
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              eSport
+            <li>
+              <Link href="/esport" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                eSport
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Mobile
+            <li>
+              <Link href="/mobile" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Mobile
+              </Link>
             </li>
-            <li className="text-white/60 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              eCommerce
+            <li>
+              <Link href="/ecommerce" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                eCommerce
+              </Link>
             </li>
           </ul>
         </div>
