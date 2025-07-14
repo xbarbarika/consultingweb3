@@ -5,31 +5,31 @@ const locations = [
   {
     country: "South Korea",
     address: "South Korea",
-    image: "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=400&h=300&fit=crop",
+    image: "/korea.jpg",
     timezone: "KST (UTC+9)"
   },
   {
     country: "India",
     address: "India",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&h=300&fit=crop",
+    image: "/mumbai.jpg",
     timezone: "IST (UTC+5:30)"
   },
   {
     country: "Dubai",
     address: "UAE",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop",
+    image: "/dubai.jpg",
     timezone: "GST (UTC+4)"
   },
   {
     country: "Ireland",
     address: "Ireland",
-    image: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=400&h=300&fit=crop",
+    image: "/ireland.jpg",
     timezone: "GMT (UTC+0)"
   },
   {
     country: "USA",
     address: "USA",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop",
+    image: "/usa.jpg",
     timezone: "EST (UTC-5)"
   }
 ];
