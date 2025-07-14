@@ -39,10 +39,18 @@ const industriesData = [
   { label: 'eCommerce', href: '/ecommerce' },
 ];
 
+const companyData = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Careers', href: '/careers' },
+];
+
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -62,6 +70,7 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   const handleClose = () => {
     setServicesOpen(false);
     setIndustriesOpen(false);
+    setCompanyOpen(false);
     onClose();
   };
 
@@ -201,6 +210,48 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                             pathname === industry.href ? 'text-pink-400 font-medium' : 'text-white/70 group-hover:text-white'
                           }`}>
                             {industry.label}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Company with Dropdown */}
+            <div>
+              <button
+                onClick={() => setCompanyOpen(!companyOpen)}
+                className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
+              >
+                <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Company
+                </span>
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 16 16" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${companyOpen ? 'rotate-180' : ''}`}
+                >
+                  <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              {companyOpen && (
+                <div className="mt-2 ml-2 sm:ml-4 space-y-1 animate-fade-in">
+                  <div className="space-y-1">
+                    {companyData.map((company) => (
+                      <Link key={company.href} href={company.href} onClick={handleClose}>
+                        <div className={`group flex items-center justify-between p-2 sm:p-3 rounded-lg transition-all duration-200 ${
+                          pathname === company.href ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+                        }`}>
+                          <span className={`text-sm transition-colors ${
+                            pathname === company.href ? 'text-pink-400 font-medium' : 'text-white/70 group-hover:text-white'
+                          }`}>
+                            {company.label}
                           </span>
                         </div>
                       </Link>
