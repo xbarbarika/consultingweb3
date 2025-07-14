@@ -33,28 +33,41 @@ const servicesDropdown = [
   { label: 'GenAI', href: '/genai' },
 ];
 
+const companyDropdown = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Careers', href: '/careers' },
+];
+
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const companyRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const companyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
-  // Handle click outside to close dropdown
+  // Handle click outside to close dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setServicesOpen(false);
       }
+      if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
+        setCompanyOpen(false);
+      }
     };
 
-    if (servicesOpen) {
+    if (servicesOpen || companyOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [servicesOpen]);
+  }, [servicesOpen, companyOpen]);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -66,6 +79,19 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setServicesOpen(false);
+    }, 100);
+  };
+
+  const handleCompanyMouseEnter = () => {
+    if (companyTimeoutRef.current) {
+      clearTimeout(companyTimeoutRef.current);
+    }
+    setCompanyOpen(true);
+  };
+
+  const handleCompanyMouseLeave = () => {
+    companyTimeoutRef.current = setTimeout(() => {
+      setCompanyOpen(false);
     }, 100);
   };
   
@@ -120,6 +146,39 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                       ) : (
                         <div key={service.label} className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
                           <span>{service.label}</span>
+                        </div>
+                      )
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : item.label === 'Company' ? (
+              <div
+                ref={companyRef}
+                className="relative"
+                onMouseEnter={handleCompanyMouseEnter}
+                onMouseLeave={handleCompanyMouseLeave}
+              >
+                <span className="capitalize flex items-center gap-1 select-none">
+                  {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                {companyOpen && (
+                  <div 
+                    className="absolute left-0 top-full mt-0 w-48 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" 
+                    style={{minWidth: '200px'}}
+                    onMouseEnter={handleCompanyMouseEnter}
+                    onMouseLeave={handleCompanyMouseLeave}
+                  >
+                    {companyDropdown.map((company) => (
+                      company.href ? (
+                        <Link key={company.label} href={company.href}>
+                          <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                            <span>{company.label}</span>
+                          </div>
+                        </Link>
+                      ) : (
+                        <div key={company.label} className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                          <span>{company.label}</span>
                         </div>
                       )
                     ))}
