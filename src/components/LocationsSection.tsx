@@ -127,7 +127,7 @@ const LocationsSection = () => {
               <div className="relative h-48">
                 <Image
                   src={location.image}
-                  alt={`${location.city}, ${location.country}`}
+                  alt={`${location.country}`}
                   fill
                   className="object-cover"
                 />
@@ -137,7 +137,7 @@ const LocationsSection = () => {
                     className="text-white font-bold text-xl mb-1"
                     style={{ fontFamily: 'DM Sans' }}
                   >
-                    {location.city}
+                    {location.country}
                   </h3>
                   <p 
                     className="text-white/80 text-sm"
