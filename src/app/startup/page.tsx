@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 export default function Startup() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
     // Set page title and favicon
@@ -24,6 +25,26 @@ export default function Startup() {
     link.type = 'image/x-icon';
     link.href = '/Barbarika.ico';
     document.head.appendChild(link);
+
+    // Handle screen size detection
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setScreenSize('mobile');
+      } else if (window.innerWidth <= 768) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('desktop');
+      }
+    };
+
+    // Set initial screen size
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -37,60 +58,54 @@ export default function Startup() {
         backgroundRepeat: 'no-repeat',
       }}>
         <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-center justify-start pt-48 px-4 md:px-8 lg:px-16 min-h-screen">
+        <main className="w-full flex flex-col items-center justify-start pt-24 md:pt-32 lg:pt-48 px-4 md:px-8 lg:px-16 min-h-screen">
           {/* Industries Label */}
           <div style={{ marginBottom: '28px' }}>
             <span style={{ 
               color: 'white', 
               opacity: 0.4, 
               fontFamily: 'Inter', 
-              fontSize: '20px', 
+              fontSize: screenSize === 'desktop' ? '20px' : '16px', 
               fontWeight: 500, 
-              lineHeight: '28px' 
+              lineHeight: screenSize === 'desktop' ? '28px' : '22px' 
             }}>Industries </span>
             <span style={{ 
               color: 'white', 
               opacity: 0.6, 
               fontFamily: 'Inter', 
-              fontSize: '20px', 
+              fontSize: screenSize === 'desktop' ? '20px' : '16px', 
               fontWeight: 400, 
-              lineHeight: '28px' 
+              lineHeight: screenSize === 'desktop' ? '28px' : '22px' 
             }}>Startup</span>
           </div>
           {/* Main Heading */}
-          <h1 style={{ 
-            color: 'white',
-            textAlign: 'center',
+          <h1 className="text-center text-white font-medium leading-tight mb-6 px-4" style={{ 
             fontFamily: 'Inter',
-            fontSize: '36px',
-            fontWeight: 500,
+            fontSize: screenSize === 'mobile' ? '24px' : screenSize === 'tablet' ? '30px' : '36px',
             lineHeight: '110%',
-            marginBottom: '23px',
-            whiteSpace: 'nowrap'
+            whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
           }}>
             Launch Fast. Scale Smart. Raise Capital.
           </h1>
           {/* Subheading */}
-          <p style={{ 
-            color: 'white',
-            opacity: 0.5,
-            textAlign: 'center',
+          <p className="text-center text-white opacity-50 mb-12 md:mb-15 px-4" style={{ 
             fontFamily: 'Inter',
-            fontSize: '18px',
+            fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
             fontWeight: 400,
             lineHeight: '110%',
-            maxWidth: '700px',
-            marginBottom: '60px'
+            maxWidth: screenSize === 'desktop' ? '700px' : '90%'
           }}>
-            From MVP to market leader with cost-effective growth strategies.<br />
-            With Barbarika, you get startup marketing that maximizes runway and attracts investors.
+            From MVP to IPO, navigate the startup journey with marketing strategies that maximize impact on minimal budgets.<br />
+            With Barbarika, you get startup marketing that drives growth, attracts investors, and builds market presence.
           </p>
           {/* Book Demo Button */}
-          <div style={{ marginBottom: '77px' }}>
+          <div style={{ marginBottom: screenSize === 'desktop' ? '77px' : '48px' }}>
             <Link href="/book-demo">
-              <button className="px-8 py-3 rounded-full font-medium text-black text-lg shadow-lg transition-all duration-300" style={{
+              <button className="rounded-full font-medium text-black shadow-lg transition-all duration-300" style={{
                 background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
-                minWidth: 160
+                padding: screenSize === 'mobile' ? '12px 24px' : '12px 32px',
+                fontSize: screenSize === 'mobile' ? '16px' : '18px',
+                minWidth: screenSize === 'mobile' ? '140px' : '160px'
               }}>
                 Book Demo
               </button>
@@ -98,7 +113,9 @@ export default function Startup() {
           </div>
           {/* Bullet Points */}
           <div className="flex flex-col items-center w-full">
-            <div className="relative max-w-4xl mx-auto">
+            <div className="relative mx-auto" style={{ 
+              maxWidth: screenSize === 'mobile' ? '100%' : screenSize === 'tablet' ? '85%' : '896px' 
+            }}>
               {/* Orange vertical line */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF965D] to-[#BA34E2]"></div>
               
@@ -108,11 +125,11 @@ export default function Startup() {
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: '18px',
+                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
                 }}>
                   • Cost-effective growth hacking and viral marketing strategies
                 </p>
@@ -121,11 +138,11 @@ export default function Startup() {
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: '18px',
+                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
                 }}>
                   • Investor pitch deck support and funding strategy
                 </p>
@@ -134,11 +151,11 @@ export default function Startup() {
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: '18px',
+                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
                 }}>
                   • Product-market fit validation and user feedback loops
                 </p>
@@ -147,10 +164,10 @@ export default function Startup() {
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: '18px',
+                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
                 }}>
                   • MVP launch strategies and early adopter acquisition
                 </p>

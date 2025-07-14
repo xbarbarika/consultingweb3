@@ -5,9 +5,8 @@ import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
-export default function SmallBusiness() {
+export default function Fintech() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
     // Set page title and favicon
@@ -25,26 +24,6 @@ export default function SmallBusiness() {
     link.type = 'image/x-icon';
     link.href = '/Barbarika.ico';
     document.head.appendChild(link);
-
-    // Handle screen size detection
-    const handleResize = () => {
-      if (window.innerWidth <= 480) {
-        setScreenSize('mobile');
-      } else if (window.innerWidth <= 768) {
-        setScreenSize('tablet');
-      } else {
-        setScreenSize('desktop');
-      }
-    };
-
-    // Set initial screen size
-    handleResize();
-
-    // Add event listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -58,54 +37,60 @@ export default function SmallBusiness() {
         backgroundRepeat: 'no-repeat',
       }}>
         <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-center justify-start pt-24 md:pt-32 lg:pt-48 px-4 md:px-8 lg:px-16 min-h-screen">
+        <main className="w-full flex flex-col items-center justify-start pt-48 px-4 md:px-8 lg:px-16 min-h-screen">
           {/* Industries Label */}
           <div style={{ marginBottom: '28px' }}>
             <span style={{ 
               color: 'white', 
               opacity: 0.4, 
               fontFamily: 'Inter', 
-              fontSize: screenSize === 'desktop' ? '20px' : '16px', 
+              fontSize: '20px', 
               fontWeight: 500, 
-              lineHeight: screenSize === 'desktop' ? '28px' : '22px' 
+              lineHeight: '28px' 
             }}>Industries </span>
             <span style={{ 
               color: 'white', 
               opacity: 0.6, 
               fontFamily: 'Inter', 
-              fontSize: screenSize === 'desktop' ? '20px' : '16px', 
+              fontSize: '20px', 
               fontWeight: 400, 
-              lineHeight: screenSize === 'desktop' ? '28px' : '22px' 
-            }}>Small Business</span>
+              lineHeight: '28px' 
+            }}>Fintech</span>
           </div>
           {/* Main Heading */}
-          <h1 className="text-center text-white font-medium leading-tight mb-6 px-4" style={{ 
+          <h1 style={{ 
+            color: 'white',
+            textAlign: 'center',
             fontFamily: 'Inter',
-            fontSize: screenSize === 'mobile' ? '24px' : screenSize === 'tablet' ? '30px' : '36px',
+            fontSize: '36px',
+            fontWeight: 500,
             lineHeight: '110%',
-            whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
+            marginBottom: '23px',
+            whiteSpace: 'nowrap'
           }}>
-            Grow Local. Build Relationships. Increase Revenue.
+            Transform Financial Services. Build Trust. Drive Innovation.
           </h1>
           {/* Subheading */}
-          <p className="text-center text-white opacity-50 mb-12 md:mb-15 px-4" style={{ 
+          <p style={{ 
+            color: 'white',
+            opacity: 0.5,
+            textAlign: 'center',
             fontFamily: 'Inter',
-            fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
+            fontSize: '18px',
             fontWeight: 400,
             lineHeight: '110%',
-            maxWidth: screenSize === 'desktop' ? '700px' : '90%'
+            maxWidth: '700px',
+            marginBottom: '60px'
           }}>
-            Connect with your local community and build lasting customer relationships that drive sustainable growth.<br />
-            With Barbarika, you get small business marketing that maximizes impact within your budget.
+            Navigate complex financial regulations while delivering seamless user experiences.<br />
+            With Barbarika, you get specialized fintech marketing that builds credibility and drives growth.
           </p>
           {/* Book Demo Button */}
-          <div style={{ marginBottom: screenSize === 'desktop' ? '77px' : '48px' }}>
+          <div style={{ marginBottom: '77px' }}>
             <Link href="/book-demo">
-              <button className="rounded-full font-medium text-black shadow-lg transition-all duration-300" style={{
+              <button className="px-8 py-3 rounded-full font-medium text-black text-lg shadow-lg transition-all duration-300" style={{
                 background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)',
-                padding: screenSize === 'mobile' ? '12px 24px' : '12px 32px',
-                fontSize: screenSize === 'mobile' ? '16px' : '18px',
-                minWidth: screenSize === 'mobile' ? '140px' : '160px'
+                minWidth: 160
               }}>
                 Book Demo
               </button>
@@ -113,9 +98,7 @@ export default function SmallBusiness() {
           </div>
           {/* Bullet Points */}
           <div className="flex flex-col items-center w-full">
-            <div className="relative mx-auto" style={{ 
-              maxWidth: screenSize === 'mobile' ? '100%' : screenSize === 'tablet' ? '85%' : '896px' 
-            }}>
+            <div className="relative max-w-4xl mx-auto">
               {/* Orange vertical line */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF965D] to-[#BA34E2]"></div>
               
@@ -125,51 +108,51 @@ export default function SmallBusiness() {
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
+                  fontSize: '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
+                  whiteSpace: 'nowrap'
                 }}>
-                  • Local SEO and Google My Business optimization
+                  • Regulatory compliance and security-focused marketing strategies
                 </p>
                 
                 <p style={{ 
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
+                  fontSize: '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
+                  whiteSpace: 'nowrap'
                 }}>
-                  • Social media for local community engagement
+                  • Trust-building content for financial services and payments
                 </p>
                 
                 <p style={{ 
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
+                  fontSize: '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
                   marginBottom: '12px',
-                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
+                  whiteSpace: 'nowrap'
                 }}>
-                  • Cost-effective advertising and customer acquisition
+                  • Customer acquisition for lending, investing, and banking apps
                 </p>
                 
                 <p style={{ 
                   color: 'white',
                   opacity: 0.6,
                   fontFamily: 'Inter',
-                  fontSize: screenSize === 'mobile' ? '14px' : screenSize === 'tablet' ? '16px' : '18px',
+                  fontSize: '18px',
                   fontWeight: 400,
                   lineHeight: '150%',
-                  whiteSpace: screenSize === 'desktop' ? 'nowrap' : 'normal'
+                  whiteSpace: 'nowrap'
                 }}>
-                  • Customer loyalty programs and repeat business strategies
+                  • Investor relations and funding strategy for fintech startups
                 </p>
               </div>
             </div>

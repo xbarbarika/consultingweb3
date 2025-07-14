@@ -24,9 +24,25 @@ const servicesData = [
   { label: 'GenAI', href: '/genai' },
 ];
 
+const industriesData = [
+  { label: 'B2B', href: '/industries' },
+  { label: 'Fintech', href: '/fintech' },
+  { label: 'Crypto', href: '/crypto' },
+  { label: 'Healthcare', href: '/healthcare' },
+  { label: 'Software', href: '/software' },
+  { label: 'SaaS', href: '/saas' },
+  { label: 'Startup', href: '/startup' },
+  { label: 'Small Business', href: '/small-business' },
+  { label: 'Gaming', href: '/gaming' },
+  { label: 'eSport', href: '/esport' },
+  { label: 'Mobile', href: '/mobile' },
+  { label: 'eCommerce', href: '/ecommerce' },
+];
+
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -45,6 +61,7 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
 
   const handleClose = () => {
     setServicesOpen(false);
+    setIndustriesOpen(false);
     onClose();
   };
 
@@ -151,18 +168,47 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
               )}
             </div>
 
-            {/* Industries */}
-            <Link href="/industries" onClick={handleClose}>
-              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
-                pathname === '/industries' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
-              }`}>
-                <span className={`text-base sm:text-lg font-medium ${
-                  pathname === '/industries' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
-                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
+            {/* Industries with Dropdown */}
+            <div>
+              <button
+                onClick={() => setIndustriesOpen(!industriesOpen)}
+                className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
+              >
+                <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Industries
                 </span>
-              </div>
-            </Link>
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 16 16" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${industriesOpen ? 'rotate-180' : ''}`}
+                >
+                  <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              
+              {industriesOpen && (
+                <div className="mt-2 ml-2 sm:ml-4 space-y-1 animate-fade-in">
+                  <div className="grid grid-cols-1 gap-1">
+                    {industriesData.map((industry) => (
+                      <Link key={industry.label} href={industry.href} onClick={handleClose}>
+                        <div className={`p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors group ${
+                          pathname === industry.href ? 'bg-pink-500/10 border border-pink-500/20' : ''
+                        }`}>
+                          <span className={`text-sm transition-colors ${
+                            pathname === industry.href ? 'text-pink-400 font-medium' : 'text-white/70 group-hover:text-white'
+                          }`}>
+                            {industry.label}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Our People - Scroll to section if on home, otherwise navigate */}
             <button

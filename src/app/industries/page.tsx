@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 export default function Industries() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
 
   useEffect(() => {
     // Set page title and favicon
@@ -24,7 +25,186 @@ export default function Industries() {
     link.type = 'image/x-icon';
     link.href = '/Barbarika.ico';
     document.head.appendChild(link);
+
+    // Screen size detection
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setScreenSize('mobile');
+      } else if (width <= 768) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('desktop');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Responsive typography
+  const getHeadingStyle = () => {
+    const baseStyle = {
+      color: 'white',
+      textAlign: 'center' as const,
+      fontFamily: 'Inter',
+      fontWeight: 500,
+      lineHeight: '110%',
+      marginBottom: '23px',
+    };
+
+    switch (screenSize) {
+      case 'mobile':
+        return {
+          ...baseStyle,
+          fontSize: '24px',
+          whiteSpace: 'normal' as const,
+          padding: '0 10px',
+        };
+      case 'tablet':
+        return {
+          ...baseStyle,
+          fontSize: '30px',
+          whiteSpace: 'normal' as const,
+          padding: '0 20px',
+        };
+      default:
+        return {
+          ...baseStyle,
+          fontSize: '36px',
+          whiteSpace: 'nowrap' as const,
+        };
+    }
+  };
+
+  const getSubheadingStyle = () => {
+    const baseStyle = {
+      color: 'white',
+      opacity: 0.5,
+      textAlign: 'center' as const,
+      fontFamily: 'Inter',
+      fontWeight: 400,
+      lineHeight: '110%',
+      marginBottom: '60px'
+    };
+
+    switch (screenSize) {
+      case 'mobile':
+        return {
+          ...baseStyle,
+          fontSize: '14px',
+          maxWidth: '280px',
+          padding: '0 10px',
+        };
+      case 'tablet':
+        return {
+          ...baseStyle,
+          fontSize: '16px',
+          maxWidth: '500px',
+          padding: '0 20px',
+        };
+      default:
+        return {
+          ...baseStyle,
+          fontSize: '18px',
+          maxWidth: '700px',
+        };
+    }
+  };
+
+  const getBreadcrumbStyle = () => {
+    const baseStyle = {
+      marginBottom: '28px'
+    };
+
+    switch (screenSize) {
+      case 'mobile':
+        return {
+          ...baseStyle,
+          padding: '0 10px',
+        };
+      case 'tablet':
+        return {
+          ...baseStyle,
+          padding: '0 20px',
+        };
+      default:
+        return baseStyle;
+    }
+  };
+
+  const getBreadcrumbTextStyle = () => {
+    switch (screenSize) {
+      case 'mobile':
+        return {
+          fontFamily: 'Inter',
+          fontSize: '16px',
+          fontWeight: 500,
+          lineHeight: '24px'
+        };
+      case 'tablet':
+        return {
+          fontFamily: 'Inter',
+          fontSize: '18px',
+          fontWeight: 500,
+          lineHeight: '26px'
+        };
+      default:
+        return {
+          fontFamily: 'Inter',
+          fontSize: '20px',
+          fontWeight: 500,
+          lineHeight: '28px'
+        };
+    }
+  };
+
+  const getContainerStyle = () => {
+    switch (screenSize) {
+      case 'mobile':
+        return 'max-w-sm';
+      case 'tablet':
+        return 'max-w-2xl';
+      default:
+        return 'max-w-4xl';
+    }
+  };
+
+  const getBulletStyle = () => {
+    const baseStyle = {
+      color: 'white',
+      opacity: 0.6,
+      fontFamily: 'Inter',
+      fontWeight: 400,
+      marginBottom: '12px'
+    };
+
+    switch (screenSize) {
+      case 'mobile':
+        return {
+          ...baseStyle,
+          fontSize: '14px',
+          lineHeight: '150%',
+          whiteSpace: 'normal' as const,
+        };
+      case 'tablet':
+        return {
+          ...baseStyle,
+          fontSize: '16px',
+          lineHeight: '150%',
+          whiteSpace: 'normal' as const,
+        };
+      default:
+        return {
+          ...baseStyle,
+          fontSize: '18px',
+          lineHeight: '150%',
+          whiteSpace: 'nowrap' as const,
+        };
+    }
+  };
+
   return (
     <div className="text-white">
       <div className="min-h-screen w-full" style={{
@@ -38,51 +218,27 @@ export default function Industries() {
         <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-center justify-start pt-48 px-4 md:px-8 lg:px-16 min-h-screen">
           {/* Industries Label */}
-          <div style={{ marginBottom: '28px' }}>
+          <div style={getBreadcrumbStyle()}>
             <span style={{ 
               color: 'white', 
               opacity: 0.4, 
-              fontFamily: 'Inter', 
-              fontSize: '20px', 
-              fontWeight: 500, 
-              lineHeight: '28px' 
+              ...getBreadcrumbTextStyle()
             }}>Industries </span>
             <span style={{ 
               color: 'white', 
               opacity: 0.6, 
-              fontFamily: 'Inter', 
-              fontSize: '20px', 
-              fontWeight: 400, 
-              lineHeight: '28px' 
+              ...getBreadcrumbTextStyle(),
+              fontWeight: 400
             }}>B2B</span>
           </div>
           {/* Main Heading */}
-          <h1 style={{ 
-            color: 'white',
-            textAlign: 'center',
-            fontFamily: 'Inter',
-            fontSize: '36px',
-            fontWeight: 500,
-            lineHeight: '110%',
-            marginBottom: '23px',
-            whiteSpace: 'nowrap'
-          }}>
+          <h1 style={getHeadingStyle()}>
             Spark Conversations. Build Community. Drive Growth.
           </h1>
           {/* Subheading */}
-          <p style={{ 
-            color: 'white',
-            opacity: 0.5,
-            textAlign: 'center',
-            fontFamily: 'Inter',
-            fontSize: '18px',
-            fontWeight: 400,
-            lineHeight: '110%',
-            maxWidth: '700px',
-            marginBottom: '60px'
-          }}>
+          <p style={getSubheadingStyle()}>
             Say goodbye to messy handoffs, bloated retainers, and scattered freelancers.<br />
-            With NinjaPromo, you get a fully integrated marketing team—on-demand.
+            With Barbarika, you get a fully integrated marketing team—on-demand.
           </p>
           {/* Book Demo Button */}
           <div style={{ marginBottom: '77px' }}>
@@ -97,55 +253,27 @@ export default function Industries() {
           </div>
           {/* Bullet Points */}
           <div className="flex flex-col items-center w-full">
-            <div className="relative max-w-xl mx-auto">
+            <div className={`relative ${getContainerStyle()} mx-auto`}>
               {/* Orange vertical line */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF965D] to-[#BA34E2]"></div>
               
               {/* Bullet points */}
               <div className="pl-6">
-                <p style={{ 
-                  color: 'white',
-                  opacity: 0.6,
-                  fontFamily: 'Inter',
-                  fontSize: '18px',
-                  fontWeight: 400,
-                  lineHeight: '260%',
-                  marginBottom: '4px'
-                }}>
+                <p style={getBulletStyle()}>
                   • Strategy, content, and community handled
                 </p>
                 
-                <p style={{ 
-                  color: 'white',
-                  opacity: 0.6,
-                  fontFamily: 'Inter',
-                  fontSize: '18px',
-                  fontWeight: 400,
-                  lineHeight: '260%',
-                  marginBottom: '4px'
-                }}>
+                <p style={getBulletStyle()}>
                   • Platform-specific execution (IG, X, TikTok, LinkedIn, and more)
                 </p>
                 
-                <p style={{ 
-                  color: 'white',
-                  opacity: 0.6,
-                  fontFamily: 'Inter',
-                  fontSize: '18px',
-                  fontWeight: 400,
-                  lineHeight: '260%',
-                  marginBottom: '4px'
-                }}>
+                <p style={getBulletStyle()}>
                   • Organic + paid social integration
                 </p>
                 
                 <p style={{ 
-                  color: 'white',
-                  opacity: 0.6,
-                  fontFamily: 'Inter',
-                  fontSize: '18px',
-                  fontWeight: 400,
-                  lineHeight: '260%'
+                  ...getBulletStyle(),
+                  marginBottom: '0px'
                 }}>
                   • Creative assets optimized for attention and action
                 </p>
