@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   title: "Barbarika",
   description: "Created By Team Engineerian",
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/Barbarika.ico",
+    shortcut: "/Barbarika.ico",
+    apple: "/Barbarika.ico",
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +51,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Barbarika.ico" type="image/x-icon" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${shadowsIntoLight.variable} ${epilogue.variable} ${inter.variable} antialiased`}
       >

@@ -10,22 +10,6 @@ export default function ESport() {
   const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
-    // Set page title and favicon
-    document.title = "Barbarika";
-    
-    // Remove existing favicon
-    const existingLink = document.querySelector("link[rel*='icon']");
-    if (existingLink) {
-      existingLink.remove();
-    }
-    
-    // Add new favicon
-    const link = document.createElement('link');
-    link.rel = 'icon';
-    link.type = 'image/x-icon';
-    link.href = '/Barbarika.ico';
-    document.head.appendChild(link);
-
     // Handle screen size detection
     const handleResize = () => {
       if (window.innerWidth <= 480) {

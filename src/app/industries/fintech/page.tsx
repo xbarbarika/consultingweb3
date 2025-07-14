@@ -9,21 +9,6 @@ export default function Fintech() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Set page title and favicon
-    document.title = "Barbarika";
-    
-    // Remove existing favicon
-    const existingLink = document.querySelector("link[rel*='icon']");
-    if (existingLink) {
-      existingLink.remove();
-    }
-    
-    // Add new favicon
-    const link = document.createElement('link');
-    link.rel = 'icon';
-    link.type = 'image/x-icon';
-    link.href = '/Barbarika.ico';
-    document.head.appendChild(link);
   }, []);
 
   return (
