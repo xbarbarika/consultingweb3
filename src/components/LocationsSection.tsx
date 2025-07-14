@@ -3,37 +3,32 @@ import Image from 'next/image';
 
 const locations = [
   {
-    country: "Korea",
-    city: "Seoul",
-    address: "123 Gangnam-daero, Gangnam-gu, Seoul, South Korea",
+    country: "South Korea",
+    address: "South Korea",
     image: "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=400&h=300&fit=crop",
     timezone: "KST (UTC+9)"
   },
   {
     country: "India",
-    city: "Mumbai",
-    address: "456 Marine Drive, Colaba, Mumbai, Maharashtra 400001",
+    address: "India",
     image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&h=300&fit=crop",
     timezone: "IST (UTC+5:30)"
   },
   {
     country: "Dubai",
-    city: "Dubai",
-    address: "789 Sheikh Zayed Road, Downtown Dubai, UAE",
+    address: "UAE",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop",
     timezone: "GST (UTC+4)"
   },
   {
     country: "Ireland",
-    city: "Dublin",
-    address: "321 O'Connell Street, Dublin 1, Ireland",
+    address: "Ireland",
     image: "https://images.unsplash.com/photo-1549918864-48ac978761a4?w=400&h=300&fit=crop",
     timezone: "GMT (UTC+0)"
   },
   {
     country: "USA",
-    city: "New York",
-    address: "654 Broadway, Manhattan, New York, NY 10012",
+    address: "USA",
     image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop",
     timezone: "EST (UTC-5)"
   }
