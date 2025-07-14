@@ -73,7 +73,7 @@ const Footer = () => {
                 lineHeight: 'normal',
               }}
             >
-              📧 hello@barbarika.io
+              📧 barbarika.team@gmail.com
             </p>
             <p 
               className="cursor-pointer text-white mb-8 sm:mb-10 lg:mb-10 text-sm sm:text-base"
@@ -84,7 +84,7 @@ const Footer = () => {
                 lineHeight: 'normal',
               }}
             >
-              📞 +91 00000 00000
+              📞 +91 9326387236
             </p>
           </div>
 
