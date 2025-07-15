@@ -10,11 +10,9 @@ interface NavbarProps {
 const menuItems = [
   { label: 'Services'},
   { label: 'Industries' },
-  { label: 'Success stories' },
   { label: 'Our people' },
   { label: 'Company' },
   { label: 'Pricing' },
-  { label: 'Events' },
 ];
 
 const servicesDropdown = [
@@ -35,9 +33,9 @@ const servicesDropdown = [
 
 const companyDropdown = [
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
   { label: 'Blog', href: '/blog' },
   { label: 'Careers', href: '/careers' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const industriesDropdown = [
@@ -102,6 +100,8 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       setServicesOpen(false);
     }, 100);
   };
+
+
 
   const handleCompanyMouseEnter = () => {
     if (companyTimeoutRef.current) {
@@ -219,6 +219,22 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                   </div>
                 )}
               </div>
+            ) : item.label === 'Our people' ? (
+              pathname === '/' ? (
+                <span
+                  onClick={e => {
+                    e.preventDefault();
+                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="capitalize"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link href="/#team">
+                  <span className="capitalize">{item.label}</span>
+                </Link>
+              )
             ) : item.label === 'Company' ? (
               <div
                 ref={companyRef}
@@ -252,26 +268,6 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                   </div>
                 )}
               </div>
-            ) : item.label === 'Success stories' ? (
-              <Link href="/success-stories">
-                <span className="capitalize">{item.label}</span>
-              </Link>
-            ) : item.label === 'Our people' ? (
-              pathname === '/' ? (
-                <span
-                  onClick={e => {
-                    e.preventDefault();
-                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="capitalize"
-                >
-                  {item.label}
-                </span>
-              ) : (
-                <Link href="/#team">
-                  <span className="capitalize">{item.label}</span>
-                </Link>
-              )
             ) : item.label === 'Pricing' ? (
               pathname === '/' ? (
                 <span

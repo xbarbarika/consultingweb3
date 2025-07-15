@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
-import { FaGem, FaGlobeAmericas, FaGraduationCap, FaBolt, FaBullseye } from 'react-icons/fa';
 
 export default function Careers() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -257,7 +256,7 @@ export default function Careers() {
     <div className="text-white bg-black">
       <div className="w-full" style={{
         minHeight: 'calc(100vh + 300px)',
-        backgroundImage: 'url(/mainbg.png)',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -296,53 +295,23 @@ export default function Careers() {
             
             <div className={`${screenSize === 'desktop' ? 'flex justify-center items-center gap-12' : 'flex flex-col items-center'} ${screenSize === 'mobile' ? 'gap-4' : 'gap-5'}`} style={getBenefitsStyle()}>
               <div className="flex items-center gap-3">
-                <FaGem style={{ 
-                  background: 'linear-gradient(45deg, #FF965D, #BA34E2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px'
-                }} />
+                <span style={{ fontSize: '18px' }}>🔥</span>
                 <span>100% Remote</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaGlobeAmericas style={{ 
-                  background: 'linear-gradient(45deg, #FF965D, #BA34E2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px'
-                }} />
+                <span style={{ fontSize: '18px' }}>🌍</span>
                 <span>Global Culture</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaGraduationCap style={{ 
-                  background: 'linear-gradient(45deg, #FF965D, #BA34E2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px'
-                }} />
+                <span style={{ fontSize: '18px' }}>🧠</span>
                 <span>Weekly Learning Credits</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaBolt style={{ 
-                  background: 'linear-gradient(45deg, #FF965D, #BA34E2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px'
-                }} />
+                <span style={{ fontSize: '18px' }}>⏱️</span>
                 <span>Async + Flexible Hours</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaBullseye style={{ 
-                  background: 'linear-gradient(45deg, #FF965D, #BA34E2)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  fontSize: '18px'
-                }} />
+                <span style={{ fontSize: '18px' }}>🚀</span>
                 <span>Real Client Impact</span>
               </div>
             </div>
@@ -352,7 +321,7 @@ export default function Careers() {
         {/* Open Roles Section */}
         <section id="open-roles" className="w-full px-4 md:px-8 lg:px-16" style={{ marginBottom: screenSize === 'mobile' ? '120px' : screenSize === 'tablet' ? '180px' : '300px' }}>
           <div className={`mx-auto text-center ${screenSize === 'desktop' ? 'max-w-4xl' : 'max-w-full'}`}>
-                          <h2 className={`font-medium ${screenSize === 'mobile' ? 'mb-8' : screenSize === 'tablet' ? 'mb-12' : 'mb-16'}`} style={getOpenRolesHeadingStyle()}>
+            <h2 className={`font-medium ${screenSize === 'mobile' ? 'mb-8' : screenSize === 'tablet' ? 'mb-12' : 'mb-16'}`} style={getOpenRolesHeadingStyle()}>
               Open Roles
             </h2>
             
