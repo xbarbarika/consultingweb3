@@ -123,7 +123,7 @@ const Footer = () => {
           </h3>
           <ul className="[&>*:not(:last-child)]:mb-[10px]">
             <li>
-              <Link href="/marketing-sub" 
+              <Link href="/services-file/marketing-sub" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -138,7 +138,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/social-media" 
+              <Link href="/services-file/social-media" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -153,7 +153,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/paid-social" 
+              <Link href="/services-file/paid-social" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -168,7 +168,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/seo" 
+              <Link href="/services-file/seo" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -183,7 +183,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/influencer" 
+              <Link href="/services-file/influencer" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -198,7 +198,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/pr-marketing" 
+              <Link href="/services-file/pr-marketing" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -213,7 +213,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/video" 
+              <Link href="/services-file/video" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -228,7 +228,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/lead-gen" 
+              <Link href="/services-file/lead-gen" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -243,7 +243,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/branding" 
+              <Link href="/services-file/branding" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -258,7 +258,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/community" 
+              <Link href="/services-file/community" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -273,7 +273,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/web3-and-mobile" 
+              <Link href="/services-file/web3-and-mobile" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -288,7 +288,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/blockchain" 
+              <Link href="/services-file/blockchain" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -303,7 +303,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/genai" 
+              <Link href="/services-file/genai" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -350,7 +350,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/fintech" 
+              <Link href="/industries-file/fintech" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -365,7 +365,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/crypto" 
+              <Link href="/industries-file/crypto" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -380,7 +380,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/healthcare" 
+              <Link href="/industries-file/healthcare" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -395,7 +395,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/software" 
+              <Link href="/industries-file/software" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -410,7 +410,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/saas" 
+              <Link href="/industries-file/saas" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -425,7 +425,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/startup" 
+              <Link href="/industries-file/startup" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -440,7 +440,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/small-business" 
+              <Link href="/industries-file/small-business" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -455,7 +455,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/gaming" 
+              <Link href="/industries-file/gaming" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -470,7 +470,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/esport" 
+              <Link href="/industries-file/esport" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -485,7 +485,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/mobile" 
+              <Link href="/industries-file/mobile" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',
@@ -500,7 +500,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/ecommerce" 
+              <Link href="/industries-file/ecommerce" 
                 className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base"
                 style={{
                   fontFamily: 'Inter',

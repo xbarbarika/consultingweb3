@@ -9,41 +9,41 @@ interface MenuModalProps {
 }
 
 const servicesData = [
-  { label: 'Marketing Subscription', href: '/marketing-sub' },
-  { label: 'Social Media', href: '/social-media' },
-  { label: 'Paid Social', href: '/paid-social' },
-  { label: 'SEO', href: '/seo' },
-  { label: 'Influencer Marketing', href: '/influencer' },
-  { label: 'PR & Outreach', href: '/pr-marketing' },
-  { label: 'Video Production', href: '/video' },
-  { label: 'Lead Generation', href: '/lead-gen' },
-  { label: 'Branding', href: '/branding' },
-  { label: 'Community Management', href: '/community' },
-  { label: 'Web3 & Mobile', href: '/web3-and-mobile' },
-  { label: 'Blockchain', href: '/blockchain' },
-  { label: 'GenAI', href: '/genai' },
+  { label: 'Marketing Subscription', href: '/services-file/marketing-sub' },
+  { label: 'Social Media', href: '/services-file/social-media' },
+  { label: 'Paid Social', href: '/services-file/paid-social' },
+  { label: 'SEO', href: '/services-file/seo' },
+  { label: 'Influencer Marketing', href: '/services-file/influencer' },
+  { label: 'PR & Outreach', href: '/services-file/pr-marketing' },
+  { label: 'Video Production', href: '/services-file/video' },
+  { label: 'Lead Generation', href: '/services-file/lead-gen' },
+  { label: 'Branding', href: '/services-file/branding' },
+  { label: 'Community Management', href: '/services-file/community' },
+  { label: 'Web3 & Mobile', href: '/services-file/web3-and-mobile' },
+  { label: 'Blockchain', href: '/services-file/blockchain' },
+  { label: 'GenAI', href: '/services-file/genai' },
 ];
 
 const industriesData = [
   { label: 'B2B', href: '/industries' },
-  { label: 'Fintech', href: '/fintech' },
-  { label: 'Crypto', href: '/crypto' },
-  { label: 'Healthcare', href: '/healthcare' },
-  { label: 'Software', href: '/software' },
-  { label: 'SaaS', href: '/saas' },
-  { label: 'Startup', href: '/startup' },
-  { label: 'Small Business', href: '/small-business' },
-  { label: 'Gaming', href: '/gaming' },
-  { label: 'eSport', href: '/esport' },
-  { label: 'Mobile', href: '/mobile' },
-  { label: 'eCommerce', href: '/ecommerce' },
+  { label: 'Fintech', href: '/industries-file/fintech' },
+  { label: 'Crypto', href: '/industries-file/crypto' },
+  { label: 'Healthcare', href: '/industries-file/healthcare' },
+  { label: 'Software', href: '/industries-file/software' },
+  { label: 'SaaS', href: '/industries-file/saas' },
+  { label: 'Startup', href: '/industries-file/startup' },
+  { label: 'Small Business', href: '/industries-file/small-business' },
+  { label: 'Gaming', href: '/industries-file/gaming' },
+  { label: 'eSport', href: '/industries-file/esport' },
+  { label: 'Mobile', href: '/industries-file/mobile' },
+  { label: 'eCommerce', href: '/industries-file/ecommerce' },
 ];
 
 const companyData = [
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'About', href: '/company-file/about' },
+  { label: 'Contact', href: '/company-file/contact' },
+  { label: 'Blog', href: '/company-file/blog' },
+  { label: 'Careers', href: '/company-file/careers' },
 ];
 
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
@@ -300,12 +300,12 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
             </button>
 
             {/* Contact */}
-            <Link href="/contact" onClick={handleClose}>
+            <Link href="/company-file/contact" onClick={handleClose}>
               <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
-                pathname === '/contact' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+                pathname === '/company-file/contact' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
               }`}>
                 <span className={`text-base sm:text-lg font-medium ${
-                  pathname === '/contact' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
+                  pathname === '/company-file/contact' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
                 } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
                   Contact
                 </span>

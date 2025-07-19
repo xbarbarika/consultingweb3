@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         {/* Floating Action Button */}
         <div className={`fixed bottom-8 right-8 transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <Link href="/contact">
+          <Link href="/company-file/contact">
             <button className="relative group p-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
               <span className="relative text-white font-bold">Get Started</span>

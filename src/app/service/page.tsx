@@ -13,7 +13,7 @@ const services = [
     ),
     title: 'Marketing Subscription',
     desc: 'All your marketing needs in one simple subscription. Scale with an on-demand team that knows your business inside and out.',
-    href: '/marketing-sub',
+    href: '/services-file/marketing-sub',
   },
   {
     icon: (
@@ -22,7 +22,7 @@ const services = [
     ),
     title: 'Social Media',
     desc: 'Engage your audience on their favourite platforms to foster meaningful relationships that build trust.',
-    href: '/social-media',
+    href: '/services-file/social-media',
   },
   {
     icon: (
@@ -31,7 +31,7 @@ const services = [
     ),
     title: 'Paid Social',
     desc: 'Extend the reach of your brand through laser-focused social ads that amplify awareness and propel sales.',
-    href: '/paid-social',
+    href: '/services-file/paid-social',
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const services = [
     ),
     title: 'SEO',
     desc: 'Employ strategic SEO to increase your visibility in search results and generate a higher volume of targeted traffic.',
-    href: '/seo',
+    href: '/services-file/seo',
   },
   {
     icon: (
@@ -49,7 +49,7 @@ const services = [
     ),
     title: 'Influencer Marketing',
     desc: 'Turbo-boost engagement and sales with strategic influencer campaigns that create a big buzz around your brand.',
-    href: '/influencer',
+    href: '/services-file/influencer',
   },
   {
     icon: (
@@ -58,7 +58,7 @@ const services = [
     ),
     title: 'PR & Outreach',
     desc: 'Leverage stellar media relations expertise to boost brand exposure and positively influence public opinion.',
-    href: '/pr-marketing',
+    href: '/services-file/pr-marketing',
   },
   {
     icon: (
@@ -67,7 +67,7 @@ const services = [
     ),
     title: 'Video Production',
     desc: 'Cater to the growing hunger for multimedia digital content through attention-grabbing video production.',
-    href: '/video',
+    href: '/services-file/video',
   },
   {
     icon: (
@@ -76,7 +76,7 @@ const services = [
     ),
     title: 'Lead Generation',
     desc: 'Invigorate your marketing strategy by partnering with NinjaPromo – a lead generation marketing agency that can elevate your brand into the stratosphere.',
-    href: '/lead-gen',
+    href: '/services-file/lead-gen',
   },
   {
     icon: (
@@ -85,7 +85,7 @@ const services = [
     ),
     title: 'Branding',
     desc: 'Put the spotlight on your brand and stand out from the crowd with an inspired branding campaign that generates positive PR.',
-    href: '/branding',
+    href: '/services-file/branding',
   },
   {
     icon: (
@@ -94,7 +94,7 @@ const services = [
     ),
     title: 'Community Management',
     desc: 'Grow your online presence and build strong, lasting relationships with your target audience through strategic community management.',
-    href: '/community',
+    href: '/services-file/community',
   },
   {
     icon: (
@@ -103,7 +103,7 @@ const services = [
     ),
     title: 'Web3 & Mobile',
     desc: 'Next-gen web3 and mobile solutions for the future. From DeFi platforms to mobile dApps, we build the digital infrastructure of tomorrow.',
-    href: '/web3-and-mobile',
+    href: '/services-file/web3-and-mobile',
   },
   {
     icon: (
@@ -112,7 +112,7 @@ const services = [
     ),
     title: 'Blockchain',
     desc: 'Harness the incredible potential of blockchain technology to acquire new revenue streams and propel your business into the future.',
-    href: '/blockchain',
+    href: '/services-file/blockchain',
   },
   {
     icon: (
@@ -121,7 +121,7 @@ const services = [
     ),
     title: 'GenAI',
     desc: 'Leverage cutting-edge AI technology to transform your business operations. From content generation to process automation—we harness the power of AI for your success.',
-    href: '/genai',
+    href: '/services-file/genai',
   },
 ];
 
