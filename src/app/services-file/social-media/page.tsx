@@ -29,14 +29,16 @@ export default function Service() {
         {/* Book Demo Button */}
         <div className="mt-8 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           <Link href="/book-demo">
-            <button className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none w-full sm:w-auto"
+            <div 
+              className="inline-block p-[2px] rounded-xl transition hover:scale-105"
               style={{
-                borderImage: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%) 1',
-                borderStyle: 'solid',
-                borderWidth: '2px',
-              }}>
-              Book Demo
-            </button>
+                background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)',
+              }}
+            >
+              <button className="px-6 sm:px-8 py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full sm:w-auto">
+                Book Demo
+              </button>
+            </div>
           </Link>
         </div>
         
@@ -45,7 +47,7 @@ export default function Service() {
           {/* Card */}
           <div className="flex flex-col items-start w-full sm:w-auto">            
             {/* Gradient Border Wrapper */}
-            <div className="w-full sm:w-auto lg:w-[461px]" style={{
+            <div className="w-full sm:w-auto lg:w-[461px] hover:scale-105 transition-transform duration-300" style={{
               maxWidth: '461px',
               height: '240px',
               borderRadius: '22px',

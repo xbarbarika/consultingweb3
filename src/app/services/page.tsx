@@ -38,8 +38,8 @@ export default function ServicesPage() {
     gradientColors: string;
     id: string;
   }) => (
-    <section id={id} className="w-full py-16 px-4 md:px-8 lg:px-16 scroll-mt-20 group">
-      <div className="max-w-7xl mx-auto transform transition-all duration-500 hover:scale-[1.01]">
+    <section id={id} className="w-full py-16 px-4 md:px-8 lg:px-16 scroll-mt-20">
+      <div className="max-w-7xl mx-auto">
         {/* Service Label */}
         <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mb-6" style={{ fontFamily: 'Inter' }}>
           Service <span className="text-white/90 font-medium">{serviceName}</span>
@@ -58,16 +58,18 @@ export default function ServicesPage() {
         {/* Book Demo Button */}
         <div className="mb-10">
           <Link href="/book-demo">
-            <button 
-              className="px-6 sm:px-8 py-3 rounded-full font-medium border-2 bg-black/60 text-white transition hover:scale-105 focus:outline-none"
+            <div 
+              className="inline-block p-[2px] rounded-xl transition hover:scale-105"
               style={{
-                borderImage: `linear-gradient(90deg, ${gradientColors}) 1`,
-                borderStyle: 'solid',
-                borderWidth: '2px',
+                background: `linear-gradient(90deg, ${gradientColors})`,
               }}
             >
-              Book Demo
-            </button>
+              <button 
+                className="px-6 sm:px-8 py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full h-full"
+              >
+                Book Demo
+              </button>
+            </div>
           </Link>
         </div>
         
@@ -77,7 +79,7 @@ export default function ServicesPage() {
           <div className="flex flex-col items-start w-full sm:w-auto">            
             {/* Gradient Border Wrapper */}
             <div 
-              className="w-full sm:w-auto lg:w-[461px] group-hover:scale-105 transition-transform duration-300" 
+              className="w-full sm:w-auto lg:w-[461px] hover:scale-105 transition-transform duration-300" 
               style={{
                 maxWidth: '461px',
                 height: '240px',
