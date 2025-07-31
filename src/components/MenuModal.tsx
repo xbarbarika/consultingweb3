@@ -8,21 +8,7 @@ interface MenuModalProps {
   onClose: () => void;
 }
 
-const servicesData = [
-  { label: 'Marketing Subscription', href: '/marketing-sub' },
-  { label: 'Social Media', href: '/social-media' },
-  { label: 'Paid Social', href: '/paid-social' },
-  { label: 'SEO', href: '/seo' },
-  { label: 'Influencer Marketing', href: '/influencer' },
-  { label: 'PR & Outreach', href: '/pr-marketing' },
-  { label: 'Video Production', href: '/video' },
-  { label: 'Lead Generation', href: '/lead-gen' },
-  { label: 'Branding', href: '/branding' },
-  { label: 'Community Management', href: '/community' },
-  { label: 'Web3 & Mobile', href: '/web3-and-mobile' },
-  { label: 'Blockchain', href: '/blockchain' },
-  { label: 'GenAI', href: '/genai' },
-];
+
 
 const industriesData = [
   { label: 'B2B', href: '/industries' },
@@ -48,7 +34,6 @@ const companyData = [
 
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -68,7 +53,6 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleClose = () => {
-    setServicesOpen(false);
     setIndustriesOpen(false);
     setCompanyOpen(false);
     onClose();
@@ -134,48 +118,18 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
               </div>
             </Link>
 
-            {/* Services with Dropdown */}
-            <div>
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
-              >
-                <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+            {/* Services */}
+            <Link href="/services" onClick={handleClose}>
+              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
+                pathname === '/services' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
+              }`}>
+                <span className={`text-base sm:text-lg font-medium ${
+                  pathname === '/services' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
+                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
                   Services
                 </span>
-                <svg 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 16 16" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
-                >
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              
-              {servicesOpen && (
-                <div className="mt-2 ml-2 sm:ml-4 space-y-1 animate-fade-in">
-                  <Link href="/service" onClick={handleClose}>
-                    <div className="p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors">
-                      <span className="text-sm font-semibold text-pink-400">View All Services</span>
-                    </div>
-                  </Link>
-                  <div className="grid grid-cols-1 gap-1">
-                    {servicesData.map((service) => (
-                      <Link key={service.label} href={service.href} onClick={handleClose}>
-                        <div className="p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors group">
-                          <span className="text-sm text-white/70 group-hover:text-white transition-colors">
-                            {service.label}
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            </Link>
 
             {/* Industries with Dropdown */}
             <div>
