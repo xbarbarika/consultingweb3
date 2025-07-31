@@ -8,12 +8,7 @@ const founder = {
 };
 
 const teamMembers = [
-  { 
-    name: "Aditya", 
-    role: "Full Stack Blockchain Developer", 
-    avatar: "/aadityaprofile.png",
-    description: "Blockchain specialist building secure DeFi protocols and Web3 solutions."
-  },
+ 
   { 
     name: "Prince", 
     role: "Frontend Developer", 
@@ -336,7 +331,7 @@ export default function TeamSection() {
         </div>
       </div>
       
-      <div className="flex flex-wrap justify-center max-w-6xl mx-auto responsive-grid" style={{ gap: '180px' }}>
+      <div className="flex flex-wrap justify-center max-w-6xl mx-auto responsive-grid" style={{ gap: '280px' }}>
         {teamMembers.map((member, index) => (
           <div 
             key={index} 

@@ -80,7 +80,7 @@ const Footer = () => {
                 lineHeight: 'normal',
               }}
             >
-              📞 +91 9326387236
+              📞 +91 9904395990
             </p>
           </div>
 
@@ -530,66 +530,96 @@ const Footer = () => {
           >
             Company
           </h3>
-          <ul className="space-y-2">
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              About us
+          <ul className="[&>*:not(:last-child)]:mb-[10px]">
+            <li>
+              <Link href="/company-file/about" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                About us
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Our People
+            <li>
+              <Link href="/#team" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Our People
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Pricing
+            <li>
+              <Link href="/#pricing" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Pricing
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Blog
+            <li>
+              <Link href="/company-file/blog" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Blog
+              </Link>
             </li>
-            <li className="text-white/60 mb-4 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Careers
+            <li>
+              <Link href="/company-file/careers" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Careers
+              </Link>
             </li>
-            <li className="text-white/60 text-sm sm:text-base"
-              style={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: '400',
-                lineHeight: 'normal',
-              }}
-            >
-              Contact
+            <li>
+              <Link href="/company-file/contact" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
