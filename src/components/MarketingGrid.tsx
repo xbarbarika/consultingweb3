@@ -92,7 +92,7 @@ const services = [
 const MarketingGrid = () => {
   return (
     <>
-              <style dangerouslySetInnerHTML={{
+      <style dangerouslySetInnerHTML={{
         __html: `
           @media (max-width: 767px) {
             .marketing-card {
@@ -177,199 +177,279 @@ const MarketingGrid = () => {
               hyphens: auto !important;
             }
           }
+          
+          /* Enhanced 3D Glassy Card Styles */
+          .marketing-card {
+            position: relative !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 
+              0 8px 32px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transform-style: preserve-3d !important;
+          }
+          
+          .marketing-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0.05) 50%,
+              rgba(255, 255, 255, 0.1) 100%
+            ) !important;
+            border-radius: inherit !important;
+            opacity: 0 !important;
+            transition: opacity 0.4s ease !important;
+            pointer-events: none !important;
+          }
+          
+          .marketing-card::after {
+            content: '' !important;
+            position: absolute !important;
+            top: -1px !important;
+            left: -1px !important;
+            right: -1px !important;
+            bottom: -1px !important;
+            background: linear-gradient(
+              45deg,
+              rgba(255, 150, 93, 0.3),
+              rgba(186, 52, 226, 0.3),
+              rgba(255, 150, 93, 0.3)
+            ) !important;
+            border-radius: inherit !important;
+            opacity: 0 !important;
+            transition: opacity 0.4s ease !important;
+            z-index: -1 !important;
+          }
+          
           .marketing-card:hover {
-            background: radial-gradient(182.12% 137.91% at 27.78% 13.98%, #FFDBC8 0%, #F0C0FF 100%) !important;
-            backdrop-filter: blur(4.012380599975586px) !important;
+            transform: translateY(-8px) rotateX(2deg) rotateY(2deg) !important;
+            box-shadow: 
+              0 20px 60px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 40px rgba(255, 150, 93, 0.2) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
           }
+          
+          .marketing-card:hover::before {
+            opacity: 1 !important;
+          }
+          
+          .marketing-card:hover::after {
+            opacity: 1 !important;
+          }
+          
           .marketing-card:hover h2 {
-            color: #40234F !important;
-            font-family: "DM Sans" !important;
-            font-size: 22.469px !important;
-            font-style: normal !important;
-            font-weight: 600 !important;
-            line-height: 29.21px !important;
+            color: #FF965D !important;
+            text-shadow: 0 0 20px rgba(255, 150, 93, 0.5) !important;
           }
+          
           .marketing-card:hover p {
-            color: #40234F !important;
-            font-family: "DM Sans" !important;
-            font-size: 14.445px !important;
-            font-style: normal !important;
-            font-weight: 500 !important;
-            line-height: 20.8px !important;
+            color: rgba(255, 255, 255, 0.9) !important;
           }
+          
           .marketing-card:hover .badge {
-            background: rgba(0, 0, 0, 0.1) !important;
-            color: #000 !important;
+            background: rgba(255, 150, 93, 0.2) !important;
+            color: #FF965D !important;
+            border-color: rgba(255, 150, 93, 0.5) !important;
+            box-shadow: 0 0 20px rgba(255, 150, 93, 0.3) !important;
           }
+          
           .marketing-card:hover .department-badge {
-            border: 0.802px solid rgba(169, 104, 204, 0.48) !important;
-            background: transparent !important;
-            color: #442152 !important;
-            text-align: center !important;
-            font-family: "DM Sans" !important;
-            font-size: 9.63px !important;
-            font-style: normal !important;
-            font-weight: 500 !important;
-            line-height: 11.556px !important;
-            text-transform: uppercase !important;
+            border: 1px solid rgba(255, 150, 93, 0.5) !important;
+            background: rgba(255, 150, 93, 0.1) !important;
+            color: #FF965D !important;
+            box-shadow: 0 0 15px rgba(255, 150, 93, 0.3) !important;
           }
 
           .marketing-card:hover .service-icon {
-            color: #40234F !important;
+            filter: brightness(0) saturate(100%) invert(67%) sepia(89%) saturate(1234%) hue-rotate(330deg) brightness(101%) contrast(101%) !important;
+            transform: scale(1.1) !important;
           }
-          .marketing-card:hover img.service-icon {
-            filter: brightness(0) saturate(100%) invert(15%) sepia(34%) saturate(1766%) hue-rotate(285deg) brightness(95%) contrast(93%) !important;
+          
+          /* Shimmer effect for cards */
+          .marketing-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              rgba(255, 255, 255, 0.1),
+              transparent
+            ) !important;
+            transition: left 0.5s !important;
+            border-radius: inherit !important;
+            z-index: 1 !important;
+          }
+          
+          .marketing-card:hover::before {
+            left: 100% !important;
           }
         `
       }} />
-    <div 
-      id="services"
-      className="marketing-grid-container bg-[#0e0b17] text-white px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16"
-      style={{
-        width: '100vw',
-        minHeight: '100vh',
-        flexShrink: 0,
-        paddingTop: '60px'
-      }}
-    >
-      <h1 
-        className="marketing-title"
-        style={{
-          marginBottom: '40px',
-          textAlign: 'center',
-          fontFamily: '"DM Sans"',
-          fontSize: '24px',
-          fontStyle: 'normal',
-          fontWeight: 500,
-          lineHeight: '100%',
-          background: 'linear-gradient(82deg, #FF965D 35%, #BA34E2 100%)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}
-      >
-        Your On-Demand Marketing Powerhouse
-      </h1>
       <div 
-        className="marketing-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-0"
+        id="services"
+        className="marketing-grid-container bg-[#0e0b17] text-white px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16"
         style={{
-          columnGap: '15px',
-          rowGap: '30px'
+          width: '100vw',
+          minHeight: '100vh',
+          flexShrink: 0,
+          paddingTop: '60px'
         }}
       >
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className={`p-4 sm:p-5 lg:p-6 transition-all duration-300 marketing-card ${
-              service.active
-                ? "bg-[#fce4fc] text-black shadow-xl"
-                : "hover:shadow-lg hover:scale-105"
-            }`}
-            style={{
-              width: '100%',
-              maxWidth: '288.891px',
-              height: 'auto',
-              minHeight: '280px',
-              flexShrink: 0,
-              borderRadius: '12.84px',
-              background: 'rgba(228, 197, 255, 0.08)',
-              backdropFilter: 'blur(4.012380599975586px)'
-            }}
-          >
-            <div className="mb-4">
-              <div className="p-2 w-fit mb-4">
-                {service.icon ? (
-                  <Image
-                    src={`/${service.icon}`}
-                    alt={service.title}
-                    width={24}
-                    height={24}
-                    className="service-icon"
-                    style={{
-                      flexShrink: 0,
-                      filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                    }}
-                  />
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="service-icon"
-                    style={{
-                      width: '24px',
-                      height: '24px',
-                      flexShrink: 0,
-                      color: '#FFFFFF'
-                    }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
-                    />
-                  </svg>
-                )}
-              </div>
-            </div>
-            <h2 
-              className="mb-4"
+        <h1 
+          className="marketing-title"
+          style={{
+            marginBottom: '40px',
+            textAlign: 'center',
+            fontFamily: '"DM Sans"',
+            fontSize: '24px',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            lineHeight: '100%',
+            background: 'linear-gradient(82deg, #FF965D 35%, #BA34E2 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >
+          Your On-Demand Marketing Powerhouse
+        </h1>
+        <div 
+          className="marketing-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-0"
+          style={{
+            columnGap: '15px',
+            rowGap: '30px'
+          }}
+        >
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`p-4 sm:p-5 lg:p-6 transition-all duration-300 marketing-card ${
+                service.active
+                  ? "bg-[#fce4fc] text-black shadow-xl"
+                  : "hover:shadow-lg hover:scale-105"
+              }`}
               style={{
-                color: '#FFFFFF',
-                fontFamily: '"DM Sans"',
-                fontSize: '22.469px',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '29.21px'
+                width: '100%',
+                maxWidth: '288.891px',
+                height: 'auto',
+                minHeight: '280px',
+                flexShrink: 0,
+                borderRadius: '16px',
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
-              {service.title}
-            </h2>
-            <div className="flex gap-2 mb-4">
-              <span 
-                className="badge department-badge"
+              <div className="mb-4">
+                <div className="p-2 w-fit mb-4">
+                  {service.icon ? (
+                    <Image
+                      src={`/${service.icon}`}
+                      alt={service.title}
+                      width={24}
+                      height={24}
+                      className="service-icon transition-transform duration-300"
+                      style={{
+                        flexShrink: 0,
+                        filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                      }}
+                    />
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="service-icon transition-transform duration-300"
+                      style={{
+                        width: '24px',
+                        height: '24px',
+                        flexShrink: 0,
+                        color: '#FFFFFF'
+                      }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </div>
+              <h2 
+                className="mb-4 transition-all duration-300"
                 style={{
-                  display: 'flex',
-                  width: '70px',
-                  height: '22px',
-                  padding: '4px 8px',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  flexShrink: 0,
-                  borderRadius: '6.42px',
-                  border: '0.802px solid #A1A1A9',
-                  background: 'transparent',
-                  color: '#A1A1AA',
-                  textAlign: 'center',
+                  color: '#FFFFFF',
                   fontFamily: '"DM Sans"',
-                  fontSize: '8px',
+                  fontSize: '22.469px',
                   fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '10px',
-                  textTransform: 'uppercase'
+                  fontWeight: 600,
+                  lineHeight: '29.21px'
                 }}
               >
-                DEPARTMENT
-              </span>
+                {service.title}
+              </h2>
+              <div className="flex gap-2 mb-4">
+                <span 
+                  className="badge department-badge transition-all duration-300"
+                  style={{
+                    display: 'flex',
+                    width: '70px',
+                    height: '22px',
+                    padding: '4px 8px',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexShrink: 0,
+                    borderRadius: '6.42px',
+                    border: '0.802px solid #A1A1A9',
+                    background: 'transparent',
+                    color: '#A1A1AA',
+                    textAlign: 'center',
+                    fontFamily: '"DM Sans"',
+                    fontSize: '8px',
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    lineHeight: '10px',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  DEPARTMENT
+                </span>
+              </div>
+              <p 
+                className="transition-all duration-300"
+                style={{
+                  color: '#A1A1A9',
+                  fontFamily: '"DM Sans"',
+                  fontSize: '14.445px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '20.8px'
+                }}
+              >
+                {service.description}
+              </p>
             </div>
-            <p 
-              style={{
-                color: '#A1A1A9',
-                fontFamily: '"DM Sans"',
-                fontSize: '14.445px',
-                fontStyle: 'normal',
-                fontWeight: 500,
-                lineHeight: '20.8px'
-              }}
-            >
-              {service.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 };

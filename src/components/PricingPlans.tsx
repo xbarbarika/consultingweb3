@@ -102,17 +102,19 @@ const PricingPlans = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative group cursor-pointer transition-all duration-300 ${
+              className={`relative group cursor-pointer transition-all duration-500 ${
                 plan.popular ? 'md:-mt-8' : ''
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="px-4 py-2 rounded-full text-xs font-semibold text-white"
+                  <div className="px-4 py-2 rounded-full text-xs font-semibold text-white animate-pulse"
                     style={{
                       background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
-                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)'
+                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)'
                     }}>
                     Most Popular
                   </div>
@@ -121,41 +123,53 @@ const PricingPlans = () => {
 
               {/* Plan Card */}
               <div
-                className={`h-full px-6 sm:px-8 py-8 sm:py-10 transition-all duration-300 text-gray-100 relative overflow-hidden ${
-                  plan.popular 
-                    ? 'ring-2 ring-pink-500/50 shadow-xl shadow-pink-500/20' 
-                    : 'hover:shadow-xl hover:shadow-white/10'
+                className={`h-full px-6 sm:px-8 py-8 sm:py-10 transition-all duration-500 text-gray-100 relative overflow-hidden pricing-card ${
+                  plan.popular ? 'popular-card' : 'standard-card'
                 }`}
                 style={{
                   borderRadius: '24px',
                   background: plan.popular 
-                    ? 'linear-gradient(135deg, rgba(255, 150, 93, 0.1) 0%, rgba(186, 52, 226, 0.1) 100%)' 
-                    : '#19191A',
+                    ? 'linear-gradient(135deg, rgba(255, 150, 93, 0.15) 0%, rgba(186, 52, 226, 0.15) 100%)' 
+                    : 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
                   border: plan.popular 
-                    ? '1px solid rgba(255, 150, 93, 0.3)' 
-                    : '1px solid rgba(107, 107, 107, 0.3)'
-                }}
-                onMouseEnter={(e) => {
-                  if (!plan.popular) {
-                    e.currentTarget.style.background = 'radial-gradient(84.11% 84.51% at 39.77% 16.11%, rgba(255, 158, 114, 0.15) 0%, rgba(255, 94, 193, 0.15) 100%)';
-                    e.currentTarget.style.borderColor = 'rgba(255, 150, 93, 0.5)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!plan.popular) {
-                    e.currentTarget.style.background = '#19191A';
-                    e.currentTarget.style.borderColor = 'rgba(107, 107, 107, 0.3)';
-                  }
+                    ? '1px solid rgba(255, 150, 93, 0.4)' 
+                    : '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: plan.popular
+                    ? '0 8px 32px rgba(255, 150, 93, 0.2), 0 0 0 1px rgba(255, 150, 93, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                    : '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+                  transformStyle: 'preserve-3d'
                 }}
               >
+                {/* Glassmorphism Overlay */}
+                <div 
+                  className="absolute inset-0 rounded-[24px] opacity-0 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%)',
+                    pointerEvents: 'none'
+                  }}
+                ></div>
+
+                {/* Shimmer Effect */}
+                <div 
+                  className="absolute inset-0 rounded-[24px] opacity-0 transition-opacity duration-500"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent)',
+                    transform: 'translateX(-100%)',
+                    pointerEvents: 'none'
+                  }}
+                ></div>
+
                 {/* Plan Badge */}
-                <div className="flex justify-center mb-6 sm:mb-8">
+                <div className="flex justify-center mb-6 sm:mb-8 relative z-10">
                   <div 
-                    className="inline-flex px-4 py-2 rounded-full text-center transition-colors"
+                    className="inline-flex px-4 py-2 rounded-full text-center transition-all duration-300"
                     style={{
-                      border: plan.popular ? '1px solid rgba(255, 150, 93, 0.5)' : '1px solid #6B6B6B',
+                      border: plan.popular ? '1px solid rgba(255, 150, 93, 0.5)' : '1px solid rgba(255, 255, 255, 0.2)',
                       color: plan.popular ? '#FF965D' : '#B9B9B9',
-                      backgroundColor: plan.popular ? 'rgba(255, 150, 93, 0.1)' : 'transparent',
+                      backgroundColor: plan.popular ? 'rgba(255, 150, 93, 0.1)' : 'rgba(255, 255, 255, 0.05)',
+                      backdropFilter: 'blur(10px)',
                       fontFamily: 'DM Sans',
                       fontSize: 'clamp(13px, 3.2vw, 16px)',
                       fontWeight: 500,
@@ -167,7 +181,7 @@ const PricingPlans = () => {
                 </div>
                 
                 {/* Price */}
-                <div className="text-center mb-6 sm:mb-8">
+                <div className="text-center mb-6 sm:mb-8 relative z-10">
                   <div className="flex items-baseline justify-center">
                     <span
                       style={{
@@ -197,7 +211,7 @@ const PricingPlans = () => {
 
                 {/* Description */}
                 <p 
-                  className="text-center mb-8 sm:mb-10"
+                  className="text-center mb-8 sm:mb-10 relative z-10"
                   style={{
                     color: plan.popular ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.6)',
                     fontFamily: 'DM Sans',
@@ -211,7 +225,7 @@ const PricingPlans = () => {
                 </p>
 
                 {/* CTA Button */}
-                <div className="mt-auto">
+                <div className="mt-auto relative z-10">
                   <button 
                     className={`w-full py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base ${
                       plan.popular 
@@ -220,8 +234,11 @@ const PricingPlans = () => {
                     }`}
                     style={plan.popular ? {
                       background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
-                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)'
-                    } : {}}
+                      boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)',
+                      backdropFilter: 'blur(10px)'
+                    } : {
+                      backdropFilter: 'blur(10px)'
+                    }}
                   >
                     Get Started
                   </button>
@@ -248,14 +265,20 @@ const PricingPlans = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl hover:bg-white/5 transition-colors">
+              <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl hover:bg-white/5 transition-all duration-300 feature-card"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+                }}>
                 <div className="flex-shrink-0 mt-0.5">
                   <Image 
                     src="/tick.svg" 
                     alt="tick" 
                     width={20}
                     height={20}
-                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300"
                     style={{
                       filter: 'hue-rotate(180deg) saturate(1.5) brightness(1.2)'
                     }}
@@ -283,11 +306,59 @@ const PricingPlans = () => {
           <p className="text-white/60 text-sm sm:text-base mb-6 sm:mb-8">
             Not sure which plan is right for you?
           </p>
-          <button className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-white border border-white/20 hover:border-pink-400/50 hover:bg-white/5 transition-all duration-300 text-sm sm:text-base">
+          <button className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-white border border-white/20 hover:border-pink-400/50 hover:bg-white/5 transition-all duration-300 text-sm sm:text-base hover:scale-105"
+            style={{
+              backdropFilter: 'blur(10px)',
+              background: 'rgba(255, 255, 255, 0.05)'
+            }}>
             Schedule a Consultation
           </button>
         </div>
       </div>
+
+      <style jsx>{`
+        .pricing-card {
+          transform-style: preserve-3d;
+        }
+        
+        .pricing-card:hover {
+          transform: translateY(-12px) rotateX(3deg) rotateY(3deg);
+          box-shadow: 
+            0 25px 80px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 50px rgba(255, 150, 93, 0.3);
+        }
+        
+        .popular-card:hover {
+          box-shadow: 
+            0 25px 80px rgba(255, 150, 93, 0.3),
+            0 0 0 1px rgba(255, 150, 93, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 60px rgba(255, 150, 93, 0.4);
+        }
+        
+        .pricing-card:hover .glassmorphism-overlay {
+          opacity: 1;
+        }
+        
+        .pricing-card:hover .shimmer-effect {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+        
+        .feature-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 
+            0 12px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-card:hover img {
+          transform: scale(1.1);
+        }
+      `}</style>
     </div>
   );
 };
