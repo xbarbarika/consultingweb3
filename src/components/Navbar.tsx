@@ -15,25 +15,7 @@ const menuItems = [
   { label: 'Pricing' },
 ];
 
-<<<<<<< HEAD
 
-=======
-const servicesDropdown = [
-  { label: 'Marketing Subscription', href: '/services-file/marketing-sub' },
-  { label: 'Social Media', href: '/services-file/social-media' },
-  { label: 'Paid Social', href: '/services-file/paid-social' },
-  { label: 'SEO', href: '/services-file/seo' },
-  { label: 'Influencer Marketing', href: '/services-file/influencer' },
-  { label: 'PR & Outreach', href: '/services-file/pr-marketing' },
-  { label: 'Video Production', href: '/services-file/video' },
-  { label: 'Lead Generation', href: '/services-file/lead-gen' },
-  { label: 'Branding', href: '/services-file/branding' },
-  { label: 'Community Management', href: '/services-file/community' },
-  { label: 'Web3 & Mobile', href: '/services-file/web3-and-mobile' },
-  { label: 'Blockchain ', href: '/services-file/blockchain' },
-  { label: 'GenAI', href: '/services-file/genai' },
-];
->>>>>>> 5f8d83085c9be1d32eae8faf0159bd612ce6997a
 
 const companyDropdown = [
   { label: 'About', href: '/company-file/about' },
