@@ -10,35 +10,51 @@ interface NavbarProps {
 const menuItems = [
   { label: 'Services'},
   { label: 'Industries' },
-  { label: 'Success stories' },
   { label: 'Our people' },
   { label: 'Company' },
   { label: 'Pricing' },
-  { label: 'Events' },
 ];
 
+<<<<<<< HEAD
 
+=======
+const servicesDropdown = [
+  { label: 'Marketing Subscription', href: '/services-file/marketing-sub' },
+  { label: 'Social Media', href: '/services-file/social-media' },
+  { label: 'Paid Social', href: '/services-file/paid-social' },
+  { label: 'SEO', href: '/services-file/seo' },
+  { label: 'Influencer Marketing', href: '/services-file/influencer' },
+  { label: 'PR & Outreach', href: '/services-file/pr-marketing' },
+  { label: 'Video Production', href: '/services-file/video' },
+  { label: 'Lead Generation', href: '/services-file/lead-gen' },
+  { label: 'Branding', href: '/services-file/branding' },
+  { label: 'Community Management', href: '/services-file/community' },
+  { label: 'Web3 & Mobile', href: '/services-file/web3-and-mobile' },
+  { label: 'Blockchain ', href: '/services-file/blockchain' },
+  { label: 'GenAI', href: '/services-file/genai' },
+];
+>>>>>>> 5f8d83085c9be1d32eae8faf0159bd612ce6997a
 
 const companyDropdown = [
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'About', href: '/company-file/about' },
+  { label: 'Blog', href: '/company-file/blog' },
+  { label: 'Careers', href: '/company-file/careers' },
+  { label: 'Contact', href: '/company-file/contact' },
 ];
 
 const industriesDropdown = [
   { label: 'B2B', href: '/industries' },
-  { label: 'Fintech', href: '/fintech' },
-  { label: 'Crypto', href: '/crypto' },
-  { label: 'Healthcare', href: '/healthcare' },
-  { label: 'Software', href: '/software' },
-  { label: 'SaaS', href: '/saas' },
-  { label: 'Startup', href: '/startup' },
-  { label: 'Small Business', href: '/small-business' },
-  { label: 'Gaming', href: '/gaming' },
-  { label: 'eSport', href: '/esport' },
-  { label: 'Mobile', href: '/mobile' },
-  { label: 'eCommerce', href: '/ecommerce' },
+  { label: 'Fintech', href: '/industries-file/fintech' },
+  { label: 'Crypto', href: '/industries-file/crypto' },
+  { label: 'Healthcare', href: '/industries-file/healthcare' },
+  { label: 'Software', href: '/industries-file/software' },
+  { label: 'SaaS', href: '/industries-file/saas' },
+  { label: 'Startup', href: '/industries-file/startup' },
+  { label: 'Small Business', href: '/industries-file/small-business' },
+  { label: 'Gaming', href: '/industries-file/gaming' },
+  { label: 'eSport', href: '/industries-file/esport' },
+  { label: 'Mobile', href: '/industries-file/mobile' },
+  { label: 'eCommerce', href: '/industries-file/ecommerce' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
@@ -69,6 +85,8 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [companyOpen, industriesOpen]);
+
+
 
   const handleCompanyMouseEnter = () => {
     if (companyTimeoutRef.current) {
@@ -155,6 +173,22 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                   </div>
                 )}
               </div>
+            ) : item.label === 'Our people' ? (
+              pathname === '/' ? (
+                <span
+                  onClick={e => {
+                    e.preventDefault();
+                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="capitalize"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link href="/#team">
+                  <span className="capitalize">{item.label}</span>
+                </Link>
+              )
             ) : item.label === 'Company' ? (
               <div
                 ref={companyRef}
@@ -188,26 +222,6 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
                   </div>
                 )}
               </div>
-            ) : item.label === 'Success stories' ? (
-              <Link href="/success-stories">
-                <span className="capitalize">{item.label}</span>
-              </Link>
-            ) : item.label === 'Our people' ? (
-              pathname === '/' ? (
-                <span
-                  onClick={e => {
-                    e.preventDefault();
-                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="capitalize"
-                >
-                  {item.label}
-                </span>
-              ) : (
-                <Link href="/#team">
-                  <span className="capitalize">{item.label}</span>
-                </Link>
-              )
             ) : item.label === 'Pricing' ? (
               pathname === '/' ? (
                 <span
