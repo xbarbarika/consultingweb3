@@ -109,7 +109,7 @@ const PricingPlans = () => {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="px-4 py-2 rounded-full text-xs font-semibold text-white animate-pulse"
+                  <div className="px-4 py-2 rounded-full text-xs font-semibold text-white"
                     style={{
                       background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
                       boxShadow: '0 4px 20px rgba(255, 150, 93, 0.3)',
