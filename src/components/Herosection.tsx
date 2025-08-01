@@ -34,7 +34,7 @@ export default function HeroSection() {
         <p className="hidden md:block absolute right-[60px] lg:right-[100px] top-[140px] lg:top-[200px] opacity-70 animate-float-fast" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Community Campaigns</p>
         <p className="hidden md:block absolute right-[80px] lg:right-[160px] bottom-[140px] lg:bottom-[200px] opacity-70 animate-float-slow" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Tech PR</p>
         
-        <div className="absolute top-[120px] sm:top-[140px] lg:top-[180px] left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+        <div className="absolute top-[120px] sm:top-[140px] lg:top-[180px] left-1/2 transform -translate-x-1/2">
           <button className="inline-flex justify-center items-center gap-[8px] lg:gap-[10px] px-[18px] sm:px-[16px] lg:px-[20px] py-[7px] sm:py-[6px] lg:py-[8px] text-[11px] sm:text-xs rounded-[30px] hover:scale-105 transition-transform duration-300" style={{background: 'rgba(255, 255, 255, 0.1)'}}>Chain the Future</button>
         </div>
       </div>
@@ -52,13 +52,13 @@ export default function HeroSection() {
             WebkitTextFillColor: 'transparent',
             animation: 'shimmer 3s ease-in-out infinite'
           }}>
-            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">Subscription-based</span>
-            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">marketing for</span>
-            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">unstoppable growth</span>
-            <span className="hidden sm:block">Subscription-based <br /> marketing for unstoppable growth</span>
+            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">Strategic design</span>
+            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">consultancy that transforms</span>
+            <span className="block sm:hidden text-[26px] xs:text-[30px] leading-[30px] xs:leading-[34px]">brands into leaders</span>
+            <span className="hidden sm:block">Strategic design consultancy that <br /> transforms brands into industry leaders</span>
           </h1>
           <p className="text-gray-300 mt-5 sm:mt-4 lg:mt-6 text-sm sm:text-base max-w-xs sm:max-w-md lg:max-w-2xl mx-auto px-2 sm:px-0 animate-fade-in-up-delayed">
-            We architect high-conversion digital campaigns that help ambitious startups and enterprises break through noise and grow fast — without wasting ad dollars.
+            We craft exceptional digital experiences and strategic brand solutions that help ambitious startups and enterprises stand out, build trust, and accelerate growth with results that speak for themselves.
           </p>
           <div className="mt-5 sm:mt-6 lg:mt-8 flex flex-row justify-center gap-3 sm:gap-4 px-2 sm:px-0 animate-fade-in-up-more-delayed">
             <button className="px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300 text-sm sm:text-base animate-pulse-subtle">Learn more</button>
