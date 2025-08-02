@@ -1,4 +1,5 @@
-import React from "react";
+'use client';
+import React, { useState, useEffect, useRef } from "react";
 
 const features = [
   {
@@ -28,10 +29,33 @@ const features = [
 ];
 
 export default function EvolutionSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="industries" className="bg-black text-white py-20 px-6 text-center">
+    <section ref={sectionRef} id="industries" className="bg-black text-white py-20 px-6 text-center overflow-hidden">
       <h2 
-        className="mb-4 mx-auto w-full max-w-[320px] sm:max-w-[500px] lg:max-w-[700px] px-4 lg:px-0 text-2xl sm:text-3xl lg:text-[40px]"
+        className={`mb-4 mx-auto w-full max-w-[320px] sm:max-w-[500px] lg:max-w-[700px] px-4 lg:px-0 text-2xl sm:text-3xl lg:text-[40px] transition-all duration-300 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
         style={{
           textAlign: 'center',
           fontFamily: 'var(--font-dm-sans)',
@@ -48,7 +72,9 @@ export default function EvolutionSection() {
         Welcome to the Next <br /> Evolution in Digital Marketing
       </h2>
       <p 
-        className="mx-auto mb-12"
+        className={`mx-auto mb-12 transition-all duration-300 ease-out delay-50 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
         style={{
           color: '#FFF',
           fontFamily: 'var(--font-inter)',
@@ -67,37 +93,42 @@ export default function EvolutionSection() {
         {features.map((feature, idx) => (
           <div
             key={idx}
-            className="transition-all duration-300 cursor-pointer inline-flex flex-col items-start text-left"
+            className={`transition-all duration-150 ease-out cursor-pointer inline-flex flex-col items-start text-left transform ${
+              isVisible 
+                ? 'opacity-100 translate-y-0 scale-100' 
+                : 'opacity-0 translate-y-12 scale-95'
+            } ${
+              hoveredCard === idx 
+                ? 'scale-102 translate-y-[-2px] shadow-xl' 
+                : 'scale-100 translate-y-0 shadow-lg'
+            }`}
             style={{
               padding: '47px 60px 56px 44px',
               gap: '24px',
               borderRadius: '14px',
-              background: 'rgba(20, 20, 20, 0.50)',
-              backgroundBlendMode: 'screen'
+              background: hoveredCard === idx 
+                ? 'rgba(255, 255, 255, 0.1)'
+                : 'rgba(20, 20, 20, 0.80)',
+              backgroundBlendMode: 'screen',
+              transitionDelay: `${50 + idx * 25}ms`,
+              boxShadow: hoveredCard === idx 
+                ? '0 15px 35px rgba(0, 0, 0, 0.3)' 
+                : '0 8px 25px rgba(0, 0, 0, 0.2)',
+              backdropFilter: 'blur(15px)',
+              border: hoveredCard === idx 
+                ? '1px solid rgba(255, 255, 255, 0.2)' 
+                : '1px solid rgba(255, 255, 255, 0.1)',
+              position: 'relative',
+              overflow: 'hidden'
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#C5C5C5';
-              e.currentTarget.style.padding = '47px 80px 56px 44px';
-              // Change text colors to black on hover
-              const h3 = e.currentTarget.querySelector('h3');
-              const p = e.currentTarget.querySelector('p');
-              if (h3) h3.style.color = 'black';
-              if (p) p.style.color = 'black';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(20, 20, 20, 0.50)';
-              e.currentTarget.style.padding = '47px 60px 56px 44px';
-              // Restore original text colors
-              const h3 = e.currentTarget.querySelector('h3');
-              const p = e.currentTarget.querySelector('p');
-              if (h3) h3.style.color = 'rgba(255, 255, 255, 0.50)';
-              if (p) p.style.color = 'rgba(255, 255, 255, 0.50)';
-            }}
+            onMouseEnter={() => setHoveredCard(idx)}
+            onMouseLeave={() => setHoveredCard(null)}
           >
             <h3 
-              className="transition-colors duration-300"
+              className={`transition-all duration-100 ease-out ${
+                hoveredCard === idx ? 'text-white' : 'text-white/70'
+              }`}
               style={{
-                color: 'rgba(255, 255, 255, 0.50)',
                 fontFamily: 'var(--font-inter)',
                 fontSize: '28px',
                 fontStyle: 'normal',
@@ -140,9 +171,10 @@ export default function EvolutionSection() {
               )}
             </h3>
             <p 
-              className="transition-colors duration-300"
+              className={`transition-all duration-100 ease-out ${
+                hoveredCard === idx ? 'text-white/90' : 'text-white/60'
+              }`}
               style={{
-                color: 'rgba(255, 255, 255, 0.50)',
                 fontFamily: 'var(--font-inter)',
                 fontSize: '16px',
                 fontStyle: 'normal',
@@ -159,22 +191,38 @@ export default function EvolutionSection() {
       </div>
 
       {/* Learn More Button */}
-      <div className="mt-10">
+      <div className={`mt-10 transition-all duration-300 ease-out delay-150 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         <button 
-          className="px-6 py-3 rounded-full text-black text-sm font-medium shadow-lg transition-all duration-300"
+          className="px-8 py-4 rounded-full text-black text-sm font-bold shadow-lg transition-all duration-150 ease-out transform hover:scale-105 hover:shadow-xl active:scale-95"
           style={{
-            background: 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)'
+            background: 'linear-gradient(45deg, #FF965D, #BA34E2, #FF965D)',
+            backgroundSize: '200% 200%',
+            animation: 'gradientShift 3s ease infinite'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(82deg, #BA34E2 54.13%, #FF965D 100.03%)';
+            e.currentTarget.style.animation = 'gradientShift 1s ease infinite';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(82deg, #FF965D 54.13%, #BA34E2 100.03%)';
+            e.currentTarget.style.animation = 'gradientShift 3s ease infinite';
           }}
         >
           Learn more
         </button>
       </div>
+
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .scale-102 {
+          transform: scale(1.02);
+        }
+      `}</style>
     </section>
   );
 } 
