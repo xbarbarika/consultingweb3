@@ -98,12 +98,18 @@ const Footer = () => {
               Follow us
             </h3>
             <div className="flex gap-4 text-xl text-zinc-400">
-              <FaInstagram className="cursor-pointer hover:text-white" />
+              <Link href="https://www.instagram.com/barbarika_xyz/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="cursor-pointer hover:text-white transition-colors duration-300" />
+              </Link>
               <FaLinkedin className="cursor-pointer hover:text-white" />
-              <FaTelegram className="cursor-pointer hover:text-white" />
+              <Link href="https://t.me/+FBj81VSgbiA2N2Zl" target="_blank" rel="noopener noreferrer">
+                <FaTelegram className="cursor-pointer hover:text-white transition-colors duration-300" />
+              </Link>
               <FaDiscord className="cursor-pointer hover:text-white" />
               <FaYoutube className="cursor-pointer hover:text-white" />
-              <FaXTwitter className="cursor-pointer hover:text-white" />
+              <Link href="https://x.com/Barbarika192079" target="_blank" rel="noopener noreferrer">
+                <FaXTwitter className="cursor-pointer hover:text-white transition-colors duration-300" />
+              </Link>
             </div>
           </div>
         </div>
