@@ -9,13 +9,10 @@ interface NavbarProps {
 
 const menuItems = [
   { label: 'Services'},
-  { label: 'Industries' },
   { label: 'Our people' },
   { label: 'Company' },
   { label: 'Pricing' },
 ];
-
-
 
 const companyDropdown = [
   { label: 'About', href: '/company-file/about' },
@@ -24,29 +21,11 @@ const companyDropdown = [
   { label: 'Contact', href: '/company-file/contact' },
 ];
 
-const industriesDropdown = [
-  { label: 'B2B', href: '/industries' },
-  { label: 'Fintech', href: '/industries-file/fintech' },
-  { label: 'Crypto', href: '/industries-file/crypto' },
-  { label: 'Healthcare', href: '/industries-file/healthcare' },
-  { label: 'Software', href: '/industries-file/software' },
-  { label: 'SaaS', href: '/industries-file/saas' },
-  { label: 'Startup', href: '/industries-file/startup' },
-  { label: 'Small Business', href: '/industries-file/small-business' },
-  { label: 'Gaming', href: '/industries-file/gaming' },
-  { label: 'eSport', href: '/industries-file/esport' },
-  { label: 'Mobile', href: '/industries-file/mobile' },
-  { label: 'eCommerce', href: '/industries-file/ecommerce' },
-];
-
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const pathname = usePathname();
   const [companyOpen, setCompanyOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
   const companyRef = useRef<HTMLDivElement>(null);
-  const industriesRef = useRef<HTMLDivElement>(null);
   const companyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const industriesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // Handle click outside to close dropdowns
   useEffect(() => {
@@ -54,21 +33,16 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
         setCompanyOpen(false);
       }
-      if (industriesRef.current && !industriesRef.current.contains(event.target as Node)) {
-        setIndustriesOpen(false);
-      }
     };
 
-    if (companyOpen || industriesOpen) {
+    if (companyOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [companyOpen, industriesOpen]);
-
-
+  }, [companyOpen]);
 
   const handleCompanyMouseEnter = () => {
     if (companyTimeoutRef.current) {
@@ -80,19 +54,6 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const handleCompanyMouseLeave = () => {
     companyTimeoutRef.current = setTimeout(() => {
       setCompanyOpen(false);
-    }, 100);
-  };
-
-  const handleIndustriesMouseEnter = () => {
-    if (industriesTimeoutRef.current) {
-      clearTimeout(industriesTimeoutRef.current);
-    }
-    setIndustriesOpen(true);
-  };
-
-  const handleIndustriesMouseLeave = () => {
-    industriesTimeoutRef.current = setTimeout(() => {
-      setIndustriesOpen(false);
     }, 100);
   };
   
@@ -122,39 +83,6 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
               <Link href="/services">
                 <span className="capitalize">{item.label}</span>
               </Link>
-            ) : item.label === 'Industries' ? (
-              <div
-                ref={industriesRef}
-                className="relative"
-                onMouseEnter={handleIndustriesMouseEnter}
-                onMouseLeave={handleIndustriesMouseLeave}
-              >
-                <span className="capitalize flex items-center gap-1 select-none">
-                  {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </span>
-                {industriesOpen && (
-                  <div 
-                    className="absolute left-0 top-full mt-0 w-64 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in" 
-                    style={{minWidth: '260px'}}
-                    onMouseEnter={handleIndustriesMouseEnter}
-                    onMouseLeave={handleIndustriesMouseLeave}
-                  >
-                    {industriesDropdown.map((industry) => (
-                      industry.href ? (
-                        <Link key={industry.label} href={industry.href}>
-                          <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
-                            <span>{industry.label}</span>
-                          </div>
-                        </Link>
-                      ) : (
-                        <div key={industry.label} className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
-                          <span>{industry.label}</span>
-                        </div>
-                      )
-                    ))}
-                  </div>
-                )}
-              </div>
             ) : item.label === 'Our people' ? (
               pathname === '/' ? (
                 <span

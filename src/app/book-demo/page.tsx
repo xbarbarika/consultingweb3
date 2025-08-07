@@ -6,6 +6,48 @@ import Footer from '@/components/Footer';
 
 export default function BookDemoPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    aboutProject: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Check if all fields are filled
+    const isFormValid = Object.values(formData).every(value => value.trim() !== '');
+    
+    if (isFormValid) {
+      // Show success popup
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        aboutProject: ''
+      });
+      
+      // Hide success popup after 3 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+    }
+  };
 
   return (
     <main style={{ backgroundColor: '#000000', minHeight: '100vh' }}>
@@ -34,41 +76,61 @@ export default function BookDemoPage() {
           {/* Gradient Border Wrapper */}
           <div className="w-full h-full rounded-xl bg-gradient-to-r from-[#FF965D] to-[#BA34E2] p-[1px]">
             <div className="w-full h-full bg-[#18171A] rounded-[11px] p-8 text-white">
-              <form className="h-full flex flex-col">
+              <form className="h-full flex flex-col" onSubmit={handleSubmit}>
                 <div className="pt-[45px] space-y-[25px]">
                   <div>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       placeholder="First Name"
                       className="flex w-[413px] px-3 py-2.5 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-[17px] placeholder:font-normal placeholder:leading-normal"
+                      required
                     />
                   </div>
                   <div>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       placeholder="Last Name"
                       className="flex w-[413px] px-3 py-2.5 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-[17px] placeholder:font-normal placeholder:leading-normal"
+                      required
                     />
                   </div>
                   <div>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="Work Email"
                       className="flex w-[413px] px-3 py-2.5 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-[17px] placeholder:font-normal placeholder:leading-normal"
+                      required
                     />
                   </div>
                   <div>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder="(+91) 00000 00000"
                       className="flex w-[413px] px-3 py-2.5 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-[17px] placeholder:font-normal placeholder:leading-normal"
+                      required
                     />
                   </div>
                   <div>
                     <textarea
+                      name="aboutProject"
+                      value={formData.aboutProject}
+                      onChange={handleInputChange}
                       placeholder="About Project"
                       className="flex w-[413px] px-3 py-2.5 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all resize-none text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-[17px] placeholder:font-normal placeholder:leading-normal h-[41px] overflow-hidden"
                       rows={1}
+                      required
                     />
                   </div>
                 </div>
@@ -129,40 +191,60 @@ export default function BookDemoPage() {
           {/* Gradient Border Wrapper */}
           <div className="w-full rounded-xl bg-gradient-to-r from-[#FF965D] to-[#BA34E2] p-[1px]">
             <div className="w-full bg-[#18171A] rounded-[11px] p-6 text-white">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     placeholder="First Name"
                     className="flex w-full px-3 py-3 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-base placeholder:font-normal placeholder:leading-normal"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     placeholder="Last Name"
                     className="flex w-full px-3 py-3 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-base placeholder:font-normal placeholder:leading-normal"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Work Email"
                     className="flex w-full px-3 py-3 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-base placeholder:font-normal placeholder:leading-normal"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     placeholder="(+91) 00000 00000"
                     className="flex w-full px-3 py-3 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-base placeholder:font-normal placeholder:leading-normal"
+                    required
                   />
                 </div>
                 <div>
                   <textarea
+                    name="aboutProject"
+                    value={formData.aboutProject}
+                    onChange={handleInputChange}
                     placeholder="About Project"
                     className="flex w-full px-3 py-3 items-center gap-2.5 bg-transparent border-0 border-b border-b-white/11 focus:outline-none focus:border-b-white/25 transition-all resize-none text-white placeholder:text-white/60 placeholder:font-inter placeholder:text-base placeholder:font-normal placeholder:leading-normal h-[50px] overflow-hidden"
                     rows={2}
+                    required
                   />
                 </div>
                 <div className="mt-8">
@@ -179,6 +261,22 @@ export default function BookDemoPage() {
         </div>
       </div>
     </section>
+
+    {/* Success Popup */}
+    {showSuccess && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg p-8 max-w-sm mx-4 text-center shadow-2xl">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Successful!</h3>
+          <p className="text-gray-600">Your demo request has been submitted successfully. We'll get back to you soon!</p>
+        </div>
+      </div>
+    )}
+
     <Footer />
     <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </main>
