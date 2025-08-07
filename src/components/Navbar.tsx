@@ -2,6 +2,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import {
+  FaInstagram,
+  FaTelegram,
+  FaXTwitter,
+} from 'react-icons/fa6';
 
 interface NavbarProps {
   onMenuClick?: () => void;
@@ -155,8 +160,21 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
         ))}
       </ul>
       
-      {/* CTA Button */}
+      {/* Social Icons and CTA Button */}
       <div className="flex items-center gap-4">
+        {/* Social Media Icons - Hidden on mobile */}
+        <div className="hidden lg:flex items-center gap-4 text-white/60">
+          <Link href="https://www.instagram.com/barbarika_xyz/" target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="w-5 h-5 cursor-pointer hover:text-white transition-colors duration-300" />
+          </Link>
+          <Link href="https://t.me/+FBj81VSgbiA2N2Zl" target="_blank" rel="noopener noreferrer">
+            <FaTelegram className="w-5 h-5 cursor-pointer hover:text-white transition-colors duration-300" />
+          </Link>
+          <Link href="https://x.com/Barbarika192079" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter className="w-5 h-5 cursor-pointer hover:text-white transition-colors duration-300" />
+          </Link>
+        </div>
+        
         <Link href="/book-demo">
           <button 
             className="hidden lg:inline-flex justify-center items-center gap-2 px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm border border-white/20 bg-black/30 hover:bg-white hover:text-black hover:border-white hover:shadow-lg" 

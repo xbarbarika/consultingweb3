@@ -28,7 +28,7 @@ const locations = [
   },
   {
     country: "USA",
-    address: "USA",
+    address: "141st LN SE Bellevue WA 98007",
     image: "/usa.jpg",
     timezone: "EST (UTC-5)"
   }
