@@ -272,7 +272,7 @@ export default function BookDemoPage() {
             </svg>
           </div>
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Successful!</h3>
-          <p className="text-gray-600">Your demo request has been submitted successfully. We'll get back to you soon!</p>
+          <p className="text-gray-600">Your demo request has been submitted successfully. We&apos;ll get back to you soon!</p>
         </div>
       </div>
     )}
