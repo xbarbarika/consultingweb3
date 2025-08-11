@@ -172,7 +172,7 @@ export default function Marketing() {
               Everything you need to grow your brand, all in one place. Explore our full suite of marketing services below:
             </p>
           </div>
-          {marketingSections.map((section, idx) => (
+          {marketingSections.map((section) => (
             <section key={section.key} className="w-full max-w-5xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-lg" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
               <div className="bg-black/70 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-8 rounded-2xl">
                 <div className="flex-1">
