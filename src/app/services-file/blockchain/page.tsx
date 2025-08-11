@@ -44,44 +44,10 @@ export default function BlockchainService() {
 
   return (
     <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-13.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-        <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
-          {/* Service Label */}
-          <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>
-            <span className="text-white/90 font-medium">Blockchain Development</span>
-          </div>
-          
-          {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px] max-w-4xl">
-            Leading Blockchain Development & Consulting Services
-          </h1>
-          
-          {/* Subheading */}
-          <p className="mt-[25px] text-white/50 max-w-3xl text-base sm:text-lg font-normal leading-[140%] ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
-            We provide cutting-edge blockchain solutions including smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain integration. From concept to deployment, we deliver secure and scalable blockchain applications.
-          </p>
-          
-          {/* Book Demo Button */}
-          <div className="mt-8 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
-            <Link href="/book-demo">
-              <div 
-                className="inline-block p-[2px] rounded-xl transition hover:scale-105"
-                style={{
-                  background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)',
-                }}
-              >
-                <button className="px-8 py-4 rounded-[10px] font-medium bg-black text-white transition focus:outline-none text-lg">
-                  Book Consultation
-                </button>
-              </div>
-            </Link>
-          </div>
-        </main>
-      </div>
+      <Navbar onMenuClick={() => setMenuOpen(true)} />
 
       {/* Stats Section */}
-      <div className="bg-gradient-to-b from-[#0a0a0f] to-[#1a1a2e] py-16 px-4 md:px-8 lg:px-16">
+      <div className="bg-gradient-to-b from-[#0a0a0f] to-[#1a1a2e] pt-28 sm:pt-32 pb-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">Our Blockchain Expertise</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
