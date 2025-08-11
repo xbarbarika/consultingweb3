@@ -14,7 +14,7 @@ export default function Service() {
         <Navbar onMenuClick={() => setMenuOpen(true)} />
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
         {/* Service Label */}
-        <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>Service <span className="text-white/90 font-medium">Web3 & Mobile</span></div>
+        <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}><span className="text-white/90 font-medium">Web3 & Mobile</span></div>
         {/* Main Heading */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]">
           Build the Future<br />

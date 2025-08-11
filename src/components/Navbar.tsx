@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   FaInstagram,
@@ -29,8 +28,11 @@ const companyDropdown = [
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const pathname = usePathname();
   const [companyOpen, setCompanyOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const companyRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const companyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // Handle click outside to close dropdowns
   useEffect(() => {
@@ -38,16 +40,19 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
       if (companyRef.current && !companyRef.current.contains(event.target as Node)) {
         setCompanyOpen(false);
       }
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
     };
 
-    if (companyOpen) {
+    if (companyOpen || servicesOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [companyOpen]);
+  }, [companyOpen, servicesOpen]);
 
   const handleCompanyMouseEnter = () => {
     if (companyTimeoutRef.current) {
@@ -59,6 +64,19 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
   const handleCompanyMouseLeave = () => {
     companyTimeoutRef.current = setTimeout(() => {
       setCompanyOpen(false);
+    }, 100);
+  };
+
+  const handleServicesMouseEnter = () => {
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current);
+    }
+    setServicesOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    servicesTimeoutRef.current = setTimeout(() => {
+      setServicesOpen(false);
     }, 100);
   };
   
@@ -85,9 +103,47 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
             className={`relative flex items-center cursor-pointer hover:text-pink-400 transition text-sm font-semibold capitalize ${index === 0 ? 'text-white' : 'text-gray-300'}`}
           >
             {item.label === 'Services' ? (
-              <Link href="/services">
-                <span className="capitalize">{item.label}</span>
-              </Link>
+              <div
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
+              >
+                <span className="capitalize flex items-center gap-1 select-none">
+                  {item.label} <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2.5L6 6.5L10 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </span>
+                {servicesOpen && (
+                  <div 
+                    className="absolute left-0 top-full mt-0 w-56 bg-white text-black rounded-lg shadow-lg py-2 z-50 border border-gray-200 animate-fade-in"
+                    style={{minWidth: '224px'}}
+                    onMouseEnter={handleServicesMouseEnter}
+                    onMouseLeave={handleServicesMouseLeave}
+                  >
+                    <Link href="/marketing">
+                      <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                        <span>Marketing</span>
+                        <span className="text-xs text-pink-500">Featured</span>
+                      </div>
+                    </Link>
+                    <Link href="/services-file/blockchain">
+                      <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                        <span>Blockchain</span>
+                      </div>
+                    </Link>
+                    <Link href="/services-file/web3-and-mobile">
+                      <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                        <span>Web3 & Mobile</span>
+                      </div>
+                    </Link>
+                    <Link href="/services-file/genai">
+                      <div className="flex items-center justify-between px-5 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                        <span>AI</span>
+                      </div>
+                    </Link>
+
+                  </div>
+                )}
+              </div>
             ) : item.label === 'Our people' ? (
               pathname === '/' ? (
                 <span
@@ -199,3 +255,17 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
 };
 
 export default Navbar; 
+
+// New: ServiceNavBar for main service categories
+import Link from 'next/link';
+
+export const ServiceNavBar = () => (
+  <div className="w-full flex justify-center mt-2 z-40">
+    <nav className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-lg px-6 py-3 flex gap-4 md:gap-8 max-w-2xl w-full items-center justify-center">
+      <Link href="/marketing" className="text-white/80 hover:text-pink-400 font-semibold transition-colors">Marketing</Link>
+      <Link href="/services-file/blockchain" className="text-white/80 hover:text-pink-400 font-semibold transition-colors">Blockchain</Link>
+      <Link href="/services-file/web3-and-mobile" className="text-white/80 hover:text-pink-400 font-semibold transition-colors">Web3 & Mobile</Link>
+      <Link href="/services-file/genai" className="text-white/80 hover:text-pink-400 font-semibold transition-colors">GenAI</Link>
+    </nav>
+  </div>
+); 

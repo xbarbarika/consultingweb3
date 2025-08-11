@@ -49,7 +49,7 @@ export default function BlockchainService() {
         <main className="w-full flex flex-col items-start justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
           {/* Service Label */}
           <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mt-16 mb-6 ml-4 sm:ml-8 md:ml-12 lg:ml-16 xl:ml-[66px]" style={{ fontFamily: 'Inter' }}>
-            Service <span className="text-white/90 font-medium">Blockchain Development</span>
+            <span className="text-white/90 font-medium">Blockchain Development</span>
           </div>
           
           {/* Main Heading */}
