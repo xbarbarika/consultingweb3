@@ -8,33 +8,23 @@ interface MenuModalProps {
   onClose: () => void;
 }
 
-
-
-const industriesData = [
-  { label: 'B2B', href: '/industries' },
-  { label: 'Fintech', href: '/industries-file/fintech' },
-  { label: 'Crypto', href: '/industries-file/crypto' },
-  { label: 'Healthcare', href: '/industries-file/healthcare' },
-  { label: 'Software', href: '/industries-file/software' },
-  { label: 'SaaS', href: '/industries-file/saas' },
-  { label: 'Startup', href: '/industries-file/startup' },
-  { label: 'Small Business', href: '/industries-file/small-business' },
-  { label: 'Gaming', href: '/industries-file/gaming' },
-  { label: 'eSport', href: '/industries-file/esport' },
-  { label: 'Mobile', href: '/industries-file/mobile' },
-  { label: 'eCommerce', href: '/industries-file/ecommerce' },
+const servicesData = [
+  { label: 'Marketing', href: '/marketing', featured: true },
+  { label: 'Blockchain', href: '/services-file/blockchain' },
+  { label: 'Web3 & Mobile', href: '/services-file/web3-and-mobile' },
+  { label: 'AI', href: '/services-file/genai' },
 ];
 
 const companyData = [
   { label: 'About', href: '/company-file/about' },
-  { label: 'Contact', href: '/company-file/contact' },
   { label: 'Blog', href: '/company-file/blog' },
   { label: 'Careers', href: '/company-file/careers' },
+  { label: 'Contact', href: '/company-file/contact' },
 ];
 
 const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
-  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -53,7 +43,7 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleClose = () => {
-    setIndustriesOpen(false);
+    setServicesOpen(false);
     setCompanyOpen(false);
     onClose();
   };
@@ -118,27 +108,14 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
               </div>
             </Link>
 
-            {/* Services */}
-            <Link href="/services" onClick={handleClose}>
-              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
-                pathname === '/services' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
-              }`}>
-                <span className={`text-base sm:text-lg font-medium ${
-                  pathname === '/services' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
-                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Services
-                </span>
-              </div>
-            </Link>
-
-            {/* Industries with Dropdown */}
+            {/* Services with Dropdown */}
             <div>
               <button
-                onClick={() => setIndustriesOpen(!industriesOpen)}
+                onClick={() => setServicesOpen(!servicesOpen)}
                 className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
               >
                 <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Industries
+                  Services
                 </span>
                 <svg 
                   width="16" 
@@ -146,25 +123,30 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                   viewBox="0 0 16 16" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${industriesOpen ? 'rotate-180' : ''}`}
+                  className={`text-white/60 group-hover:text-pink-400 transition-all duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
                 >
                   <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               
-              {industriesOpen && (
+              {servicesOpen && (
                 <div className="mt-2 ml-2 sm:ml-4 space-y-1 animate-fade-in">
-                  <div className="grid grid-cols-1 gap-1">
-                    {industriesData.map((industry) => (
-                      <Link key={industry.label} href={industry.href} onClick={handleClose}>
-                        <div className={`p-2 sm:p-3 rounded-lg hover:bg-white/5 transition-colors group ${
-                          pathname === industry.href ? 'bg-pink-500/10 border border-pink-500/20' : ''
+                  <div className="space-y-1">
+                    {servicesData.map((service) => (
+                      <Link key={service.label} href={service.href} onClick={handleClose}>
+                        <div className={`group flex items-center justify-between p-2 sm:p-3 rounded-lg transition-all duration-200 ${
+                          pathname === service.href ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
                         }`}>
                           <span className={`text-sm transition-colors ${
-                            pathname === industry.href ? 'text-pink-400 font-medium' : 'text-white/70 group-hover:text-white'
+                            pathname === service.href ? 'text-pink-400 font-medium' : 'text-white/70 group-hover:text-white'
                           }`}>
-                            {industry.label}
+                            {service.label}
                           </span>
+                          {service.featured && (
+                            <span className="text-xs text-pink-500 bg-pink-500/10 px-2 py-1 rounded-full">
+                              Featured
+                            </span>
+                          )}
                         </div>
                       </Link>
                     ))}
@@ -172,6 +154,25 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                 </div>
               )}
             </div>
+
+            {/* Our People - Scroll to section if on home, otherwise navigate */}
+            <button
+              onClick={() => {
+                if (pathname === '/') {
+                  handleClose();
+                  setTimeout(() => {
+                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                } else {
+                  window.location.href = '/#team';
+                }
+              }}
+              className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
+            >
+              <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Our People
+              </span>
+            </button>
 
             {/* Company with Dropdown */}
             <div>
@@ -215,25 +216,6 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
               )}
             </div>
 
-            {/* Our People - Scroll to section if on home, otherwise navigate */}
-            <button
-              onClick={() => {
-                if (pathname === '/') {
-                  handleClose();
-                  setTimeout(() => {
-                    document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 300);
-                } else {
-                  window.location.href = '/#team';
-                }
-              }}
-              className="group w-full flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 hover:bg-white/5"
-            >
-              <span className="text-base sm:text-lg font-medium text-white group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Our People
-              </span>
-            </button>
-
             {/* Pricing - Scroll to section if on home, otherwise navigate */}
             <button
               onClick={() => {
@@ -252,19 +234,6 @@ const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
                 Pricing
               </span>
             </button>
-
-            {/* Contact */}
-            <Link href="/company-file/contact" onClick={handleClose}>
-              <div className={`group flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all duration-200 ${
-                pathname === '/company-file/contact' ? 'bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30' : 'hover:bg-white/5'
-              }`}>
-                <span className={`text-base sm:text-lg font-medium ${
-                  pathname === '/company-file/contact' ? 'text-pink-400' : 'text-white group-hover:text-pink-400'
-                } transition-colors`} style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Contact
-                </span>
-              </div>
-            </Link>
           </nav>
 
           {/* CTA Section - Always visible at bottom */}
