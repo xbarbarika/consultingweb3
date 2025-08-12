@@ -270,17 +270,18 @@ export default function BlockchainService() {
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-pink-100 to-purple-100 bg-clip-text text-transparent">
-            Blockchain Development
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-10 mb-16 bg-gradient-to-r from-white via-pink-100 to-purple-100 bg-clip-text text-transparent">
+            Blockchain Solutions for Visionaries
           </h1>
-          <p className="text-xl sm:text-2xl text-white/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-            We are a blockchain development company that provides cutting-edge
-            engineering solutions, helping Web3 startups and enterprise clients
-            design, develop and integrate complex software solutions
+          <span className="block text-xl sm:text-2xl font-normal text-white/80 mb-10">
+            Empowering your ideas with secure, scalable, and innovative blockchain technology from concept to launch.
+          </span>
+          <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Unlock the full potential of blockchain for your business. We help you design, architect, and build custom blockchain products that turn your vision into reality: securely, efficiently, and with future growth in mind.
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-22">
             <div className="group">
               <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] to-[#a63ffd] group-hover:scale-110 transition-transform duration-300">
                 20+
@@ -318,7 +319,7 @@ export default function BlockchainService() {
       </div>
 
       {/* Services Section */}
-      <div className="bg-[#1a1a2e] py-20 px-4 md:px-8 lg:px-16">
+      <div className="bg-[#1a1a2e] pt-14 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-white">
             What We Offer
@@ -350,38 +351,38 @@ export default function BlockchainService() {
           </div>
 
           {/* Service Content */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {activeTab === "blockchain" &&
               blockchainServices.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-102 hover:shadow-lg hover:shadow-black/20 cursor-pointer"
+                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
                 >
-                  {/* Icon */}
-                  <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
-                    <div className="text-white/80 group-hover:text-white transition-colors duration-300">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed mb-4 text-sm">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-white/5 rounded-md text-xs text-white/60 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300"
-                      >
-                        {feature}
+                  <div className="flex items-start gap-4 w-full">
+                    {/* Icon - now left, neutral circle */}
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
+                      <span className="text-white text-xl flex items-center justify-center">
+                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#ff965d] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-white/80 leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#ff965d] transition-all duration-300"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -390,33 +391,33 @@ export default function BlockchainService() {
               web3Services.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-102 hover:shadow-lg hover:shadow-black/20 cursor-pointer"
+                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
                 >
-                  {/* Icon */}
-                  <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
-                    <div className="text-white/80 group-hover:text-white transition-colors duration-300">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed mb-4 text-sm">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-white/5 rounded-md text-xs text-white/60 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300"
-                      >
-                        {feature}
+                  <div className="flex items-start gap-4 w-full">
+                    {/* Icon - now left, neutral circle */}
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
+                      <span className="text-white text-xl flex items-center justify-center">
+                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#a63ffd] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-white/80 leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#a63ffd] transition-all duration-300"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -425,33 +426,33 @@ export default function BlockchainService() {
               industryServices.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-102 hover:shadow-lg hover:shadow-black/20 cursor-pointer"
+                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
                 >
-                  {/* Icon */}
-                  <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
-                    <div className="text-white/80 group-hover:text-white transition-colors duration-300">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed mb-4 text-sm">
-                    {service.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-white/5 rounded-md text-xs text-white/60 border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300"
-                      >
-                        {feature}
+                  <div className="flex items-start gap-4 w-full">
+                    {/* Icon - now left, neutral circle */}
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
+                      <span className="text-white text-xl flex items-center justify-center">
+                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#4ade80] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-white/80 leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#4ade80] transition-all duration-300"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -460,24 +461,34 @@ export default function BlockchainService() {
       </div>
 
       {/* Technologies Section */}
-      <div className="bg-gradient-to-b from-[#1a1a2e] to-[#0a0a0f] py-20 px-4 md:px-8 lg:px-16">
+      <div className="bg-gradient-to-b from-[#1a1a2e] to-[#0a0a0f] py-24 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-white">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] via-white to-[#a63ffd]">
             Technologies We Use
           </h2>
+          <p className="text-lg text-white/70 text-center mb-20 max-w-2xl mx-auto">
+            We leverage the most advanced blockchain networks, developer tools, and cloud platforms to deliver secure, scalable, and innovative solutions for your business.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-12">
             {/* Blockchains */}
-            <div className="text-center group">
-              <h3 className="text-2xl font-bold text-white mb-8 group-hover:text-pink-400 transition-colors">
+            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#ff965d]/10 p-10 hover:shadow-[#ff965d]/30 transition-all duration-300">
+              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#ff965d] to-[#a63ffd] rounded-full flex items-center justify-center shadow-lg shadow-[#ff965d]/30 border-4 border-[#1a1a2e]">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h8M12 8v8" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-pink-400 transition-colors">
                 BLOCKCHAIN NETWORKS
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center">
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-4 py-3 bg-white/10 rounded-xl text-sm text-white/80 border border-white/20 hover:bg-white/20 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 transform hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ff965d]/30 to-[#a63ffd]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
                   >
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#ff965d] to-[#a63ffd] shadow"></span>
                     {tech}
                   </span>
                 ))}
@@ -485,16 +496,23 @@ export default function BlockchainService() {
             </div>
 
             {/* Tools */}
-            <div className="text-center group">
-              <h3 className="text-2xl font-bold text-white mb-8 group-hover:text-blue-400 transition-colors">
+            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#a63ffd]/10 p-10 hover:shadow-[#a63ffd]/30 transition-all duration-300">
+              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#a63ffd] to-[#ff965d] rounded-full flex items-center justify-center shadow-lg shadow-[#a63ffd]/30 border-4 border-[#1a1a2e]">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 8h8v8H8z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-blue-400 transition-colors">
                 DEVELOPMENT TOOLS
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center">
                 {tools.map((tool, index) => (
                   <span
                     key={index}
-                    className="px-4 py-3 bg-white/10 rounded-xl text-sm text-white/80 border border-white/20 hover:bg-white/20 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 transform hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#a63ffd]/30 to-[#ff965d]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
                   >
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#a63ffd] to-[#ff965d] shadow"></span>
                     {tool}
                   </span>
                 ))}
@@ -502,16 +520,23 @@ export default function BlockchainService() {
             </div>
 
             {/* Platforms */}
-            <div className="text-center group">
-              <h3 className="text-2xl font-bold text-white mb-8 group-hover:text-green-400 transition-colors">
+            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#4ade80]/10 p-10 hover:shadow-[#4ade80]/30 transition-all duration-300">
+              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#4ade80] to-[#a63ffd] rounded-full flex items-center justify-center shadow-lg shadow-[#4ade80]/30 border-4 border-[#1a1a2e]">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="6" y="6" width="12" height="12" rx="3" strokeWidth="2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-green-400 transition-colors">
                 CLOUD PLATFORMS
               </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center">
                 {platforms.map((platform, index) => (
                   <span
                     key={index}
-                    className="px-4 py-3 bg-white/10 rounded-xl text-sm text-white/80 border border-white/20 hover:bg-white/20 hover:border-green-500/50 hover:text-green-400 transition-all duration-300 transform hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#4ade80]/30 to-[#a63ffd]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-green-400/50 hover:text-green-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
                   >
+                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#4ade80] to-[#a63ffd] shadow"></span>
                     {platform}
                   </span>
                 ))}
