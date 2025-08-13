@@ -70,7 +70,7 @@ const marketingSections = [
     key: 'video',
     label: 'Video Production',
     heading: 'Bring Your Brand to Life Through Video',
-    subheading: 'From concept to delivery, we create compelling video content that captivates your audience. Whether it’s brand stories, product demos, or social media content—we make videos that convert.',
+    subheading: 'From concept to delivery, we create compelling video content that captivates your audience. Whether it\'s brand stories, product demos, or social media content—we make videos that convert.',
     cardTitle: 'Video Production',
     cardColor: '#5BAFFF',
     features: [
@@ -164,44 +164,78 @@ export default function Marketing() {
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-center justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
-          <div className="w-full max-w-5xl mx-auto text-center mt-10 mb-8">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-pink-400 mb-2">Marketing</h2>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Marketing Services</h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+        <main className="w-full flex flex-col items-center justify-start pt-20 sm:pt-24 md:pt-28 lg:pt-24 pb-8 sm:pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
+          <div className="w-full max-w-5xl mx-auto text-center mt-6 sm:mt-8 md:mt-10 mb-8 sm:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2">Marketing</h2>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Our Marketing Services</h1>
+            <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-4">
               Everything you need to grow your brand, all in one place. Explore our full suite of marketing services below:
             </p>
           </div>
           {marketingSections.map((section) => (
-            <section key={section.key} className="w-full max-w-5xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-lg" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-              <div className="bg-black/70 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-8 rounded-2xl">
-                <div className="flex-1">
-                  <div className="text-white/60 text-lg sm:text-xl font-medium leading-7 mb-4" style={{ fontFamily: 'Inter' }}>
+            <section key={section.key} className="w-full max-w-5xl mx-auto mb-8 sm:mb-12 md:mb-16 rounded-2xl overflow-hidden shadow-lg" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+              <div className="bg-black/70 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row gap-6 sm:gap-8 rounded-2xl">
+                <div className="flex-1 order-2 lg:order-1">
+                  <div className="text-white/60 text-base sm:text-lg md:text-xl font-medium leading-7 mb-3 sm:mb-4" style={{ fontFamily: 'Inter' }}>
                     {section.label}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4">
                     {section.heading}
                   </h2>
-                  <p className="mb-6 text-white/50 max-w-2xl text-base sm:text-lg font-normal leading-[110%]">
+                  <p className="mb-4 sm:mb-6 text-white/50 max-w-2xl text-sm sm:text-base md:text-lg font-normal leading-[110%]">
                     {section.subheading}
                   </p>
                   <Link href="/book-demo">
                     <div className="inline-block p-[2px] rounded-xl transition hover:scale-105" style={{ background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)' }}>
-                      <button className="px-6 sm:px-8 py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full sm:w-auto">
+                      <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full sm:w-auto text-sm sm:text-base">
                         Book Demo
                       </button>
                     </div>
                   </Link>
                 </div>
-                <div className="flex flex-col items-start w-full sm:w-auto">
-                  <div className="w-full sm:w-auto lg:w-[461px] mb-6" style={{ maxWidth: '461px', height: '240px', borderRadius: '22px', background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%)', padding: '1px' }}>
+                <div className="flex flex-col items-start w-full lg:w-auto order-1 lg:order-2">
+                  <div className="w-full max-w-full lg:w-[461px] mb-4 sm:mb-6" style={{ 
+                    maxWidth: '461px', 
+                    height: '180px',
+                    borderRadius: '22px', 
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%)', 
+                    padding: '1px' 
+                  }}>
                     <div className="relative" style={{ width: '100%', height: '100%', borderRadius: '22px', background: '#181825', backdropFilter: 'blur(21.5px)' }}>
-                      <div style={{ position: 'absolute', top: '40px', left: '45px', width: '62px', height: '37px', borderRadius: '4px', background: section.cardColor }} />
-                      <div style={{ position: 'absolute', top: '130px', left: '45px', color: '#FFFFFF', fontFamily: 'Inter', fontSize: '24px', fontWeight: '400', lineHeight: '28px' }}>{section.cardTitle}</div>
-                      <div style={{ position: 'absolute', top: '176px', left: '45px', color: 'rgba(255,255,255,0.3)', fontFamily: 'Epilogue', fontSize: '18px', fontStyle: 'italic', fontWeight: '500', lineHeight: '110%', letterSpacing: '0.9px' }}>BARBARIKA</div>
+                      <div style={{ 
+                        position: 'absolute', 
+                        top: '20px', 
+                        left: '20px', 
+                        width: '40px', 
+                        height: '24px', 
+                        borderRadius: '4px', 
+                        background: section.cardColor 
+                      }} />
+                      <div style={{ 
+                        position: 'absolute', 
+                        top: '60px', 
+                        left: '20px', 
+                        color: '#FFFFFF', 
+                        fontFamily: 'Inter', 
+                        fontSize: '16px', 
+                        fontWeight: '400', 
+                        lineHeight: '20px' 
+                      }}>{section.cardTitle}</div>
+                      <div style={{ 
+                        position: 'absolute', 
+                        top: '90px', 
+                        left: '20px', 
+                        color: 'rgba(255,255,255,0.3)', 
+                        fontFamily: 'Epilogue', 
+                        fontSize: '14px', 
+                        fontStyle: 'italic', 
+                        fontWeight: '500', 
+                        lineHeight: '110%', 
+                        letterSpacing: '0.9px' 
+                      }}>BARBARIKA</div>
                     </div>
                   </div>
-                  <ul className="space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter', fontStyle: 'normal', fontWeight: '400', lineHeight: '260%' }}>
+                  <ul className="space-y-2 sm:space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter', fontStyle: 'normal', fontWeight: '400', lineHeight: '260%' }}>
                     {section.features.map((feature, i) => (
                       <li key={i}>{feature}</li>
                     ))}
@@ -214,6 +248,37 @@ export default function Marketing() {
       </div>
       <Footer />
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      
+      <style jsx>{`
+        /* Responsive card adjustments */
+        @media (max-width: 768px) {
+          .marketing-card {
+            height: 160px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 14px !important;
+            line-height: 18px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 12px !important;
+            line-height: 16px !important;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .marketing-card {
+            height: 200px !important;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .marketing-card {
+            height: 240px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

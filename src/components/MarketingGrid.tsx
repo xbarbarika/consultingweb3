@@ -98,41 +98,49 @@ const MarketingGrid = () => {
             .marketing-card {
               width: 100% !important;
               max-width: 100% !important;
+              min-height: 220px !important;
             }
             .marketing-grid {
-              column-gap: 0px !important;
+              column-gap: 15px !important;
               row-gap: 20px !important;
+            }
+            .marketing-title {
+              font-size: 20px !important;
+              margin-bottom: 30px !important;
+            }
+            .marketing-grid-container {
+              padding-top: 40px !important;
             }
           }
           @media (min-width: 1024px) {
             .marketing-grid-container {
-              padding-top: 120px !important;
-              height: 1459px !important;
-              min-height: unset !important;
+              padding-top: 80px !important;
+              height: auto !important;
+              min-height: 100vh !important;
             }
             .marketing-title {
-              font-size: 40px !important;
-              margin-bottom: 80px !important;
+              font-size: 36px !important;
+              margin-bottom: 60px !important;
             }
             .marketing-grid {
               column-gap: 25px !important;
-              row-gap: 40px !important;
+              row-gap: 35px !important;
             }
             .department-badge {
-              width: 82.19px !important;
-              height: 25.992px !important;
-              padding: 6.42px 10.177px 6.733px 10.432px !important;
-              font-size: 9.63px !important;
-              line-height: 11.556px !important;
+              width: auto !important;
+              height: auto !important;
+              padding: 8px 16px !important;
+              font-size: 12px !important;
+              line-height: 16px !important;
             }
 
             .service-icon {
-              width: 32.099px !important;
-              height: 32.099px !important;
+              width: 28px !important;
+              height: 28px !important;
             }
             .marketing-card {
-              height: 333.028px !important;
-              min-height: unset !important;
+              height: auto !important;
+              min-height: 280px !important;
               display: flex !important;
               flex-direction: column !important;
             }
@@ -148,33 +156,53 @@ const MarketingGrid = () => {
           }
           @media (min-width: 768px) and (max-width: 1023px) {
             .marketing-title {
-              font-size: 32px !important;
-              margin-bottom: 60px !important;
+              font-size: 28px !important;
+              margin-bottom: 50px !important;
             }
             .marketing-grid {
               column-gap: 20px !important;
-              row-gap: 35px !important;
+              row-gap: 30px !important;
             }
             .department-badge {
-              width: 75px !important;
-              height: 24px !important;
-              padding: 5px 9px !important;
-              font-size: 8.5px !important;
-              line-height: 10.5px !important;
+              width: auto !important;
+              height: auto !important;
+              padding: 6px 12px !important;
+              font-size: 11px !important;
+              line-height: 14px !important;
             }
 
             .service-icon {
-              width: 28px !important;
-              height: 28px !important;
+              width: 24px !important;
+              height: 24px !important;
             }
             .marketing-card {
               height: auto !important;
-              min-height: 300px !important;
+              min-height: 260px !important;
             }
             .marketing-card p {
               word-wrap: break-word !important;
               overflow-wrap: break-word !important;
               hyphens: auto !important;
+            }
+            .marketing-grid-container {
+              padding-top: 50px !important;
+            }
+          }
+          
+          @media (min-width: 1280px) {
+            .marketing-grid-container {
+              padding-top: 100px !important;
+            }
+            .marketing-title {
+              font-size: 40px !important;
+              margin-bottom: 80px !important;
+            }
+            .marketing-grid {
+              column-gap: 30px !important;
+              row-gap: 40px !important;
+            }
+            .marketing-card {
+              min-height: 300px !important;
             }
           }
           
@@ -239,6 +267,13 @@ const MarketingGrid = () => {
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
               0 0 40px rgba(255, 150, 93, 0.2) !important;
             background: rgba(255, 255, 255, 0.08) !important;
+          }
+          
+          /* Mobile hover adjustments */
+          @media (max-width: 768px) {
+            .marketing-card:hover {
+              transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
+            }
           }
           
           .marketing-card:hover::before {
@@ -308,19 +343,18 @@ const MarketingGrid = () => {
           width: '100%',
           minHeight: '100vh',
           flexShrink: 0,
-          paddingTop: '60px'
+          paddingTop: '40px'
         }}
       >
         <h1 
-          className="marketing-title"
+          className="marketing-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
           style={{
-            marginBottom: '40px',
+            marginBottom: '30px',
             textAlign: 'center',
             fontFamily: '"DM Sans"',
-            fontSize: '24px',
             fontStyle: 'normal',
             fontWeight: 500,
-            lineHeight: '100%',
+            lineHeight: '120%',
             background: 'linear-gradient(82deg, #FF965D 35%, #BA34E2 100%)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -330,40 +364,48 @@ const MarketingGrid = () => {
           Your On-Demand Marketing Powerhouse
         </h1>
         <div 
-          className="marketing-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-0"
+          className="marketing-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-0"
           style={{
             columnGap: '15px',
-            rowGap: '30px'
+            rowGap: '20px',
+            sm: {
+              columnGap: '20px',
+              rowGap: '25px'
+            },
+            lg: {
+              columnGap: '25px',
+              rowGap: '30px'
+            }
           }}
         >
           {services.map((service, index) => (
             <div
               key={index}
-              className={`p-4 sm:p-5 lg:p-6 transition-all duration-300 marketing-card ${
+              className={`p-3 sm:p-4 md:p-5 lg:p-6 transition-all duration-300 marketing-card ${
                 service.active
                   ? "bg-[#fce4fc] text-black shadow-xl"
                   : "hover:shadow-lg hover:scale-105"
               }`}
               style={{
                 width: '100%',
-                maxWidth: '288.891px',
+                maxWidth: '100%',
                 height: 'auto',
-                minHeight: '280px',
+                minHeight: '240px',
                 flexShrink: 0,
                 borderRadius: '16px',
                 position: 'relative',
                 overflow: 'hidden'
               }}
             >
-              <div className="mb-4">
-                <div className="p-2 w-fit mb-4">
+              <div className="mb-3 sm:mb-4">
+                <div className="p-2 w-fit mb-3 sm:mb-4">
                   {service.icon ? (
                     <Image
                       src={`/${service.icon}`}
                       alt={service.title}
-                      width={24}
-                      height={24}
-                      className="service-icon transition-transform duration-300"
+                      width={20}
+                      height={20}
+                      className="service-icon transition-transform duration-300 w-5 h-5 sm:w-6 sm:h-6"
                       style={{
                         flexShrink: 0,
                         filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)'
@@ -376,10 +418,8 @@ const MarketingGrid = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="service-icon transition-transform duration-300"
+                      className="service-icon transition-transform duration-300 w-5 h-5 sm:w-6 sm:h-6"
                       style={{
-                        width: '24px',
-                        height: '24px',
                         flexShrink: 0,
                         color: '#FFFFFF'
                       }}
@@ -394,58 +434,60 @@ const MarketingGrid = () => {
                 </div>
               </div>
               <h2 
-                className="mb-4 transition-all duration-300"
+                className="mb-3 sm:mb-4 transition-all duration-300 text-sm sm:text-base lg:text-lg"
                 style={{
                   color: '#FFFFFF',
                   fontFamily: '"DM Sans"',
-                  fontSize: '22.469px',
                   fontStyle: 'normal',
                   fontWeight: 600,
-                  lineHeight: '29.21px'
+                  lineHeight: '120%'
                 }}
               >
                 {service.title}
               </h2>
-              <div className="flex gap-2 mb-4">
-                <span 
-                  className="badge department-badge transition-all duration-300"
-                  style={{
-                    display: 'flex',
-                    width: '70px',
-                    height: '22px',
-                    padding: '4px 8px',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexShrink: 0,
-                    borderRadius: '6.42px',
-                    border: '0.802px solid #A1A1A9',
-                    background: 'transparent',
-                    color: '#A1A1AA',
-                    textAlign: 'center',
-                    fontFamily: '"DM Sans"',
-                    fontSize: '8px',
-                    fontStyle: 'normal',
-                    fontWeight: 500,
-                    lineHeight: '10px',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  DEPARTMENT
-                </span>
-              </div>
               <p 
-                className="transition-all duration-300"
+                className="mb-4 text-xs sm:text-sm lg:text-base"
                 style={{
-                  color: '#A1A1A9',
+                  color: 'rgba(255, 255, 255, 0.7)',
                   fontFamily: '"DM Sans"',
-                  fontSize: '14.445px',
                   fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '20.8px'
+                  fontWeight: 400,
+                  lineHeight: '140%',
+                  flexGrow: 1
                 }}
               >
                 {service.description}
               </p>
+              <div className="flex items-center justify-between">
+                <div 
+                  className="department-badge px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium border border-white/20"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    color: '#FFFFFF',
+                    fontFamily: '"DM Sans"',
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    lineHeight: '100%'
+                  }}
+                >
+                  {service.projects} Projects
+                </div>
+                {service.active && (
+                  <div 
+                    className="badge px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium"
+                    style={{
+                      background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
+                      color: '#FFFFFF',
+                      fontFamily: '"DM Sans"',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                      lineHeight: '100%'
+                    }}
+                  >
+                    Active
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
