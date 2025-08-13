@@ -94,55 +94,162 @@ const MarketingGrid = () => {
     <>
       <style dangerouslySetInnerHTML={{
         __html: `
-          @media (max-width: 767px) {
+          /* iPhone SE and very small devices */
+          @media (max-width: 375px) {
+            .marketing-card {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-height: 180px !important;
+              border-radius: 12px !important;
+            }
+            .marketing-grid {
+              column-gap: 10px !important;
+              row-gap: 14px !important;
+            }
+            .marketing-title {
+              font-size: 16px !important;
+              margin-bottom: 20px !important;
+            }
+            .marketing-grid-container {
+              padding-top: 24px !important;
+            }
+            .department-badge {
+              font-size: 10px !important;
+              padding: 4px 8px !important;
+            }
+            .service-icon {
+              width: 16px !important;
+              height: 16px !important;
+            }
+          }
+
+          /* Small mobile devices */
+          @media (min-width: 376px) and (max-width: 480px) {
+            .marketing-card {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-height: 190px !important;
+              border-radius: 13px !important;
+            }
+            .marketing-grid {
+              column-gap: 12px !important;
+              row-gap: 16px !important;
+            }
+            .marketing-title {
+              font-size: 18px !important;
+              margin-bottom: 22px !important;
+            }
+            .marketing-grid-container {
+              padding-top: 28px !important;
+            }
+            .department-badge {
+              font-size: 11px !important;
+              padding: 5px 10px !important;
+            }
+            .service-icon {
+              width: 18px !important;
+              height: 18px !important;
+            }
+          }
+
+          /* Medium mobile devices */
+          @media (min-width: 481px) and (max-width: 640px) {
+            .marketing-card {
+              width: 100% !important;
+              max-width: 100% !important;
+              min-height: 200px !important;
+              border-radius: 14px !important;
+            }
+            .marketing-grid {
+              column-gap: 12px !important;
+              row-gap: 16px !important;
+            }
+            .marketing-title {
+              font-size: 20px !important;
+              margin-bottom: 24px !important;
+            }
+            .marketing-grid-container {
+              padding-top: 32px !important;
+            }
+            .department-badge {
+              font-size: 11px !important;
+              padding: 6px 12px !important;
+            }
+            .service-icon {
+              width: 20px !important;
+              height: 20px !important;
+            }
+          }
+
+          /* Large mobile devices */
+          @media (min-width: 641px) and (max-width: 767px) {
             .marketing-card {
               width: 100% !important;
               max-width: 100% !important;
               min-height: 220px !important;
+              border-radius: 15px !important;
             }
             .marketing-grid {
               column-gap: 15px !important;
               row-gap: 20px !important;
             }
             .marketing-title {
-              font-size: 20px !important;
-              margin-bottom: 30px !important;
+              font-size: 22px !important;
+              margin-bottom: 26px !important;
             }
             .marketing-grid-container {
-              padding-top: 40px !important;
+              padding-top: 36px !important;
+            }
+            .department-badge {
+              font-size: 12px !important;
+              padding: 6px 12px !important;
+            }
+            .service-icon {
+              width: 22px !important;
+              height: 22px !important;
             }
           }
+
+          /* Small tablet devices */
+          @media (min-width: 768px) and (max-width: 900px) {
+            .marketing-grid {
+              column-gap: 18px !important;
+              row-gap: 24px !important;
+            }
+          }
+          /* Desktop devices */
           @media (min-width: 1024px) {
             .marketing-grid-container {
-              padding-top: 80px !important;
+              padding-top: 60px !important;
               height: auto !important;
               min-height: 100vh !important;
             }
             .marketing-title {
-              font-size: 36px !important;
-              margin-bottom: 60px !important;
+              font-size: 32px !important;
+              margin-bottom: 50px !important;
             }
             .marketing-grid {
-              column-gap: 25px !important;
-              row-gap: 35px !important;
+              column-gap: 22px !important;
+              row-gap: 32px !important;
             }
             .department-badge {
               width: auto !important;
               height: auto !important;
-              padding: 8px 16px !important;
+              padding: 7px 14px !important;
               font-size: 12px !important;
               line-height: 16px !important;
             }
 
             .service-icon {
-              width: 28px !important;
-              height: 28px !important;
+              width: 26px !important;
+              height: 26px !important;
             }
             .marketing-card {
               height: auto !important;
-              min-height: 280px !important;
+              min-height: 260px !important;
               display: flex !important;
               flex-direction: column !important;
+              border-radius: 18px !important;
             }
             .marketing-card p {
               flex-grow: 1 !important;
@@ -154,21 +261,22 @@ const MarketingGrid = () => {
               align-items: stretch !important;
             }
           }
+          /* Tablet devices */
           @media (min-width: 768px) and (max-width: 1023px) {
             .marketing-title {
-              font-size: 28px !important;
-              margin-bottom: 50px !important;
+              font-size: 26px !important;
+              margin-bottom: 40px !important;
             }
             .marketing-grid {
-              column-gap: 20px !important;
-              row-gap: 30px !important;
+              column-gap: 18px !important;
+              row-gap: 26px !important;
             }
             .department-badge {
               width: auto !important;
               height: auto !important;
               padding: 6px 12px !important;
-              font-size: 11px !important;
-              line-height: 14px !important;
+              font-size: 12px !important;
+              line-height: 16px !important;
             }
 
             .service-icon {
@@ -177,7 +285,8 @@ const MarketingGrid = () => {
             }
             .marketing-card {
               height: auto !important;
-              min-height: 260px !important;
+              min-height: 240px !important;
+              border-radius: 16px !important;
             }
             .marketing-card p {
               word-wrap: break-word !important;
@@ -185,16 +294,52 @@ const MarketingGrid = () => {
               hyphens: auto !important;
             }
             .marketing-grid-container {
-              padding-top: 50px !important;
+              padding-top: 44px !important;
             }
           }
           
+          /* Large desktop devices */
           @media (min-width: 1280px) {
+            .marketing-grid-container {
+              padding-top: 80px !important;
+            }
+            .marketing-title {
+              font-size: 38px !important;
+              margin-bottom: 70px !important;
+            }
+            .marketing-grid {
+              column-gap: 26px !important;
+              row-gap: 36px !important;
+            }
+            .marketing-card {
+              min-height: 280px !important;
+              border-radius: 20px !important;
+            }
+            .department-badge {
+              padding: 8px 16px !important;
+              font-size: 13px !important;
+            }
+            .service-icon {
+              width: 28px !important;
+              height: 28px !important;
+            }
+          }
+
+          /* Medium desktop devices */
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            .marketing-grid {
+              column-gap: 22px !important;
+              row-gap: 30px !important;
+            }
+          }
+
+          /* Extra large desktop devices */
+          @media (min-width: 1536px) {
             .marketing-grid-container {
               padding-top: 100px !important;
             }
             .marketing-title {
-              font-size: 40px !important;
+              font-size: 42px !important;
               margin-bottom: 80px !important;
             }
             .marketing-grid {
@@ -203,6 +348,27 @@ const MarketingGrid = () => {
             }
             .marketing-card {
               min-height: 300px !important;
+              border-radius: 22px !important;
+            }
+            .department-badge {
+              padding: 9px 18px !important;
+              font-size: 14px !important;
+            }
+            .service-icon {
+              width: 30px !important;
+              height: 30px !important;
+            }
+          }
+
+          /* Ultra wide screens */
+          @media (min-width: 1920px) {
+            .marketing-grid {
+              column-gap: 32px !important;
+              row-gap: 44px !important;
+            }
+            .marketing-card {
+              min-height: 320px !important;
+              border-radius: 24px !important;
             }
           }
           
@@ -270,7 +436,19 @@ const MarketingGrid = () => {
           }
           
           /* Mobile hover adjustments */
-          @media (max-width: 768px) {
+          @media (max-width: 375px) {
+            .marketing-card:hover {
+              transform: translateY(-2px) rotateX(0.5deg) rotateY(0.5deg) !important;
+            }
+          }
+
+          @media (min-width: 376px) and (max-width: 640px) {
+            .marketing-card:hover {
+              transform: translateY(-3px) rotateX(0.8deg) rotateY(0.8deg) !important;
+            }
+          }
+
+          @media (min-width: 641px) and (max-width: 768px) {
             .marketing-card:hover {
               transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
             }
@@ -338,18 +516,18 @@ const MarketingGrid = () => {
       }} />
       <div 
         id="services"
-        className="marketing-grid-container bg-[#0e0b17] text-white px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16"
+        className="marketing-grid-container bg-[#0e0b17] text-white px-3 xs:px-4 sm:px-6 lg:px-8 pb-6 xs:pb-8 sm:pb-10 lg:pb-12 xl:pb-16 landscape-spacing"
         style={{
           width: '100%',
           minHeight: '100vh',
           flexShrink: 0,
-          paddingTop: '40px'
+          paddingTop: '32px'
         }}
       >
         <h1 
-          className="marketing-title text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+          className="marketing-title text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-overflow-fix"
           style={{
-            marginBottom: '30px',
+            marginBottom: '20px',
             textAlign: 'center',
             fontFamily: '"DM Sans"',
             fontStyle: 'normal',
@@ -364,24 +542,16 @@ const MarketingGrid = () => {
           Your On-Demand Marketing Powerhouse
         </h1>
         <div 
-          className="marketing-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-0"
+          className="marketing-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-0 landscape-grid-gap"
           style={{
-            columnGap: '15px',
-            rowGap: '20px',
-            sm: {
-              columnGap: '20px',
-              rowGap: '25px'
-            },
-            lg: {
-              columnGap: '25px',
-              rowGap: '30px'
-            }
+            columnGap: '12px',
+            rowGap: '16px'
           }}
         >
           {services.map((service, index) => (
             <div
               key={index}
-              className={`p-3 sm:p-4 md:p-5 lg:p-6 transition-all duration-300 marketing-card ${
+              className={`p-2.5 xs:p-3 sm:p-4 md:p-5 lg:p-6 transition-all duration-300 marketing-card landscape-card-height ${
                 service.active
                   ? "bg-[#fce4fc] text-black shadow-xl"
                   : "hover:shadow-lg hover:scale-105"
@@ -390,22 +560,22 @@ const MarketingGrid = () => {
                 width: '100%',
                 maxWidth: '100%',
                 height: 'auto',
-                minHeight: '240px',
+                minHeight: '200px',
                 flexShrink: 0,
-                borderRadius: '16px',
+                borderRadius: '14px',
                 position: 'relative',
                 overflow: 'hidden'
               }}
             >
-              <div className="mb-3 sm:mb-4">
-                <div className="p-2 w-fit mb-3 sm:mb-4">
+              <div className="mb-2.5 xs:mb-3 sm:mb-4">
+                <div className="p-1.5 xs:p-2 w-fit mb-2.5 xs:mb-3 sm:mb-4">
                   {service.icon ? (
                     <Image
                       src={`/${service.icon}`}
                       alt={service.title}
-                      width={20}
-                      height={20}
-                      className="service-icon transition-transform duration-300 w-5 h-5 sm:w-6 sm:h-6"
+                      width={18}
+                      height={18}
+                      className="service-icon transition-transform duration-300 w-4.5 h-4.5 xs:w-5 xs:h-5 sm:w-6 sm:h-6"
                       style={{
                         flexShrink: 0,
                         filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(100%)'
@@ -418,7 +588,7 @@ const MarketingGrid = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="service-icon transition-transform duration-300 w-5 h-5 sm:w-6 sm:h-6"
+                      className="service-icon transition-transform duration-300 w-4.5 h-4.5 xs:w-5 xs:h-5 sm:w-6 sm:h-6"
                       style={{
                         flexShrink: 0,
                         color: '#FFFFFF'
@@ -434,7 +604,7 @@ const MarketingGrid = () => {
                 </div>
               </div>
               <h2 
-                className="mb-3 sm:mb-4 transition-all duration-300 text-sm sm:text-base lg:text-lg"
+                className="mb-2.5 xs:mb-3 sm:mb-4 transition-all duration-300 text-sm xs:text-sm sm:text-base lg:text-lg text-overflow-fix"
                 style={{
                   color: '#FFFFFF',
                   fontFamily: '"DM Sans"',
@@ -446,7 +616,7 @@ const MarketingGrid = () => {
                 {service.title}
               </h2>
               <p 
-                className="mb-4 text-xs sm:text-sm lg:text-base"
+                className="mb-3 xs:mb-4 text-xs xs:text-sm sm:text-base lg:text-base text-overflow-fix landscape-spacing"
                 style={{
                   color: 'rgba(255, 255, 255, 0.7)',
                   fontFamily: '"DM Sans"',
@@ -460,7 +630,7 @@ const MarketingGrid = () => {
               </p>
               <div className="flex items-center justify-between">
                 <div 
-                  className="department-badge px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium border border-white/20"
+                  className="department-badge px-1.5 xs:px-2 py-1 xs:py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium border border-white/20"
                   style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     color: '#FFFFFF',
@@ -474,7 +644,7 @@ const MarketingGrid = () => {
                 </div>
                 {service.active && (
                   <div 
-                    className="badge px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium"
+                    className="badge px-1.5 xs:px-2 py-1 xs:py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium"
                     style={{
                       background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
                       color: '#FFFFFF',

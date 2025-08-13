@@ -160,74 +160,88 @@ const marketingSections = [
 
 export default function Marketing() {
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  // Add smooth scrolling behavior
+  React.useEffect(() => {
+    // Check if there's a hash in the URL and scroll to it
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="text-white">
       <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-center justify-start pt-20 sm:pt-24 md:pt-28 lg:pt-24 pb-8 sm:pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
-          <div className="w-full max-w-5xl mx-auto text-center mt-6 sm:mt-8 md:mt-10 mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2">Marketing</h2>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Our Marketing Services</h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-4">
+        <main className="w-full flex flex-col items-center justify-start pt-16 xs:pt-18 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-24 pb-6 xs:pb-8 sm:pb-10 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 min-h-[calc(100vh-64px)]">
+          <div className="w-full max-w-5xl mx-auto text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 mb-6 xs:mb-8 sm:mb-12">
+            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2">Marketing</h2>
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 xs:mb-3 sm:mb-4">Our Marketing Services</h1>
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-3 xs:px-4">
               Everything you need to grow your brand, all in one place. Explore our full suite of marketing services below:
             </p>
           </div>
           {marketingSections.map((section) => (
-            <section key={section.key} className="w-full max-w-5xl mx-auto mb-8 sm:mb-12 md:mb-16 rounded-2xl overflow-hidden shadow-lg" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-              <div className="bg-black/70 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row gap-6 sm:gap-8 rounded-2xl">
-                <div className="flex-1 order-2 lg:order-1">
-                  <div className="text-white/60 text-base sm:text-lg md:text-xl font-medium leading-7 mb-3 sm:mb-4" style={{ fontFamily: 'Inter' }}>
+            <section key={section.key} id={section.key} className="w-full max-w-5xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 rounded-2xl overflow-hidden shadow-lg marketing-section scroll-mt-20" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+              <div className="bg-black/70 p-3 xs:p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 flex flex-col xl:flex-row gap-4 xs:gap-6 sm:gap-8 rounded-2xl landscape-spacing">
+                <div className="flex-1 order-2 xl:order-1">
+                  <div className="text-white/60 text-sm xs:text-base sm:text-lg md:text-xl font-medium leading-6 xs:leading-7 mb-2 xs:mb-3 sm:mb-4 marketing-label" style={{ fontFamily: 'Inter' }}>
                     {section.label}
                   </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4">
+                  <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 xs:mb-3 sm:mb-4 marketing-title text-overflow-fix">
                     {section.heading}
                   </h2>
-                  <p className="mb-4 sm:mb-6 text-white/50 max-w-2xl text-sm sm:text-base md:text-lg font-normal leading-[110%]">
+                  <p className="mb-3 xs:mb-4 sm:mb-6 text-white/50 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg font-normal leading-[120%] xs:leading-[110%] marketing-subtitle text-overflow-fix landscape-spacing">
                     {section.subheading}
                   </p>
-                  <Link href="/book-demo">
-                    <div className="inline-block p-[2px] rounded-xl transition hover:scale-105" style={{ background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)' }}>
-                      <button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full sm:w-auto text-sm sm:text-base">
+                  <Link href="/book-demo" className="block w-full sm:w-auto">
+                    <div className="inline-block p-[2px] rounded-xl transition hover:scale-105 w-full sm:w-auto" style={{ background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)' }}>
+                      <button className="px-3 xs:px-4 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full h-full text-sm xs:text-sm sm:text-base landscape-button">
                         Book Demo
                       </button>
                     </div>
                   </Link>
                 </div>
-                <div className="flex flex-col items-start w-full lg:w-auto order-1 lg:order-2">
-                  <div className="w-full max-w-full lg:w-[461px] mb-4 sm:mb-6" style={{ 
+                <div className="flex flex-col items-start w-full xl:w-auto order-1 xl:order-2">
+                  <div className="w-full max-w-full xl:w-[461px] mb-3 xs:mb-4 sm:mb-6 marketing-card landscape-card-height" style={{ 
                     maxWidth: '461px', 
-                    height: '180px',
-                    borderRadius: '22px', 
+                    height: '140px',
+                    borderRadius: '16px', 
                     background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%)', 
                     padding: '1px' 
                   }}>
-                    <div className="relative" style={{ width: '100%', height: '100%', borderRadius: '22px', background: '#181825', backdropFilter: 'blur(21.5px)' }}>
+                    <div className="relative" style={{ width: '100%', height: '100%', borderRadius: '16px', background: '#181825', backdropFilter: 'blur(21.5px)' }}>
                       <div style={{ 
                         position: 'absolute', 
-                        top: '20px', 
-                        left: '20px', 
-                        width: '40px', 
-                        height: '24px', 
+                        top: '16px', 
+                        left: '16px', 
+                        width: '32px', 
+                        height: '20px', 
                         borderRadius: '4px', 
                         background: section.cardColor 
                       }} />
                       <div style={{ 
                         position: 'absolute', 
-                        top: '60px', 
-                        left: '20px', 
+                        top: '48px', 
+                        left: '16px', 
                         color: '#FFFFFF', 
                         fontFamily: 'Inter', 
-                        fontSize: '16px', 
+                        fontSize: '14px', 
                         fontWeight: '400', 
-                        lineHeight: '20px' 
+                        lineHeight: '18px' 
                       }}>{section.cardTitle}</div>
                       <div style={{ 
                         position: 'absolute', 
-                        top: '90px', 
-                        left: '20px', 
+                        top: '72px', 
+                        left: '16px', 
                         color: 'rgba(255,255,255,0.3)', 
                         fontFamily: 'Epilogue', 
-                        fontSize: '14px', 
+                        fontSize: '12px', 
                         fontStyle: 'italic', 
                         fontWeight: '500', 
                         lineHeight: '110%', 
@@ -235,7 +249,7 @@ export default function Marketing() {
                       }}>BARBARIKA</div>
                     </div>
                   </div>
-                  <ul className="space-y-2 sm:space-y-3 list-disc list-inside flex-1 text-sm sm:text-base lg:text-[20px]" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter', fontStyle: 'normal', fontWeight: '400', lineHeight: '260%' }}>
+                  <ul className="space-y-1.5 xs:space-y-2 sm:space-y-3 list-disc list-inside flex-1 text-xs xs:text-sm sm:text-base lg:text-lg xl:text-[20px] marketing-features text-overflow-fix" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter', fontStyle: 'normal', fontWeight: '400', lineHeight: '200%' }}>
                     {section.features.map((feature, i) => (
                       <li key={i}>{feature}</li>
                     ))}
@@ -250,10 +264,45 @@ export default function Marketing() {
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       
       <style jsx>{`
-        /* Responsive card adjustments */
-        @media (max-width: 768px) {
+        /* Responsive card adjustments for all devices */
+        @media (max-width: 375px) {
           .marketing-card {
-            height: 160px !important;
+            height: 120px !important;
+            border-radius: 12px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 12px !important;
+            line-height: 16px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 10px !important;
+            line-height: 14px !important;
+          }
+        }
+
+        @media (min-width: 376px) and (max-width: 480px) {
+          .marketing-card {
+            height: 130px !important;
+            border-radius: 14px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 13px !important;
+            line-height: 17px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 11px !important;
+            line-height: 15px !important;
+          }
+        }
+
+        @media (min-width: 481px) and (max-width: 640px) {
+          .marketing-card {
+            height: 140px !important;
+            border-radius: 16px !important;
           }
           
           .marketing-card .card-title {
@@ -267,15 +316,71 @@ export default function Marketing() {
           }
         }
 
+        @media (min-width: 641px) and (max-width: 768px) {
+          .marketing-card {
+            height: 160px !important;
+            border-radius: 18px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 15px !important;
+            line-height: 19px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 13px !important;
+            line-height: 17px !important;
+          }
+        }
+
         @media (min-width: 769px) and (max-width: 1024px) {
           .marketing-card {
-            height: 200px !important;
+            height: 180px !important;
+            border-radius: 20px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 16px !important;
+            line-height: 20px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 14px !important;
+            line-height: 18px !important;
           }
         }
 
         @media (min-width: 1025px) {
           .marketing-card {
+            height: 200px !important;
+            border-radius: 22px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 18px !important;
+            line-height: 22px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 16px !important;
+            line-height: 20px !important;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .marketing-card {
             height: 240px !important;
+            border-radius: 22px !important;
+          }
+          
+          .marketing-card .card-title {
+            font-size: 20px !important;
+            line-height: 24px !important;
+          }
+          
+          .marketing-card .card-brand {
+            font-size: 18px !important;
+            line-height: 22px !important;
           }
         }
       `}</style>

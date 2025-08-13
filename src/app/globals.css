@@ -482,3 +482,468 @@ body {
     transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
   }
 }
+
+/* Responsive text sizing */
+.text-size-responsive {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .text-size-responsive {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-size-responsive {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Landscape Orientation Fixes */
+/* iPhone SE and small devices in landscape */
+@media (max-height: 375px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .hero-button {
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .floating-labels {
+    display: none !important;
+  }
+  
+  .footer-badges {
+    bottom: 1rem !important;
+    gap: 0.5rem !important;
+  }
+  
+  .footer-badge {
+    padding: 0.5rem !important;
+    width: auto !important;
+    min-width: 120px !important;
+  }
+  
+  .footer-badge img {
+    width: 80px !important;
+    height: 30px !important;
+  }
+  
+  .footer-badge p {
+    font-size: 0.625rem !important;
+    margin-top: 0.25rem !important;
+  }
+}
+
+/* Small mobile devices in landscape */
+@media (min-height: 376px) and (max-height: 480px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 0.75rem !important;
+    margin-top: 0.75rem !important;
+  }
+  
+  .hero-button {
+    padding: 0.375rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .floating-labels {
+    font-size: 0.75rem !important;
+  }
+  
+  .footer-badges {
+    bottom: 1.5rem !important;
+    gap: 0.75rem !important;
+  }
+  
+  .footer-badge {
+    padding: 0.75rem !important;
+    width: auto !important;
+    min-width: 140px !important;
+  }
+  
+  .footer-badge img {
+    width: 100px !important;
+    height: 40px !important;
+  }
+  
+  .footer-badge p {
+    font-size: 0.75rem !important;
+    margin-top: 0.375rem !important;
+  }
+}
+
+/* Medium mobile devices in landscape */
+@media (min-height: 481px) and (max-height: 640px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem !important;
+    line-height: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .hero-button {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .floating-labels {
+    font-size: 0.875rem !important;
+  }
+  
+  .footer-badges {
+    bottom: 2rem !important;
+    gap: 1rem !important;
+  }
+  
+  .footer-badge {
+    padding: 1rem !important;
+    width: auto !important;
+    min-width: 160px !important;
+  }
+  
+  .footer-badge img {
+    width: 120px !important;
+    height: 50px !important;
+  }
+  
+  .footer-badge p {
+    font-size: 0.875rem !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Large mobile devices in landscape */
+@media (min-height: 641px) and (max-height: 767px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 2.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+    line-height: 1.625rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 1.25rem !important;
+    margin-top: 1.25rem !important;
+  }
+  
+  .hero-button {
+    padding: 0.625rem 1.5rem !important;
+    font-size: 1.125rem !important;
+  }
+  
+  .floating-labels {
+    font-size: 1rem !important;
+  }
+  
+  .footer-badges {
+    bottom: 2.5rem !important;
+    gap: 1.25rem !important;
+  }
+  
+  .footer-badge {
+    padding: 1.25rem !important;
+    width: auto !important;
+    min-width: 180px !important;
+  }
+  
+  .footer-badge img {
+    width: 140px !important;
+    height: 60px !important;
+  }
+  
+  .footer-badge p {
+    font-size: 1rem !important;
+    margin-top: 0.625rem !important;
+  }
+}
+
+/* Tablet devices in landscape */
+@media (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding-top: 4rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 2.75rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .hero-button {
+    padding: 0.75rem 1.75rem !important;
+    font-size: 1.25rem !important;
+  }
+  
+  .floating-labels {
+    font-size: 1.125rem !important;
+  }
+  
+  .footer-badges {
+    bottom: 3rem !important;
+    gap: 1.5rem !important;
+  }
+  
+  .footer-badge {
+    padding: 1.5rem !important;
+    width: auto !important;
+    min-width: 200px !important;
+  }
+  
+  .footer-badge img {
+    width: 160px !important;
+    height: 70px !important;
+  }
+  
+  .footer-badge p {
+    font-size: 1.125rem !important;
+    margin-top: 0.75rem !important;
+  }
+}
+
+/* Services and Marketing pages landscape fixes */
+@media (orientation: landscape) and (max-height: 600px) {
+  .service-section {
+    padding-top: 2rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .service-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .service-subtitle {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .service-card {
+    height: 120px !important;
+    border-radius: 12px !important;
+  }
+  
+  .service-features {
+    font-size: 0.875rem !important;
+    line-height: 1.5rem !important;
+  }
+  
+  .marketing-section {
+    margin-bottom: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+  
+  .marketing-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .marketing-subtitle {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .marketing-card {
+    height: 100px !important;
+    border-radius: 10px !important;
+  }
+  
+  .marketing-features {
+    font-size: 0.875rem !important;
+    line-height: 1.5rem !important;
+  }
+}
+
+/* MarketingGrid landscape fixes */
+@media (orientation: landscape) and (max-height: 600px) {
+  .marketing-grid-container {
+    padding-top: 2rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .marketing-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .marketing-card {
+    min-height: 160px !important;
+    padding: 1rem !important;
+  }
+  
+  .marketing-card h2 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .marketing-card p {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .department-badge {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  .service-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* General landscape orientation improvements */
+@media (orientation: landscape) {
+  /* Prevent text overflow */
+  .text-overflow-fix {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  /* Adjust spacing for landscape */
+  .landscape-spacing {
+    margin: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* Optimize card heights for landscape */
+  .landscape-card-height {
+    min-height: auto !important;
+    height: fit-content !important;
+  }
+  
+  /* Reduce margins in landscape */
+  .landscape-margin-reduce {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Optimize button sizes for landscape */
+  .landscape-button {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Adjust grid gaps for landscape */
+  .landscape-grid-gap {
+    gap: 0.75rem !important;
+  }
+}
+
+/* Portrait orientation specific fixes */
+@media (orientation: portrait) {
+  .portrait-optimized {
+    /* Reset any landscape-specific styles */
+    min-height: auto !important;
+    padding: initial !important;
+    margin: initial !important;
+  }
+}
+
+/* High DPI displays in landscape */
+@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .high-dpi-landscape {
+    /* Ensure crisp rendering on high DPI displays */
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+  }
+}
+
+/* Print styles for landscape */
+@media print and (orientation: landscape) {
+  .print-landscape {
+    /* Optimize for landscape printing */
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
