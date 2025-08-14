@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import MenuModal from '@/components/MenuModal';
 import Footer from '@/components/Footer';
@@ -12,7 +12,9 @@ const marketingSections = [
     heading: 'All Your Marketing Needs, One Simple Subscription',
     subheading: 'Scale with an on-demand team that knows your business inside and out. From strategy to execution, get expert marketing support without the overhead.',
     cardTitle: 'Marketing Subscription',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    buttonColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    icon: '📈',
     features: [
       'Complete marketing team at your fingertips',
       'Unlimited revisions and requests',
@@ -27,7 +29,9 @@ const marketingSections = [
     heading: 'Build Meaningful Connections, Drive Real Engagement',
     subheading: 'We craft content that resonates with your audience and builds lasting relationships. From strategy to execution, we manage every aspect of your social media presence to drive growth and engagement.',
     cardTitle: 'Social Media Marketing',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    buttonColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    icon: '📱',
     features: [
       'Content strategy tailored to your brand voice',
       'Platform-optimized posting schedules',
@@ -42,7 +46,9 @@ const marketingSections = [
     heading: 'Supercharge Your Growth with High-Converting Social Ad Campaigns',
     subheading: 'We design, build and optimise ad campaigns that generate real sales. From creative production to advanced audience targeting, you get performance at scale.',
     cardTitle: 'Paid Social Advertising',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    buttonColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    icon: '🚀',
     features: [
       'Laser-focused audience targeting',
       'Creative assets built for engagement',
@@ -57,7 +63,9 @@ const marketingSections = [
     heading: 'Scalable SEO That Grows With You',
     subheading: 'Technical expertise meets content strategy for organic growth that lasts. From keyword research to backlink building—we turn search traffic into revenue.',
     cardTitle: 'Search Engine Optimization',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    buttonColor: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    icon: '🔍',
     features: [
       'Transparent pricing, no hidden fees',
       'No freelancers, only vetted SEO pros',
@@ -72,7 +80,9 @@ const marketingSections = [
     heading: 'Bring Your Brand to Life Through Video',
     subheading: 'From concept to delivery, we create compelling video content that captivates your audience. Whether it\'s brand stories, product demos, or social media content—we make videos that convert.',
     cardTitle: 'Video Production',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    buttonColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    icon: '🎬',
     features: [
       'Brand storytelling and product demos',
       'Social media and advertising video content',
@@ -87,7 +97,9 @@ const marketingSections = [
     heading: 'Amplify Your Reach Through Authentic Voices',
     subheading: 'We connect you with the right influencers to authentically promote your brand. From micro-influencers to industry leaders—we build campaigns that drive results.',
     cardTitle: 'Influencer Marketing',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    buttonColor: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    icon: '⭐',
     features: [
       'Strategic influencer identification and outreach',
       'Campaign management from start to finish',
@@ -102,7 +114,9 @@ const marketingSections = [
     heading: 'Build Authority Through Strategic PR',
     subheading: 'We position your brand as an industry leader through strategic media relations. From press releases to thought leadership—we secure the coverage that matters.',
     cardTitle: 'PR & Outreach',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    buttonColor: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+    icon: '📰',
     features: [
       'Media relations and press release distribution',
       'Thought leadership content and positioning',
@@ -117,7 +131,9 @@ const marketingSections = [
     heading: 'Build & Nurture Thriving Communities',
     subheading: 'We help you build vibrant communities around your brand that drive engagement and loyalty. From Discord servers to social groups—we manage every touchpoint with your audience.',
     cardTitle: 'Community Management',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
+    buttonColor: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
+    icon: '👥',
     features: [
       'Platform-specific community building strategies',
       'Daily engagement and moderation',
@@ -132,7 +148,9 @@ const marketingSections = [
     heading: 'Build a Brand That Stands Out and Sticks',
     subheading: 'We craft brands that resonate from visual identity to verbal tone. Our approach combines deep research, clear positioning, and design systems built for growth.',
     cardTitle: 'Branding',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    buttonColor: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    icon: '🎨',
     features: [
       'Brand strategy, positioning & architecture',
       'Logo, visual identity & brand guidelines',
@@ -147,7 +165,9 @@ const marketingSections = [
     heading: 'Consistent, Qualified Leads, Without the Guesswork',
     subheading: 'We build and manage performance-driven lead generation systems that deliver results—not just clicks. From strategy to execution, we handle every step so your sales team focuses on closing, not chasing.',
     cardTitle: 'Lead Generation',
-    cardColor: '#5BAFFF',
+    cardColor: 'linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)',
+    buttonColor: 'linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)',
+    icon: '🎯',
     features: [
       'High-intent lead targeting with real-time list building',
       'Personalized messaging that gets replies',
@@ -160,10 +180,10 @@ const marketingSections = [
 
 export default function Marketing() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   
   // Add smooth scrolling behavior
-  React.useEffect(() => {
-    // Check if there's a hash in the URL and scroll to it
+  useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash) {
       const element = document.querySelector(window.location.hash);
       if (element) {
@@ -175,213 +195,275 @@ export default function Marketing() {
   }, []);
 
   return (
-    <div className="text-white">
-      <div className="min-h-screen" style={{ backgroundImage: 'url(/bg-pages/D3-1.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div className="text-white min-h-screen flex flex-col">
+      {/* Premium Background with Gradient Overlay */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{ 
+          backgroundImage: 'url(/bg-pages/D3-1.svg)', 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
+          backgroundRepeat: 'no-repeat' 
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-purple-900/40"></div>
+      </div>
+
+      <div className="relative z-10 flex-1">
         <Navbar onMenuClick={() => setMenuOpen(true)} />
-        <main className="w-full flex flex-col items-center justify-start pt-16 xs:pt-18 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-24 pb-6 xs:pb-8 sm:pb-10 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 min-h-[calc(100vh-64px)]">
-          <div className="w-full max-w-5xl mx-auto text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 mb-6 xs:mb-8 sm:mb-12">
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2">Marketing</h2>
-            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 xs:mb-3 sm:mb-4">Our Marketing Services</h1>
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-3 xs:px-4">
-              Everything you need to grow your brand, all in one place. Explore our full suite of marketing services below:
+        
+        <main className="w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12">
+          {/* Hero Section */}
+          <div className="w-full max-w-6xl mx-auto text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-slide-up">
+              <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Marketing Services
+              </span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent leading-tight animate-slide-up-delay" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+              Transform Your Brand
+              <br />
+              <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Through Marketing
+              </span>
+            </h1>
+            
+            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed animate-slide-up-delay-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Everything you need to grow your brand, all in one place. 
+              Explore our comprehensive suite of marketing services designed to drive real results.
             </p>
           </div>
-          {marketingSections.map((section) => (
-            <section key={section.key} id={section.key} className="w-full max-w-5xl mx-auto mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 rounded-2xl overflow-hidden shadow-lg marketing-section scroll-mt-20" style={{ backgroundImage: `url(${section.bg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-              <div className="bg-black/70 p-3 xs:p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 flex flex-col xl:flex-row gap-4 xs:gap-6 sm:gap-8 rounded-2xl landscape-spacing">
-                <div className="flex-1 order-2 xl:order-1">
-                  <div className="text-white/60 text-sm xs:text-base sm:text-lg md:text-xl font-medium leading-6 xs:leading-7 mb-2 xs:mb-3 sm:mb-4 marketing-label" style={{ fontFamily: 'Inter' }}>
-                    {section.label}
-                  </div>
-                  <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 xs:mb-3 sm:mb-4 marketing-title text-overflow-fix">
-                    {section.heading}
-                  </h2>
-                  <p className="mb-3 xs:mb-4 sm:mb-6 text-white/50 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg font-normal leading-[120%] xs:leading-[110%] marketing-subtitle text-overflow-fix landscape-spacing">
-                    {section.subheading}
-                  </p>
-                  <Link href="/book-demo" className="block w-full sm:w-auto">
-                    <div className="inline-block p-[2px] rounded-xl transition hover:scale-105 w-full sm:w-auto" style={{ background: 'linear-gradient(90deg, #ff965d 0%, #ff5bbe 50%, #a63ffd 100%)' }}>
-                      <button className="px-3 xs:px-4 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full h-full text-sm xs:text-sm sm:text-base landscape-button">
-                        Book Demo
-                      </button>
+
+          {/* Services Grid */}
+          <div className="w-full max-w-7xl mx-auto space-y-12 mb-20">
+            {marketingSections.map((section, index) => (
+              <section
+                key={section.key}
+                id={section.key}
+                className="scroll-mt-20 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div 
+                  className="relative group"
+                >
+                  {/* Premium Glass Card */}
+                  <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:shadow-3xl hover:scale-[1.02]">
+                    {/* Animated Background Gradient */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"
+                      style={{ background: section.cardColor }}
+                    ></div>
+                    
+                    <div className="relative p-10 lg:p-16">
+                      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        {/* Content Side */}
+                        <div className="space-y-8">
+                          {/* Service Badge */}
+                          <div className="flex items-center gap-4">
+                            <div className="text-3xl animate-bounce-slow">{section.icon}</div>
+                            <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white/90 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                              {section.label}
+                            </span>
+                          </div>
+                          
+                          {/* Heading */}
+                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                            {section.heading}
+                          </h2>
+                          
+                          {/* Subheading */}
+                          <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
+                            {section.subheading}
+                          </p>
+                          
+                          {/* CTA Button */}
+                          <div className="transform transition-all duration-300 hover:scale-105 pt-2">
+                            <Link href="/book-demo">
+                              <button 
+                                className="group relative px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-2xl text-base md:text-lg"
+                                style={{ 
+                                  background: section.buttonColor,
+                                  fontFamily: 'Inter, sans-serif'
+                                }}
+                              >
+                                <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span className="relative z-10 flex items-center gap-2 md:gap-3">
+                                  Book Demo
+                                  <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </span>
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
+                        
+                        {/* Card Side */}
+                        <div className="space-y-8">
+                          {/* Premium Service Card */}
+                          <div className="relative transform transition-all duration-700 hover:scale-105 hover:rotate-y-5">
+                            <div className="relative h-64 lg:h-72 rounded-3xl overflow-hidden shadow-2xl">
+                              {/* Card Background */}
+                              <div 
+                                className="absolute inset-0 rounded-3xl transition-all duration-700"
+                                style={{ background: section.cardColor }}
+                              >
+                                <div className="absolute inset-0 bg-black/30"></div>
+                              </div>
+                              
+                              {/* Card Content */}
+                              <div className="relative h-full p-8 flex flex-col justify-between">
+                                <div className="flex items-start justify-between">
+                                  <div className="w-16 h-10 rounded-xl bg-white/20 backdrop-blur-md"></div>
+                                  <div className="text-3xl">{section.icon}</div>
+                                </div>
+                                
+                                <div className="space-y-3">
+                                  <h3 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                                    {section.cardTitle}
+                                  </h3>
+                                  <p className="text-xs md:text-sm text-white/70 font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                    BARBARIKA
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Features List */}
+                          <div className="space-y-3 md:space-y-4">
+                            {section.features.map((feature, i) => (
+                              <div
+                                key={i}
+                                className="flex items-start gap-3 md:gap-4 animate-slide-in-left p-3 md:p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+                                style={{ animationDelay: `${i * 0.1}s` }}
+                              >
+                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 mt-1.5 md:mt-2 flex-shrink-0 animate-pulse"></div>
+                                <p className="text-white/90 leading-relaxed text-base md:text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                  {feature}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </Link>
-                </div>
-                <div className="flex flex-col items-start w-full xl:w-auto order-1 xl:order-2">
-                  <div className="w-full max-w-full xl:w-[461px] mb-3 xs:mb-4 sm:mb-6 marketing-card landscape-card-height" style={{ 
-                    maxWidth: '461px', 
-                    height: '140px',
-                    borderRadius: '16px', 
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%)', 
-                    padding: '1px' 
-                  }}>
-                    <div className="relative" style={{ width: '100%', height: '100%', borderRadius: '16px', background: '#181825', backdropFilter: 'blur(21.5px)' }}>
-                      <div style={{ 
-                        position: 'absolute', 
-                        top: '16px', 
-                        left: '16px', 
-                        width: '32px', 
-                        height: '20px', 
-                        borderRadius: '4px', 
-                        background: section.cardColor 
-                      }} />
-                      <div style={{ 
-                        position: 'absolute', 
-                        top: '48px', 
-                        left: '16px', 
-                        color: '#FFFFFF', 
-                        fontFamily: 'Inter', 
-                        fontSize: '14px', 
-                        fontWeight: '400', 
-                        lineHeight: '18px' 
-                      }}>{section.cardTitle}</div>
-                      <div style={{ 
-                        position: 'absolute', 
-                        top: '72px', 
-                        left: '16px', 
-                        color: 'rgba(255,255,255,0.3)', 
-                        fontFamily: 'Epilogue', 
-                        fontSize: '12px', 
-                        fontStyle: 'italic', 
-                        fontWeight: '500', 
-                        lineHeight: '110%', 
-                        letterSpacing: '0.9px' 
-                      }}>BARBARIKA</div>
-                    </div>
                   </div>
-                  <ul className="space-y-1.5 xs:space-y-2 sm:space-y-3 list-disc list-inside flex-1 text-xs xs:text-sm sm:text-base lg:text-lg xl:text-[20px] marketing-features text-overflow-fix" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter', fontStyle: 'normal', fontWeight: '400', lineHeight: '200%' }}>
-                    {section.features.map((feature, i) => (
-                      <li key={i}>{feature}</li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
-            </section>
-          ))}
+              </section>
+            ))}
+          </div>
         </main>
       </div>
-      <Footer />
+      
+      {/* Footer */}
+      <div className="relative z-10">
+        <Footer />
+      </div>
+      
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       
       <style jsx>{`
-        /* Responsive card adjustments for all devices */
-        @media (max-width: 375px) {
-          .marketing-card {
-            height: 120px !important;
-            border-radius: 12px !important;
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slide-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(20px); 
           }
-          
-          .marketing-card .card-title {
-            font-size: 12px !important;
-            line-height: 16px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 10px !important;
-            line-height: 14px !important;
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
           }
         }
-
-        @media (min-width: 376px) and (max-width: 480px) {
-          .marketing-card {
-            height: 130px !important;
-            border-radius: 14px !important;
+        
+        @keyframes slide-up-delay {
+          from { 
+            opacity: 0; 
+            transform: translateY(30px); 
           }
-          
-          .marketing-card .card-title {
-            font-size: 13px !important;
-            line-height: 17px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 11px !important;
-            line-height: 15px !important;
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
           }
         }
-
-        @media (min-width: 481px) and (max-width: 640px) {
-          .marketing-card {
-            height: 140px !important;
-            border-radius: 16px !important;
+        
+        @keyframes slide-up-delay-2 {
+          from { 
+            opacity: 0; 
+            transform: translateY(40px); 
           }
-          
-          .marketing-card .card-title {
-            font-size: 14px !important;
-            line-height: 18px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 12px !important;
-            line-height: 16px !important;
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
           }
         }
-
-        @media (min-width: 641px) and (max-width: 768px) {
-          .marketing-card {
-            height: 160px !important;
-            border-radius: 18px !important;
+        
+        @keyframes fade-in-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(30px); 
           }
-          
-          .marketing-card .card-title {
-            font-size: 15px !important;
-            line-height: 19px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 13px !important;
-            line-height: 17px !important;
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
           }
         }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .marketing-card {
-            height: 180px !important;
-            border-radius: 20px !important;
+        
+        @keyframes slide-in-left {
+          from { 
+            opacity: 0; 
+            transform: translateX(-20px); 
           }
-          
-          .marketing-card .card-title {
-            font-size: 16px !important;
-            line-height: 20px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 14px !important;
-            line-height: 18px !important;
+          to { 
+            opacity: 1; 
+            transform: translateX(0); 
           }
         }
-
-        @media (min-width: 1025px) {
-          .marketing-card {
-            height: 200px !important;
-            border-radius: 22px !important;
-          }
-          
-          .marketing-card .card-title {
-            font-size: 18px !important;
-            line-height: 22px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 16px !important;
-            line-height: 20px !important;
-          }
+        
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
         }
-
-        @media (min-width: 1280px) {
-          .marketing-card {
-            height: 240px !important;
-            border-radius: 22px !important;
-          }
-          
-          .marketing-card .card-title {
-            font-size: 20px !important;
-            line-height: 24px !important;
-          }
-          
-          .marketing-card .card-brand {
-            font-size: 18px !important;
-            line-height: 22px !important;
-          }
+        
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out;
+        }
+        
+        .animate-slide-up-delay {
+          animation: slide-up-delay 0.8s ease-out 0.2s both;
+        }
+        
+        .animate-slide-up-delay-2 {
+          animation: slide-up-delay-2 0.8s ease-out 0.4s both;
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out both;
+        }
+        
+        .animate-slide-in-left {
+          animation: slide-in-left 0.4s ease-out both;
+        }
+        
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
+        }
+        
+        .hover\\:rotate-y-5:hover {
+          transform: perspective(1000px) rotateY(5deg);
+        }
+        
+        .shadow-3xl {
+          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
         }
       `}</style>
     </div>

@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
             className="cursor-pointer bg-transparent border-none p-0 m-0 focus:outline-none"
             style={{ background: 'none' }}
           >
-            <span className="text-lg sm:text-xl font-bold italic tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
+            <span className="text-lg sm:text-xl font-bold tracking-wider" style={{fontFamily: 'Epilogue, sans-serif'}}>BARBARIKA</span>
           </button>
         </Link>
       </div>

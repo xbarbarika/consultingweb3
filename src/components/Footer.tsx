@@ -10,13 +10,13 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-4 sm:px-6 md:px-8 lg:px-20 xl:pl-[130px]" style={{ minHeight: '646px' }}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-sm text-zinc-300 gap-8 sm:gap-10 lg:gap-[50px]">
+    <footer className="bg-black text-white py-16 px-4 sm:px-6 md:px-8 lg:px-20 xl:pl-[130px]" style={{ minHeight: '646px' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-sm text-zinc-300 gap-12 sm:gap-16 lg:gap-[60px]">
 
         {/* Left section */}
         <div className="col-span-1 sm:col-span-2 lg:col-span-1">
           <h2 
-            className="text-white mb-2 mt-6 sm:mt-12 lg:mt-[90px] text-lg sm:text-xl font-bold italic tracking-wider"
+            className="text-white mb-4 mt-6 sm:mt-12 lg:mt-[90px] text-lg sm:text-xl font-bold italic tracking-wider"
             style={{
               fontFamily: 'Epilogue, sans-serif',
             }}
@@ -37,9 +37,9 @@ const Footer = () => {
             Your global growth partner
           </p>
 
-          <div>
+          <div className="mb-12">
             <h3 
-              className="text-white mb-1 text-base sm:text-lg"
+              className="text-white mb-3 text-base sm:text-lg"
               style={{
                 fontFamily: 'Inter',
                 fontStyle: 'normal',
@@ -87,7 +87,7 @@ const Footer = () => {
           {/* Social icons */}
           <div>
             <h3 
-              className="text-white mb-4 mt-8 sm:mt-12 lg:mt-[85px] text-base sm:text-lg"
+              className="text-white mb-6 mt-8 sm:mt-12 lg:mt-[85px] text-base sm:text-lg"
               style={{
                 fontFamily: 'Inter',
                 fontStyle: 'normal',
@@ -117,7 +117,7 @@ const Footer = () => {
         {/* Services */}
         <div className="mt-6 sm:mt-12 lg:mt-[90px] ml-0 sm:ml-8 lg:ml-[100px]">
           <h3 
-            className="text-white mb-4 text-base"
+            className="text-white mb-6 text-base font-semibold"
             style={{
               fontFamily: 'Inter',
               fontStyle: 'normal',
@@ -127,10 +127,10 @@ const Footer = () => {
           >
             Services
           </h3>
-          <ul className="[&>*:not(:last-child)]:mb-[10px]">
+          <ul className="space-y-4">
             <li>
-              <Link href="/services-file/marketing-sub" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+              <Link href="/marketing" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -140,162 +140,12 @@ const Footer = () => {
                   cursor: 'pointer'
                 }}
               >
-                Marketing Subscription
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/social-media" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Social Media
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/paid-social" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Paid Social
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/seo" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                SEO
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/influencer" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Influencer Marketing
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/pr-marketing" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                PR & Outreach
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/video" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Video Production
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/lead-gen" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Lead Generation
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/branding" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Branding
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/community" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Community Management
-              </Link>
-            </li>
-            <li>
-              <Link href="/services-file/web3-and-mobile" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
-                style={{
-                  fontFamily: 'Inter',
-                  fontStyle: 'normal',
-                  fontWeight: '400',
-                  lineHeight: 'normal',
-                  textDecoration: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                Web3 & Mobile
+                Marketing
               </Link>
             </li>
             <li>
               <Link href="/services-file/blockchain" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -309,8 +159,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services-file/genai" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+              <Link href="/services-file/web3-and-mobile" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -320,18 +170,31 @@ const Footer = () => {
                   cursor: 'pointer'
                 }}
               >
-                GenAI
+                Web3 & Mobile
+              </Link>
+            </li>
+            <li>
+              <Link href="/services-file/genai" 
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
+                style={{
+                  fontFamily: 'Inter',
+                  fontStyle: 'normal',
+                  fontWeight: '400',
+                  lineHeight: 'normal',
+                  textDecoration: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                AI
               </Link>
             </li>
           </ul>
         </div>
 
-
-
         {/* Company */}
         <div className="mt-6 sm:mt-12 lg:mt-[90px] ml-0 sm:ml-8 lg:ml-[100px]">
           <h3 
-            className="text-white mb-4 text-base"
+            className="text-white mb-6 text-base font-semibold"
             style={{
               fontFamily: 'Inter',
               fontStyle: 'normal',
@@ -341,10 +204,10 @@ const Footer = () => {
           >
             Company
           </h3>
-          <ul className="[&>*:not(:last-child)]:mb-[10px]">
+          <ul className="space-y-4">
             <li>
               <Link href="/company-file/about" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -359,7 +222,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/#team" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -374,7 +237,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/#pricing" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -389,7 +252,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/company-file/blog" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -404,7 +267,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/company-file/careers" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -419,7 +282,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/company-file/contact" 
-                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400"
+                className="hover:opacity-100 transition-opacity text-white/60 text-sm sm:text-base hover:text-pink-400 block"
                 style={{
                   fontFamily: 'Inter',
                   fontStyle: 'normal',
@@ -437,8 +300,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-zinc-800 mt-10 pt-6 text-center">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+      <div className="border-t border-zinc-800 mt-16 pt-8 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
           <p 
             className="text-white/40 text-xs sm:text-sm"
             style={{

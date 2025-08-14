@@ -54,17 +54,17 @@ export default function ServicesPage() {
     <section id={id} className="w-full py-6 xs:py-8 sm:py-10 md:py-12 lg:py-16 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 scroll-mt-20 service-section">
       <div className="max-w-7xl mx-auto">
         {/* Service Label */}
-        <div className="text-white/60 text-sm xs:text-base sm:text-lg md:text-xl font-medium leading-6 xs:leading-7 mb-3 xs:mb-4 sm:mb-6 service-label" style={{ fontFamily: 'Inter' }}>
+        <div className="text-white/60 text-sm xs:text-base sm:text-lg md:text-xl font-medium leading-6 xs:leading-7 mb-3 xs:mb-4 sm:mb-6 service-label" style={{ fontFamily: 'Inter, sans-serif' }}>
           Service <span className="text-white/90 font-medium">{serviceName}</span>
         </div>
         
         {/* Main Heading */}
-        <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 xs:mb-4 sm:mb-6 service-title text-overflow-fix">
+        <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 xs:mb-4 sm:mb-6 service-title text-overflow-fix" style={{ fontFamily: 'Epilogue, sans-serif' }}>
           {title}
         </h2>
         
         {/* Subheading */}
-        <p className="text-white/50 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg font-normal leading-[120%] xs:leading-[110%] mb-4 xs:mb-6 sm:mb-8 service-subtitle text-overflow-fix landscape-spacing">
+        <p className="text-white/50 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg font-normal leading-[120%] xs:leading-[110%] mb-4 xs:mb-6 sm:mb-8 service-subtitle text-overflow-fix landscape-spacing" style={{ fontFamily: 'Inter, sans-serif' }}>
           {subtitle}
         </p>
         
@@ -79,6 +79,7 @@ export default function ServicesPage() {
             >
               <button 
                 className="px-3 xs:px-4 sm:px-6 md:px-8 py-2.5 xs:py-3 sm:py-3 rounded-[10px] font-medium bg-black text-white transition focus:outline-none w-full h-full text-sm xs:text-sm sm:text-base landscape-button"
+                style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 Book Demo
               </button>
@@ -156,7 +157,7 @@ export default function ServicesPage() {
                     top: '48px',
                     left: '16px',
                     color: '#FFFFFF', 
-                    fontFamily: 'Inter', 
+                    fontFamily: 'Inter, sans-serif', 
                     fontSize: '14px', 
                     fontWeight: '400', 
                     lineHeight: '18px',
@@ -172,7 +173,7 @@ export default function ServicesPage() {
                     top: '72px',
                     left: '16px',
                     color: 'rgba(255, 255, 255, 0.3)', 
-                    fontFamily: 'Epilogue', 
+                    fontFamily: 'Epilogue, sans-serif', 
                     fontSize: '12px', 
                     fontStyle: 'italic', 
                     fontWeight: '500', 
@@ -192,7 +193,7 @@ export default function ServicesPage() {
             className="space-y-2 xs:space-y-3 sm:space-y-3 list-disc list-inside flex-1 text-xs xs:text-sm sm:text-base lg:text-lg xl:text-[20px] order-1 xl:order-2 service-features text-overflow-fix" 
             style={{
               color: 'rgba(255, 255, 255, 0.6)', 
-              fontFamily: 'Inter', 
+              fontFamily: 'Inter, sans-serif', 
               fontStyle: 'normal', 
               fontWeight: '400', 
               lineHeight: '200%'
@@ -402,16 +403,16 @@ export default function ServicesPage() {
         {/* Header Section */}
         <div className="w-full flex flex-col items-center justify-start pt-16 xs:pt-18 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-24 pb-6 xs:pb-8 sm:pb-10 px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="w-full max-w-5xl mx-auto text-center mt-4 xs:mt-6 sm:mt-8 md:mt-10 mb-8 xs:mb-12 sm:mb-16">
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2">Services</h2>
-            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 xs:mb-3 sm:mb-4">Our Complete Service Portfolio</h1>
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-6 xs:mb-8 sm:mb-12 px-3 xs:px-4">
+            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-semibold text-pink-400 mb-2" style={{ fontFamily: 'Epilogue, sans-serif' }}>Services</h2>
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 xs:mb-3 sm:mb-4" style={{ fontFamily: 'Epilogue, sans-serif' }}>Our Complete Service Portfolio</h1>
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-6 xs:mb-8 sm:mb-12 px-3 xs:px-4" style={{ fontFamily: 'Inter, sans-serif' }}>
               We&apos;re experts in all things marketing. B2B, blockchain, fintech, software, and high-growth startup brands are our sweet spot. 
               Discover our comprehensive range of services designed to scale your business to new heights.
             </p>
             
             {/* Services Navigation */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 xs:p-4 sm:p-6 border border-white/10 hover:border-pink-400/30 transition-all duration-300 mx-3 xs:mx-4">
-              <h3 className="text-base xs:text-lg sm:text-xl font-semibold mb-2 xs:mb-3 sm:mb-4 text-white flex items-center justify-center gap-2">
+              <h3 className="text-base xs:text-lg sm:text-xl font-semibold mb-2 xs:mb-3 sm:mb-4 text-white flex items-center justify-center gap-2" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                 <svg width="16" height="16" className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#ec4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -421,6 +422,7 @@ export default function ServicesPage() {
                 <Link 
                   href="/marketing"
                   className="text-white/70 hover:text-pink-400 transition-all duration-200 text-left hover:scale-105 transform py-1.5 xs:py-2 px-1.5 xs:px-2 sm:px-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-pink-400/20 group"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
                 >
                   <span className="group-hover:font-medium transition-all duration-200">Marketing</span>
                 </Link>
@@ -431,6 +433,7 @@ export default function ServicesPage() {
                     className="text-white/70 hover:text-pink-400 transition-all duration-200 text-left hover:scale-105 transform py-1.5 xs:py-2 px-1.5 xs:px-2 sm:px-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-pink-400/20 group"
                     style={{
                       animationDelay: `${index * 50}ms`,
+                      fontFamily: 'Inter, sans-serif'
                     }}
                   >
                     <span className="group-hover:font-medium transition-all duration-200">
@@ -446,7 +449,7 @@ export default function ServicesPage() {
         {/* Featured Marketing Card */}
         <div className="w-full px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-2">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-3 xs:mb-4 sm:mb-6 text-white/70 text-xs xs:text-sm uppercase tracking-widest">Featured</div>
+            <div className="mb-3 xs:mb-4 sm:mb-6 text-white/70 text-xs xs:text-sm uppercase tracking-widest" style={{ fontFamily: 'Inter, sans-serif' }}>Featured</div>
             <Link href="/marketing" className="group inline-block w-full">
               <div
                 className="w-full max-w-full xl:w-[461px] hover:scale-105 transition-all duration-500 service-card-wrapper"
@@ -495,7 +498,7 @@ export default function ServicesPage() {
                       top: '48px',
                       left: '16px',
                       color: '#FFFFFF',
-                      fontFamily: 'Inter',
+                      fontFamily: 'Inter, sans-serif',
                       fontSize: '14px',
                       fontWeight: '400',
                       lineHeight: '18px',
@@ -511,7 +514,7 @@ export default function ServicesPage() {
                       top: '72px',
                       left: '16px',
                       color: 'rgba(255, 255, 255, 0.3)',
-                      fontFamily: 'Epilogue',
+                      fontFamily: 'Epilogue, sans-serif',
                       fontSize: '12px',
                       fontStyle: 'italic',
                       fontWeight: '500',

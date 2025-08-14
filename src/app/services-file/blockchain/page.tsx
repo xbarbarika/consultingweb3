@@ -319,14 +319,17 @@ export default function BlockchainService() {
       </div>
 
       {/* Services Section */}
-      <div className="bg-[#1a1a2e] pt-14 px-4 md:px-8 lg:px-16">
+      <div className="bg-[#181828] pt-20 px-4 md:px-8 lg:px-16 relative overflow-hidden">
+        {/* Decorative gradients */}
+        <div className="pointer-events-none absolute -top-32 left-0 w-96 h-96 bg-gradient-to-br from-[#ff965d]/30 via-[#a63ffd]/20 to-transparent rounded-full blur-3xl opacity-60"></div>
+        <div className="pointer-events-none absolute -bottom-32 right-0 w-96 h-96 bg-gradient-to-tr from-[#a63ffd]/30 via-[#ff965d]/20 to-transparent rounded-full blur-3xl opacity-60"></div>
+
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-white">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] via-white to-[#a63ffd] drop-shadow-lg">
             What We Offer
           </h2>
-          <p className="text-white/60 text-center mb-16 max-w-3xl mx-auto text-lg">
-            Comprehensive blockchain development services tailored to your
-            business needs
+          <p className="text-white/70 text-center mb-20 max-w-2xl mx-auto text-xl font-medium">
+            End-to-end blockchain development, product design, and Web3 expertise for ambitious teams and enterprises.
           </p>
 
           {/* Service Tabs */}
@@ -339,10 +342,10 @@ export default function BlockchainService() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-4 rounded-xl font-bold text-sm tracking-wider transition-all duration-300 transform hover:scale-105 ${
+                className={`px-8 py-4 rounded-2xl font-bold text-base tracking-wider transition-all duration-300 shadow-md ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-[#ff965d] to-[#a63ffd] text-white shadow-2xl shadow-orange-500/25"
-                    : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white border border-white/20"
+                    ? "bg-gradient-to-r from-[#ff965d] to-[#a63ffd] text-white shadow-lg shadow-orange-500/25 scale-105"
+                    : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
                 }`}
               >
                 {tab.label}
@@ -352,110 +355,38 @@ export default function BlockchainService() {
 
           {/* Service Content */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {activeTab === "blockchain" &&
-              blockchainServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
-                >
-                  <div className="flex items-start gap-4 w-full">
-                    {/* Icon - now left, neutral circle */}
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
-                      <span className="text-white text-xl flex items-center justify-center">
-                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#ff965d] transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-base text-white/80 leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {service.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#ff965d] transition-all duration-300"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+            {(activeTab === "blockchain" ? blockchainServices :
+              activeTab === "web3" ? web3Services : industryServices
+            ).map((service, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-white/5 via-[#232347]/10 to-[#1a1a2e]/30 rounded-2xl p-10 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col min-h-[370px] relative"
+              >
+                {/* Floating icon */}
+                <div className="absolute -top-7 left-8">
+                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20">
+                    <span className="text-white text-2xl flex items-center justify-center">
+                      {React.cloneElement(service.icon, { className: "w-7 h-7" })}
+                    </span>
                   </div>
                 </div>
-              ))}
-
-            {activeTab === "web3" &&
-              web3Services.map((service, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
-                >
-                  <div className="flex items-start gap-4 w-full">
-                    {/* Icon - now left, neutral circle */}
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
-                      <span className="text-white text-xl flex items-center justify-center">
-                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
+                {/* Card content */}
+                <div className="flex-1 flex flex-col justify-end pt-10">
+                  <h3 className="text-xl font-bold text-white mb-3 mt-6">{service.title}</h3>
+                  <p className="text-base text-white/80 leading-relaxed mb-5">{service.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {service.features.map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 hover:bg-white/20 hover:border-[#ff965d] transition-all duration-300"
+                      >
+                        {feature}
                       </span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#a63ffd] transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-base text-white/80 leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {service.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#a63ffd] transition-all duration-300"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
-              ))}
-
-            {activeTab === "industries" &&
-              industryServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/15 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-black/30 cursor-pointer flex flex-col min-h-[340px]"
-                >
-                  <div className="flex items-start gap-4 w-full">
-                    {/* Icon - now left, neutral circle */}
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20 mt-1">
-                      <span className="text-white text-xl flex items-center justify-center">
-                        {React.cloneElement(service.icon, { className: "w-6 h-6" })}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#4ade80] transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-base text-white/80 leading-relaxed mb-4">
-                        {service.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {service.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 group-hover:bg-white/20 group-hover:border-[#4ade80] transition-all duration-300"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
