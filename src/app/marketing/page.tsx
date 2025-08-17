@@ -14,7 +14,7 @@ const marketingSections = [
     cardTitle: 'Marketing Subscription',
     cardColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     buttonColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    icon: '📈',
+    icon: '📊',
     features: [
       'Complete marketing team at your fingertips',
       'Unlimited revisions and requests',
@@ -31,7 +31,7 @@ const marketingSections = [
     cardTitle: 'Social Media Marketing',
     cardColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     buttonColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    icon: '📱',
+    icon: '💬',
     features: [
       'Content strategy tailored to your brand voice',
       'Platform-optimized posting schedules',
@@ -48,7 +48,7 @@ const marketingSections = [
     cardTitle: 'Paid Social Advertising',
     cardColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     buttonColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    icon: '🚀',
+    icon: '📈',
     features: [
       'Laser-focused audience targeting',
       'Creative assets built for engagement',
@@ -82,7 +82,7 @@ const marketingSections = [
     cardTitle: 'Video Production',
     cardColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
     buttonColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-    icon: '🎬',
+    icon: '🎥',
     features: [
       'Brand storytelling and product demos',
       'Social media and advertising video content',
@@ -181,7 +181,6 @@ const marketingSections = [
 export default function Marketing() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  
   // Add smooth scrolling behavior
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash) {
@@ -213,30 +212,58 @@ export default function Marketing() {
         <Navbar onMenuClick={() => setMenuOpen(true)} />
         
         <main className="w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12">
-          {/* Hero Section */}
-          <div className="w-full max-w-6xl mx-auto text-center mb-20 animate-fade-in">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-slide-up">
-              <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Marketing Services
-              </span>
+          {/* Hero Section - Left Aligned with Contact Button */}
+          <div className="w-full max-w-7xl mx-auto mb-20 animate-fade-in">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+              {/* Left Side - Content */}
+              <div className="flex-1 space-y-6 lg:space-y-8">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-slide-up">
+                  <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    Marketing Services
+                  </span>
+                </div>
+                
+                <div className="space-y-4 lg:space-y-6">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight animate-slide-up-delay" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                    <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                      Transform Your
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                      Brand Through
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      Marketing
+                    </span>
+                  </h1>
+                  
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed animate-slide-up-delay-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    Everything you need to grow your brand, all in one place. 
+                    Explore our comprehensive suite of marketing services designed to drive real results.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Side - Contact Button */}
+              <div className="lg:flex-shrink-0 animate-slide-up-delay-2">
+                <Link href="/book-demo">
+                  <button className="group relative px-8 py-4 lg:px-12 lg:py-6 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-2xl text-lg lg:text-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
+                    <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center gap-3">
+                      Get Started
+                      <svg className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
+              </div>
             </div>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent leading-tight animate-slide-up-delay" style={{ fontFamily: 'Epilogue, sans-serif' }}>
-              Transform Your Brand
-              <br />
-              <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Through Marketing
-              </span>
-            </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed animate-slide-up-delay-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Everything you need to grow your brand, all in one place. 
-              Explore our comprehensive suite of marketing services designed to drive real results.
-            </p>
           </div>
 
           {/* Services Grid */}
-          <div className="w-full max-w-7xl mx-auto space-y-12 mb-20">
+          <div className="w-full max-w-7xl mx-auto space-y-16 mb-20">
             {marketingSections.map((section, index) => (
               <section
                 key={section.key}
@@ -244,53 +271,45 @@ export default function Marketing() {
                 className="scroll-mt-20 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div 
-                  className="relative group"
-                >
-                  {/* Premium Glass Card */}
-                  <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:shadow-3xl hover:scale-[1.02]">
-                    {/* Animated Background Gradient */}
-                    <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700"
-                      style={{ background: section.cardColor }}
-                    ></div>
-                    
-                    <div className="relative p-10 lg:p-16">
-                      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="relative">
+                  {/* Container - No Hover Effect */}
+                  <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+                    <div className="relative p-8 lg:p-12 xl:p-16">
+                      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                         {/* Content Side */}
-                        <div className="space-y-8">
+                        <div className="space-y-6 lg:space-y-8">
                           {/* Service Badge */}
-                          <div className="flex items-center gap-4">
-                            <div className="text-3xl animate-bounce-slow">{section.icon}</div>
-                            <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white/90 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                          <div className="flex items-center gap-3 lg:gap-4">
+                            <div className="text-2xl lg:text-3xl opacity-80">{section.icon}</div>
+                            <span className="px-3 py-1.5 lg:px-4 lg:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs lg:text-sm font-semibold text-white/90 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
                               {section.label}
                             </span>
                           </div>
                           
                           {/* Heading */}
-                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                             {section.heading}
                           </h2>
                           
                           {/* Subheading */}
-                          <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
+                          <p className="text-base md:text-lg lg:text-xl text-white/70 leading-relaxed max-w-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>
                             {section.subheading}
                           </p>
                           
                           {/* CTA Button */}
-                          <div className="transform transition-all duration-300 hover:scale-105 pt-2">
+                          <div className="pt-2">
                             <Link href="/book-demo">
                               <button 
-                                className="group relative px-8 py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-2xl text-base md:text-lg"
+                                className="group relative px-6 py-3 lg:px-8 lg:py-4 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-xl text-base lg:text-lg"
                                 style={{ 
                                   background: section.buttonColor,
                                   fontFamily: 'Inter, sans-serif'
                                 }}
                               >
-                                <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <span className="relative z-10 flex items-center gap-2 md:gap-3">
+                                <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span className="relative z-10 flex items-center gap-2 lg:gap-3">
                                   Book Demo
-                                  <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <svg className="w-4 h-4 lg:w-5 lg:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                   </svg>
                                 </span>
@@ -300,30 +319,30 @@ export default function Marketing() {
                         </div>
                         
                         {/* Card Side */}
-                        <div className="space-y-8">
-                          {/* Premium Service Card */}
-                          <div className="relative transform transition-all duration-700 hover:scale-105 hover:rotate-y-5">
-                            <div className="relative h-64 lg:h-72 rounded-3xl overflow-hidden shadow-2xl">
+                        <div className="space-y-6 lg:space-y-8">
+                          {/* Service Card - With Hover Effect */}
+                          <div className="relative transform transition-all duration-500 hover:scale-105 hover:rotate-y-2">
+                            <div className="relative h-56 lg:h-64 xl:h-72 rounded-3xl overflow-hidden shadow-2xl">
                               {/* Card Background */}
                               <div 
-                                className="absolute inset-0 rounded-3xl transition-all duration-700"
+                                className="absolute inset-0 rounded-3xl transition-all duration-500"
                                 style={{ background: section.cardColor }}
                               >
-                                <div className="absolute inset-0 bg-black/30"></div>
+                                <div className="absolute inset-0 bg-black/20"></div>
                               </div>
                               
                               {/* Card Content */}
-                              <div className="relative h-full p-8 flex flex-col justify-between">
+                              <div className="relative h-full p-6 lg:p-8 flex flex-col justify-between">
                                 <div className="flex items-start justify-between">
-                                  <div className="w-16 h-10 rounded-xl bg-white/20 backdrop-blur-md"></div>
-                                  <div className="text-3xl">{section.icon}</div>
+                                  <div className="w-12 h-8 lg:w-16 lg:h-10 rounded-xl bg-white/20 backdrop-blur-md"></div>
+                                  <div className="text-2xl lg:text-3xl opacity-80">{section.icon}</div>
                                 </div>
                                 
-                                <div className="space-y-3">
-                                  <h3 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                                <div className="space-y-2 lg:space-y-3">
+                                  <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-white" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                                     {section.cardTitle}
                                   </h3>
-                                  <p className="text-xs md:text-sm text-white/70 font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                  <p className="text-xs lg:text-sm text-white/70 font-medium tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
                                     BARBARIKA
                                   </p>
                                 </div>
@@ -332,15 +351,15 @@ export default function Marketing() {
                           </div>
                           
                           {/* Features List */}
-                          <div className="space-y-3 md:space-y-4">
+                          <div className="space-y-3 lg:space-y-4">
                             {section.features.map((feature, i) => (
                               <div
                                 key={i}
-                                className="flex items-start gap-3 md:gap-4 animate-slide-in-left p-3 md:p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+                                className="flex items-start gap-3 lg:gap-4 animate-slide-in-left p-3 lg:p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
                                 style={{ animationDelay: `${i * 0.1}s` }}
                               >
-                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 mt-1.5 md:mt-2 flex-shrink-0 animate-pulse"></div>
-                                <p className="text-white/90 leading-relaxed text-base md:text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                <div className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 mt-1.5 lg:mt-2 flex-shrink-0"></div>
+                                <p className="text-white/90 leading-relaxed text-sm lg:text-base" style={{ fontFamily: 'Inter, sans-serif' }}>
                                   {feature}
                                 </p>
                               </div>
@@ -425,11 +444,6 @@ export default function Marketing() {
           }
         }
         
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
-        }
-        
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
@@ -454,16 +468,8 @@ export default function Marketing() {
           animation: slide-in-left 0.4s ease-out both;
         }
         
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
-        
-        .hover\\:rotate-y-5:hover {
-          transform: perspective(1000px) rotateY(5deg);
-        }
-        
-        .shadow-3xl {
-          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+        .hover\\:rotate-y-2:hover {
+          transform: perspective(1000px) rotateY(2deg);
         }
       `}</style>
     </div>
