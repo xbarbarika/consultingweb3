@@ -257,72 +257,101 @@ export default function BlockchainService() {
   ];
 
   return (
-    <div className="text-white bg-black">
-      <Navbar onMenuClick={() => setMenuOpen(true)} />
+    <div className="text-white min-h-screen flex flex-col">
+      {/* Solid Black Background */}
+      <div className="fixed inset-0 z-0 bg-black"></div>
 
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-b from-[#0a0a0f] to-[#1a1a2e] pt-28 sm:pt-32 pb-20 px-4 md:px-8 lg:px-16 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-32 right-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-        </div>
+      <div className="relative z-10 flex-1">
+        <Navbar onMenuClick={() => setMenuOpen(true)} />
+        
+        <main className="w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12">
+          {/* Hero Section */}
+          <div className="w-full max-w-7xl mx-auto mb-20 animate-fade-in">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+              {/* Left Side - Content */}
+              <div className="flex-1 space-y-6 lg:space-y-8">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-slide-up">
+                  <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    Blockchain Solutions
+                  </span>
+                </div>
+                
+                <div className="space-y-4 lg:space-y-6">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight animate-slide-up-delay" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                    <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                      Blockchain Solutions
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                      for Visionaries
+                    </span>
+                  </h1>
+                  
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed animate-slide-up-delay-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    Empowering your ideas with secure, scalable, and innovative blockchain technology from concept to launch.
+                  </p>
+                </div>
+              </div>
 
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-10 mb-16 bg-gradient-to-r from-white via-pink-100 to-purple-100 bg-clip-text text-transparent">
-            Blockchain Solutions for Visionaries
-          </h1>
-          <span className="block text-xl sm:text-2xl font-normal text-white/80 mb-10">
-            Empowering your ideas with secure, scalable, and innovative blockchain technology from concept to launch.
-          </span>
-          <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Unlock the full potential of blockchain for your business. We help you design, architect, and build custom blockchain products that turn your vision into reality: securely, efficiently, and with future growth in mind.
-          </p>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-22">
-            <div className="group">
-              <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] to-[#a63ffd] group-hover:scale-110 transition-transform duration-300">
-                20+
-              </div>
-              <div className="text-white/60 font-medium group-hover:text-white transition-colors">
-                launched projects
-              </div>
-            </div>
-            <div className="group">
-              <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] to-[#a63ffd] group-hover:scale-110 transition-transform duration-300">
-                7+
-              </div>
-              <div className="text-white/60 font-medium group-hover:text-white transition-colors">
-                years of expertise in blockchain
-              </div>
-            </div>
-            <div className="group">
-              <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] to-[#a63ffd] group-hover:scale-110 transition-transform duration-300">
-                33+
-              </div>
-              <div className="text-white/60 font-medium group-hover:text-white transition-colors">
-                blockchain hackathons won
-              </div>
-            </div>
-            <div className="group">
-              <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] to-[#a63ffd] group-hover:scale-110 transition-transform duration-300">
-                50+
-              </div>
-              <div className="text-white/60 font-medium group-hover:text-white transition-colors">
-                published scientific articles about blockchain
+              {/* Right Side - Contact Button */}
+              <div className="lg:flex-shrink-0 animate-slide-up-delay-2">
+                <Link href="/book-demo">
+                  <button className="group relative px-8 py-4 lg:px-12 lg:py-6 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-2xl text-lg lg:text-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
+                    <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center gap-3">
+                      Get Started
+                      <svg className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Stats Section */}
+          <div className="w-full max-w-7xl mx-auto mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  20+
+                </div>
+                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
+                  launched projects
+                </div>
+              </div>
+              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  7+
+                </div>
+                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
+                  years of expertise
+                </div>
+              </div>
+              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  33+
+                </div>
+                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
+                  hackathons won
+                </div>
+              </div>
+              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  50+
+                </div>
+                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
+                  scientific articles
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
 
       {/* Services Section */}
-      <div className="bg-[#181828] pt-20 px-4 md:px-8 lg:px-16 relative overflow-hidden">
-        {/* Decorative gradients */}
-        <div className="pointer-events-none absolute -top-32 left-0 w-96 h-96 bg-gradient-to-br from-[#ff965d]/30 via-[#a63ffd]/20 to-transparent rounded-full blur-3xl opacity-60"></div>
-        <div className="pointer-events-none absolute -bottom-32 right-0 w-96 h-96 bg-gradient-to-tr from-[#a63ffd]/30 via-[#ff965d]/20 to-transparent rounded-full blur-3xl opacity-60"></div>
+      <div className="w-full bg-white/5 backdrop-blur-sm py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] via-white to-[#a63ffd] drop-shadow-lg">
@@ -354,31 +383,32 @@ export default function BlockchainService() {
           </div>
 
           {/* Service Content */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {(activeTab === "blockchain" ? blockchainServices :
               activeTab === "web3" ? web3Services : industryServices
             ).map((service, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-white/5 via-[#232347]/10 to-[#1a1a2e]/30 rounded-2xl p-10 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col min-h-[370px] relative"
+                className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col min-h-[480px] lg:min-h-[520px] relative hover:border-white/30"
               >
                 {/* Floating icon */}
-                <div className="absolute -top-7 left-8">
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shadow border border-white/20">
-                    <span className="text-white text-2xl flex items-center justify-center">
-                      {React.cloneElement(service.icon, { className: "w-7 h-7" })}
+                <div className="absolute -top-8 left-6 lg:-top-8 lg:left-8 z-10">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/20 group-hover:border-white/30 transition-all duration-300">
+                    <span className="text-white text-xl lg:text-2xl flex items-center justify-center">
+                      {React.cloneElement(service.icon, { className: "w-6 h-6 lg:w-7 lg:h-7" })}
                     </span>
                   </div>
                 </div>
                 {/* Card content */}
-                <div className="flex-1 flex flex-col justify-end pt-10">
-                  <h3 className="text-xl font-bold text-white mb-3 mt-6">{service.title}</h3>
-                  <p className="text-base text-white/80 leading-relaxed mb-5">{service.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                <div className="flex-1 flex flex-col pt-8 lg:pt-10">
+                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 mt-6 group-hover:text-white transition-colors leading-tight" style={{ fontFamily: 'Epilogue, sans-serif' }}>{service.title}</h3>
+                  <p className="text-base lg:text-lg text-white/80 leading-relaxed mb-6 flex-1" style={{ fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-6">
                     {service.features.map((feature, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-white/80 border border-white/15 hover:bg-white/20 hover:border-[#ff965d] transition-all duration-300"
+                        className="px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold text-white/80 border border-white/20 hover:bg-white/20 hover:border-pink-400 transition-all duration-300"
+                        style={{ fontFamily: 'Inter, sans-serif' }}
                       >
                         {feature}
                       </span>
@@ -392,7 +422,7 @@ export default function BlockchainService() {
       </div>
 
       {/* Technologies Section */}
-      <div className="bg-gradient-to-b from-[#1a1a2e] to-[#0a0a0f] py-24 px-4 md:px-8 lg:px-16">
+      <div className="w-full bg-white/5 backdrop-blur-sm py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] via-white to-[#a63ffd]">
             Technologies We Use
@@ -401,25 +431,26 @@ export default function BlockchainService() {
             We leverage the most advanced blockchain networks, developer tools, and cloud platforms to deliver secure, scalable, and innovative solutions for your business.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Blockchains */}
-            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#ff965d]/10 p-10 hover:shadow-[#ff965d]/30 transition-all duration-300">
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#ff965d] to-[#a63ffd] rounded-full flex items-center justify-center shadow-lg shadow-[#ff965d]/30 border-4 border-[#1a1a2e]">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
+              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
+                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h8M12 8v8" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-pink-400 transition-colors">
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                 BLOCKCHAIN NETWORKS
               </h3>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ff965d]/30 to-[#a63ffd]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-pink-500/50 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-pink-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
                   >
-                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#ff965d] to-[#a63ffd] shadow"></span>
+                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 shadow"></span>
                     {tech}
                   </span>
                 ))}
@@ -427,23 +458,24 @@ export default function BlockchainService() {
             </div>
 
             {/* Tools */}
-            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#a63ffd]/10 p-10 hover:shadow-[#a63ffd]/30 transition-all duration-300">
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#a63ffd] to-[#ff965d] rounded-full flex items-center justify-center shadow-lg shadow-[#a63ffd]/30 border-4 border-[#1a1a2e]">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
+              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
+                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 8h8v8H8z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-purple-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                 DEVELOPMENT TOOLS
               </h3>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
                 {tools.map((tool, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#a63ffd]/30 to-[#ff965d]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-purple-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
                   >
-                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#a63ffd] to-[#ff965d] shadow"></span>
+                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 shadow"></span>
                     {tool}
                   </span>
                 ))}
@@ -451,23 +483,24 @@ export default function BlockchainService() {
             </div>
 
             {/* Platforms */}
-            <div className="relative text-center group bg-gradient-to-br from-[#232347]/60 to-[#1a1a2e]/80 rounded-2xl border border-white/10 shadow-lg shadow-[#4ade80]/10 p-10 hover:shadow-[#4ade80]/30 transition-all duration-300">
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-[#4ade80] to-[#a63ffd] rounded-full flex items-center justify-center shadow-lg shadow-[#4ade80]/30 border-4 border-[#1a1a2e]">
-                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
+              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
+                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <rect x="6" y="6" width="12" height="12" rx="3" strokeWidth="2" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 9h6v6H9z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mt-8 mb-6 group-hover:text-green-400 transition-colors">
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                 CLOUD PLATFORMS
               </h3>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
                 {platforms.map((platform, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#4ade80]/30 to-[#a63ffd]/30 rounded-full text-sm text-white/90 border border-white/20 shadow-md hover:bg-white/10 hover:border-green-400/50 hover:text-green-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
                   >
-                    <span className="w-2 h-2 rounded-full bg-gradient-to-br from-[#4ade80] to-[#a63ffd] shadow"></span>
+                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 shadow"></span>
                     {platform}
                   </span>
                 ))}
@@ -478,40 +511,55 @@ export default function BlockchainService() {
       </div>
 
       {/* Case Studies Section */}
-      <div className="bg-[#0a0a0f] py-20 px-4 md:px-8 lg:px-16">
+      <div className="w-full bg-white/5 backdrop-blur-sm py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-white">
-            Client Success Stories
-          </h2>
-          {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <p className="text-white/60 text-center mb-16 max-w-3xl mx-auto text-lg">
-            Real blockchain projects we&apos;ve delivered for our clients
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+              <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Success Stories
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+              Client Success Stories
+            </h2>
+            <p className="text-lg lg:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Real blockchain projects we&apos;ve delivered for our clients, showcasing our expertise and innovation
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-500 hover:transform hover:scale-102 hover:shadow-lg hover:shadow-black/20 cursor-pointer"
+                className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-black/30 cursor-pointer relative overflow-hidden min-h-[500px] lg:min-h-[550px] flex flex-col"
               >
                 {/* Header Section */}
-                <div className="mb-4">
-                  <div className="text-sm text-[#ff965d] font-medium mb-3 bg-white/5 px-3 py-1 rounded-md inline-block border border-white/10">
-                    {study.category}
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
+                <div className="mb-6">
+                  <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300 leading-tight" style={{ fontFamily: 'Epilogue, sans-serif' }}>
                     {study.title}
                   </h3>
                 </div>
 
                 {/* Content */}
-                <p className="text-white/70 mb-4 leading-relaxed line-clamp-4 text-sm">
-                  {study.description}
-                </p>
-                <div className="text-sm text-white/50 group-hover:text-white/60 transition-colors duration-300">
-                  <strong className="text-white/70">Technologies:</strong>{" "}
-                  {study.technologies}
+                <div className="space-y-4 flex-1 flex flex-col">
+                  <p className="text-white/80 leading-relaxed text-base lg:text-lg flex-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {study.description}
+                  </p>
+                  
+                  {/* Technologies Section */}
+                  <div className="pt-4 border-t border-white/10 mt-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-purple-400"></div>
+                      <span className="text-sm font-semibold text-white/60 uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Technologies</span>
+                    </div>
+                    <div className="text-sm lg:text-base text-white/70 group-hover:text-white/80 transition-colors duration-300 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {study.technologies}
+                    </div>
+                  </div>
                 </div>
+
+                {/* Hover Effect Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -519,18 +567,12 @@ export default function BlockchainService() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-[#ff965d] to-[#a63ffd] py-20 px-4 md:px-8 lg:px-16 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-        </div>
+      <div className="w-full bg-black py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden">
 
         <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Build Your Blockchain Solution?
           </h2>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
             Let&apos;s discuss your blockchain project and create a solution that
             drives your business forward. Get a free consultation with our
@@ -566,8 +608,68 @@ export default function BlockchainService() {
         </div>
       </div>
 
-      <Footer />
+      {/* Footer */}
+      <div className="relative z-10">
+        <Footer />
+      </div>
+      
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes slide-up {
+          from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes slide-up-delay {
+          from { 
+            opacity: 0; 
+            transform: translateY(30px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes slide-up-delay-2 {
+          from { 
+            opacity: 0; 
+            transform: translateY(40px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out;
+        }
+        
+        .animate-slide-up-delay {
+          animation: slide-up-delay 0.8s ease-out 0.2s both;
+        }
+        
+        .animate-slide-up-delay-2 {
+          animation: slide-up-delay-2 0.8s ease-out 0.4s both;
+        }
+      `}</style>
     </div>
   );
 }
