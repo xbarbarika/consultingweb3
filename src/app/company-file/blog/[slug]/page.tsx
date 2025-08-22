@@ -16,31 +16,31 @@ const blogPosts = [
     readTime: '2 min read',
     image: '/hero.png',
     content: `Welcome to the Journey!
-Starting something new can be exciting — and sometimes a bit overwhelming. In the coming days, we'll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future. This first post is all about understanding what our journey will look like and how you, even as a beginner, can confidently explore these topics.
+Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we&apos;ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future. This first post is all about understanding what our journey will look like and how you, even as a beginner, can confidently explore these topics.
 
 What Are We Doing on Day 1?
 Today, we focus on two things:
 
-Getting curious: We'll start by asking, "What is AI?" and "What is Blockchain?" in the simplest terms.
-Planning ahead: We'll create a roadmap for our blog series, so you always know what's coming next.
+Getting curious: We&apos;ll start by asking, &quot;What is AI?&quot; and &quot;What is Blockchain?&quot; in the simplest terms.
+Planning ahead: We&apos;ll create a roadmap for our blog series, so you always know what&apos;s coming next.
 
 What is Artificial Intelligence (AI)?
 Think of AI as teaching computers to learn, adapt, and make decisions — just like people do! AI is behind everyday things, from online shopping recommendations and virtual assistants (like Siri and Alexa) to self-driving cars. The goal of AI is to help machines recognize patterns and solve problems, making life easier and work faster.
 
 Example:
-Imagine Netflix suggesting movies you might like. That's AI, learning your tastes and offering up choices.
+Imagine Netflix suggesting movies you might like. That&apos;s AI, learning your tastes and offering up choices.
 
 What is Blockchain?
-Blockchain is more like a super-secure online notebook. But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the "blockchain"), nobody can change or erase it. This makes it nearly tamper-proof. It's the technology behind digital coins like Bitcoin, but it's useful far beyond that!
+Blockchain is more like a super-secure online notebook. But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the &quot;blockchain&quot;), nobody can change or erase it. This makes it nearly tamper-proof. It&apos;s the technology behind digital coins like Bitcoin, but it&apos;s useful far beyond that!
 
 Example:
 If you transfer money to a friend using blockchain, the transaction is recorded in a way that everyone can see, and nobody can secretly change it.
 
 Why Are These Technologies Important Together?
-AI is great at crunching massive amounts of data, but it needs data that's trustworthy. Blockchain keeps data safe and reliable. Together, they can make systems that are both smart and secure. We'll explore this partnership in detail throughout the series!
+AI is great at crunching massive amounts of data, but it needs data that&apos;s trustworthy. Blockchain keeps data safe and reliable. Together, they can make systems that are both smart and secure. We&apos;ll explore this partnership in detail throughout the series!
 
 Our Blog Roadmap
-Here's the journey we'll take over the next 15 days:
+Here&apos;s the journey we&apos;ll take over the next 15 days:
 
 1. Introduction and Basics (Today)
 2. Deep Dive: What is AI?
@@ -59,10 +59,10 @@ Here's the journey we'll take over the next 15 days:
 15. Final Polish and Publish!
 
 Wrap Up
-Congratulations you've just taken the first step! Keep following as we unravel these technologies together, always using simple words, relatable stories, and real-life examples. Got questions about AI or blockchain already? Drop them in the comments, and I'll be sure to include answers in upcoming posts!
+Congratulations you&apos;ve just taken the first step! Keep following as we unravel these technologies together, always using simple words, relatable stories, and real-life examples. Got questions about AI or blockchain already? Drop them in the comments, and I&apos;ll be sure to include answers in upcoming posts!
 
 Next Up:
-Tomorrow, we'll make AI even simpler. Stay tuned!`
+Tomorrow, we&apos;ll make AI even simpler. Stay tuned!`
   },
   {
     slug: 'coming-soon',
@@ -90,7 +90,7 @@ export default function BlogPost() {
           <main className="w-full flex flex-col items-center justify-start pt-24 sm:pt-28 lg:pt-24 pb-10 px-4 md:px-8 lg:px-16 min-h-[calc(100vh-64px)]">
             <div className="w-full max-w-4xl mx-auto text-center">
               <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
-              <p className="text-lg text-white/70 mb-8">The blog post you're looking for doesn't exist.</p>
+              <p className="text-lg text-white/70 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
               <Link href="/company-file/blog" className="inline-block bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg transition-colors">
                 Back to Blog
               </Link>
