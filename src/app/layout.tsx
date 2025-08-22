@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, DM_Sans, Shadows_Into_Light, Epilogue, Inter } from "next/font/google";
+import { Geist, Geist_Mono, DM_Sans, Shadows_Into_Light, Epilogue, Inter, Press_Start_2P, Tourney, Numans } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,6 +33,25 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const pressStart2P = Press_Start_2P({
+  variable: "--font-press-start-2p",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const tourney = Tourney({
+  variable: "--font-tourney",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const numans = Numans({
+  variable: "--font-numans",
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Barbarika",
   description: "Created By Team Engineerian",
@@ -56,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${shadowsIntoLight.variable} ${epilogue.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${shadowsIntoLight.variable} ${epilogue.variable} ${inter.variable} ${pressStart2P.variable} ${tourney.variable} ${numans.variable} min-h-screen antialiased`}
       >
         {children}
       </body>

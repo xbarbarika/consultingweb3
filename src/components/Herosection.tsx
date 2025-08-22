@@ -3,125 +3,204 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-         <section id="hero" className="relative text-white min-h-screen w-full pt-32 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden hero-section" style={{backgroundImage: 'url(/hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
-      {/* Background Circles Image with Animation */}
-      <div className="absolute inset-0 z-0 herocircles-bg animate-pulse-slow" style={{backgroundImage: 'url(/herocircles.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}></div>
-      
-      {/* Animated Stars/Sparkles */}
-      <div className="absolute inset-0 z-0">
-        {/* Star 1 */}
-        <div className="absolute top-[15%] left-[10%] w-2 h-2 bg-yellow-300 rounded-full animate-twinkle"></div>
-        {/* Star 2 */}
-        <div className="absolute top-[25%] right-[15%] w-1 h-1 bg-blue-300 rounded-full animate-twinkle-delayed"></div>
-        {/* Star 3 */}
-        <div className="absolute top-[40%] left-[20%] w-1.5 h-1.5 bg-purple-300 rounded-full animate-twinkle"></div>
-        {/* Star 4 */}
-        <div className="absolute top-[60%] right-[25%] w-1 h-1 bg-pink-300 rounded-full animate-twinkle-delayed"></div>
-        {/* Star 5 */}
-        <div className="absolute top-[75%] left-[15%] w-2 h-2 bg-cyan-300 rounded-full animate-twinkle"></div>
-        {/* Star 6 */}
-        <div className="absolute top-[20%] left-[50%] w-1 h-1 bg-white rounded-full animate-twinkle-delayed"></div>
-        {/* Star 7 */}
-        <div className="absolute top-[50%] right-[10%] w-1.5 h-1.5 bg-yellow-200 rounded-full animate-twinkle"></div>
-        {/* Star 8 */}
-        <div className="absolute top-[80%] right-[20%] w-1 h-1 bg-blue-200 rounded-full animate-twinkle-delayed"></div>
+    <section 
+      id="hero" 
+      className="relative min-h-screen w-full overflow-hidden"
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/background.jpeg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       </div>
       
-      {/* Floating Labels with Enhanced Animations */}
-      <div className="absolute inset-0 z-0 floating-labels">
-        <p className="hidden md:block absolute left-[60px] lg:left-[100px] top-[120px] lg:top-[180px] opacity-70 animate-float-slow" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Performance Ads</p>
-        <p className="hidden md:block absolute left-[80px] lg:left-[160px] bottom-[180px] lg:bottom-[240px] opacity-70 animate-float-medium" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Influencer Ops</p>
-        <p className="hidden md:block absolute right-[60px] lg:right-[100px] top-[140px] lg:top-[200px] opacity-70 animate-float-fast" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Community Campaigns</p>
-        <p className="hidden md:block absolute right-[80px] lg:right-[160px] bottom-[140px] lg:bottom-[200px] opacity-70 animate-float-slow" style={{fontFamily: '"Shadows Into Light", cursive', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, letterSpacing: '0.9px'}}>Tech PR</p>
+      {/* Main Content Container */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-20 lg:pb-24">
+        {/* Text Content */}
+        <div className="text-center lg:text-left max-w-3xl lg:max-w-2xl xl:max-w-3xl mb-8 sm:mb-12 lg:mb-0">
+          <div className="relative inline-block mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                style={{
+                  color: 'white',
+                  fontFamily: 'var(--font-dm-sans), sans-serif',
+                  lineHeight: '1.1',
+                  textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+                  position: 'relative',
+                  display: 'inline-block',
+                  padding: '0.5rem 1.5rem',
+                  border: '3px solid #FF3B30',
+                  borderRadius: '1rem',
+                  background: 'rgba(0, 0, 0, 0.3)',
+                  backdropFilter: 'blur(10px)'
+                }}
+            >
+              <span 
+                className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                style={{
+                  fontFamily: 'var(--font-tourney), sans-serif',
+                  fontWeight: 400,
+                  fontStyle: 'normal',
+                  fontVariationSettings: '"wdth" 100',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
+                }}
+              >
+                Your Technology Partner for
+              </span>
+              <span 
+                className="block text-xl sm:text-2xl md:text-3xl mt-3"
+                style={{
+                  fontFamily: 'var(--font-press-start-2p), monospace',
+                  fontWeight: 400,
+                  lineHeight: '1.4',
+                  letterSpacing: '-0.5px'
+                }}
+              >
+                Web, SaaS, Blockchain, and AI Innovation
+              </span>
+            </h1>
+          </div>
+          
+          <div className="relative z-20 mb-10 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed"
+               style={{
+                 fontFamily: 'var(--font-numans), sans-serif',
+                 lineHeight: '1.6',
+                 textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                 fontWeight: 400,
+                 position: 'relative',
+                 zIndex: 20
+               }}
+            >
+              We design and develop powerful digital products that help businesses innovate, scale, and stay ahead in a fast-changing world
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 justify-center lg:justify-start">
+            <button 
+              className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              style={{
+                background: 'rgba(0, 0, 0, 0.2)',
+                color: 'white',
+                border: '2px solid #FF3B30',
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Get Started
+            </button>
+            <button 
+              className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              style={{
+                background: 'rgba(0, 0, 0, 0.2)',
+                color: 'white',
+                border: '2px solid #4776E6',
+                backdropFilter: 'blur(10px)'
+              }}
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
         
-                 <div className="absolute top-[80px] sm:top-[140px] lg:top-[180px] left-1/2 transform -translate-x-1/2">
-           <button className="inline-flex justify-center items-center gap-[8px] lg:gap-[10px] px-[18px] sm:px-[16px] lg:px-[20px] py-[7px] sm:py-[6px] lg:py-[8px] text-[11px] sm:text-xs rounded-[30px] hover:scale-105 transition-transform duration-300 landscape-button" style={{background: 'rgba(255, 255, 255, 0.1)'}}>Chain the Future</button>
-         </div>
-      </div>
-
-             {/* Main Content with Shimmer Effect */}
-       <div className="absolute inset-0 z-10 flex items-center justify-center lg:mt-0 md:-mt-12 -mt-8 sm:-mt-16">
-         <div className="text-center">
-           <h1 className="w-full max-w-[340px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1200px] mx-auto text-center font-medium text-transparent bg-clip-text mb-6 sm:mb-12 lg:mb-20 mt-0 sm:mt-8 lg:mt-8 text-[30px] xs:text-[34px] sm:text-[34px] md:text-[42px] lg:text-[56px] leading-[34px] xs:leading-[38px] sm:leading-[38px] md:leading-[46px] lg:leading-[64px] animate-fade-in-up hero-title text-overflow-fix" style={{
-             fontFamily: 'var(--font-dm-sans)',
-             fontStyle: 'normal',
-             fontWeight: 500,
-             background: 'linear-gradient(82deg, #FF8F4E 54.13%, #CA22EA 100.03%)',
-             backgroundClip: 'text',
-             WebkitBackgroundClip: 'text',
-             WebkitTextFillColor: 'transparent',
-             animation: 'shimmer 3s ease-in-out infinite'
-           }}>
-             <span className="block sm:hidden text-[30px] xs:text-[34px] leading-[34px] xs:leading-[38px]">Strategic design</span>
-             <span className="block sm:hidden text-[30px] xs:text-[34px] leading-[34px] xs:leading-[38px]">consultancy that transforms</span>
-             <span className="block sm:hidden text-[30px] xs:text-[34px] leading-[34px] xs:leading-[38px]">brands into leaders</span>
-             <span className="hidden sm:block">Strategic design consultancy that <br /> transforms brands into industry leaders</span>
-           </h1>
-           <p className="text-gray-300 mt-6 sm:mt-4 lg:mt-6 text-base sm:text-base max-w-sm sm:max-w-md lg:max-w-2xl mx-auto px-2 sm:px-0 animate-fade-in-up-delayed hero-subtitle text-overflow-fix landscape-spacing leading-relaxed">
-             We craft exceptional digital experiences and strategic brand solutions that help ambitious startups and enterprises stand out, build trust, and accelerate growth with results that speak for themselves.
-           </p>
-                       <div className="mt-8 sm:mt-6 lg:mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-4 px-4 sm:px-0 animate-fade-in-up-more-delayed hero-buttons">
-              <button className="px-4 sm:px-6 py-3 sm:py-3 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300 text-sm sm:text-base hero-button landscape-button">Learn more</button>
-              <button className="px-4 sm:px-6 py-3 sm:py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-sm sm:text-base hero-button landscape-button">Book Demo</button>
+        {/* Floating Image - Enhanced Size */}
+        <div className="relative w-full max-w-[90%] sm:max-w-lg lg:max-w-2xl xl:max-w-3xl mt-6 sm:mt-10 lg:mt-0 mx-auto lg:mx-0">
+          <div className="relative w-full h-64 sm:h-80 md:h-[450px] lg:h-[600px] xl:h-[650px]">
+            {/* Main Image - Responsive */}
+            <div className="relative w-full h-full p-2 sm:p-3 md:p-4">
+              <div className="relative w-full h-full">
+                <div 
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle at center, rgba(255, 240, 180, 0.15) 0%, transparent 60%)',
+                    filter: 'blur(8px)',
+                    transform: 'scale(1.08)',
+                    opacity: 0.5
+                  }}
+                />
+                <Image
+                  src="/floating.png"
+                  alt="Floating Icon"
+                  fill
+                  className="object-contain"
+                  priority
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 50vw"
+                  style={{
+                    filter: 'drop-shadow(0 2px 6px rgba(255, 240, 180, 0.08))',
+                    animation: 'float 8s ease-in-out infinite',
+                    transform: 'scale(1.05)'
+                  }}
+                />
+              </div>
             </div>
-         </div>
-       </div>
-
-      {/* Footer Badges with Hover Animations */}
-      <div className="absolute bottom-[35px] left-0 right-0 z-10 hidden lg:flex justify-center gap-6 max-w-none mx-auto px-4 footer-badges">
-        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 cursor-pointer footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/Clutchlogo.svg" alt="Clutch" width={180} height={60} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
+            
+            {/* Subtle Highlight - Only on larger screens */}
+            <div className="hidden md:block absolute inset-0 overflow-hidden">
+              <div 
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 60%)',
+                  borderRadius: '50%',
+                  filter: 'blur(12px)'
+                }}
+              ></div>
+            </div>
           </div>
-          <p className="text-xs text-gray-400">Top Crypto Marketing Agency 2025</p>
-        </div>
-        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 cursor-pointer footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/TechReviewerLogo.svg" alt="TechReviewer" width={180} height={60} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Best Web Design Company</p>
-        </div>
-        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 cursor-pointer footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/Clutchlogo.svg" alt="Clutch" width={180} height={60} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Top Crypto Marketing Agency 2025</p>
-        </div>
-        <div className="flex flex-col items-center w-[320px] px-[30px] py-[20px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 cursor-pointer footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/TechReviewerLogo.svg" alt="TechReviewer" width={180} height={60} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Best Web Design Company</p>
+          
+          {/* Decorative Elements */}
+          <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-purple-500/20 blur-3xl"></div>
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-orange-500/20 blur-3xl"></div>
         </div>
       </div>
       
-      {/* Mobile/Tablet Footer Badges - Hidden on mobile, visible on tablet and up */}
-      <div className="absolute bottom-[50px] sm:bottom-[70px] md:bottom-[50px] left-0 right-0 z-10 grid grid-cols-2 gap-2 sm:gap-3 max-w-[320px] sm:max-w-[520px] mx-auto px-3 sm:px-4 hidden sm:grid lg:hidden footer-badges">
-        <div className="flex flex-col items-center w-full px-[16px] sm:px-[16px] py-[12px] sm:py-[12px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/Clutchlogo.svg" alt="Clutch" width={120} height={40} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Top Crypto Marketing Agency 2025</p>
-        </div>
-        <div className="flex flex-col items-center w-full px-[16px] sm:px-[16px] py-[12px] sm:py-[12px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/TechReviewerLogo.svg" alt="TechReviewer" width={120} height={40} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Best Web Design Company</p>
-        </div>
-        <div className="flex flex-col items-center w-full px-[16px] sm:px-[16px] py-[12px] sm:py-[12px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/TrustpilotLogo.svg" alt="Trustpilot" width={120} height={40} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Top Rated Trustpilot Agency</p>
-        </div>
-        <div className="flex flex-col items-center w-full px-[16px] sm:px-[16px] py-[12px] sm:py-[12px] rounded-[10px] text-center text-sm hover:scale-105 transition-transform duration-300 footer-badge" style={{background: 'rgba(0, 0, 0, 0.35)'}}>
-          <div className="flex items-center justify-center mb-2">
-            <Image src="/InfluencerLogo.svg" alt="Influencer MarketingHub" width={120} height={40} style={{objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />
-          </div>
-          <p className="text-xs text-gray-400">Top Crypto & NFT Agency</p>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden z-0 opacity-50">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              width: `${Math.random() * 10 + 5}px`,
+              height: `${Math.random() * 10 + 5}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              background: `rgba(${Math.random() > 0.5 ? '255, 143, 78' : '202, 34, 234'}, ${Math.random() * 0.3 + 0.2})`,
+              animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+              opacity: 0.7
+            }}
+          ></div>
+        ))}
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+          <div className="w-1 h-2 bg-white rounded-full mt-1"></div>
         </div>
       </div>
+      
+      <style jsx global>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(10px) translateX(-10px);
+          }
+          75% {
+            transform: translateY(-10px) translateX(10px);
+          }
+        }
+      `}</style>
     </section>
   );
 }

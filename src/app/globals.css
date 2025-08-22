@@ -260,6 +260,32 @@ body {
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+/* Particle Animation */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
+}
+
 /* 3D Glassy Card Animations */
 
 /* Enhanced glassmorphism effects */
