@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, DM_Sans, Shadows_Into_Light, Epilogue, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -36,12 +36,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Barbarika",
   description: "Created By Team Engineerian",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/Barbarika.ico",
     shortcut: "/Barbarika.ico",
     apple: "/Barbarika.ico",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

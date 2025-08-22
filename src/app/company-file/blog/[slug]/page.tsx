@@ -10,59 +10,71 @@ const blogPosts = [
   {
     slug: 'ai-blockchain',
     title: 'AI + BLOCKCHAIN',
-    excerpt: 'Welcome to the Journey! Starting something new can be exciting — and sometimes a bit overwhelming. In the coming days, we\'ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future.',
+    excerpt: 'Welcome to the Journey! Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we\'ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future.',
     date: 'Aug 7, 2025',
     author: 'Barbarika Labs',
     readTime: '2 min read',
     image: '/hero.png',
-    content: `Welcome to the Journey!
-Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we&apos;ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future. This first post is all about understanding what our journey will look like and how you, even as a beginner, can confidently explore these topics.
+    content: `<div class="blog-content">
+  <h1>Welcome to the Journey!</h1>
+  
+  <p>Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we'll break down the fascinating world of <strong>Artificial Intelligence (AI)</strong> and <strong>Blockchain</strong>, not only as individual technologies but as a powerful combination shaping the future.</p>
+  
+  <p>This first post is all about understanding what our journey will look like and how you, even as a beginner, can confidently explore these topics.</p>
 
-What Are We Doing on Day 1?
-Today, we focus on two things:
+  <h2>What Are We Doing on Day 1?</h2>
+  <p>Today, we focus on two things:</p>
+  <ul>
+    <li><strong>Getting curious:</strong> We'll start by asking, "What is AI?" and "What is Blockchain?" in the simplest terms.</li>
+    <li><strong>Planning ahead:</strong> We'll create a roadmap for our blog series, so you always know what's coming next.</li>
+  </ul>
 
-Getting curious: We&apos;ll start by asking, &quot;What is AI?&quot; and &quot;What is Blockchain?&quot; in the simplest terms.
-Planning ahead: We&apos;ll create a roadmap for our blog series, so you always know what&apos;s coming next.
+  <h2>What is Artificial Intelligence (AI)?</h2>
+  <p><strong>Think of AI as teaching computers to learn, adapt, and make decisions just like people do!</strong></p>
+  <p>AI is behind everyday things, from online shopping recommendations and virtual assistants (like Siri and Alexa) to self-driving cars. The goal of AI is to help machines recognize patterns and solve problems, making life easier and work faster.</p>
+  
+  <p><strong>Example:</strong> Imagine Netflix suggesting movies you might like. That's AI, learning your tastes and offering up choices.</p>
 
-What is Artificial Intelligence (AI)?
-Think of AI as teaching computers to learn, adapt, and make decisions — just like people do! AI is behind everyday things, from online shopping recommendations and virtual assistants (like Siri and Alexa) to self-driving cars. The goal of AI is to help machines recognize patterns and solve problems, making life easier and work faster.
+  <h2>What is Blockchain?</h2>
+  <p><strong>Blockchain is more like a super-secure online notebook.</strong></p>
+  <p>But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the "blockchain"), <strong>nobody can change or erase it</strong>. This makes it nearly tamper-proof. It's the technology behind digital coins like Bitcoin, but it's useful far beyond that!</p>
+  
+  <p><strong>Example:</strong> If you transfer money to a friend using blockchain, the transaction is recorded in a way that <strong>everyone can see, and nobody can secretly change it</strong>.</p>
 
-Example:
-Imagine Netflix suggesting movies you might like. That&apos;s AI, learning your tastes and offering up choices.
+  <h2>Why Are These Technologies Important Together?</h2>
+  <p><strong>AI is great at crunching massive amounts of data, but it needs data that's trustworthy. Blockchain keeps data safe and reliable.</strong></p>
+  <p>Together, they can make systems that are both smart and secure. We'll explore this partnership in detail throughout the series!</p>
 
-What is Blockchain?
-Blockchain is more like a super-secure online notebook. But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the &quot;blockchain&quot;), nobody can change or erase it. This makes it nearly tamper-proof. It&apos;s the technology behind digital coins like Bitcoin, but it&apos;s useful far beyond that!
+  <h2>Our Blog Roadmap</h2>
+  <p>Here's the journey we'll take over the next <strong>15 days</strong>:</p>
+  
+  <div class="roadmap-simple">
+    <div class="roadmap-phase">
+      <h3>Phase 1: Foundation (Days 1-5)</h3>
+      <p>Building understanding of AI and Blockchain basics</p>
+    </div>
+    
+    <div class="roadmap-phase">
+      <h3>Phase 2: Deep Dive (Days 6-10)</h3>
+      <p>Exploring real-world applications and benefits</p>
+    </div>
+    
+    <div class="roadmap-phase">
+      <h3>Phase 3: Advanced Topics (Days 11-15)</h3>
+      <p>Case studies, expert insights, and final polish</p>
+    </div>
+  </div>
+  
+  <p><strong>Full 15-Day Journey:</strong> Introduction → AI Deep Dive → Blockchain Deep Dive → Combination Benefits → Real Examples → Business Impact → Challenges → News → Trends → Q&A → Tips → Case Studies → Expert Opinions → Review → Final Publish</p>
 
-Example:
-If you transfer money to a friend using blockchain, the transaction is recorded in a way that everyone can see, and nobody can secretly change it.
+  <h2>Wrap Up</h2>
+  <p><strong>Congratulations! You've just taken the first step!</strong></p>
+  <p>Keep following as we unravel these technologies together, always using simple words, relatable stories, and real-life examples.</p>
+  <p>Got questions about AI or blockchain already? Drop them in the comments, and I'll be sure to include answers in upcoming posts!</p>
 
-Why Are These Technologies Important Together?
-AI is great at crunching massive amounts of data, but it needs data that&apos;s trustworthy. Blockchain keeps data safe and reliable. Together, they can make systems that are both smart and secure. We&apos;ll explore this partnership in detail throughout the series!
-
-Our Blog Roadmap
-Here&apos;s the journey we&apos;ll take over the next 15 days:
-
-1. Introduction and Basics (Today)
-2. Deep Dive: What is AI?
-3. Deep Dive: What is Blockchain?
-4. Why Combine AI and Blockchain?
-5. Real-World Examples
-6. Benefits for Businesses and Society
-7. Challenges and Limitations
-8. Recent Developments and News
-9. Future Trends
-10. Q&A or Highlights (Recap)
-11. Practical Tips for Beginners
-12. Case Studies
-13. Interviews or Expert Opinions
-14. Writing and Review Day
-15. Final Polish and Publish!
-
-Wrap Up
-Congratulations you&apos;ve just taken the first step! Keep following as we unravel these technologies together, always using simple words, relatable stories, and real-life examples. Got questions about AI or blockchain already? Drop them in the comments, and I&apos;ll be sure to include answers in upcoming posts!
-
-Next Up:
-Tomorrow, we&apos;ll make AI even simpler. Stay tuned!`
+  <h2>Next Up</h2>
+  <p><strong>Tomorrow, we'll make AI even simpler.</strong> Stay tuned!</p>
+</div>`
   },
   {
     slug: 'coming-soon',
@@ -134,9 +146,10 @@ export default function BlogPost() {
             {/* Blog Post Content */}
             <div className="prose prose-invert prose-lg max-w-none">
               <div className="bg-gray-800/30 rounded-2xl p-8 border border-white/10">
-                <div className="whitespace-pre-line text-white/90 leading-relaxed">
-                  {post.content}
-                </div>
+                <div 
+                  className="text-white/90 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
               </div>
             </div>
 
