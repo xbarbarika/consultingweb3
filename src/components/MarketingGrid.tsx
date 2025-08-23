@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+// Using direct path to public directory for background image
 
 const services = [
   {
@@ -375,14 +376,10 @@ const MarketingGrid = () => {
           /* Enhanced 3D Glassy Card Styles */
           .marketing-card {
             position: relative !important;
-            background: rgba(255, 255, 255, 0.05) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            box-shadow: 
-              0 8px 32px rgba(0, 0, 0, 0.3),
-              0 0 0 1px rgba(255, 255, 255, 0.1),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 2px solid rgba(255, 59, 48, 0.3) !important;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
             transform-style: preserve-3d !important;
           }
@@ -396,9 +393,9 @@ const MarketingGrid = () => {
             bottom: 0 !important;
             background: linear-gradient(
               135deg,
-              rgba(255, 255, 255, 0.1) 0%,
-              rgba(255, 255, 255, 0.05) 50%,
-              rgba(255, 255, 255, 0.1) 100%
+              rgba(255, 59, 48, 0.1) 0%,
+              rgba(255, 59, 48, 0.05) 50%,
+              rgba(255, 59, 48, 0.1) 100%
             ) !important;
             border-radius: inherit !important;
             opacity: 0 !important;
@@ -415,9 +412,9 @@ const MarketingGrid = () => {
             bottom: -1px !important;
             background: linear-gradient(
               45deg,
-              rgba(255, 150, 93, 0.3),
-              rgba(186, 52, 226, 0.3),
-              rgba(255, 150, 93, 0.3)
+              rgba(255, 59, 48, 0.3),
+              rgba(0, 0, 0, 0.5),
+              rgba(255, 59, 48, 0.3)
             ) !important;
             border-radius: inherit !important;
             opacity: 0 !important;
@@ -428,11 +425,12 @@ const MarketingGrid = () => {
           .marketing-card:hover {
             transform: translateY(-8px) rotateX(2deg) rotateY(2deg) !important;
             box-shadow: 
-              0 20px 60px rgba(0, 0, 0, 0.4),
-              0 0 0 1px rgba(255, 255, 255, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              0 0 40px rgba(255, 150, 93, 0.2) !important;
-            background: rgba(255, 255, 255, 0.08) !important;
+              0 20px 60px rgba(255, 59, 48, 0.2),
+              0 0 0 1px rgba(255, 59, 48, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 0 40px rgba(255, 59, 48, 0.2) !important;
+            background: rgba(20, 20, 20, 0.8) !important;
+            border-color: rgba(255, 59, 48, 0.6) !important;
           }
           
           /* Mobile hover adjustments */
@@ -463,8 +461,8 @@ const MarketingGrid = () => {
           }
           
           .marketing-card:hover h2 {
-            color: #FF965D !important;
-            text-shadow: 0 0 20px rgba(255, 150, 93, 0.5) !important;
+            color: #FF3B30 !important;
+            text-shadow: 0 0 20px rgba(255, 59, 48, 0.5) !important;
           }
           
           .marketing-card:hover p {
@@ -472,21 +470,21 @@ const MarketingGrid = () => {
           }
           
           .marketing-card:hover .badge {
-            background: rgba(255, 150, 93, 0.2) !important;
-            color: #FF965D !important;
-            border-color: rgba(255, 150, 93, 0.5) !important;
-            box-shadow: 0 0 20px rgba(255, 150, 93, 0.3) !important;
+            background: rgba(255, 59, 48, 0.2) !important;
+            color: #FF3B30 !important;
+            border-color: rgba(255, 59, 48, 0.5) !important;
+            box-shadow: 0 0 20px rgba(255, 59, 48, 0.3) !important;
           }
           
           .marketing-card:hover .department-badge {
-            border: 1px solid rgba(255, 150, 93, 0.5) !important;
-            background: rgba(255, 150, 93, 0.1) !important;
-            color: #FF965D !important;
-            box-shadow: 0 0 15px rgba(255, 150, 93, 0.3) !important;
+            border: 1px solid rgba(255, 59, 48, 0.5) !important;
+            background: rgba(255, 59, 48, 0.1) !important;
+            color: #FF3B30 !important;
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.3) !important;
           }
 
           .marketing-card:hover .service-icon {
-            filter: brightness(0) saturate(100%) invert(67%) sepia(89%) saturate(1234%) hue-rotate(330deg) brightness(101%) contrast(101%) !important;
+            filter: brightness(0) saturate(100%) invert(25%) sepia(99%) saturate(7489%) hue-rotate(359deg) brightness(98%) contrast(112%) !important;
             transform: scale(1.1) !important;
           }
           
@@ -515,32 +513,74 @@ const MarketingGrid = () => {
         `
       }} />
       <div 
-        id="services"
-        className="marketing-grid-container bg-[#0e0b17] text-white px-3 xs:px-4 sm:px-6 lg:px-8 pb-6 xs:pb-8 sm:pb-10 lg:pb-12 xl:pb-16 landscape-spacing"
+        className="relative w-full min-h-screen"
         style={{
-          width: '100%',
-          minHeight: '100vh',
-          flexShrink: 0,
-          paddingTop: '32px'
+          backgroundImage: `
+            linear-gradient(
+              to bottom, 
+              rgba(0, 0, 0, 0.8), 
+              rgba(0, 0, 0, 0.7), 
+              rgba(0, 0, 0, 0.9)
+            ),
+            url('/marketingbg.jpg')
+          `,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        <h1 
-          className="marketing-title text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-overflow-fix"
+        
+        <div 
+          id="services"
+          className="relative z-10 text-white px-3 xs:px-4 sm:px-6 lg:px-8 pb-6 xs:pb-8 sm:pb-10 lg:pb-12 xl:pb-16 pt-8"
           style={{
-            marginBottom: '20px',
-            textAlign: 'center',
-            fontFamily: '"DM Sans"',
-            fontStyle: 'normal',
-            fontWeight: 500,
-            lineHeight: '120%',
-            background: 'linear-gradient(82deg, #FF965D 35%, #BA34E2 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            width: '100%',
+            minHeight: '100vh',
+            position: 'relative',
           }}
         >
-          Your On-Demand Marketing Powerhouse
-        </h1>
+        <div className="w-full flex justify-center mb-8 sm:mb-12 lg:mb-16 px-4">
+          <div className="w-full max-w-5xl mx-auto text-center">
+            <h1 
+              className="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              style={{
+                color: 'white',
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                lineHeight: '1.2',
+                textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+                position: 'relative',
+                display: 'inline-block',
+                padding: '0.8rem 2rem',
+                border: '3px solid #FF3B30',
+                borderRadius: '1rem',
+                background: 'rgba(0, 0, 0, 0.3)',
+                backdropFilter: 'blur(10px)',
+                margin: '0 auto',
+                width: 'auto',
+                maxWidth: '90%',
+                boxSizing: 'border-box',
+                wordBreak: 'break-word',
+                overflowWrap: 'break-word'
+              }}
+            >
+              <span 
+                className="block"
+                style={{
+                  fontFamily: 'var(--font-tourney), sans-serif',
+                  fontWeight: 400,
+                  fontStyle: 'normal',
+                  fontVariationSettings: '"wdth" 100',
+                  letterSpacing: '0.05em',
+                  fontSize: 'inherit',
+                  lineHeight: 'inherit'
+                }}
+              >
+                Your On-Demand Marketing Powerhouse
+              </span>
+            </h1>
+          </div>
+        </div>
         <div 
           className="marketing-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto px-2 sm:px-4 lg:px-0 landscape-grid-gap"
           style={{
@@ -553,7 +593,7 @@ const MarketingGrid = () => {
               key={index}
               className={`p-2.5 xs:p-3 sm:p-4 md:p-5 lg:p-6 transition-all duration-300 marketing-card landscape-card-height ${
                 service.active
-                  ? "bg-[#fce4fc] text-black shadow-xl"
+                  ? "bg-gradient-to-br from-red-900/20 to-red-900/40 text-white shadow-xl border-2 border-red-500/50"
                   : "hover:shadow-lg hover:scale-105"
               }`}
               style={{
@@ -646,7 +686,7 @@ const MarketingGrid = () => {
                   <div 
                     className="badge px-1.5 xs:px-2 py-1 xs:py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium"
                     style={{
-                      background: 'linear-gradient(90deg, #FF965D 0%, #BA34E2 100%)',
+                      background: 'linear-gradient(90deg, #FF3B30 0%, #BA34E2 100%)',
                       color: '#FFFFFF',
                       fontFamily: '"DM Sans"',
                       fontStyle: 'normal',
@@ -660,6 +700,7 @@ const MarketingGrid = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </>
