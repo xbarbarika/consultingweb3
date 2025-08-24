@@ -449,15 +449,35 @@ export default function BlockchainService() {
             ).map((service, index) => {
               const isActive = index < 2; // Mark first 2 services as active
               
+              // Define marketing-style gradient backgrounds for each card
+              const cardBackgrounds = [
+                'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Red to dark
+                'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Purple to dark
+                'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Green to dark
+                'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Blue to dark
+                'linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Orange to dark
+                'linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)', // Pink to dark
+              ];
+              
+              const hoverGradients = [
+                'linear-gradient(135deg, rgba(255, 59, 48, 0.2) 0%, rgba(255, 59, 48, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+              ];
+              
               return (
                 <div
                   key={index}
                   className="group relative rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
                   style={{
-                    background: 'rgba(0, 0, 0, 0.4)',
-                    border: '2px solid rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    minHeight: '300px'
+                    background: cardBackgrounds[index % cardBackgrounds.length],
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(15px)',
+                    minHeight: '300px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
                   }}
                 >
                   {/* Active Badge */}
@@ -478,7 +498,7 @@ export default function BlockchainService() {
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                      background: hoverGradients[index % hoverGradients.length]
                     }}
                   />
                   
@@ -567,10 +587,11 @@ export default function BlockchainService() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Blockchains */}
             <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
-              background: 'rgba(0, 0, 0, 0.4)',
-              border: '2px solid rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
-              minHeight: '350px'
+              background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(15px)',
+              minHeight: '350px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
             }}>
               {/* Hover Effects */}
               <div 
@@ -634,10 +655,11 @@ export default function BlockchainService() {
 
             {/* Tools */}
             <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
-              background: 'rgba(0, 0, 0, 0.4)',
-              border: '2px solid rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
-              minHeight: '350px'
+              background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(15px)',
+              minHeight: '350px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
             }}>
               {/* Hover Effects */}
               <div 
@@ -701,10 +723,11 @@ export default function BlockchainService() {
 
             {/* Platforms */}
             <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
-              background: 'rgba(0, 0, 0, 0.4)',
-              border: '2px solid rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
-              minHeight: '350px'
+              background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(20, 20, 20, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(15px)',
+              minHeight: '350px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
             }}>
               {/* Hover Effects */}
               <div 
