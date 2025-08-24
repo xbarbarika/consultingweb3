@@ -257,169 +257,302 @@ export default function BlockchainService() {
   ];
 
   return (
-    <div className="text-white min-h-screen flex flex-col">
-      {/* Solid Black Background */}
-      <div className="fixed inset-0 z-0 bg-black"></div>
-
-      <div className="relative z-10 flex-1">
+    <div className="text-white min-h-screen" style={{ backgroundColor: '#000000' }}>
+      <div className="relative z-10">
         <Navbar onMenuClick={() => setMenuOpen(true)} />
         
-        <main className="w-full flex flex-col items-center justify-start pt-24 pb-16 px-4 sm:px-6 lg:px-8 xl:px-12">
-          {/* Hero Section */}
-          <div className="w-full max-w-7xl mx-auto mb-20 animate-fade-in">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
-              {/* Left Side - Content */}
-              <div className="flex-1 space-y-6 lg:space-y-8">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-slide-up">
-                  <span className="text-sm font-semibold text-pink-400 tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    Blockchain Solutions
-                  </span>
-                </div>
-                
-                <div className="space-y-4 lg:space-y-6">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight animate-slide-up-delay" style={{ fontFamily: 'Epilogue, sans-serif' }}>
-                    <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                      Blockchain Solutions
-                    </span>
-                    <br />
-                    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                      for Visionaries
-                    </span>
-                  </h1>
-                  
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed animate-slide-up-delay-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    Empowering your ideas with secure, scalable, and innovative blockchain technology from concept to launch.
-                  </p>
-                </div>
+        {/* Hero Section - Unique Design */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-32 h-32 rounded-full opacity-20 animate-pulse" style={{ background: 'linear-gradient(45deg, #FF3B30, #FF6B6B)' }}></div>
+            <div className="absolute top-1/3 right-20 w-24 h-24 rounded-full opacity-15 animate-bounce" style={{ background: 'linear-gradient(135deg, #FF3B30, #8B5CF6)', animationDelay: '1s' }}></div>
+            <div className="absolute bottom-20 left-1/4 w-20 h-20 rounded-full opacity-10 animate-pulse" style={{ background: 'linear-gradient(225deg, #FF3B30, #EC4899)', animationDelay: '2s' }}></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            {/* Header Badge */}
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full mb-6" style={{
+                background: 'rgba(255, 59, 48, 0.1)',
+                border: '1px solid rgba(255, 59, 48, 0.3)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <span className="w-2 h-2 rounded-full mr-2" style={{ background: '#FF3B30' }}></span>
+                <span className="text-sm font-semibold text-white/90 tracking-wide uppercase" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
+                  Blockchain Development Services
+                </span>
               </div>
-
-              {/* Right Side - Contact Button */}
-              <div className="lg:flex-shrink-0 animate-slide-up-delay-2">
+            </div>
+            
+            {/* Main Content */}
+            <div className="text-center max-w-5xl mx-auto">
+              {/* Title */}
+              <h1 className="mb-8">
+                <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4" style={{
+                  fontFamily: 'var(--font-dm-sans), sans-serif',
+                  background: 'linear-gradient(135deg, #FFFFFF 0%, #FF3B30 50%, #FFFFFF 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  lineHeight: '1.1'
+                }}>
+                  Next-Gen
+                </span>
+                <span className="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold" style={{
+                  fontFamily: 'var(--font-tourney), sans-serif',
+                  color: 'white',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
+                }}>
+                  Blockchain Solutions
+                </span>
+              </h1>
+              
+              {/* Description */}
+              <p className="text-xl lg:text-2xl text-white/80 leading-relaxed mb-12 max-w-4xl mx-auto" style={{
+                fontFamily: 'var(--font-numans), sans-serif'
+              }}>
+                Transform your business with cutting-edge blockchain technology. We deliver secure, scalable, and innovative Web3 solutions that drive real results.
+              </p>
+              
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link href="/book-demo">
-                  <button className="group relative px-8 py-4 lg:px-12 lg:py-6 rounded-2xl font-bold text-white overflow-hidden transition-all duration-500 hover:shadow-2xl text-lg lg:text-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700">
-                    <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center gap-3">
-                      Get Started
-                      <svg className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
+                  <button className="group px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 relative overflow-hidden" style={{
+                    background: '#FF3B30',
+                    color: 'white',
+                    fontFamily: 'var(--font-dm-sans), sans-serif'
+                  }}>
+                    <span className="relative z-10">Start Your Project</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </Link>
+                <button className="group px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105" style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  color: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.2)',
+                  backdropFilter: 'blur(10px)',
+                  fontFamily: 'var(--font-dm-sans), sans-serif'
+                }}>
+                  Explore Services
+                </button>
+              </div>
+              
+              {/* Feature Highlights */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{
+                    background: 'rgba(255, 59, 48, 0.1)',
+                    border: '2px solid rgba(255, 59, 48, 0.3)'
+                  }}>
+                    <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>Security First</h3>
+                  <p className="text-white/70 text-sm" style={{ fontFamily: 'var(--font-numans), sans-serif' }}>Enterprise-grade security with comprehensive audits</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{
+                    background: 'rgba(255, 59, 48, 0.1)',
+                    border: '2px solid rgba(255, 59, 48, 0.3)'
+                  }}>
+                    <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>Lightning Fast</h3>
+                  <p className="text-white/70 text-sm" style={{ fontFamily: 'var(--font-numans), sans-serif' }}>Optimized performance for real-world applications</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{
+                    background: 'rgba(255, 59, 48, 0.1)',
+                    border: '2px solid rgba(255, 59, 48, 0.3)'
+                  }}>
+                    <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>Custom Built</h3>
+                  <p className="text-white/70 text-sm" style={{ fontFamily: 'var(--font-numans), sans-serif' }}>Tailored solutions for your specific needs</p>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Stats Section */}
-          <div className="w-full max-w-7xl mx-auto mb-20">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
-                <div className="text-3xl lg:text-4xl font-bold text-pink-400 mb-2 group-hover:scale-110 transition-transform duration-300">
-                  20+
-                </div>
-                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
-                  launched projects
-                </div>
-              </div>
-              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
-                <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">
-                  7+
-                </div>
-                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
-                  years of expertise
-                </div>
-              </div>
-              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
-                <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform duration-300">
-                  33+
-                </div>
-                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
-                  hackathons won
-                </div>
-              </div>
-              <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-white/20 hover:border-white/30 transition-all duration-300">
-                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform duration-300">
-                  50+
-                </div>
-                <div className="text-white/60 text-sm lg:text-base font-medium group-hover:text-white transition-colors">
-                  scientific articles
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+        </section>
       </div>
 
-      {/* Services Section */}
-      <div className="w-full bg-white/5 backdrop-blur-sm py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden">
-
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ff965d] via-white to-[#a63ffd] drop-shadow-lg">
-            What We Offer
-          </h2>
-          <p className="text-white/70 text-center mb-20 max-w-2xl mx-auto text-xl font-medium">
-            End-to-end blockchain development, product design, and Web3 expertise for ambitious teams and enterprises.
-          </p>
+      {/* Services Section - Marketing Grid Style */}
+      <section className="py-16 sm:py-20 lg:py-24" style={{ backgroundColor: '#000000' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6"
+              style={{
+                color: 'white',
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
+              }}
+            >
+              Our Blockchain Services
+            </h2>
+            <p 
+              className="text-lg sm:text-xl lg:text-2xl text-white/80 max-w-3xl mx-auto"
+              style={{
+                fontFamily: 'var(--font-numans), sans-serif',
+                lineHeight: '1.6'
+              }}
+            >
+              End-to-end blockchain development and Web3 expertise
+            </p>
+          </div>
 
           {/* Service Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 lg:mb-16">
             {[
-              { id: "blockchain", label: "BLOCKCHAIN DEVELOPMENT" },
+              { id: "blockchain", label: "BLOCKCHAIN" },
               { id: "web3", label: "WEB3 & MOBILE" },
               { id: "industries", label: "INDUSTRIES" },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-4 rounded-2xl font-bold text-base tracking-wider transition-all duration-300 shadow-md ${
+                className={`px-6 py-3 rounded-full font-semibold text-sm tracking-wider transition-all duration-300 ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-[#ff965d] to-[#a63ffd] text-white shadow-lg shadow-orange-500/25 scale-105"
-                    : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
+                    ? "text-white"
+                    : "text-white/70 hover:text-white"
                 }`}
+                style={{
+                  background: activeTab === tab.id 
+                    ? 'rgba(0, 0, 0, 0.4)' 
+                    : 'rgba(0, 0, 0, 0.2)',
+                  border: activeTab === tab.id 
+                    ? '2px solid #FF3B30' 
+                    : '2px solid rgba(255, 255, 255, 0.2)',
+                  backdropFilter: 'blur(10px)',
+                  fontFamily: 'var(--font-dm-sans), sans-serif'
+                }}
               >
                 {tab.label}
               </button>
             ))}
           </div>
 
-          {/* Service Content */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {(activeTab === "blockchain" ? blockchainServices :
               activeTab === "web3" ? web3Services : industryServices
-            ).map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col min-h-[480px] lg:min-h-[520px] relative hover:border-white/30"
-              >
-                {/* Floating icon */}
-                <div className="absolute -top-8 left-6 lg:-top-8 lg:left-8 z-10">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center shadow-lg border border-white/20 group-hover:border-white/30 transition-all duration-300">
-                    <span className="text-white text-xl lg:text-2xl flex items-center justify-center">
-                      {React.cloneElement(service.icon, { className: "w-6 h-6 lg:w-7 lg:h-7" })}
-                    </span>
-                  </div>
-                </div>
-                {/* Card content */}
-                <div className="flex-1 flex flex-col pt-8 lg:pt-10">
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 mt-6 group-hover:text-white transition-colors leading-tight" style={{ fontFamily: 'Epilogue, sans-serif' }}>{service.title}</h3>
-                  <p className="text-base lg:text-lg text-white/80 leading-relaxed mb-6 flex-1" style={{ fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {service.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold text-white/80 border border-white/20 hover:bg-white/20 hover:border-pink-400 transition-all duration-300"
-                        style={{ fontFamily: 'Inter, sans-serif' }}
+            ).map((service, index) => {
+              const isActive = index < 2; // Mark first 2 services as active
+              
+              return (
+                <div
+                  key={index}
+                  className="group relative rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.4)',
+                    border: '2px solid rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    minHeight: '300px'
+                  }}
+                >
+                  {/* Active Badge */}
+                  {isActive && (
+                    <div 
+                      className="absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-semibold"
+                      style={{
+                        background: '#FF3B30',
+                        color: 'white',
+                        fontFamily: 'var(--font-dm-sans), sans-serif'
+                      }}
+                    >
+                      ACTIVE
+                    </div>
+                  )}
+                  
+                  {/* Hover Effects */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                    }}
+                  />
+                  
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col">
+                    {/* Icon */}
+                    <div className="mb-4">
+                      <div 
+                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                        style={{
+                          background: 'rgba(0, 0, 0, 0.3)',
+                          border: '2px solid rgba(255, 255, 255, 0.2)',
+                          backdropFilter: 'blur(10px)'
+                        }}
                       >
-                        {feature}
-                      </span>
-                    ))}
+                        {React.cloneElement(service.icon, { 
+                          className: "w-6 h-6 text-white group-hover:text-red-400 transition-colors duration-300" 
+                        })}
+                      </div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 
+                      className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors duration-300 leading-tight"
+                      style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}
+                    >
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p 
+                      className="text-white/80 group-hover:text-white/90 leading-relaxed mb-4 flex-1 text-base"
+                      style={{ fontFamily: 'var(--font-numans), sans-serif' }}
+                    >
+                      {service.description}
+                    </p>
+                    
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1.5 rounded-full text-sm font-medium text-white/70 group-hover:text-white transition-all duration-300"
+                          style={{
+                            background: 'rgba(0, 0, 0, 0.3)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                            backdropFilter: 'blur(10px)',
+                            fontFamily: 'var(--font-numans), sans-serif'
+                          }}
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                      {service.features.length > 3 && (
+                        <span
+                          className="px-3 py-1.5 rounded-full text-sm font-medium text-white/50 transition-all duration-300"
+                          style={{
+                            background: 'rgba(0, 0, 0, 0.2)',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            backdropFilter: 'blur(10px)',
+                            fontFamily: 'var(--font-numans), sans-serif'
+                          }}
+                        >
+                          +{service.features.length - 3} more
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Technologies Section */}
       <div className="w-full bg-white/5 backdrop-blur-sm py-20 px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -433,77 +566,203 @@ export default function BlockchainService() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Blockchains */}
-            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
-              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
-                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h8M12 8v8" />
-                </svg>
+            <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
+              background: 'rgba(0, 0, 0, 0.4)',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              minHeight: '350px'
+            }}>
+              {/* Hover Effects */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                }}
+              />
+              
+              {/* Icon */}
+              <div className="mb-6">
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 mx-auto"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
+                  <svg className="w-6 h-6 text-white group-hover:text-red-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h8M12 8v8" />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-pink-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+              
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
                 BLOCKCHAIN NETWORKS
               </h3>
-              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
-                {technologies.map((tech, index) => (
+              
+              <div className="flex flex-wrap gap-2 justify-center">
+                {technologies.slice(0, 6).map((tech, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-pink-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="px-3 py-1.5 rounded-full text-sm font-medium text-white/70 group-hover:text-white transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.3)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
                   >
-                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 shadow"></span>
                     {tech}
                   </span>
                 ))}
+                {technologies.length > 6 && (
+                  <span
+                    className="px-2.5 py-1 rounded-full text-xs font-medium text-white/50 transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
+                  >
+                    +{technologies.length - 6} more
+                  </span>
+                )}
               </div>
             </div>
 
             {/* Tools */}
-            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
-              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
-                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 8h8v8H8z" />
-                </svg>
+            <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
+              background: 'rgba(0, 0, 0, 0.4)',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              minHeight: '350px'
+            }}>
+              {/* Hover Effects */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                }}
+              />
+              
+              {/* Icon */}
+              <div className="mb-6">
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 mx-auto"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
+                  <svg className="w-6 h-6 text-white group-hover:text-red-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 8h8v8H8z" />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-purple-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+              
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
                 DEVELOPMENT TOOLS
               </h3>
-              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
-                {tools.map((tool, index) => (
+              
+              <div className="flex flex-wrap gap-2 justify-center">
+                {tools.slice(0, 6).map((tool, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-purple-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="px-3 py-1.5 rounded-full text-sm font-medium text-white/70 group-hover:text-white transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.3)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
                   >
-                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 shadow"></span>
                     {tool}
                   </span>
                 ))}
+                {tools.length > 6 && (
+                  <span
+                    className="px-2.5 py-1 rounded-full text-xs font-medium text-white/50 transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
+                  >
+                    +{tools.length - 6} more
+                  </span>
+                )}
               </div>
             </div>
 
             {/* Platforms */}
-            <div className="relative text-center group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl p-6 lg:p-12 hover:border-white/30 transition-all duration-300 min-h-[500px] lg:min-h-[600px] flex flex-col">
-              <div className="absolute -top-6 lg:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-4 border-black z-10">
-                <svg className="w-6 h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <rect x="6" y="6" width="12" height="12" rx="3" strokeWidth="2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 9h6v6H9z" />
-                </svg>
+            <div className="relative text-center group rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden" style={{
+              background: 'rgba(0, 0, 0, 0.4)',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              minHeight: '350px'
+            }}>
+              {/* Hover Effects */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                }}
+              />
+              
+              {/* Icon */}
+              <div className="mb-6">
+                <div 
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 mx-auto"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.3)',
+                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
+                  <svg className="w-6 h-6 text-white group-hover:text-red-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="6" y="6" width="12" height="12" rx="3" strokeWidth="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 9h6v6H9z" />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mt-8 lg:mt-10 mb-6 lg:mb-8 group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+              
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
                 CLOUD PLATFORMS
               </h3>
-              <div className="flex flex-wrap gap-2 lg:gap-4 justify-center flex-1 items-start pt-2 lg:pt-4">
-                {platforms.map((platform, index) => (
+              
+              <div className="flex flex-wrap gap-2 justify-center">
+                {platforms.slice(0, 6).map((platform, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-1 lg:gap-2 px-3 py-2 lg:px-4 lg:py-3 bg-white/10 backdrop-blur-sm rounded-full text-xs lg:text-sm xl:text-base text-white/90 border border-white/20 shadow-md hover:bg-white/20 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 font-semibold tracking-wide"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="px-3 py-1.5 rounded-full text-sm font-medium text-white/70 group-hover:text-white transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.3)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
                   >
-                    <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 shadow"></span>
                     {platform}
                   </span>
                 ))}
+                {platforms.length > 6 && (
+                  <span
+                    className="px-2.5 py-1 rounded-full text-xs font-medium text-white/50 transition-all duration-300"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      fontFamily: 'var(--font-numans), sans-serif'
+                    }}
+                  >
+                    +{platforms.length - 6} more
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -531,35 +790,35 @@ export default function BlockchainService() {
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-white/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-black/30 cursor-pointer relative overflow-hidden min-h-[500px] lg:min-h-[550px] flex flex-col"
+                className="group relative rounded-2xl p-6 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                style={{
+                  background: 'rgba(0, 0, 0, 0.4)',
+                  border: '2px solid rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  minHeight: '320px'
+                }}
               >
-                {/* Header Section */}
-                <div className="mb-6">
-                  <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300 leading-tight" style={{ fontFamily: 'Epilogue, sans-serif' }}>
+                {/* Hover Effects */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                  }}
+                />
+                
+                {/* Content */}
+                <div className="relative z-10 h-full flex flex-col">
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors duration-300 leading-tight" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
                     {study.title}
                   </h3>
-                </div>
-
-                {/* Content */}
-                <div className="space-y-4 flex-1 flex flex-col">
-                  <p className="text-white/80 leading-relaxed text-base lg:text-lg flex-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  
+                  {/* Description */}
+                  <p className="text-white/80 group-hover:text-white/90 leading-relaxed mb-4 flex-1 text-base" style={{ fontFamily: 'var(--font-numans), sans-serif' }}>
                     {study.description}
                   </p>
                   
-                  {/* Technologies Section */}
-                  <div className="pt-4 border-t border-white/10 mt-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-purple-400"></div>
-                      <span className="text-sm font-semibold text-white/60 uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>Technologies</span>
-                    </div>
-                    <div className="text-sm lg:text-base text-white/70 group-hover:text-white/80 transition-colors duration-300 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      {study.technologies}
-                    </div>
-                  </div>
                 </div>
-
-                {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -567,46 +826,58 @@ export default function BlockchainService() {
       </div>
 
       {/* CTA Section */}
-      <div className="w-full bg-black py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden">
-
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Ready to Build Your Blockchain Solution?
-          </h2>
-          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Let&apos;s discuss your blockchain project and create a solution that
-            drives your business forward. Get a free consultation with our
-            blockchain experts at Barbarika.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/book-demo">
-              <button className="group px-10 py-5 bg-white text-[#ff965d] font-bold rounded-xl hover:bg-white/90 transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-2xl shadow-lg">
-                <span className="flex items-center gap-2">
+      <section className="py-16 sm:py-20 lg:py-24" style={{ backgroundColor: '#000000' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+              style={{
+                color: 'white',
+                fontFamily: 'var(--font-dm-sans), sans-serif',
+                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
+              }}
+            >
+              Ready to Build Your Blockchain Solution?
+            </h2>
+            <p 
+              className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed"
+              style={{
+                fontFamily: 'var(--font-numans), sans-serif'
+              }}
+            >
+              Let's discuss your blockchain project and create a solution that drives your business forward.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/book-demo">
+                <button 
+                  className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.2)',
+                    color: 'white',
+                    border: '2px solid #FF3B30',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
                   Book Free Consultation
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </Link>
-            <Link href="/company-file/contact">
-              <button className="px-10 py-5 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-[#ff965d] transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-2xl">
-                Contact Us
-              </button>
-            </Link>
+                </button>
+              </Link>
+              <Link href="/company-file/contact">
+                <button 
+                  className="px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.2)',
+                    color: 'white',
+                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    backdropFilter: 'blur(10px)'
+                  }}
+                >
+                  Contact Us
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer */}
       <div className="relative z-10">
