@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, DM_Sans, Shadows_Into_Light, Epilogue, Inter, Press_Start_2P, Tourney, Numans } from "next/font/google";
+import { Geist, Geist_Mono, DM_Sans, Shadows_Into_Light, Epilogue, Inter, Press_Start_2P, Tourney, Numans, Roboto_Condensed, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -52,6 +52,20 @@ const numans = Numans({
   subsets: ["latin"],
 });
 
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   title: "Barbarika",
   description: "Created By Team Engineerian",
@@ -75,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${shadowsIntoLight.variable} ${epilogue.variable} ${inter.variable} ${pressStart2P.variable} ${tourney.variable} ${numans.variable} min-h-screen antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${shadowsIntoLight.variable} ${epilogue.variable} ${inter.variable} ${pressStart2P.variable} ${tourney.variable} ${numans.variable} ${robotoCondensed.variable} ${libreBaskerville.variable} font-sans min-h-screen antialiased`}
       >
         {children}
       </body>
