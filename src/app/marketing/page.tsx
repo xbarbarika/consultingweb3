@@ -8,6 +8,7 @@ import Link from 'next/link';
 const marketingSections = [
   {
     key: 'marketing-sub',
+    category: 'MARKETING SUBSCRIPTION',
     label: 'Marketing Subscription',
     heading: 'All Your Marketing Needs, One Simple Subscription',
     subheading: 'Scale with an on-demand team that knows your business inside and out. From strategy to execution, get expert marketing support without the overhead.',
@@ -25,6 +26,7 @@ const marketingSections = [
   },
   {
     key: 'social-media',
+    category: 'SOCIAL MEDIA',
     label: 'Social Media',
     heading: 'Build Meaningful Connections, Drive Real Engagement',
     subheading: 'We craft content that resonates with your audience and builds lasting relationships. From strategy to execution, we manage every aspect of your social media presence to drive growth and engagement.',
@@ -42,6 +44,7 @@ const marketingSections = [
   },
   {
     key: 'paid-social',
+    category: 'PAID SOCIAL ADVERTISING',
     label: 'Paid Social Advertising',
     heading: 'Supercharge Your Growth with High-Converting Social Ad Campaigns',
     subheading: 'We design, build and optimise ad campaigns that generate real sales. From creative production to advanced audience targeting, you get performance at scale.',
@@ -59,6 +62,7 @@ const marketingSections = [
   },
   {
     key: 'seo',
+    category: 'SEO',
     label: 'SEO',
     heading: 'Scalable SEO That Grows With You',
     subheading: 'Technical expertise meets content strategy for organic growth that lasts. From keyword research to backlink building—we turn search traffic into revenue.',
@@ -76,6 +80,7 @@ const marketingSections = [
   },
   {
     key: 'video',
+    category: 'VIDEO PRODUCTION',
     label: 'Video Production',
     heading: 'Bring Your Brand to Life Through Video',
     subheading: 'From concept to delivery, we create compelling video content that captivates your audience. Whether it\'s brand stories, product demos, or social media content—we make videos that convert.',
@@ -93,6 +98,7 @@ const marketingSections = [
   },
   {
     key: 'influencer',
+    category: 'INFLUENCER',
     label: 'Influencer Marketing',
     heading: 'Amplify Your Reach Through Authentic Voices',
     subheading: 'We connect you with the right influencers to authentically promote your brand. From micro-influencers to industry leaders—we build campaigns that drive results.',
@@ -110,6 +116,7 @@ const marketingSections = [
   },
   {
     key: 'pr-marketing',
+    category: 'PR & OUTREACH',
     label: 'PR & Outreach',
     heading: 'Build Authority Through Strategic PR',
     subheading: 'We position your brand as an industry leader through strategic media relations. From press releases to thought leadership—we secure the coverage that matters.',
@@ -127,6 +134,7 @@ const marketingSections = [
   },
   {
     key: 'community',
+    category: 'COMMUNITY',
     label: 'Community Management',
     heading: 'Build & Nurture Thriving Communities',
     subheading: 'We help you build vibrant communities around your brand that drive engagement and loyalty. From Discord servers to social groups—we manage every touchpoint with your audience.',
@@ -144,6 +152,7 @@ const marketingSections = [
   },
   {
     key: 'branding',
+    category: 'BRANDING',
     label: 'Branding',
     heading: 'Build a Brand That Stands Out and Sticks',
     subheading: 'We craft brands that resonate from visual identity to verbal tone. Our approach combines deep research, clear positioning, and design systems built for growth.',
@@ -161,6 +170,7 @@ const marketingSections = [
   },
   {
     key: 'lead-gen',
+    category: 'LEAD GENERATION',
     label: 'Lead Generation',
     heading: 'Consistent, Qualified Leads, Without the Guesswork',
     subheading: 'We build and manage performance-driven lead generation systems that deliver results—not just clicks. From strategy to execution, we handle every step so your sales team focuses on closing, not chasing.',
@@ -298,6 +308,24 @@ export default function Marketing() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black/80 to-red-900/30" />
                 <div className="relative z-10 flex-1 flex flex-col group">
+                  {/* Category Badge */}
+                  <div className="mb-3 sm:mb-4">
+                    <span 
+                      className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg"
+                      style={{
+                        backgroundColor: '#FF3B30',
+                        color: '#FFFFFF',
+                        fontFamily: '"DM Sans"',
+                        fontWeight: 800,
+                        letterSpacing: '0.1em',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 2px 8px rgba(255, 59, 48, 0.3)'
+                      }}
+                    >
+                      {filteredSections[0].category}
+                    </span>
+                  </div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-libre-baskerville">{filteredSections[0].heading}</h2>
                   <p className="text-gray-300 mb-3 sm:mb-4 md:mb-6 flex-1 font-roboto-condensed text-xs sm:text-sm md:text-base leading-relaxed">{filteredSections[0].subheading}</p>
                   <a 
@@ -349,6 +377,24 @@ export default function Marketing() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black/80 to-red-900/30" />
                 <div className="relative z-10 flex-1 flex flex-col group">
+                  {/* Category Badge */}
+                  <div className="mb-3 sm:mb-4">
+                    <span 
+                      className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg"
+                      style={{
+                        backgroundColor: '#FF3B30',
+                        color: '#FFFFFF',
+                        fontFamily: '"DM Sans"',
+                        fontWeight: 800,
+                        letterSpacing: '0.1em',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 2px 8px rgba(255, 59, 48, 0.3)'
+                      }}
+                    >
+                      {section.category}
+                    </span>
+                  </div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-libre-baskerville">{section.heading}</h2>
                   <p className="text-gray-300 mb-3 sm:mb-4 md:mb-6 flex-1 font-roboto-condensed text-xs sm:text-sm md:text-base leading-relaxed">{section.subheading}</p>
                   <a 
@@ -396,6 +442,24 @@ export default function Marketing() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black/80 to-red-900/30" />
                 <div className="relative z-10 flex-1 flex flex-col group">
+                  {/* Category Badge */}
+                  <div className="mb-3 sm:mb-4">
+                    <span 
+                      className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg"
+                      style={{
+                        backgroundColor: '#FF3B30',
+                        color: '#FFFFFF',
+                        fontFamily: '"DM Sans"',
+                        fontWeight: 800,
+                        letterSpacing: '0.1em',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 2px 8px rgba(255, 59, 48, 0.3)'
+                      }}
+                    >
+                      {filteredSections[3].category}
+                    </span>
+                  </div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-libre-baskerville">{filteredSections[3].heading}</h2>
                   <p className="text-gray-300 mb-3 sm:mb-4 md:mb-6 flex-1 font-roboto-condensed text-xs sm:text-sm md:text-base leading-relaxed">{filteredSections[3].subheading}</p>
                   <a 
@@ -447,6 +511,24 @@ export default function Marketing() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black/80 to-red-900/30" />
                 <div className="relative z-10 flex-1 flex flex-col group">
+                  {/* Category Badge */}
+                  <div className="mb-3 sm:mb-4">
+                    <span 
+                      className="inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg"
+                      style={{
+                        backgroundColor: '#FF3B30',
+                        color: '#FFFFFF',
+                        fontFamily: '"DM Sans"',
+                        fontWeight: 800,
+                        letterSpacing: '0.1em',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 2px 8px rgba(255, 59, 48, 0.3)'
+                      }}
+                    >
+                      {section.category}
+                    </span>
+                  </div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-libre-baskerville">{section.heading}</h2>
                   <p className="text-gray-300 mb-3 sm:mb-4 md:mb-6 flex-1 font-roboto-condensed text-xs sm:text-sm md:text-base leading-relaxed">{section.subheading}</p>
                   <a 
