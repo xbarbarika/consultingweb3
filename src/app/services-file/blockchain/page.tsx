@@ -845,7 +845,7 @@ export default function BlockchainService() {
                 fontFamily: 'var(--font-numans), sans-serif'
               }}
             >
-              Let's discuss your blockchain project and create a solution that drives your business forward.
+              Let&apos;s discuss your blockchain project and create a solution that drives your business forward.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book-demo">
