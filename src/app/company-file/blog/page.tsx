@@ -16,109 +16,267 @@ interface BlogPost {
   image: string;
   category: string;
   content: string;
+  isSeries?: boolean;
+  seriesSlug?: string;
 }
 
-const blogPosts = [
+interface BlogSeries {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  posts: BlogPost[];
+}
+
+const blogSeries: BlogSeries[] = [
   {
-    slug: 'ai-blockchain',
+    slug: 'ai-blockchain-series',
     title: 'AI + BLOCKCHAIN',
-    excerpt: 'Welcome to the Journey! Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we\'ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future.',
-    date: 'Aug 7, 2025',
-    author: 'Barbarika Labs',
-    readTime: '2 min read',
-    image: '/hero.png',
+    description: 'Explore the fascinating intersection of Artificial Intelligence and Blockchain technology through our comprehensive series.',
     category: 'Technology',
-    content: `
-      <article class="prose prose-invert max-w-none">
-        <p class="text-xl text-gray-100 mb-6 leading-relaxed">Welcome to the Journey! Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we'll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future.</p>
-        
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What Are We Doing on Day 1?</h2>
-        <p class="text-gray-200">Today, we focus on two things:</p>
-        <ul class="list-disc pl-6 space-y-2 my-4 text-gray-200">
-          <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Getting curious:</strong> We'll start by asking, "What is AI?" and "What is Blockchain?" in the simplest terms.</li>
-          <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Planning ahead:</strong> We'll create a roadmap for our blog series, so you always know what's coming next.</li>
-        </ul>
+    image: '/hero.png',
+    posts: [
+      {
+        slug: 'ai-blockchain-intro',
+        title: 'Day 1: Introduction to AI + Blockchain',
+        excerpt: 'Welcome to the Journey! Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we\'ll break down the fascinating world of Artificial Intelligence (AI) and Blockchain.',
+        date: 'Aug 7, 2025',
+        author: 'Barbarika Labs',
+        readTime: '2 min read',
+        image: '/hero.png',
+        category: 'Technology',
+        seriesSlug: 'ai-blockchain-series',
+        content: `
+          <article class="prose prose-invert max-w-none">
+            <p class="text-xl text-gray-100 mb-6 leading-relaxed">Welcome to the Journey! Starting something new can be exciting and sometimes a bit overwhelming. In the coming days, we'll break down the fascinating world of Artificial Intelligence (AI) and Blockchain, not only as individual technologies but as a powerful combination shaping the future.</p>
+            
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What Are We Doing on Day 1?</h2>
+            <p class="text-gray-200">Today, we focus on two things:</p>
+            <ul class="list-disc pl-6 space-y-2 my-4 text-gray-200">
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Getting curious:</strong> We'll start by asking, "What is AI?" and "What is Blockchain?" in the simplest terms.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Planning ahead:</strong> We'll create a roadmap for our blog series, so you always know what's coming next.</li>
+            </ul>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What is Artificial Intelligence (AI)?</h2>
-        <p class="text-gray-200 leading-relaxed">Think of AI as teaching computers to learn, adapt, and make decisions just like people do!</p>
-        <p class="text-gray-200 leading-relaxed">AI is behind everyday things, from online shopping recommendations and virtual assistants (like Siri and Alexa) to self-driving cars. The goal of AI is to help machines recognize patterns and solve problems, making life easier and work faster.</p>
-        <div class="bg-gray-800/60 p-5 rounded-lg my-6 border-l-4 border-blue-500 shadow-lg">
-          <p class="m-0 text-gray-100"><span class="font-semibold text-blue-300">Example:</span> Imagine Netflix suggesting movies you might like. That's AI, learning your tastes and offering up choices.</p>
-        </div>
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What is Artificial Intelligence (AI)?</h2>
+            <p class="text-gray-200 leading-relaxed">Think of AI as teaching computers to learn, adapt, and make decisions just like people do!</p>
+            <p class="text-gray-200 leading-relaxed">AI is behind everyday things, from online shopping recommendations and virtual assistants (like Siri and Alexa) to self-driving cars. The goal of AI is to help machines recognize patterns and solve problems, making life easier and work faster.</p>
+            <div class="bg-gray-800/60 p-5 rounded-lg my-6 border-l-4 border-blue-500 shadow-lg">
+              <p class="m-0 text-gray-100"><span class="font-semibold text-blue-300">Example:</span> Imagine Netflix suggesting movies you might like. That's AI, learning your tastes and offering up choices.</p>
+            </div>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What is Blockchain?</h2>
-        <p class="text-gray-200 leading-relaxed">Blockchain is more like a super-secure online notebook.</p>
-        <p class="text-gray-200 leading-relaxed">But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the "blockchain"), nobody can change or erase it. This makes it nearly tamper-proof. It's the technology behind digital coins like Bitcoin, but it's useful far beyond that!</p>
-        <div class="bg-gray-800/60 p-5 rounded-lg my-6 border-l-4 border-blue-500 shadow-lg">
-          <p class="m-0 text-gray-100"><span class="font-semibold text-blue-300">Example:</span> If you transfer money to a friend using blockchain, the transaction is recorded in a way that everyone can see, and nobody can secretly change it.</p>
-        </div>
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What is Blockchain?</h2>
+            <p class="text-gray-200 leading-relaxed">Blockchain is more like a super-secure online notebook.</p>
+            <p class="text-gray-200 leading-relaxed">But instead of one person controlling it, lots of people share the same copy. Once something is written in this notebook (the "blockchain"), nobody can change or erase it. This makes it nearly tamper-proof. It's the technology behind digital coins like Bitcoin, but it's useful far beyond that!</p>
+            <div class="bg-gray-800/60 p-5 rounded-lg my-6 border-l-4 border-blue-500 shadow-lg">
+              <p class="m-0 text-gray-100"><span class="font-semibold text-blue-300">Example:</span> If you transfer money to a friend using blockchain, the transaction is recorded in a way that everyone can see, and nobody can secretly change it.</p>
+            </div>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">Why Are These Technologies Important Together?</h2>
-        <p class="text-gray-200 leading-relaxed">AI is great at crunching massive amounts of data, but it needs data that's trustworthy. Blockchain keeps data safe and reliable.</p>
-        <p class="text-gray-200 leading-relaxed">Together, they can make systems that are both smart and secure. We'll explore this partnership in detail throughout the series!</p>
+            <div class="mt-14 pt-6 border-t border-gray-800/60">
+              <p class="text-gray-300 m-0">
+                <span class="font-medium text-blue-300">Next Up:</span> 
+                <span class="text-gray-100">Day 2: Deep dive into AI fundamentals and machine learning basics.</span>
+              </p>
+            </div>
+          </article>
+        `
+      },
+      {
+        slug: 'ai-deep-dive',
+        title: 'Day 2: WHAT IS AI?',
+        excerpt: 'What is AI? Hey there, curious mind! Today, let\'s explore Artificial Intelligence (AI) using a warm, natural story to make things simple and memorable.',
+        date: 'Aug 8, 2025',
+        author: 'Barbarika Labs',
+        readTime: '5 min read',
+        image: '/hero.png',
+        category: 'Technology',
+        seriesSlug: 'ai-blockchain-series',
+        content: `
+          <article class="prose prose-invert max-w-none">
+            <h1 class="text-3xl font-bold text-white mb-6">What is AI?</h1>
+            <p class="text-xl text-gray-100 mb-6 leading-relaxed">Hey there, curious mind! 🌟</p>
+            <p class="text-gray-200 leading-relaxed mb-6">Today, let's explore Artificial Intelligence (AI) using a warm, natural story to make things simple and memorable. Along the way, I'll give you a clear overview of AI's important parts — without making it too long or technical.</p>
+            
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">Imagine a Little Parrot Named Kiwi Learning About Flowers</h2>
+            <p class="text-gray-200 leading-relaxed mb-4">Meet Kiwi, a bright and curious pet parrot living in a garden full of colorful flowers. Kiwi loves to play but doesn't yet know the different types of flowers around him.</p>
+            <p class="text-gray-200 leading-relaxed mb-4">One day, Kiwi's owner decides to help him learn:</p>
+            <ul class="list-disc pl-6 space-y-2 my-4 text-gray-200">
+              <li class="leading-relaxed">She shows Kiwi a red rose, pointing out its shape and color.</li>
+              <li class="leading-relaxed">Then, she introduces a yellow marigold, explaining how it looks different — its petals and scent.</li>
+              <li class="leading-relaxed">Over time, Kiwi learns to recognize these flowers by their colors, shapes, and even smells.</li>
+            </ul>
+            <p class="text-gray-200 leading-relaxed mb-6">Soon, whenever Kiwi sees a flower, he can confidently say, "That's a rose!" or "That's a marigold!" even if the flower looks a little different or is in a new spot.</p>
 
-        <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">Our Blog Roadmap</h2>
-        <p class="text-gray-200 leading-relaxed">Here's the journey we'll take over the next 15 days:</p>
-        
-        <div class="space-y-6 mt-8">
-          <div class="bg-gray-900/40 p-5 rounded-xl border border-gray-800/50">
-            <h3 class="text-xl font-semibold text-blue-100 mb-2">Phase 1: Foundation (Days 1-5)</h3>
-            <p class="text-gray-300 m-0">Building understanding of AI and Blockchain basics</p>
-          </div>
-          
-          <div class="bg-gray-900/40 p-5 rounded-xl border border-gray-800/50">
-            <h3 class="text-xl font-semibold text-blue-100 mb-2">Phase 2: Deep Dive (Days 6-10)</h3>
-            <p class="text-gray-300 m-0">Exploring real-world applications and benefits</p>
-          </div>
-          
-          <div class="bg-gray-900/40 p-5 rounded-xl border border-gray-800/50">
-            <h3 class="text-xl font-semibold text-blue-100 mb-2">Phase 3: Advanced Topics (Days 11-15)</h3>
-            <p class="text-gray-300 m-0">Case studies, expert insights, and final polish</p>
-          </div>
-        </div>
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">This is Exactly How AI Learns!</h2>
+            <p class="text-gray-200 leading-relaxed mb-4">Just like Kiwi, AI starts with no knowledge. Instead of programming AI with every single detail about flowers (or anything else), we give it lots of examples — called data.</p>
+            <p class="text-gray-200 leading-relaxed mb-6">AI looks carefully to find patterns, like Kiwi noticing the red petals or the round shape of the rose. Using those clues, the AI guesses what it sees or hears, even if it's something brand new.</p>
 
-        <div class="bg-gray-900/60 p-6 rounded-xl my-8 border border-gray-800/60 shadow-lg backdrop-blur-sm">
-          <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-red-400 bg-clip-text text-transparent">Full 15-Day Journey:</h3>
-          <p class="text-gray-200 text-sm md:text-base overflow-x-auto py-2">
-            Introduction → AI Deep Dive → Blockchain Deep Dive → Combination Benefits → Real Examples → Business Impact → Challenges → News → Trends → Q&A → Tips → Case Studies → Expert Opinions → Review → Final Publish
-          </p>
-        </div>
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">What Makes AI So Amazing?</h2>
+            <p class="text-gray-200 leading-relaxed mb-4">AI can do many incredible things once it learns from data:</p>
+            <ul class="list-disc pl-6 space-y-2 my-6 text-gray-200">
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Recommendation Systems:</strong> Platforms like Netflix or YouTube use AI to find shows and videos you might love.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Healthcare:</strong> AI helps doctors spot diseases early by analyzing medical images.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Navigation:</strong> Apps learn about traffic and suggest the fastest routes.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Voice Assistants:</strong> When you talk to Siri or Alexa, AI understands and helps you.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Automating Tasks:</strong> AI can automate repetitive work, saving time and reducing errors.</li>
+            </ul>
 
-        <h2 class="text-2xl font-bold text-white mt-14 mb-5 tracking-tight bg-gradient-to-r from-blue-400 to-red-400 bg-clip-text text-transparent">Wrap Up</h2>
-        <p class="text-gray-200 leading-relaxed">Congratulations! You've just taken the first step!</p>
-        <p class="text-gray-200 leading-relaxed">Keep following as we unravel these technologies together, always using simple words, relatable stories, and real-life examples.</p>
-        <p class="mt-5 text-gray-200 leading-relaxed">Got questions about AI or blockchain already? Drop them in the comments, and I'll be sure to include answers in upcoming posts!</p>
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">Key Aspects of AI You Should Know</h2>
+            <div class="space-y-4 my-6">
+              <div class="bg-gray-900/40 p-4 rounded-lg border border-gray-800/50">
+                <h3 class="text-lg font-semibold text-blue-100 mb-2">Machine Learning (ML)</h3>
+                <p class="text-gray-300 m-0">This is how AI learns from data. It looks for patterns and improves with more examples.</p>
+              </div>
+              
+              <div class="bg-gray-900/40 p-4 rounded-lg border border-gray-800/50">
+                <h3 class="text-lg font-semibold text-blue-100 mb-2">Deep Learning</h3>
+                <p class="text-gray-300 m-0">A powerful kind of ML that uses layered "neural networks" inspired by the human brain. It helps AI understand complex data like pictures, sounds, and languages.</p>
+              </div>
+              
+              <div class="bg-gray-900/40 p-4 rounded-lg border border-gray-800/50">
+                <h3 class="text-lg font-semibold text-blue-100 mb-2">Natural Language Processing (NLP)</h3>
+                <p class="text-gray-300 m-0">This allows AI to understand and talk in human language — like chatbots or language translators.</p>
+              </div>
+              
+              <div class="bg-gray-900/40 p-4 rounded-lg border border-gray-800/50">
+                <h3 class="text-lg font-semibold text-blue-100 mb-2">Computer Vision</h3>
+                <p class="text-gray-300 m-0">AI's ability to "see" and interpret images or videos, just like how Kiwi recognizes flowers.</p>
+              </div>
+              
+              <div class="bg-gray-900/40 p-4 rounded-lg border border-gray-800/50">
+                <h3 class="text-lg font-semibold text-blue-100 mb-2">Generative AI</h3>
+                <p class="text-gray-300 m-0">AI that can create new content such as writing stories, making art, or composing music.</p>
+              </div>
+            </div>
 
-        <div class="mt-14 pt-6 border-t border-gray-800/60">
-          <p class="text-gray-300 m-0">
-            <span class="font-medium text-blue-300">Next Up:</span> 
-            <span class="text-gray-100">Tomorrow, we'll make AI even simpler. Stay tuned!</span>
-          </p>
-        </div>
-      </article>
-    `
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">How AI Learns, Step-by-Step (Like Teaching Kiwi)</h2>
+            <ol class="list-decimal pl-6 space-y-2 my-6 text-gray-200">
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Show lots of examples:</strong> Kiwi sees many flowers; AI gets huge amounts of data.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Find patterns:</strong> Kiwi notices petal shapes and colors; AI finds features in data.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Practice and improve:</strong> Kiwi gets better at recognizing flowers; AI updates its understanding constantly.</li>
+              <li class="leading-relaxed"><strong class="text-blue-100 font-semibold">Make smart guesses:</strong> Kiwi identifies new flowers based on past learning; AI predicts or classifies new info.</li>
+            </ol>
+
+            <h2 class="text-2xl font-bold text-white mt-10 mb-4 tracking-tight">Why Should You Care About AI?</h2>
+            <p class="text-gray-200 leading-relaxed mb-4">Because AI is already part of your daily life and has huge potential for the future:</p>
+            <ul class="list-disc pl-6 space-y-2 my-6 text-gray-200">
+              <li class="leading-relaxed">It makes experiences personalized and easier.</li>
+              <li class="leading-relaxed">It accelerates innovation in fields like medicine, finance, and education.</li>
+              <li class="leading-relaxed">It can create new jobs and ways to earn — think of smart tools helping you work or become creative.</li>
+              <li class="leading-relaxed">It encourages us to think carefully about ethical use, fairness, and privacy.</li>
+            </ul>
+
+            <div class="bg-gray-800/60 p-5 rounded-lg my-6 border-l-4 border-blue-500 shadow-lg">
+              <p class="m-0 text-gray-100"><span class="font-semibold text-blue-300">Final Thought:</span> AI is like teaching a smart friend — whether it's Kiwi or your computer — step by step, from basics to brilliant. With each lesson, AI gets better, helping make your world easier and more exciting.</p>
+            </div>
+
+            <p class="text-gray-200 leading-relaxed mb-4">Got questions or fun stories about learning new things? Share them in the comments — we're all in this learning adventure together!</p>
+            <p class="text-gray-200 leading-relaxed mb-6">Stay curious, and see you tomorrow! 🚀</p>
+
+            <div class="mt-14 pt-6 border-t border-gray-800/60">
+              <p class="text-gray-300 m-0">
+                <span class="font-medium text-blue-300">What's Up Next?</span> 
+                <span class="text-gray-100">Tomorrow, we will uncover Blockchain, a secure and trustworthy technology.</span>
+              </p>
+            </div>
+          </article>
+        `
+      },
+      {
+        slug: 'blockchain-fundamentals',
+        title: 'Day 3: Blockchain Fundamentals - Beyond Cryptocurrency',
+        excerpt: 'Discover how blockchain technology works beyond digital currencies. Understand consensus mechanisms, smart contracts, and decentralization.',
+        date: 'Aug 9, 2025',
+        author: 'Barbarika Labs',
+        readTime: '3 min read',
+        image: '/hero.png',
+        category: 'Technology',
+        seriesSlug: 'ai-blockchain-series',
+        content: `<p class="text-gray-400 text-center py-8">Content coming soon...</p>`
+      },
+      {
+        slug: 'ai-blockchain-synergy',
+        title: 'Day 4: The Perfect Match - AI + Blockchain Synergy',
+        excerpt: 'Learn how AI and blockchain complement each other. Explore use cases where these technologies create powerful solutions together.',
+        date: 'Aug 10, 2025',
+        author: 'Barbarika Labs',
+        readTime: '4 min read',
+        image: '/hero.png',
+        category: 'Technology',
+        seriesSlug: 'ai-blockchain-series',
+        content: `<p class="text-gray-400 text-center py-8">Content coming soon...</p>`
+      },
+      {
+        slug: 'real-world-applications',
+        title: 'Day 5: Real-World Applications and Case Studies',
+        excerpt: 'Examine real companies and projects using AI + Blockchain. From supply chain to healthcare, see how these technologies are changing industries.',
+        date: 'Aug 11, 2025',
+        author: 'Barbarika Labs',
+        readTime: '5 min read',
+        image: '/hero.png',
+        category: 'Technology',
+        seriesSlug: 'ai-blockchain-series',
+        content: `<p class="text-gray-400 text-center py-8">Content coming soon...</p>`
+      }
+    ]
   },
   {
-    slug: 'coming-soon',
-    title: 'Coming Soon',
-    excerpt: 'Stay tuned for more exciting content!',
-    date: 'Coming soon',
-    author: 'Barbarika Labs',
-    readTime: '1 min read',
+    slug: 'zk-series',
+    title: 'ZK',
+    description: 'Discover the world of Zero Knowledge proofs and privacy-preserving technologies.',
+    category: 'Cryptography',
     image: '/hero.png',
-    category: 'Announcement',
-    content: "<p>New content coming soon!</p>"
+    posts: [
+      {
+        slug: 'zk-intro',
+        title: 'Introduction to Zero Knowledge Proofs',
+        excerpt: 'Coming soon - explore the fundamentals of Zero Knowledge technology.',
+        date: 'Aug 15, 2025',
+        author: 'Barbarika Labs',
+        readTime: '3 min read',
+        image: '/hero.png',
+        category: 'Cryptography',
+        seriesSlug: 'zk-series',
+        content: `<p class="text-gray-400 text-center py-8">Content coming soon...</p>`
+      }
+    ]
+  },
+  {
+    slug: 'rwa-series',
+    title: 'RWA (Real World Assets)',
+    description: 'Explore how Real World Assets are being tokenized and brought onto blockchain networks.',
+    category: 'Finance',
+    image: '/hero.png',
+    posts: [
+      {
+        slug: 'rwa-intro',
+        title: 'Introduction to Real World Asset Tokenization',
+        excerpt: 'Coming soon - discover the world of Real World Asset tokenization.',
+        date: 'Aug 20, 2025',
+        author: 'Barbarika Labs',
+        readTime: '4 min read',
+        image: '/hero.png',
+        category: 'Finance',
+        seriesSlug: 'rwa-series',
+        content: `<p class="text-gray-400 text-center py-8">Content coming soon...</p>`
+      }
+    ]
   }
 ];
+
+// Flatten all posts for search functionality
+const allBlogPosts = blogSeries.flatMap(series => series.posts);
 
 export default function Blog() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [selectedSeries, setSelectedSeries] = useState<BlogSeries | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   const closeModal = () => {
     setSelectedPost(null);
+    setSelectedSeries(null);
     document.body.style.overflow = 'auto';
     // Update URL without triggering a page reload
     router.push('/company-file/blog', { scroll: false });
@@ -126,9 +284,9 @@ export default function Blog() {
 
   // Filter blog posts based on search query
   const filteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return blogPosts;
+    if (!searchQuery.trim()) return allBlogPosts;
     const query = searchQuery.toLowerCase();
-    return blogPosts.filter(post => 
+    return allBlogPosts.filter((post: BlogPost) => 
       post.title.toLowerCase().includes(query) ||
       post.excerpt.toLowerCase().includes(query) ||
       post.content.toLowerCase().includes(query) ||
@@ -141,7 +299,7 @@ export default function Blog() {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
       if (hash) {
-        const post = blogPosts.find(p => p.slug === hash);
+        const post = allBlogPosts.find((p: BlogPost) => p.slug === hash);
         if (post) {
           setSelectedPost(post);
           document.body.style.overflow = 'hidden';
@@ -159,6 +317,20 @@ export default function Blog() {
     document.body.style.overflow = 'hidden';
     // Update URL with post slug
     router.push(`/company-file/blog#${post.slug}`, { scroll: false });
+  };
+
+  const openSeries = (series: BlogSeries) => {
+    setSelectedSeries(series);
+    document.body.style.overflow = 'hidden';
+    // Update URL with series slug
+    router.push(`/company-file/blog#${series.slug}`, { scroll: false });
+  };
+
+  const backToMain = () => {
+    setSelectedSeries(null);
+    setSelectedPost(null);
+    document.body.style.overflow = 'auto';
+    router.push('/company-file/blog', { scroll: false });
   };
 
   return (
@@ -224,60 +396,159 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Blog Posts Grid */}
+      {/* Blog Content */}
       <section className="relative py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {filteredPosts.length === 0 ? (
-          <div className="text-center py-16">
-            <h3 className="text-xl font-medium text-gray-300">No posts found</h3>
-            <p className="mt-2 text-gray-500">Try adjusting your search or filter to find what you&apos;re looking for.</p>
+        {selectedSeries ? (
+          /* Series View - Show posts within selected series */
+          <div>
+            {/* Back Button */}
+            <button 
+              onClick={backToMain}
+              className="mb-8 flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Blog Series
+            </button>
+            
+            {/* Series Header */}
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ 
+                fontFamily: 'var(--font-tourney), sans-serif',
+                background: selectedSeries.category === 'Technology' ? 'linear-gradient(90deg, #3B82F6 0%, #EF4444 100%)' :
+                           selectedSeries.category === 'Cryptography' ? 'linear-gradient(90deg, #8B5CF6 0%, #EC4899 100%)' :
+                           'linear-gradient(90deg, #10B981 0%, #F59E0B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                {selectedSeries.title}
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">{selectedSeries.description}</p>
+            </div>
+
+            {/* Posts in Series */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {selectedSeries.posts.map((post: BlogPost, index: number) => (
+                <div 
+                  key={index}
+                  className={`relative group bg-gray-900/60 rounded-xl overflow-hidden border border-gray-800/60 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/50 hover:scale-[1.02] hover:ring-1 hover:ring-blue-500/30`}
+                  onClick={() => openPost(post)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && openPost(post)}
+                >
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image 
+                      src={post.image} 
+                      alt={post.title}
+                      fill
+                      className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm ${
+                        post.category === 'Technology' ? 'text-blue-300 bg-blue-900/50' :
+                        post.category === 'Cryptography' ? 'text-purple-300 bg-purple-900/50' :
+                        'text-green-300 bg-green-900/50'
+                      }`}>
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6 relative z-10">
+                    <div className="flex items-center text-sm text-gray-400 mb-2">
+                      <span className="group-hover:text-blue-300 transition-colors">{post.date}</span>
+                      <span className="mx-2">•</span>
+                      <span className="text-sm text-gray-300">{post.readTime}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 group-hover:text-gray-200 transition-colors line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
+                      <span>Read more</span>
+                      <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {filteredPosts.map((post, index) => (
-              <div 
-                key={index}
-                className={`relative group bg-gray-900/60 rounded-xl overflow-hidden border border-gray-800/60 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/50 hover:scale-[1.02] hover:ring-1 hover:ring-blue-500/30`}
-                onClick={() => openPost(post)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && openPost(post)}
-              >
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image 
-                    src={post.image} 
-                    alt={post.title}
-                    fill
-                    className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105 duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-300 bg-blue-900/50 rounded-full backdrop-blur-sm">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6 relative z-10">
-                  <div className="flex items-center text-sm text-gray-400 mb-2">
-                    <span className="group-hover:text-blue-300 transition-colors">{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span className="text-sm text-gray-300">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors bg-gradient-to-r from-blue-300 to-red-300 bg-clip-text text-transparent">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 group-hover:text-gray-200 transition-colors line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center text-sm text-blue-400 group-hover:text-blue-300 transition-colors">
-                    <span>Read more</span>
-                    <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
+          /* Main View - Show series cards */
+          <div>
+            {filteredPosts.length === 0 ? (
+              <div className="text-center py-16">
+                <h3 className="text-xl font-medium text-gray-300">No posts found</h3>
+                <p className="mt-2 text-gray-500">Try adjusting your search or filter to find what you&apos;re looking for.</p>
               </div>
-            ))}
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                {blogSeries.map((series, index) => (
+                  <div 
+                    key={index}
+                    className={`relative group bg-gray-900/60 rounded-xl overflow-hidden border border-gray-800/60 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/50 hover:scale-[1.02] hover:ring-1 hover:ring-blue-500/30`}
+                    onClick={() => openSeries(series)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && openSeries(series)}
+                  >
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image 
+                        src={series.image} 
+                        alt={series.title}
+                        fill
+                        className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm ${
+                          series.category === 'Technology' ? 'text-blue-300 bg-blue-900/50' :
+                          series.category === 'Cryptography' ? 'text-purple-300 bg-purple-900/50' :
+                          'text-green-300 bg-green-900/50'
+                        }`}>
+                          {series.category}
+                        </span>
+                        <div className="mt-2">
+                          <span className="inline-block px-2 py-1 text-xs text-gray-300 bg-gray-800/70 rounded">
+                            {series.posts.length} posts
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6 relative z-10">
+                      <h3 className={`text-xl font-bold mb-2 transition-colors ${
+                        series.category === 'Technology' ? 'text-white group-hover:text-blue-300 bg-gradient-to-r from-blue-300 to-red-300 bg-clip-text text-transparent' :
+                        series.category === 'Cryptography' ? 'text-white group-hover:text-purple-300 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent' :
+                        'text-white group-hover:text-green-300 bg-gradient-to-r from-green-300 to-yellow-300 bg-clip-text text-transparent'
+                      }`}>
+                        {series.title}
+                      </h3>
+                      <p className="text-gray-400 mb-4 group-hover:text-gray-200 transition-colors line-clamp-3">
+                        {series.description}
+                      </p>
+                      <div className={`flex items-center text-sm transition-colors ${
+                        series.category === 'Technology' ? 'text-blue-400 group-hover:text-blue-300' :
+                        series.category === 'Cryptography' ? 'text-purple-400 group-hover:text-purple-300' :
+                        'text-green-400 group-hover:text-green-300'
+                      }`}>
+                        <span>Explore Series</span>
+                        <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </section>
