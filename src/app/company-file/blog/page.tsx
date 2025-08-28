@@ -166,7 +166,7 @@ const Blog = () => {
       <MenuModal isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       <div className="relative">
         <div className="w-full">
-          <div className="py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-12 xl:px-24">
+          <div className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 xl:px-24">
             <div className="max-w-6xl mx-auto text-center">
               <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight px-2" style={{
                 fontFamily: 'var(--font-tourney), sans-serif',
@@ -182,7 +182,7 @@ const Blog = () => {
               }}>
                 Insights & Updates
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-4 sm:mb-6 px-2 sm:px-4" style={{
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto sm:mb-0 px-2 sm:px-4" style={{
                 fontFamily: 'var(--font-dm-sans), sans-serif',
                 lineHeight: '1.6'
               }}>
@@ -193,7 +193,7 @@ const Blog = () => {
         </div>
 
         {/* Search Bar */}
-        <section className="relative py-4 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <section className="relative px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <div className="relative">
             <input
               type="text"
